@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Blue-dark
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru-dark theme - Blue version, modified by Jannomag
+Encoding=UTF-8
+GtkTheme=Yaru-Blue-dark
+IconTheme=Yaru
+CursorTheme=Yaru
+CursorSize=24
