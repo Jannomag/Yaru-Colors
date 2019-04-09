@@ -63,5 +63,6 @@ Yaru-Purple:	#a064d8 - #4c1f7a
 Yaru-Red:	#e92020 - #742525
 Yaru-Yellow:	#e9ba20 - #746225
 `
+
 All other colors in the themes are generated while compiling the css from Yaru's source.
 
