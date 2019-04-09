@@ -41,27 +41,27 @@ Manual install:
 (or do it with the script, it'll do it for you...)
 
 
-Have fun with it!
-For any suggestions send me a message here or on Reddit /u/jannomag
+**Have fun with it!
+For any suggestions send me a message here or on Reddit /u/jannomag**
 
 
 
 
-Hex-Color codes of all base colors
-- First color is the Ubuntu-Orange, second the Ubuntu-Purple
-
+**Hex-Color codes of all base colors**
+First color is the Ubuntu-Orange, second the Ubuntu-Purple
+`               ORANGE  - PURPLE`  
 `Yaru-ORIGINAL:	#E95420 - #762572`   
-`Yaru-Aqua:	#41c6c8 - #326868`   
-`Yaru-Blue:	#208fe9 - #255074`   
-`Yaru-Brown:	#995640 - #462e1b`   
-`Yaru-Deepblue:  #25469d - #1a318b`   
-`Yaru-Green:	#3eb34f - #123d18`   
-`Yaru-Grey:	#9c9c9c - #4d4d4d`   
-`Yaru-MATE:	#78ab50 - #4f6326`   
-`Yaru-Pink:	#e920a3 - #742558`   
-`Yaru-Purple:	#a064d8 - #4c1f7a`   
-`Yaru-Red:	#e92020 - #742525`   
-`Yaru-Yellow:	#e9ba20 - #746225`   
+`Yaru-Aqua:	    #41c6c8 - #326868`   
+`Yaru-Blue:	    #208fe9 - #255074`   
+`Yaru-Brown:	  #995640 - #462e1b`   
+`Yaru-Deepblue: #25469d - #1a318b`   
+`Yaru-Green:	  #3eb34f - #123d18`   
+`Yaru-Grey:	    #9c9c9c - #4d4d4d`   
+`Yaru-MATE:	    #78ab50 - #4f6326`   
+`Yaru-Pink:	    #e920a3 - #742558`   
+`Yaru-Purple:	  #a064d8 - #4c1f7a`   
+`Yaru-Red:	    #e92020 - #742525`   
+`Yaru-Yellow:	  #e9ba20 - #746225`   
 
 All other colors in the themes are generated while compiling the css from Yaru's source.
 
