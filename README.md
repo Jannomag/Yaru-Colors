@@ -41,15 +41,15 @@ Manual install:
 (or do it with the script, it'll do it for you...)
 
 
-**Have fun with it!
+**Have fun with it!   
 For any suggestions send me a message here or on Reddit /u/jannomag**
 
 
 
 
-**Hex-Color codes of all base colors**
+**Hex-Color codes of all base colors**   
 First color is the Ubuntu-Orange, second the Ubuntu-Purple
-`               ORANGE  - PURPLE`  
+
 `Yaru-ORIGINAL:	#E95420 - #762572`   
 `Yaru-Aqua:	    #41c6c8 - #326868`   
 `Yaru-Blue:	    #208fe9 - #255074`   
