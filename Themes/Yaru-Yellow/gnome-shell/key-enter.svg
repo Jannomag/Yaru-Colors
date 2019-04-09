@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="30"
+   viewBox="0 0 30 26"
+   version="1.1"
+   id="svg7384"
+   height="26"
+   sodipodi:docname="key-enter.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     id="namedview19"
+     showgrid="false"
+     inkscape:zoom="10.429825"
+     inkscape:cx="3.9670882"
+     inkscape:cy="12.455512"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg7384"
+     inkscape:pagecheckerboard="true" />
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnome Symbolic Icon Theme</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <title
+     id="title9167">Gnome Symbolic Icon Theme</title>
+  <defs
+     id="defs7386">
+    <linearGradient
+       osb:paint="solid"
+       id="linearGradient19282"
+       gradientTransform="matrix(-2.7365795,0.28202934,-0.18908311,-0.99988321,239.54008,-879.45557)">
+      <stop
+         style="stop-color:#666666;stop-opacity:1;"
+         offset="0"
+         id="stop19284" />
+    </linearGradient>
+  </defs>
+  <g
+     transform="translate(-141.0002,-797)"
+     style="display:inline"
+     id="layer9" />
+  <g
+     transform="translate(-141.0002,-797)"
+     style="display:inline"
+     id="layer10" />
+  <g
+     transform="translate(-141.0002,-797)"
+     id="layer11" />
+  <g
+     transform="translate(-141.0002,-797)"
+     style="display:inline"
+     id="layer13" />
+  <g
+     transform="translate(-141.0002,-797)"
+     id="layer14" />
+  <g
+     transform="translate(-141.0002,-797)"
+     style="display:inline"
+     id="layer15" />
+  <g
+     transform="translate(-141.0002,-797)"
+     style="display:inline"
+     id="g71291" />
+  <g
+     transform="translate(-141.0002,-797)"
+     style="display:inline"
+     id="g4953" />
+  <g
+     transform="translate(-1.0000001,-3.2499996)"
+     id="g871">
+    <g
+       id="layer9-6"
+       style="display:inline;fill:#ffffff"
+       transform="translate(-141.0002,-791)" />
+    <g
+       id="layer10-7"
+       style="display:inline;fill:#ffffff"
+       transform="translate(-141.0002,-791)" />
+    <g
+       style="fill:#ffffff"
+       id="layer11-5"
+       transform="translate(-141.0002,-791)" />
+    <g
+       id="layer13-3"
+       style="display:inline;fill:#ffffff"
+       transform="translate(-141.0002,-791)" />
+    <g
+       style="fill:#ffffff"
+       id="layer14-5"
+       transform="translate(-141.0002,-791)" />
+    <g
+       id="layer15-6"
+       style="display:inline;fill:#ffffff"
+       transform="translate(-141.0002,-791)" />
+    <g
+       id="g71291-2"
+       style="display:inline;fill:#ffffff"
+       transform="translate(-141.0002,-791)" />
+    <g
+       id="g4953-9"
+       style="display:inline;fill:#ffffff"
+       transform="translate(-141.0002,-791)" />
+    <g
+       transform="matrix(2.2,0,0,2.2,1.9401993,-3.8)"
+       style="color:#000000;fill:#ffffff"
+       id="g832" />
+    <g
+       id="g942">
+      <path
+         id="path828-3"
+         overflow="visible"
+         font-weight="400"
+         style="color:#000000;font-weight:400;line-height:normal;font-family:sans-serif;font-variant-ligatures:none;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;white-space:normal;shape-padding:0;overflow:visible;isolation:auto;mix-blend-mode:normal;fill:#ffffff;stroke-width:2.5;marker:none"
+         d="m 29.140201,13.85 c 0,3.75 -1.6,6.2325 -3.895,7.435 -2.292502,1.205 -5.045002,1.315 -7.675002,1.315 h -7.514642 v -2.5 h 7.514642 c 2.5275,0 4.9375,-0.2 6.515002,-1.0275 1.575,-0.8275 2.555,-2.0975 2.555,-5.2225 V 5 h 2.5 z"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="scsccscsccs" />
+      <g
+         id="g832-1"
+         style="color:#000000;fill:#ffffff"
+         transform="matrix(2.4,0,0,2.4,1.8565993,-26.1)">
+        <path
+           id="path830-2"
+           overflow="visible"
+           style="overflow:visible;fill:#ffffff;marker:none"
+           d="m 5,17.333333 v 5 a 36.958,36.958 0 0 1 -2.323,-1.166 c -0.78,-0.431 -1.534,-0.876 -2.259,-1.334 0.725,-0.449 1.478,-0.889 2.26,-1.32 a 43.09,43.09 0 0 1 2.322,-1.18 z"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+</svg>
