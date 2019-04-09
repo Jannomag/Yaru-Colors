@@ -6,7 +6,7 @@ Yaru-Colors themes conataing following:
 - Yaru icons
 - Ubuntu-Dock theme (indicators)
 
-Following changes are made by me:
+**Following changes are made by me:**
 - .css files for GTK3 and Gnome-Shell are edited. I changed all orange and purple tinted colors
 - GTK2 images and Gnome-Shell graphics which were orange tinted are changed
 - For the icon pack I just recolored the folder icons in 'places' and 'status'
@@ -16,21 +16,21 @@ I tried to make the installation as easy as possible.
 Therefore I created an installation script called install.sh. 
 
 The installer will do a backup if something needs to be overwritten (only Ubuntu 18.10+).
-It will guide you through everything and you can choose what you want to install.
+It will guide you through everything and allows you to choose what you want to install.
 
-Installation with script:
+**Installation with script:**
 - Run the installer with `./install.sh`
   -- for replacing /usr/share/gnome-shell/theme/Yaru for better compatiblity, run this script as root
 - Follow the installer
 - Done
 
-Removal with script:
+**Removal with script:**
 - Rund the uninstaller with `./uninstall.sh`
   -- if you installed the shell theme to /usr/share/gnome-shell/theme/Yaru, run this script as root
 - Follow the script
 - Done
 
-Manual install:
+**Manual install:**
 - Copy your desired theme into your desired theme directory (example `/usr/share/themes` or `~/.local/share/themes`)
 - Copy you desired icon pack into your desired theme directory (example `/usr/share/icons` or `~/.icons`)
 - For better compatiblity you can optionally copy the files from a theme's gnome-shell directory to /usr/share/gnome-shell/theme/Yaru and overwrite everything AFTER you backed up the files
@@ -40,9 +40,11 @@ Manual install:
 `gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color 'HEXCODE' 2> /dev/null`
 (or do it with the script, it'll do it for you...)
 
-
-**Have fun with it!   
-For any suggestions send me a message here or on Reddit /u/jannomag**
+   
+      
+      
+***Have fun with it!   
+For any suggestions send me a message here or on Reddit /u/jannomag***
 
 
 
