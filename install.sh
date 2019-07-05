@@ -59,7 +59,7 @@ else
         isroot="true"
 	themeinstallpath="/usr/share/themes"
 	iconinstallpath="/usr/share/icons"
-	echo -e "${BGre}You ran this script as root, defautl install path is set to\n'/usr/share/' which can also be changed later!${RCol}"
+	echo -e "${BGre}You ran this script as root, default install path is set to\n'/usr/share/' which can also be changed later!${RCol}"
 fi
 
 #Determine user name for later
