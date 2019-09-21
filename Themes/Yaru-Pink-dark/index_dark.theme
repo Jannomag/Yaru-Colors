@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Pink-dark
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru-Dark theme - forked with a stylish Pink base color
+Encoding=UTF-8
+GtkTheme=Yaru-Pink
+IconTheme=Yaru-Pink
+CursorTheme=Yaru
+CursorSize=24

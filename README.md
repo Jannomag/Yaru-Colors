@@ -4,6 +4,9 @@
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)
 
+*Update 2.0: Yaru developers updated the original theme, so I did. It cointains now the new light version from 19.10.*
+*Maybe I'm able to create "Yaru-Classic" theme with the old darker header bars, but for now it was enough work to create 2.0*
+
 Yaru-Colors themes conataing following:
 - GTK 2 / 3 theme
 - Gnome-Shell theme

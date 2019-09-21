@@ -1,9 +1,9 @@
 [X-GNOME-Metatheme]
 Name=Yaru-Yellow
 Type=X-GNOME-Metatheme
-Comment=Ubuntu Yaru theme - forked with a stylish yellow base color
+Comment=Ubuntu Yaru theme - forked with a stylish Yellow base color
 Encoding=UTF-8
 GtkTheme=Yaru-Yellow
-IconTheme=Yaru_Yellow
+IconTheme=Yaru-Yellow
 CursorTheme=Yaru
 CursorSize=24

@@ -1442,8 +1442,8 @@ GtkComboBox {
   color: #F7F7F7; }
   .titlebar:backdrop,
   .header-bar:backdrop {
-    background-color: #3d3a3a;
-    border-color: rgba(22, 21, 21, 0.3);
+    background-color: #2B2929;
+    border-color: rgba(4, 4, 4, 0.3);
     color: #959697;
     transition: all 200ms ease-out; }
   .titlebar .title,
@@ -1468,7 +1468,7 @@ GtkComboBox {
     .titlebar > GtkBox > .separator.vertical:backdrop,
     .header-bar .header-bar-separator:backdrop,
     .header-bar > GtkBox > .separator.vertical:backdrop {
-      background-color: #373535;
+      background-color: #2e2d2d;
       background-image: none; }
   .titlebar.selection-mode,
   .header-bar.selection-mode {
@@ -1882,12 +1882,12 @@ GtkComboBox {
       background-color: #454242;
       border-color: #454242;
       box-shadow: none;
-      color: #a1a0a0;
+      color: #9c9b9b;
       transition: all 200ms ease-out; }
       .titlebar .entry:backdrop .label, .titlebar .entry:backdrop,
       .header-bar .entry:backdrop .label,
       .header-bar .entry:backdrop {
-        color: #a1a0a0; }
+        color: #9c9b9b; }
       .titlebar .entry:backdrop:insensitive,
       .header-bar .entry:backdrop:insensitive {
         background-color: transparent;
@@ -1905,7 +1905,7 @@ GtkComboBox {
       color: #F7F7F7; }
       .titlebar .entry .image:hover,
       .header-bar .entry .image:hover {
-        color: #a1a0a0; }
+        color: #9c9b9b; }
     .titlebar .entry selection,
     .header-bar .entry selection {
       background-color: #0f95c5;
@@ -1957,9 +1957,9 @@ GtkComboBox {
   .header-bar .sidebar-button.button:hover:backdrop,
   .header-bar .button.titlebutton.appmenu:hover:backdrop {
     color: #F7F7F7;
-    background-color: #4d4949;
+    background-color: #3b3838;
     background-image: none;
-    border-color: #4d4949;
+    border-color: #3b3838;
     box-shadow: none; }
   .titlebar .button:active, .titlebar .button:checked, .titlebar .button.flat:active, .titlebar .sidebar-button.button:active, .titlebar .button.flat:checked, .titlebar .sidebar-button.button:checked, .titlebar .button.titlebutton.appmenu:active, .titlebar .button.titlebutton.appmenu:checked,
   .header-bar .button:active,
@@ -2043,9 +2043,9 @@ GtkComboBox {
   .header-bar .sidebar-button.button:backdrop,
   .header-bar .button.titlebutton.appmenu:backdrop {
     -gtk-image-effect: dim;
-    background-color: #3d3a3a;
+    background-color: #2B2929;
     background-image: none;
-    border-color: #3d3a3a;
+    border-color: #2B2929;
     box-shadow: none; }
     .titlebar .button:backdrop .label, .titlebar .button:backdrop, .titlebar .button.flat:backdrop .label, .titlebar .sidebar-button.button:backdrop .label, .titlebar .button.flat:backdrop, .titlebar .sidebar-button.button:backdrop, .titlebar .button.titlebutton.appmenu:backdrop .label, .titlebar .button.titlebutton.appmenu:backdrop,
     .header-bar .button:backdrop .label,
@@ -2056,7 +2056,7 @@ GtkComboBox {
     .header-bar .sidebar-button.button:backdrop,
     .header-bar .button.titlebutton.appmenu:backdrop .label,
     .header-bar .button.titlebutton.appmenu:backdrop {
-      color: #adacac; }
+      color: #a5a5a5; }
   .titlebar .button:backdrop:active, .titlebar .button:backdrop:checked, .titlebar .button.flat:backdrop:active, .titlebar .sidebar-button.button:backdrop:active, .titlebar .button.flat:backdrop:checked, .titlebar .sidebar-button.button:backdrop:checked, .titlebar .button.titlebutton.appmenu:backdrop:active, .titlebar .button.titlebutton.appmenu:backdrop:checked,
   .header-bar .button:backdrop:active,
   .header-bar .button:backdrop:checked,
@@ -2066,10 +2066,10 @@ GtkComboBox {
   .header-bar .sidebar-button.button:backdrop:checked,
   .header-bar .button.titlebutton.appmenu:backdrop:active,
   .header-bar .button.titlebutton.appmenu:backdrop:checked {
-    background-color: #4a4747;
+    background-color: #383535;
     background-image: none;
-    border-color: #4a4747;
-    border-top-color: #4a4747;
+    border-color: #383535;
+    border-top-color: #383535;
     box-shadow: none; }
     .titlebar .button:backdrop:active .label, .titlebar .button:backdrop:active, .titlebar .button:backdrop:checked .label, .titlebar .button:backdrop:checked, .titlebar .button.flat:backdrop:active .label, .titlebar .sidebar-button.button:backdrop:active .label, .titlebar .button.flat:backdrop:active, .titlebar .sidebar-button.button:backdrop:active, .titlebar .button.flat:backdrop:checked .label, .titlebar .sidebar-button.button:backdrop:checked .label, .titlebar .button.flat:backdrop:checked, .titlebar .sidebar-button.button:backdrop:checked, .titlebar .button.titlebutton.appmenu:backdrop:active .label, .titlebar .button.titlebutton.appmenu:backdrop:active, .titlebar .button.titlebutton.appmenu:backdrop:checked .label, .titlebar .button.titlebutton.appmenu:backdrop:checked,
     .header-bar .button:backdrop:active .label,
@@ -2088,7 +2088,7 @@ GtkComboBox {
     .header-bar .button.titlebutton.appmenu:backdrop:active,
     .header-bar .button.titlebutton.appmenu:backdrop:checked .label,
     .header-bar .button.titlebutton.appmenu:backdrop:checked {
-      color: #d4d4d4; }
+      color: #d1d0d0; }
   .titlebar .button:backdrop:insensitive, .titlebar .button.flat:backdrop:insensitive, .titlebar .sidebar-button.button:backdrop:insensitive, .titlebar .button.titlebutton.appmenu:backdrop:insensitive,
   .header-bar .button:backdrop:insensitive,
   .header-bar .button.flat:backdrop:insensitive,
@@ -2599,7 +2599,7 @@ GtkComboBox {
     .titlebar .path-bar.linked .header-bar .button:backdrop,
     .header-bar .path-bar.linked .button:backdrop {
       background-color: #454242;
-      color: #bfbebe; }
+      color: #bab9b9; }
       .titlebar .stack-switcher.linked .button:backdrop:checked, .header-bar .stack-switcher.linked .titlebar .button:backdrop:checked, .titlebar .path-bar.linked .button:backdrop:checked, .header-bar .path-bar.linked .titlebar .button:backdrop:checked,
       .titlebar .stack-switcher.linked .header-bar .button:backdrop:checked,
       .header-bar .stack-switcher.linked .button:backdrop:checked,
@@ -2832,8 +2832,8 @@ column-header .button, column-header .button:hover, column-header .button:active
   color: #CCC;
   padding: 0px; }
   .menubar:backdrop {
-    background-color: #3d3a3a;
-    color: #a1a0a0; }
+    background-color: #2B2929;
+    color: #9c9b9b; }
     .menubar:backdrop .label {
       color: #959697; }
   .menubar > .menuitem {
@@ -5217,7 +5217,7 @@ GtkColorSwatch {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#6c6767), to(transparent)); }
       .header-bar .button.titlebutton:not(.close):not(.appmenu):hover:hover:backdrop,
       .titlebar .button.titlebutton:not(.close):not(.appmenu):hover:hover:backdrop {
-        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
     .header-bar .button.titlebutton:not(.close):not(.appmenu):hover:active,
     .titlebar .button.titlebutton:not(.close):not(.appmenu):hover:active {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#5a5656), to(transparent)); }
@@ -5229,7 +5229,7 @@ GtkColorSwatch {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#6c6767), to(transparent)); }
       .header-bar .button.titlebutton:not(.close):not(.appmenu):active:hover:backdrop,
       .titlebar .button.titlebutton:not(.close):not(.appmenu):active:hover:backdrop {
-        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
     .header-bar .button.titlebutton:not(.close):not(.appmenu):active:active,
     .titlebar .button.titlebutton:not(.close):not(.appmenu):active:active {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#5a5656), to(transparent)); }
@@ -5241,7 +5241,7 @@ GtkColorSwatch {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#379beb), to(transparent)); }
       .header-bar .button.titlebutton.close:hover:backdrop,
       .titlebar .button.titlebutton.close:hover:backdrop {
-        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
     .header-bar .button.titlebutton.close:active,
     .titlebar .button.titlebutton.close:active {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#157cd1), to(transparent)); }
@@ -5256,7 +5256,7 @@ GtkColorSwatch {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#379beb), to(transparent)); }
         .header-bar .button.titlebutton.close:hover:hover:backdrop,
         .titlebar .button.titlebutton.close:hover:hover:backdrop {
-          background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+          background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
       .header-bar .button.titlebutton.close:hover:active,
       .titlebar .button.titlebutton.close:hover:active {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#157cd1), to(transparent)); }
@@ -5271,7 +5271,7 @@ GtkColorSwatch {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#379beb), to(transparent)); }
         .header-bar .button.titlebutton.close:active:hover:backdrop,
         .titlebar .button.titlebutton.close:active:hover:backdrop {
-          background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+          background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
       .header-bar .button.titlebutton.close:active:active,
       .titlebar .button.titlebutton.close:active:active {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#157cd1), to(transparent)); }

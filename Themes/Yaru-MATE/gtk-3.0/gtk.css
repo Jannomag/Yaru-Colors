@@ -7,7 +7,7 @@
 * {
   padding: 0;
   -GtkToolButton-icon-spacing: 4;
-  -GtkTextView-error-underline-color: #e92020;
+  -GtkTextView-error-underline-color: #ED3146;
   -GtkCheckButton-indicator-size: 16;
   -GtkCheckMenuItem-indicator-size: 16;
   -GtkScrolledWindow-scrollbar-spacing: 0;
@@ -244,15 +244,15 @@ GtkTextView {
   .linked:not(.vertical) > .entry:focus + GtkComboBoxText > .the-button-in-the-combobox {
     border-left-color: #78ab50; }
   .entry.error {
-    color: #e92020;
-    border-color: #e92020; }
+    color: #ED3146;
+    border-color: #ED3146; }
     .entry.error:focus {
       background-color: transparent;
       background-image: linear-gradient(to bottom, #eaecee, #fbfbfc 3px, #FFFFFF 90%);
       box-shadow: inset 0 1px 1px 0px rgba(0, 0, 0, 0.05);
-      border-color: #e92020; }
+      border-color: #ED3146; }
     .entry.error:selected, .entry.error:selected:focus {
-      background-color: #e92020; }
+      background-color: #ED3146; }
   .entry.warning {
     color: #F89B0F;
     border-color: #F89B0F; }
@@ -771,10 +771,10 @@ GtkTextView {
         background-clip: padding-box;
         box-shadow: none; }
   .button.destructive-action {
-    background-color: #c31313;
+    background-color: #d81329;
     background-image: none;
     color: white;
-    border-color: #940f0f;
+    border-color: #a90f20;
     box-shadow: 0 1px rgba(0, 0, 0, 0.1);
     text-shadow: none;
     icon-shadow: none; }
@@ -785,40 +785,40 @@ GtkTextView {
       box-shadow: none;
       text-shadow: none;
       icon-shadow: none;
-      color: #c31313; }
+      color: #d81329; }
     .button.destructive-action:hover {
       -gtk-image-effect: highlight;
-      background-color: #da1616;
+      background-color: #eb1a31;
       background-image: none;
       color: white;
-      border-color: #940f0f;
-      border-bottom-color: #5d0909;
+      border-color: #a90f20;
+      border-bottom-color: #710a15;
       box-shadow: 0 1px rgba(0, 0, 0, 0.15);
       text-shadow: none;
       icon-shadow: none; }
     .button.destructive-action:active, .button.destructive-action:checked {
       box-shadow: none;
-      border-color: #7d0c0c;
-      border-top-color: #660a0a;
-      background-color: #940f0f;
+      border-color: #920d1c;
+      border-top-color: #7a0b17;
+      background-color: #a90f20;
       background-image: none;
       text-shadow: none;
       icon-shadow: none; }
     .button.destructive-action:backdrop, .button.destructive-action.flat:backdrop, .destructive-action.sidebar-button.button:backdrop {
       -gtk-image-effect: dim;
-      background-color: #da1616;
+      background-color: #eb1a31;
       background-image: none;
-      border-color: #9e1010;
+      border-color: #b31022;
       box-shadow: none; }
       .button.destructive-action:backdrop .label, .button.destructive-action:backdrop, .button.destructive-action.flat:backdrop .label, .destructive-action.sidebar-button.button:backdrop .label, .button.destructive-action.flat:backdrop, .destructive-action.sidebar-button.button:backdrop {
-        color: #f0a2a2; }
+        color: #f7a3ad; }
       .button.destructive-action:backdrop:active, .button.destructive-action:backdrop:checked, .button.destructive-action.flat:backdrop:active, .destructive-action.sidebar-button.button:backdrop:active, .button.destructive-action.flat:backdrop:checked, .destructive-action.sidebar-button.button:backdrop:checked {
-        background-color: #8b0e0e;
+        background-color: #a00e1e;
         background-image: none;
-        border-color: #9e1010;
+        border-color: #b31022;
         box-shadow: none; }
         .button.destructive-action:backdrop:active .label, .button.destructive-action:backdrop:active, .button.destructive-action:backdrop:checked .label, .button.destructive-action:backdrop:checked, .button.destructive-action.flat:backdrop:active .label, .destructive-action.sidebar-button.button:backdrop:active .label, .button.destructive-action.flat:backdrop:active, .destructive-action.sidebar-button.button:backdrop:active, .button.destructive-action.flat:backdrop:checked .label, .destructive-action.sidebar-button.button:backdrop:checked .label, .button.destructive-action.flat:backdrop:checked, .destructive-action.sidebar-button.button:backdrop:checked {
-          color: #e8cfcf; }
+          color: #eccfd2; }
       .button.destructive-action:backdrop:insensitive, .button.destructive-action.flat:backdrop:insensitive, .destructive-action.sidebar-button.button:backdrop:insensitive {
         background-color: #edeef0;
         background-image: none;
@@ -827,11 +827,11 @@ GtkTextView {
         .button.destructive-action:backdrop:insensitive .label, .button.destructive-action:backdrop:insensitive, .button.destructive-action.flat:backdrop:insensitive .label, .destructive-action.sidebar-button.button:backdrop:insensitive .label, .button.destructive-action.flat:backdrop:insensitive, .destructive-action.sidebar-button.button:backdrop:insensitive {
           color: rgba(45, 45, 45, 0.5); }
         .button.destructive-action:backdrop:insensitive:active, .button.destructive-action:backdrop:insensitive:checked, .button.destructive-action.flat:backdrop:insensitive:active, .destructive-action.sidebar-button.button:backdrop:insensitive:active, .button.destructive-action.flat:backdrop:insensitive:checked, .destructive-action.sidebar-button.button:backdrop:insensitive:checked {
-          background-color: #7d0c0c;
+          background-color: #920d1c;
           background-image: none;
-          border-color: #9e1010; }
+          border-color: #b31022; }
           .button.destructive-action:backdrop:insensitive:active .label, .button.destructive-action:backdrop:insensitive:checked .label, .button.destructive-action.flat:backdrop:insensitive:active .label, .destructive-action.sidebar-button.button:backdrop:insensitive:active .label, .button.destructive-action.flat:backdrop:insensitive:checked .label, .destructive-action.sidebar-button.button:backdrop:insensitive:checked .label {
-            color: #ab6161; }
+            color: #b8626b; }
     .button.destructive-action.flat:backdrop, .destructive-action.sidebar-button.button:backdrop, .button.destructive-action.flat:insensitive, .destructive-action.sidebar-button.button:insensitive, .button.destructive-action.flat:backdrop:insensitive, .destructive-action.sidebar-button.button:backdrop:insensitive {
       border-color: transparent;
       background-color: transparent;
@@ -839,7 +839,7 @@ GtkTextView {
       box-shadow: none;
       text-shadow: none;
       icon-shadow: none;
-      color: rgba(195, 19, 19, 0.8); }
+      color: rgba(216, 19, 41, 0.8); }
     .button.destructive-action:insensitive {
       background-color: #F5F6F7;
       background-image: none;
@@ -848,31 +848,31 @@ GtkTextView {
       .button.destructive-action:insensitive .label, .button.destructive-action:insensitive {
         color: #999a9a; }
       .button.destructive-action:insensitive:active, .button.destructive-action:insensitive:checked {
-        background-color: #ae2c2c;
+        background-color: #ca2134;
         background-image: none;
         border-color: rgba(194, 200, 206, 0.7);
         border-top-color: rgba(166, 175, 184, 0.7);
         box-shadow: inset 0 1px 1px 0px rgba(0, 0, 0, 0.05); }
         .button.destructive-action:insensitive:active .label, .button.destructive-action:insensitive:active, .button.destructive-action:insensitive:checked .label, .button.destructive-action:insensitive:checked {
-          color: #dfabab; }
+          color: #eaa6ae; }
     .osd .button.destructive-action {
       color: #F7F7F7;
-      border-color: rgba(134, 13, 13, 0.5);
-      background-color: rgba(195, 19, 19, 0.5);
+      border-color: rgba(155, 14, 29, 0.5);
+      background-color: rgba(216, 19, 41, 0.5);
       background-image: none;
       background-clip: padding-box;
       box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.2); }
       .osd .button.destructive-action:hover {
         color: white;
-        border-color: rgba(134, 13, 13, 0.7);
-        background-color: rgba(195, 19, 19, 0.7);
+        border-color: rgba(155, 14, 29, 0.7);
+        background-color: rgba(216, 19, 41, 0.7);
         background-image: none;
         background-clip: padding-box;
         box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.2); }
       .osd .button.destructive-action:active, .osd .button.destructive-action:checked, .osd .button.destructive-action:backdrop:active, .osd .button.destructive-action:backdrop:checked {
         color: white;
-        border-color: #860d0d;
-        background-color: #c31313;
+        border-color: #9b0e1d;
+        background-color: #d81329;
         background-image: none;
         background-clip: padding-box;
         box-shadow: inset 0 2px 3px -1px rgba(0, 0, 0, 0.2); }
@@ -885,8 +885,8 @@ GtkTextView {
         box-shadow: none; }
       .osd .button.destructive-action:backdrop {
         color: #F7F7F7;
-        border-color: rgba(134, 13, 13, 0.5);
-        background-color: rgba(195, 19, 19, 0.5);
+        border-color: rgba(155, 14, 29, 0.5);
+        background-color: rgba(216, 19, 41, 0.5);
         background-image: none;
         background-clip: padding-box;
         box-shadow: none; }
@@ -1442,8 +1442,8 @@ GtkComboBox {
   color: #F7F7F7; }
   .titlebar:backdrop,
   .header-bar:backdrop {
-    background-color: #3d3a3a;
-    border-color: rgba(22, 21, 21, 0.3);
+    background-color: #2B2929;
+    border-color: rgba(4, 4, 4, 0.3);
     color: #959697;
     transition: all 200ms ease-out; }
   .titlebar .title,
@@ -1468,7 +1468,7 @@ GtkComboBox {
     .titlebar > GtkBox > .separator.vertical:backdrop,
     .header-bar .header-bar-separator:backdrop,
     .header-bar > GtkBox > .separator.vertical:backdrop {
-      background-color: #373535;
+      background-color: #2e2d2d;
       background-image: none; }
   .titlebar.selection-mode,
   .header-bar.selection-mode {
@@ -1882,12 +1882,12 @@ GtkComboBox {
       background-color: #454242;
       border-color: #454242;
       box-shadow: none;
-      color: #a1a0a0;
+      color: #9c9b9b;
       transition: all 200ms ease-out; }
       .titlebar .entry:backdrop .label, .titlebar .entry:backdrop,
       .header-bar .entry:backdrop .label,
       .header-bar .entry:backdrop {
-        color: #a1a0a0; }
+        color: #9c9b9b; }
       .titlebar .entry:backdrop:insensitive,
       .header-bar .entry:backdrop:insensitive {
         background-color: transparent;
@@ -1905,7 +1905,7 @@ GtkComboBox {
       color: #F7F7F7; }
       .titlebar .entry .image:hover,
       .header-bar .entry .image:hover {
-        color: #a1a0a0; }
+        color: #9c9b9b; }
     .titlebar .entry selection,
     .header-bar .entry selection {
       background-color: #0f95c5;
@@ -1957,9 +1957,9 @@ GtkComboBox {
   .header-bar .sidebar-button.button:hover:backdrop,
   .header-bar .button.titlebutton.appmenu:hover:backdrop {
     color: #F7F7F7;
-    background-color: #4d4949;
+    background-color: #3b3838;
     background-image: none;
-    border-color: #4d4949;
+    border-color: #3b3838;
     box-shadow: none; }
   .titlebar .button:active, .titlebar .button:checked, .titlebar .button.flat:active, .titlebar .sidebar-button.button:active, .titlebar .button.flat:checked, .titlebar .sidebar-button.button:checked, .titlebar .button.titlebutton.appmenu:active, .titlebar .button.titlebutton.appmenu:checked,
   .header-bar .button:active,
@@ -2043,9 +2043,9 @@ GtkComboBox {
   .header-bar .sidebar-button.button:backdrop,
   .header-bar .button.titlebutton.appmenu:backdrop {
     -gtk-image-effect: dim;
-    background-color: #3d3a3a;
+    background-color: #2B2929;
     background-image: none;
-    border-color: #3d3a3a;
+    border-color: #2B2929;
     box-shadow: none; }
     .titlebar .button:backdrop .label, .titlebar .button:backdrop, .titlebar .button.flat:backdrop .label, .titlebar .sidebar-button.button:backdrop .label, .titlebar .button.flat:backdrop, .titlebar .sidebar-button.button:backdrop, .titlebar .button.titlebutton.appmenu:backdrop .label, .titlebar .button.titlebutton.appmenu:backdrop,
     .header-bar .button:backdrop .label,
@@ -2056,7 +2056,7 @@ GtkComboBox {
     .header-bar .sidebar-button.button:backdrop,
     .header-bar .button.titlebutton.appmenu:backdrop .label,
     .header-bar .button.titlebutton.appmenu:backdrop {
-      color: #adacac; }
+      color: #a5a5a5; }
   .titlebar .button:backdrop:active, .titlebar .button:backdrop:checked, .titlebar .button.flat:backdrop:active, .titlebar .sidebar-button.button:backdrop:active, .titlebar .button.flat:backdrop:checked, .titlebar .sidebar-button.button:backdrop:checked, .titlebar .button.titlebutton.appmenu:backdrop:active, .titlebar .button.titlebutton.appmenu:backdrop:checked,
   .header-bar .button:backdrop:active,
   .header-bar .button:backdrop:checked,
@@ -2066,10 +2066,10 @@ GtkComboBox {
   .header-bar .sidebar-button.button:backdrop:checked,
   .header-bar .button.titlebutton.appmenu:backdrop:active,
   .header-bar .button.titlebutton.appmenu:backdrop:checked {
-    background-color: #4a4747;
+    background-color: #383535;
     background-image: none;
-    border-color: #4a4747;
-    border-top-color: #4a4747;
+    border-color: #383535;
+    border-top-color: #383535;
     box-shadow: none; }
     .titlebar .button:backdrop:active .label, .titlebar .button:backdrop:active, .titlebar .button:backdrop:checked .label, .titlebar .button:backdrop:checked, .titlebar .button.flat:backdrop:active .label, .titlebar .sidebar-button.button:backdrop:active .label, .titlebar .button.flat:backdrop:active, .titlebar .sidebar-button.button:backdrop:active, .titlebar .button.flat:backdrop:checked .label, .titlebar .sidebar-button.button:backdrop:checked .label, .titlebar .button.flat:backdrop:checked, .titlebar .sidebar-button.button:backdrop:checked, .titlebar .button.titlebutton.appmenu:backdrop:active .label, .titlebar .button.titlebutton.appmenu:backdrop:active, .titlebar .button.titlebutton.appmenu:backdrop:checked .label, .titlebar .button.titlebutton.appmenu:backdrop:checked,
     .header-bar .button:backdrop:active .label,
@@ -2088,7 +2088,7 @@ GtkComboBox {
     .header-bar .button.titlebutton.appmenu:backdrop:active,
     .header-bar .button.titlebutton.appmenu:backdrop:checked .label,
     .header-bar .button.titlebutton.appmenu:backdrop:checked {
-      color: #d4d4d4; }
+      color: #d1d0d0; }
   .titlebar .button:backdrop:insensitive, .titlebar .button.flat:backdrop:insensitive, .titlebar .sidebar-button.button:backdrop:insensitive, .titlebar .button.titlebutton.appmenu:backdrop:insensitive,
   .header-bar .button:backdrop:insensitive,
   .header-bar .button.flat:backdrop:insensitive,
@@ -2332,10 +2332,10 @@ GtkComboBox {
   .header-bar .button.flat.destructive-action,
   .header-bar .destructive-action.sidebar-button.button,
   .header-bar .button.titlebutton.appmenu.destructive-action {
-    background-color: #c31313;
+    background-color: #d81329;
     background-image: none;
     color: white;
-    border-color: #c31313;
+    border-color: #d81329;
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none; }
@@ -2345,10 +2345,10 @@ GtkComboBox {
   .header-bar .destructive-action.sidebar-button.button:hover,
   .header-bar .button.titlebutton.appmenu.destructive-action:hover {
     -gtk-image-effect: highlight;
-    background-color: #da1616;
+    background-color: #eb1a31;
     background-image: none;
     color: white;
-    border-color: #da1616;
+    border-color: #eb1a31;
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none; }
@@ -2358,9 +2358,9 @@ GtkComboBox {
   .header-bar .destructive-action.sidebar-button.button:hover:backdrop,
   .header-bar .button.titlebutton.appmenu.destructive-action:hover:backdrop {
     color: white;
-    background-color: #e92020;
+    background-color: #ed3146;
     background-image: none;
-    border-color: #e92020;
+    border-color: #ed3146;
     box-shadow: none; }
   .titlebar .button.destructive-action:active, .titlebar .button.destructive-action:checked, .titlebar .button.flat.destructive-action:active, .titlebar .destructive-action.sidebar-button.button:active, .titlebar .button.flat.destructive-action:checked, .titlebar .destructive-action.sidebar-button.button:checked, .titlebar .button.titlebutton.appmenu.destructive-action:active, .titlebar .button.titlebutton.appmenu.destructive-action:checked,
   .header-bar .button.destructive-action:active,
@@ -2372,9 +2372,9 @@ GtkComboBox {
   .header-bar .button.titlebutton.appmenu.destructive-action:active,
   .header-bar .button.titlebutton.appmenu.destructive-action:checked {
     box-shadow: none;
-    border-color: #940f0f;
-    border-top-color: #940f0f;
-    background-color: #940f0f;
+    border-color: #a90f20;
+    border-top-color: #a90f20;
+    background-color: #a90f20;
     background-image: none;
     text-shadow: none;
     icon-shadow: none; }
@@ -2383,9 +2383,9 @@ GtkComboBox {
   .header-bar .button.flat.destructive-action:insensitive,
   .header-bar .destructive-action.sidebar-button.button:insensitive,
   .header-bar .button.titlebutton.appmenu.destructive-action:insensitive {
-    background-color: rgba(195, 19, 19, 0.9);
+    background-color: rgba(216, 19, 41, 0.9);
     background-image: none;
-    border-color: rgba(195, 19, 19, 0.9);
+    border-color: rgba(216, 19, 41, 0.9);
     box-shadow: none; }
     .titlebar .button.destructive-action:insensitive .label, .titlebar .button.destructive-action:insensitive, .titlebar .button.flat.destructive-action:insensitive .label, .titlebar .destructive-action.sidebar-button.button:insensitive .label, .titlebar .button.flat.destructive-action:insensitive, .titlebar .destructive-action.sidebar-button.button:insensitive, .titlebar .button.titlebutton.appmenu.destructive-action:insensitive .label, .titlebar .button.titlebutton.appmenu.destructive-action:insensitive,
     .header-bar .button.destructive-action:insensitive .label,
@@ -2396,7 +2396,7 @@ GtkComboBox {
     .header-bar .destructive-action.sidebar-button.button:insensitive,
     .header-bar .button.titlebutton.appmenu.destructive-action:insensitive .label,
     .header-bar .button.titlebutton.appmenu.destructive-action:insensitive {
-      color: rgba(228, 149, 149, 0.7); }
+      color: rgba(238, 149, 159, 0.7); }
   .titlebar .button.destructive-action:insensitive:active, .titlebar .button.destructive-action:insensitive:checked, .titlebar .button.flat.destructive-action:insensitive:active, .titlebar .destructive-action.sidebar-button.button:insensitive:active, .titlebar .button.flat.destructive-action:insensitive:checked, .titlebar .destructive-action.sidebar-button.button:insensitive:checked, .titlebar .button.titlebutton.appmenu.destructive-action:insensitive:active, .titlebar .button.titlebutton.appmenu.destructive-action:insensitive:checked,
   .header-bar .button.destructive-action:insensitive:active,
   .header-bar .button.destructive-action:insensitive:checked,
@@ -2406,9 +2406,9 @@ GtkComboBox {
   .header-bar .destructive-action.sidebar-button.button:insensitive:checked,
   .header-bar .button.titlebutton.appmenu.destructive-action:insensitive:active,
   .header-bar .button.titlebutton.appmenu.destructive-action:insensitive:checked {
-    background-color: #ae2c2c;
+    background-color: #ca2134;
     background-image: none;
-    border-color: #ae2c2c;
+    border-color: #ca2134;
     box-shadow: none; }
     .titlebar .button.destructive-action:insensitive:active .label, .titlebar .button.destructive-action:insensitive:active, .titlebar .button.destructive-action:insensitive:checked .label, .titlebar .button.destructive-action:insensitive:checked, .titlebar .button.flat.destructive-action:insensitive:active .label, .titlebar .destructive-action.sidebar-button.button:insensitive:active .label, .titlebar .button.flat.destructive-action:insensitive:active, .titlebar .destructive-action.sidebar-button.button:insensitive:active, .titlebar .button.flat.destructive-action:insensitive:checked .label, .titlebar .destructive-action.sidebar-button.button:insensitive:checked .label, .titlebar .button.flat.destructive-action:insensitive:checked, .titlebar .destructive-action.sidebar-button.button:insensitive:checked, .titlebar .button.titlebutton.appmenu.destructive-action:insensitive:active .label, .titlebar .button.titlebutton.appmenu.destructive-action:insensitive:active, .titlebar .button.titlebutton.appmenu.destructive-action:insensitive:checked .label, .titlebar .button.titlebutton.appmenu.destructive-action:insensitive:checked,
     .header-bar .button.destructive-action:insensitive:active .label,
@@ -2427,16 +2427,16 @@ GtkComboBox {
     .header-bar .button.titlebutton.appmenu.destructive-action:insensitive:active,
     .header-bar .button.titlebutton.appmenu.destructive-action:insensitive:checked .label,
     .header-bar .button.titlebutton.appmenu.destructive-action:insensitive:checked {
-      color: #dfabab; }
+      color: #eaa6ae; }
   .titlebar .button.destructive-action:backdrop, .titlebar .button.flat.destructive-action:backdrop, .titlebar .destructive-action.sidebar-button.button:backdrop, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop,
   .header-bar .button.destructive-action:backdrop,
   .header-bar .button.flat.destructive-action:backdrop,
   .header-bar .destructive-action.sidebar-button.button:backdrop,
   .header-bar .button.titlebutton.appmenu.destructive-action:backdrop {
     -gtk-image-effect: dim;
-    background-color: #da1616;
+    background-color: #eb1a31;
     background-image: none;
-    border-color: #da1616;
+    border-color: #eb1a31;
     box-shadow: none; }
     .titlebar .button.destructive-action:backdrop .label, .titlebar .button.destructive-action:backdrop, .titlebar .button.flat.destructive-action:backdrop .label, .titlebar .destructive-action.sidebar-button.button:backdrop .label, .titlebar .button.flat.destructive-action:backdrop, .titlebar .destructive-action.sidebar-button.button:backdrop, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop .label, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop,
     .header-bar .button.destructive-action:backdrop .label,
@@ -2447,7 +2447,7 @@ GtkComboBox {
     .header-bar .destructive-action.sidebar-button.button:backdrop,
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop .label,
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop {
-      color: #f0a2a2; }
+      color: #f7a3ad; }
   .titlebar .button.destructive-action:backdrop:active, .titlebar .button.destructive-action:backdrop:checked, .titlebar .button.flat.destructive-action:backdrop:active, .titlebar .destructive-action.sidebar-button.button:backdrop:active, .titlebar .button.flat.destructive-action:backdrop:checked, .titlebar .destructive-action.sidebar-button.button:backdrop:checked, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:active, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:checked,
   .header-bar .button.destructive-action:backdrop:active,
   .header-bar .button.destructive-action:backdrop:checked,
@@ -2457,9 +2457,9 @@ GtkComboBox {
   .header-bar .destructive-action.sidebar-button.button:backdrop:checked,
   .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:active,
   .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:checked {
-    background-color: #8b0e0e;
+    background-color: #a00e1e;
     background-image: none;
-    border-color: #8b0e0e;
+    border-color: #a00e1e;
     box-shadow: none; }
     .titlebar .button.destructive-action:backdrop:active .label, .titlebar .button.destructive-action:backdrop:active, .titlebar .button.destructive-action:backdrop:checked .label, .titlebar .button.destructive-action:backdrop:checked, .titlebar .button.flat.destructive-action:backdrop:active .label, .titlebar .destructive-action.sidebar-button.button:backdrop:active .label, .titlebar .button.flat.destructive-action:backdrop:active, .titlebar .destructive-action.sidebar-button.button:backdrop:active, .titlebar .button.flat.destructive-action:backdrop:checked .label, .titlebar .destructive-action.sidebar-button.button:backdrop:checked .label, .titlebar .button.flat.destructive-action:backdrop:checked, .titlebar .destructive-action.sidebar-button.button:backdrop:checked, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:active .label, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:active, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:checked .label, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:checked,
     .header-bar .button.destructive-action:backdrop:active .label,
@@ -2478,15 +2478,15 @@ GtkComboBox {
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:active,
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:checked .label,
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:checked {
-      color: #e8cfcf; }
+      color: #eccfd2; }
   .titlebar .button.destructive-action:backdrop:insensitive, .titlebar .button.flat.destructive-action:backdrop:insensitive, .titlebar .destructive-action.sidebar-button.button:backdrop:insensitive, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive,
   .header-bar .button.destructive-action:backdrop:insensitive,
   .header-bar .button.flat.destructive-action:backdrop:insensitive,
   .header-bar .destructive-action.sidebar-button.button:backdrop:insensitive,
   .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive {
-    background-color: rgba(195, 19, 19, 0.9);
+    background-color: rgba(216, 19, 41, 0.9);
     background-image: none;
-    border-color: rgba(195, 19, 19, 0.9);
+    border-color: rgba(216, 19, 41, 0.9);
     box-shadow: none; }
     .titlebar .button.destructive-action:backdrop:insensitive .label, .titlebar .button.destructive-action:backdrop:insensitive, .titlebar .button.flat.destructive-action:backdrop:insensitive .label, .titlebar .destructive-action.sidebar-button.button:backdrop:insensitive .label, .titlebar .button.flat.destructive-action:backdrop:insensitive, .titlebar .destructive-action.sidebar-button.button:backdrop:insensitive, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive .label, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive,
     .header-bar .button.destructive-action:backdrop:insensitive .label,
@@ -2497,7 +2497,7 @@ GtkComboBox {
     .header-bar .destructive-action.sidebar-button.button:backdrop:insensitive,
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive .label,
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive {
-      color: rgba(219, 113, 113, 0.935); }
+      color: rgba(232, 113, 126, 0.935); }
   .titlebar .button.destructive-action:backdrop:insensitive:active, .titlebar .button.destructive-action:backdrop:insensitive:checked, .titlebar .button.flat.destructive-action:backdrop:insensitive:active, .titlebar .destructive-action.sidebar-button.button:backdrop:insensitive:active, .titlebar .button.flat.destructive-action:backdrop:insensitive:checked, .titlebar .destructive-action.sidebar-button.button:backdrop:insensitive:checked, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive:active, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive:checked,
   .header-bar .button.destructive-action:backdrop:insensitive:active,
   .header-bar .button.destructive-action:backdrop:insensitive:checked,
@@ -2507,9 +2507,9 @@ GtkComboBox {
   .header-bar .destructive-action.sidebar-button.button:backdrop:insensitive:checked,
   .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive:active,
   .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive:checked {
-    background-color: #7d0c0c;
+    background-color: #920d1c;
     background-image: none;
-    border-color: #7d0c0c; }
+    border-color: #920d1c; }
     .titlebar .button.destructive-action:backdrop:insensitive:active .label, .titlebar .button.destructive-action:backdrop:insensitive:checked .label, .titlebar .button.flat.destructive-action:backdrop:insensitive:active .label, .titlebar .destructive-action.sidebar-button.button:backdrop:insensitive:active .label, .titlebar .button.flat.destructive-action:backdrop:insensitive:checked .label, .titlebar .destructive-action.sidebar-button.button:backdrop:insensitive:checked .label, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive:active .label, .titlebar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive:checked .label,
     .header-bar .button.destructive-action:backdrop:insensitive:active .label,
     .header-bar .button.destructive-action:backdrop:insensitive:checked .label,
@@ -2519,7 +2519,7 @@ GtkComboBox {
     .header-bar .destructive-action.sidebar-button.button:backdrop:insensitive:checked .label,
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive:active .label,
     .header-bar .button.titlebutton.appmenu.destructive-action:backdrop:insensitive:checked .label {
-      color: #ab6161; }
+      color: #b8626b; }
   .titlebar .linked:not(.path-bar):not(.stack-switcher):not(buttonbox) .button, .titlebar .linked:not(.vertical) entry,
   .header-bar .linked:not(.path-bar):not(.stack-switcher):not(buttonbox) .button,
   .header-bar .linked:not(.vertical) entry {
@@ -2599,7 +2599,7 @@ GtkComboBox {
     .titlebar .path-bar.linked .header-bar .button:backdrop,
     .header-bar .path-bar.linked .button:backdrop {
       background-color: #454242;
-      color: #bfbebe; }
+      color: #bab9b9; }
       .titlebar .stack-switcher.linked .button:backdrop:checked, .header-bar .stack-switcher.linked .titlebar .button:backdrop:checked, .titlebar .path-bar.linked .button:backdrop:checked, .header-bar .path-bar.linked .titlebar .button:backdrop:checked,
       .titlebar .stack-switcher.linked .header-bar .button:backdrop:checked,
       .header-bar .stack-switcher.linked .button:backdrop:checked,
@@ -2832,8 +2832,8 @@ column-header .button, column-header .button:hover, column-header .button:active
   color: #CCC;
   padding: 0px; }
   .menubar:backdrop {
-    background-color: #3d3a3a;
-    color: #a1a0a0; }
+    background-color: #2B2929;
+    color: #9c9b9b; }
     .menubar:backdrop .label {
       color: #959697; }
   .menubar > .menuitem {
@@ -4836,38 +4836,38 @@ GtkCalendar {
       .message-dialog.csd .dialog-action-area .button.suggested-action:insensitive .label, .message-dialog.csd .dialog-action-area .button.suggested-action:insensitive {
         color: #999a9a; }
   .message-dialog.csd .dialog-action-area .button.destructive-action {
-    background-color: #c31313;
+    background-color: #d81329;
     background-image: none;
     color: white;
-    border-color: #c31313;
+    border-color: #d81329;
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none; }
     .message-dialog.csd .dialog-action-area .button.destructive-action:hover {
       -gtk-image-effect: highlight;
-      background-color: #da1616;
+      background-color: #eb1a31;
       background-image: none;
       color: white;
-      border-color: #da1616;
+      border-color: #eb1a31;
       box-shadow: none;
       text-shadow: none;
       icon-shadow: none; }
     .message-dialog.csd .dialog-action-area .button.destructive-action:active {
       box-shadow: none;
-      border-color: #940f0f;
-      border-top-color: #940f0f;
-      background-color: #940f0f;
+      border-color: #a90f20;
+      border-top-color: #a90f20;
+      background-color: #a90f20;
       background-image: none;
       text-shadow: none;
       icon-shadow: none; }
     .message-dialog.csd .dialog-action-area .button.destructive-action:backdrop {
       -gtk-image-effect: dim;
-      background-color: #da1616;
+      background-color: #eb1a31;
       background-image: none;
-      border-color: #da1616;
+      border-color: #eb1a31;
       box-shadow: none; }
       .message-dialog.csd .dialog-action-area .button.destructive-action:backdrop .label, .message-dialog.csd .dialog-action-area .button.destructive-action:backdrop {
-        color: #f0a2a2; }
+        color: #f7a3ad; }
       .message-dialog.csd .dialog-action-area .button.destructive-action:backdrop:insensitive {
         background-color: #edeef0;
         background-image: none;
@@ -5217,7 +5217,7 @@ GtkColorSwatch {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#6c6767), to(transparent)); }
       .header-bar .button.titlebutton:not(.close):not(.appmenu):hover:hover:backdrop,
       .titlebar .button.titlebutton:not(.close):not(.appmenu):hover:hover:backdrop {
-        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
     .header-bar .button.titlebutton:not(.close):not(.appmenu):hover:active,
     .titlebar .button.titlebutton:not(.close):not(.appmenu):hover:active {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#5a5656), to(transparent)); }
@@ -5229,7 +5229,7 @@ GtkColorSwatch {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#6c6767), to(transparent)); }
       .header-bar .button.titlebutton:not(.close):not(.appmenu):active:hover:backdrop,
       .titlebar .button.titlebutton:not(.close):not(.appmenu):active:hover:backdrop {
-        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
     .header-bar .button.titlebutton:not(.close):not(.appmenu):active:active,
     .titlebar .button.titlebutton:not(.close):not(.appmenu):active:active {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#5a5656), to(transparent)); }
@@ -5241,7 +5241,7 @@ GtkColorSwatch {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#85b560), to(transparent)); }
       .header-bar .button.titlebutton.close:hover:backdrop,
       .titlebar .button.titlebutton.close:hover:backdrop {
-        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+        background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
     .header-bar .button.titlebutton.close:active,
     .titlebar .button.titlebutton.close:active {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#679345), to(transparent)); }
@@ -5256,7 +5256,7 @@ GtkColorSwatch {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#85b560), to(transparent)); }
         .header-bar .button.titlebutton.close:hover:hover:backdrop,
         .titlebar .button.titlebutton.close:hover:hover:backdrop {
-          background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+          background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
       .header-bar .button.titlebutton.close:hover:active,
       .titlebar .button.titlebutton.close:hover:active {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#679345), to(transparent)); }
@@ -5271,7 +5271,7 @@ GtkColorSwatch {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#85b560), to(transparent)); }
         .header-bar .button.titlebutton.close:active:hover:backdrop,
         .titlebar .button.titlebutton.close:active:hover:backdrop {
-          background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#524e4e), to(transparent)); }
+          background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#403d3d), to(transparent)); }
       .header-bar .button.titlebutton.close:active:active,
       .titlebar .button.titlebutton.close:active:active {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#679345), to(transparent)); }
@@ -5762,7 +5762,7 @@ widgets main borders color on backdrop windows */
 /*
 these are pretty self explicative */
 @define-color warning_color #F89B0F;
-@define-color error_color #e92020;
+@define-color error_color #ED3146;
 @define-color success_color #3EB34F;
 /*
 these colors are exported for the window manager and shouldn't be used in applications,
