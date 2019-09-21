@@ -7,13 +7,14 @@
 *Update 2.0: Yaru developers updated the original theme, so I did. It cointains now the new light version from 19.10.*
 *Maybe I'm able to create "Yaru-Classic" theme with the old darker header bars, but for now it was enough work to create 2.0*
 
-*Screenshots are still from 1.0...releasing was more important than creating screenshots, I'll add them later!*
+*Screenshots included for every theme*
 
 Yaru-Colors themes conataing following:
 - GTK 2 / 3 theme
 - Gnome-Shell theme
 - Yaru icons
 - Ubuntu-Dock theme (indicators)
+- Wallpapers (see below)
 
 **Following changes are made by me:**
 - .css files for GTK3 and Gnome-Shell are edited. I changed all orange and purple tinted colors
@@ -55,7 +56,10 @@ It will guide you through everything and allows you to choose what you want to i
 ***Have fun with it!   
 For any suggestions send me a message here or on Reddit /u/jannomag***
 
-
+**Wallpaper information**
+All wallpapers are made by me from scratch. 
+I made a wallpaper for each color and one with Ubuntu's stock colors.
+I also added a bonus photo wallpaper, also made by me.
 
 
 **Hex-Color codes of all base colors**   
