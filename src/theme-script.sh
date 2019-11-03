@@ -2,8 +2,19 @@
 WORKDIR=$(pwd)
 
 #Yaru-Color Color-Script
+#This script should compile everything from source of Yaru by it's own
+#Created by Jannomag
+#Licensed under the terms of GNU GPLv3
 
 color=$1
+withoutask=$2
+
+comp_shell="false"
+comp_gtk2="false"
+comp_gtk3="false"
+comp_icons="false"
+
+everything="false"
 #colors: Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Yellow
 
 #define colors:
@@ -86,8 +97,17 @@ elif [ "$color" == "Custom" ]; then
 	echo "Custom colors $base_col and $purple_col are set!"
 	echo "Enter color / theme name for 'Yaru-NAME': "
 	read color
+
 fi
 	echo "Color $color set!"
+
+if [ "$withoutask" == "all" ]; then
+	echo "Compiling everything without asking!"
+	everything="true"
+	comp_shell="true"
+	comp_gtk2="true"
+	comp_gtk3="true"
+fi
 
 if [ "$base_col" == "" ] || [ "$purple_col" == "" ]; then
 	echo "Unknown color entered. Colors are case sensitive:"
@@ -95,6 +115,22 @@ if [ "$base_col" == "" ] || [ "$purple_col" == "" ]; then
 	exit
 fi
 
+if [ $everything == "false" ]; then
+	echo -e "Do you want to compile the gtk3 theme?"
+	select yn in "Yes" "No"; do
+		case $yn in
+			Yes) 
+			     comp_gtk3="true"
+			     break;;
+			No)  
+			     comp_gtk3="false"
+			     break;;
+		esac
+	done	
+fi
+
+while [ $comp_gtk3 == "true" ]
+do
 #set paths for defaul theme
 gtk32_path=$WORKDIR/Themes/Yaru-$color/gtk-3.20
 gtk30_path=$WORKDIR/Themes/Yaru-$color/gtk-3.0
@@ -239,30 +275,48 @@ mv $index_dark_source.BAK $index_dark_source
 
 
 echo -e "Done!"
+comp_gtk3="false"
+
+done
+
 
 echo -e ""
 
-echo -e "Do you want to compile the gnome-shell theme?"
-select yn in "Yes" "No"; do
-	case $yn in
-		Yes) break;;
-		No) exit;;
-	esac
-done
+
+if [ $everything == "false" ]; then
+	echo -e "Do you want to compile the gnome-shell theme?"
+	select yn in "Yes" "No"; do
+		case $yn in
+			Yes) 
+			     comp_shell="true"
+			     break;;
+			No)  
+			     comp_shell="false"
+			     break;;
+		esac
+	done
+fi
+
+while [ $comp_shell == "true" ]
+do
 
 echo -e "Compiling shell theme..."
+
 
 #############################
 ### COMPILING SHELL THEME ###
 #############################
 
 #Setting paths for the theme
+theme_path=$WORKDIR/Themes/Yaru-$color
 theme_light_path=$WORKDIR/Themes/Yaru-$color-light
 theme_dark_path=$WORKDIR/Themes/Yaru-$color-dark
+shell_path=$theme_path/gnome-shell
 shell_light_path=$theme_light_path/gnome-shell
 shell_dark_path=$theme_dark_path/gnome-shell
 
 #creating directory
+mkdir -p $shell_path
 mkdir -p $shell_light_path
 mkdir -p $shell_dark_path
 
@@ -330,6 +384,7 @@ sed -i -e "s/e95420/$base_col/g" $svg4
 echo -e " "
 #copy everything
 echo -e "copy files to the theme directory ..."
+cp $source_path/light/gnome-shell-generated.css $shell_path/gnome-shell.css
 mv $source_path/light/gnome-shell-generated.css $shell_light_path/gnome-shell.css
 mv $source_path/dark/gnome-shell-generated.css $shell_dark_path/gnome-shell.css
 mv $source_path/gnome-shell-high-contrast-generated.css $shell_light_path/gnome-shell-high-contrast.css
@@ -349,13 +404,26 @@ cd ~
 
 echo -e "Done!"
 
-echo -e "Do you want to compile the gtk2 theme (this may take a while)?"
-select yn in "Yes" "No"; do
-	case $yn in
-		Yes) break;;
-		No) exit;;
-	esac
+comp_shell="false"
 done
+
+if [ $everything == "false" ]; then
+	echo -e "Do you want to compile the gtk2 theme (this may take a while)?"
+	select yn in "Yes" "No"; do
+		case $yn in
+			Yes) 
+			     comp_gtk2="true"
+			     break
+		 	     ;;
+			No) 
+        	             comp_gtk2="false"
+        	             break;;
+		esac
+	done
+fi
+
+while [ $comp_gtk2 == "true" ]
+do
 
 ############################
 ### COMPILING GTK2 THEME ###
@@ -620,8 +688,48 @@ cd $WORKDIR
 
 echo -e "Done"
 
+comp_gtk2="false"
+done
 
+### ICON COMPILING -- TESTING ###
+: ' ICON TESTING COMMENT BEGIN >>>>>>>
+echo -e "Do you want to compile the icons theme (this may take a while)?"
+select yn in "Yes" "No"; do
+	case $yn in
+		Yes) 
+		     comp_icons="true"
+		     break
+	 	     ;;
+		No) 
+                     comp_icons="false"
+                     break;;
+	esac
+done
 
+while [ $comp_icons == "true" ]
+do
 
+cd $WORKDIR/icons
+echo -e "Replacing the stock colors of the folder-icons svgs ..."
+cp ./fullcolor/places/folders.svg ./fullcolor/places/folders.svg.bak
+if [ ! -f ./fullcolor/places/folders.svg.bak ]; then
+	echo -e "Tried to backup folders.svg in ./fullcolor/places, FAILED. Exiting now!"
+	exit
+else
+	sed -i -e "s/e95420/$base_col/g" $WORKDIR/icons/fullcolor/places/folders.svg
+fi
 
+cd fullcolor
+echo -e "Starting render script, this may take a bit ..."
+python render-bitmaps.py
+echo -e "Done!"
+echo -e "Placing the rendered icons under src/Themes/Icons-$color"
+cd $WORKDIR
+mv $WORKDIR/icons/temp $WORKDIR/Themes/Icons-$color
+rm -rf $WORKDIR/icons/fullcolor/places/folder.svg && mv $WORKDIR/icons/fullcolor/places/folder.svg.bak $WORKDIR/icons/fullcolor/places/folder.svg
+comp_icons="false"
+done
 
+<<<<<< END OF ICON COMMENT'
+
+echo -e "Everything's done now, your files are stored in the Themes directory!"
