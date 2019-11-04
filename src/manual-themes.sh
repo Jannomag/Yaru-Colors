@@ -18,6 +18,7 @@ do
 	cp -R ../Themes/Yaru-$color* $theme	# copy theme
 	cp -R ../Icons/Yaru-$color* $icons	# copy icons
 	cp -R ../Wallpapers/Yaru-$color* $root	# copy wallpaper
+	cp ./dock-indicators.sh $root
 	cp -R ./manual-readme.md $root/README.md
 	cp -R $theme/Yaru-$color/gtk-3.0/assets $theme/Yaru-$color-dark/gtk-3.0/
 	cp -R $theme/Yaru-$color/gtk-3.20/assets $theme/Yaru-$color-dark/gtk-3.20/

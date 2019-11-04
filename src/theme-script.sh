@@ -92,7 +92,7 @@ elif [ "$color" == "Yellow" ]; then
 elif [ "$color" == "Custom" ]; then
 	echo "Enter base color (without # like E95420): "
 	read base_col
-	echo "Enter purple color (without # like 762572: "
+	echo "Enter purple color (without # like 762572): "
 	read purple_col
 	echo "Custom colors $base_col and $purple_col are set!"
 	echo "Enter color / theme name for 'Yaru-NAME': "
