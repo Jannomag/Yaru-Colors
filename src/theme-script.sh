@@ -101,6 +101,37 @@ elif [ "$color" == "Custom" ]; then
 fi
 	echo "Color $color set!"
 
+
+#Check if needed packages are installed, if not exit.
+if [ $(dpkg-query -W -f='${Status}' inkscape 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo -e "INKSCAPE is NOT installed!"
+  echo -e "EXITING NOW!"
+  exit
+fi
+
+if [ $(dpkg-query -W -f='${Status}' optipng 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo -e "OPTIPNG is NOT installed!"
+  echo -e "EXITING NOW!"
+  exit
+fi
+
+if [ $(dpkg-query -W -f='${Status}' libcanberra-gtk3-module 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo -e "LIBCANBERRA-GTK3-MODULE is NOT installed!"
+  echo -e "EXITING NOW!"
+  exit
+fi
+
+if [ $(dpkg-query -W -f='${Status}' libcanberra-gtk-module 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo -e "LIBCANBERRA-GTK-MODULE is NOT installed!"
+  echo -e "EXITING NOW!"
+  exit
+fi
+
+
 if [ "$withoutask" == "all" ]; then
 	echo "Compiling everything without asking!"
 	everything="true"
@@ -227,6 +258,16 @@ mv $source30_path/gtk_generated.css $gtk30_path/gtk.css
 mv $source30_path/gtk_dark_generated.css $gtk30d_path/gtk.css
 mv $source30_path/gtk_light_generated.css $gtk30l_path/gtk.css
 cp -R $source30_path/assets $gtk30_path
+
+dark32_link='@import url("../../Yaru-'"$color"'-dark/gtk-3.20/gtk.css");'
+light32_link='@import url("../../Yaru-'"$color"'-light/gtk-3.20/gtk.css");'
+dark30_link='@import url("../../Yaru-'"$color"'-dark/gtk-3.0/gtk.css");'
+light30_link='@import url("../../Yaru-'"$color"'-light/gtk-3.0/gtk.css");'
+
+echo $dark32_link >> $gtk32_path/gtk-dark.css
+echo $light32_link >> $gtk32_path/gtk-light.css
+echo $dark30_link >> $gtk30_path/gtk-dark.css
+echo $light30_link >> $gtk30_path/gtk-light.css
 
 #creating symlinks to the assets directories for each flavor
 cd $gtk30l_path

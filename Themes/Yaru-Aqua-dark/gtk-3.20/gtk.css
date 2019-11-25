@@ -19,7 +19,7 @@
  * Base States *
  ***************/
 .background {
-  color: #f7f7f7;
+  color: #F7F7F7;
   background-color: #3a3a3a; }
   .background:backdrop {
     color: #999999;
@@ -37,13 +37,13 @@
   -gtk-icon-effect: dim; }
 
 .gtkstyle-fallback {
-  color: #f7f7f7;
+  color: #F7F7F7;
   background-color: #3a3a3a; }
   .gtkstyle-fallback:hover {
-    color: #f7f7f7;
+    color: #F7F7F7;
     background-color: #545454; }
   .gtkstyle-fallback:active {
-    color: #f7f7f7;
+    color: #F7F7F7;
     background-color: #212121; }
   .gtkstyle-fallback:disabled {
     color: #999999;
@@ -116,7 +116,7 @@ flowbox flowboxchild {
 label {
   caret-color: currentColor; }
   label.separator {
-    color: #f7f7f7; }
+    color: #F7F7F7; }
     label.separator:backdrop {
       color: #999999; }
   label selection {
@@ -265,7 +265,7 @@ entry {
     color: #d0d0d0; }
     spinbutton:not(.vertical) image:hover,
     entry image:hover {
-      color: #f7f7f7; }
+      color: #F7F7F7; }
     spinbutton:not(.vertical) image:active,
     entry image:active {
       color: #37bcbe; }
@@ -480,10 +480,7 @@ treeview entry.flat, treeview entry {
   to {
     background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#37bcbe), to(transparent)); } }
 
-notebook > header > tabs > arrow, button.titlebutton, .app-notification box button,
-.app-notification.frame box button, .app-notification box button.flat, .app-notification box button.flat.image-button,
-.app-notification.frame box button.flat,
-.app-notification.frame box button.flat.image-button,
+notebook > header > tabs > arrow, button.titlebutton,
 button {
   min-height: 24px;
   min-width: 16px;
@@ -491,7 +488,7 @@ button {
   border: 1px solid;
   border-radius: 4px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  color: #f7f7f7;
+  color: #F7F7F7;
   outline-color: rgba(247, 247, 247, 0.3);
   border-color: #242424;
   border-bottom-color: #0d0d0d;
@@ -499,10 +496,7 @@ button {
   text-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
   -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
-  notebook > header > tabs > arrow, button.sidebar-button, button.titlebutton, .app-notification box button.flat,
-  .app-notification.frame box button.flat, .app-notification box button.flat, .app-notification box button.flat.image-button,
-  .app-notification.frame box button.flat,
-  .app-notification.frame box button.flat.image-button,
+  notebook > header > tabs > arrow, button.sidebar-button, button.titlebutton,
   button.flat {
     border-color: transparent;
     background-color: transparent;
@@ -511,18 +505,16 @@ button {
     text-shadow: none;
     -gtk-icon-shadow: none;
     transition: none; }
-    notebook > header > tabs > arrow:hover, button.sidebar-button:hover, button.titlebutton:hover, .app-notification box button.flat:hover, .app-notification box button.flat:hover,
-    .app-notification.frame box button.flat.image-button:hover,
+    notebook > header > tabs > arrow:hover, button.sidebar-button:hover, button.titlebutton:hover,
     button.flat:hover {
       transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
       transition-duration: 500ms; }
-      notebook > header > tabs > arrow:hover:active, button.sidebar-button:hover:active, button.titlebutton:hover:active, .app-notification box button.flat:hover:active, .app-notification box button.flat:hover:active,
+      notebook > header > tabs > arrow:hover:active, button.sidebar-button:hover:active, button.titlebutton:hover:active,
       button.flat:hover:active {
         transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-  notebook > header > tabs > arrow:hover, button.titlebutton:hover, .app-notification box button:hover, .app-notification box button.flat:hover,
-  .app-notification.frame box button.flat.image-button:hover,
+  notebook > header > tabs > arrow:hover, button.titlebutton:hover,
   button:hover {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -531,12 +523,10 @@ button {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
     background-image: linear-gradient(to top, #383838, #3d3d3d 1px);
     -gtk-icon-effect: highlight; }
-  notebook > header > tabs > arrow:active, button.titlebutton:active, .app-notification box button:active, notebook > header > tabs > arrow:checked, button.titlebutton:checked, .app-notification box button:checked, .app-notification box button.flat:active,
-  .app-notification.frame box button.flat.image-button:active, .app-notification box button.flat:checked,
-  .app-notification.frame box button.flat.image-button:checked,
+  notebook > header > tabs > arrow:active, button.titlebutton:active, notebook > header > tabs > arrow:checked, button.titlebutton:checked,
   button:active,
   button:checked {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     background-image: image(#242424);
@@ -544,9 +534,7 @@ button {
     text-shadow: none;
     -gtk-icon-shadow: none;
     transition-duration: 50ms; }
-  notebook > header > tabs > arrow:backdrop, button.sidebar-button:backdrop, button.titlebutton:backdrop, .app-notification box button:backdrop.flat, notebook > header > tabs > arrow:backdrop, button.titlebutton:backdrop, .app-notification box button:backdrop, .app-notification box button.flat:backdrop,
-  .app-notification.frame box button.flat.image-button:backdrop, .app-notification box button.flat:backdrop,
-  .app-notification.frame box button.flat.image-button:backdrop,
+  notebook > header > tabs > arrow:backdrop, button.sidebar-button:backdrop, button.titlebutton:backdrop, notebook > header > tabs > arrow:backdrop, button.titlebutton:backdrop,
   button:backdrop.flat,
   button:backdrop {
     border-color: #282828;
@@ -556,15 +544,13 @@ button {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0);
     transition: 200ms ease-out;
     -gtk-icon-effect: none; }
-    notebook > header > tabs > arrow:backdrop label, button.sidebar-button:backdrop label, button.titlebutton:backdrop label, .app-notification box button:backdrop.flat label, notebook > header > tabs > arrow:backdrop, button.sidebar-button:backdrop, button.titlebutton:backdrop, .app-notification box button:backdrop.flat, notebook > header > tabs > arrow:backdrop label, button.titlebutton:backdrop label, .app-notification box button:backdrop label, notebook > header > tabs > arrow:backdrop, button.titlebutton:backdrop, .app-notification box button:backdrop, .app-notification box button.flat:backdrop label, .app-notification.frame box button.flat.image-button:backdrop label, .app-notification box button.flat:backdrop,
-    .app-notification.frame box button.flat.image-button:backdrop, .app-notification box button.flat:backdrop label, .app-notification.frame box button.flat.image-button:backdrop label, .app-notification box button.flat:backdrop,
-    .app-notification.frame box button.flat.image-button:backdrop,
+    notebook > header > tabs > arrow:backdrop label, button.sidebar-button:backdrop label, button.titlebutton:backdrop label, notebook > header > tabs > arrow:backdrop, button.sidebar-button:backdrop, button.titlebutton:backdrop, notebook > header > tabs > arrow:backdrop label, button.titlebutton:backdrop label, notebook > header > tabs > arrow:backdrop, button.titlebutton:backdrop,
     button:backdrop.flat label,
     button:backdrop.flat,
     button:backdrop label,
     button:backdrop {
       color: #999999; }
-    notebook > header > tabs > arrow:backdrop:active, button.sidebar-button:backdrop:active, button.titlebutton:backdrop:active, .app-notification box button:backdrop.flat:active, notebook > header > tabs > arrow:backdrop:checked, button.sidebar-button:backdrop:checked, button.titlebutton:backdrop:checked, .app-notification box button:backdrop.flat:checked, notebook > header > tabs > arrow:backdrop:active, button.titlebutton:backdrop:active, .app-notification box button:backdrop:active, notebook > header > tabs > arrow:backdrop:checked, button.titlebutton:backdrop:checked, .app-notification box button:backdrop:checked, .app-notification box button.flat:backdrop:active, .app-notification box button.flat:backdrop:checked, .app-notification box button.flat:backdrop:active, .app-notification box button.flat:backdrop:checked,
+    notebook > header > tabs > arrow:backdrop:active, button.sidebar-button:backdrop:active, button.titlebutton:backdrop:active, notebook > header > tabs > arrow:backdrop:checked, button.sidebar-button:backdrop:checked, button.titlebutton:backdrop:checked, notebook > header > tabs > arrow:backdrop:active, button.titlebutton:backdrop:active, notebook > header > tabs > arrow:backdrop:checked, button.titlebutton:backdrop:checked,
     button:backdrop.flat:active,
     button:backdrop.flat:checked,
     button:backdrop:active,
@@ -572,7 +558,7 @@ button {
       border-color: #282828;
       background-image: image(#2f2f2f);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      notebook > header > tabs > arrow:backdrop:active label, button.sidebar-button:backdrop:active label, button.titlebutton:backdrop:active label, .app-notification box button:backdrop.flat:active label, notebook > header > tabs > arrow:backdrop:active, button.sidebar-button:backdrop:active, button.titlebutton:backdrop:active, .app-notification box button:backdrop.flat:active, notebook > header > tabs > arrow:backdrop:checked label, button.sidebar-button:backdrop:checked label, button.titlebutton:backdrop:checked label, .app-notification box button:backdrop.flat:checked label, notebook > header > tabs > arrow:backdrop:checked, button.sidebar-button:backdrop:checked, button.titlebutton:backdrop:checked, .app-notification box button:backdrop.flat:checked, notebook > header > tabs > arrow:backdrop:active label, button.titlebutton:backdrop:active label, .app-notification box button:backdrop:active label, notebook > header > tabs > arrow:backdrop:active, button.titlebutton:backdrop:active, .app-notification box button:backdrop:active, notebook > header > tabs > arrow:backdrop:checked label, button.titlebutton:backdrop:checked label, .app-notification box button:backdrop:checked label, notebook > header > tabs > arrow:backdrop:checked, button.titlebutton:backdrop:checked, .app-notification box button:backdrop:checked, .app-notification box button.flat:backdrop:active label, .app-notification box button.flat:backdrop:active, .app-notification box button.flat:backdrop:checked label, .app-notification box button.flat:backdrop:checked, .app-notification box button.flat:backdrop:active label, .app-notification box button.flat:backdrop:active, .app-notification box button.flat:backdrop:checked label, .app-notification box button.flat:backdrop:checked,
+      notebook > header > tabs > arrow:backdrop:active label, button.sidebar-button:backdrop:active label, button.titlebutton:backdrop:active label, notebook > header > tabs > arrow:backdrop:active, button.sidebar-button:backdrop:active, button.titlebutton:backdrop:active, notebook > header > tabs > arrow:backdrop:checked label, button.sidebar-button:backdrop:checked label, button.titlebutton:backdrop:checked label, notebook > header > tabs > arrow:backdrop:checked, button.sidebar-button:backdrop:checked, button.titlebutton:backdrop:checked, notebook > header > tabs > arrow:backdrop:active label, button.titlebutton:backdrop:active label, notebook > header > tabs > arrow:backdrop:active, button.titlebutton:backdrop:active, notebook > header > tabs > arrow:backdrop:checked label, button.titlebutton:backdrop:checked label, notebook > header > tabs > arrow:backdrop:checked, button.titlebutton:backdrop:checked,
       button:backdrop.flat:active label,
       button:backdrop.flat:active,
       button:backdrop.flat:checked label,
@@ -582,7 +568,7 @@ button {
       button:backdrop:checked label,
       button:backdrop:checked {
         color: #999999; }
-    notebook > header > tabs > arrow:backdrop:disabled, button.sidebar-button:backdrop:disabled, button.titlebutton:backdrop:disabled, .app-notification box button:backdrop.flat:disabled, notebook > header > tabs > arrow:backdrop:disabled, button.titlebutton:backdrop:disabled, .app-notification box button:backdrop:disabled, .app-notification box button.flat:backdrop:disabled, .app-notification box button.flat:backdrop:disabled,
+    notebook > header > tabs > arrow:backdrop:disabled, button.sidebar-button:backdrop:disabled, button.titlebutton:backdrop:disabled, notebook > header > tabs > arrow:backdrop:disabled, button.titlebutton:backdrop:disabled,
     button:backdrop.flat:disabled,
     button:backdrop:disabled {
       border-color: #282828;
@@ -590,13 +576,13 @@ button {
       text-shadow: none;
       -gtk-icon-shadow: none;
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      notebook > header > tabs > arrow:backdrop:disabled label, button.sidebar-button:backdrop:disabled label, button.titlebutton:backdrop:disabled label, .app-notification box button:backdrop.flat:disabled label, notebook > header > tabs > arrow:backdrop:disabled, button.sidebar-button:backdrop:disabled, button.titlebutton:backdrop:disabled, .app-notification box button:backdrop.flat:disabled, notebook > header > tabs > arrow:backdrop:disabled label, button.titlebutton:backdrop:disabled label, .app-notification box button:backdrop:disabled label, notebook > header > tabs > arrow:backdrop:disabled, button.titlebutton:backdrop:disabled, .app-notification box button:backdrop:disabled, .app-notification box button.flat:backdrop:disabled label, .app-notification box button.flat:backdrop:disabled, .app-notification box button.flat:backdrop:disabled label, .app-notification box button.flat:backdrop:disabled,
+      notebook > header > tabs > arrow:backdrop:disabled label, button.sidebar-button:backdrop:disabled label, button.titlebutton:backdrop:disabled label, notebook > header > tabs > arrow:backdrop:disabled, button.sidebar-button:backdrop:disabled, button.titlebutton:backdrop:disabled, notebook > header > tabs > arrow:backdrop:disabled label, button.titlebutton:backdrop:disabled label, notebook > header > tabs > arrow:backdrop:disabled, button.titlebutton:backdrop:disabled,
       button:backdrop.flat:disabled label,
       button:backdrop.flat:disabled,
       button:backdrop:disabled label,
       button:backdrop:disabled {
         color: #616161; }
-      notebook > header > tabs > arrow:backdrop:disabled:active, button.sidebar-button:backdrop:disabled:active, button.titlebutton:backdrop:disabled:active, .app-notification box button:backdrop.flat:disabled:active, notebook > header > tabs > arrow:backdrop:disabled:checked, button.sidebar-button:backdrop:disabled:checked, button.titlebutton:backdrop:disabled:checked, .app-notification box button:backdrop.flat:disabled:checked, notebook > header > tabs > arrow:backdrop:disabled:active, button.titlebutton:backdrop:disabled:active, .app-notification box button:backdrop:disabled:active, notebook > header > tabs > arrow:backdrop:disabled:checked, button.titlebutton:backdrop:disabled:checked, .app-notification box button:backdrop:disabled:checked, .app-notification box button.flat:backdrop:disabled:active, .app-notification box button.flat:backdrop:disabled:checked, .app-notification box button.flat:backdrop:disabled:active, .app-notification box button.flat:backdrop:disabled:checked,
+      notebook > header > tabs > arrow:backdrop:disabled:active, button.sidebar-button:backdrop:disabled:active, button.titlebutton:backdrop:disabled:active, notebook > header > tabs > arrow:backdrop:disabled:checked, button.sidebar-button:backdrop:disabled:checked, button.titlebutton:backdrop:disabled:checked, notebook > header > tabs > arrow:backdrop:disabled:active, button.titlebutton:backdrop:disabled:active, notebook > header > tabs > arrow:backdrop:disabled:checked, button.titlebutton:backdrop:disabled:checked,
       button:backdrop.flat:disabled:active,
       button:backdrop.flat:disabled:checked,
       button:backdrop:disabled:active,
@@ -604,15 +590,13 @@ button {
         border-color: #282828;
         background-image: image(#2f2f2f);
         box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-        notebook > header > tabs > arrow:backdrop:disabled:active label, button.sidebar-button:backdrop:disabled:active label, button.titlebutton:backdrop:disabled:active label, .app-notification box button:backdrop.flat:disabled:active label, notebook > header > tabs > arrow:backdrop:disabled:checked label, button.sidebar-button:backdrop:disabled:checked label, button.titlebutton:backdrop:disabled:checked label, .app-notification box button:backdrop.flat:disabled:checked label, notebook > header > tabs > arrow:backdrop:disabled:active label, button.titlebutton:backdrop:disabled:active label, .app-notification box button:backdrop:disabled:active label, notebook > header > tabs > arrow:backdrop:disabled:checked label, button.titlebutton:backdrop:disabled:checked label, .app-notification box button:backdrop:disabled:checked label, .app-notification box button.flat:backdrop:disabled:active label, .app-notification box button.flat:backdrop:disabled:checked label, .app-notification box button.flat:backdrop:disabled:active label, .app-notification box button.flat:backdrop:disabled:checked label,
+        notebook > header > tabs > arrow:backdrop:disabled:active label, button.sidebar-button:backdrop:disabled:active label, button.titlebutton:backdrop:disabled:active label, notebook > header > tabs > arrow:backdrop:disabled:checked label, button.sidebar-button:backdrop:disabled:checked label, button.titlebutton:backdrop:disabled:checked label, notebook > header > tabs > arrow:backdrop:disabled:active label, button.titlebutton:backdrop:disabled:active label, notebook > header > tabs > arrow:backdrop:disabled:checked label, button.titlebutton:backdrop:disabled:checked label,
         button:backdrop.flat:disabled:active label,
         button:backdrop.flat:disabled:checked label,
         button:backdrop:disabled:active label,
         button:backdrop:disabled:checked label {
           color: #616161; }
-  notebook > header > tabs > arrow:backdrop, button.sidebar-button:backdrop, button.titlebutton:backdrop, .app-notification box button.flat:backdrop, notebook > header > tabs > arrow:disabled, button.sidebar-button:disabled, button.titlebutton:disabled, .app-notification box button.flat:disabled, notebook > header > tabs > arrow:backdrop:disabled, button.sidebar-button:backdrop:disabled, button.titlebutton:backdrop:disabled, .app-notification box button.flat:backdrop:disabled, .app-notification box button.flat:backdrop,
-  .app-notification.frame box button.flat.image-button:backdrop, .app-notification box button.flat:disabled,
-  .app-notification.frame box button.flat.image-button:disabled, .app-notification box button.flat:backdrop:disabled,
+  notebook > header > tabs > arrow:backdrop, button.sidebar-button:backdrop, button.titlebutton:backdrop, notebook > header > tabs > arrow:disabled, button.sidebar-button:disabled, button.titlebutton:disabled, notebook > header > tabs > arrow:backdrop:disabled, button.sidebar-button:backdrop:disabled, button.titlebutton:backdrop:disabled,
   button.flat:backdrop,
   button.flat:disabled,
   button.flat:backdrop:disabled {
@@ -622,68 +606,61 @@ button {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0);
     text-shadow: none;
     -gtk-icon-shadow: none; }
-  notebook > header > tabs > arrow:disabled, button.titlebutton:disabled, .app-notification box button:disabled, .app-notification box button.flat:disabled,
-  .app-notification.frame box button.flat.image-button:disabled,
+  notebook > header > tabs > arrow:disabled, button.titlebutton:disabled,
   button:disabled {
     border-color: #242424;
     background-image: image(#373737);
     text-shadow: none;
     -gtk-icon-shadow: none;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-    notebook > header > tabs > arrow:disabled label, button.titlebutton:disabled label, .app-notification box button:disabled label, notebook > header > tabs > arrow:disabled, button.titlebutton:disabled, .app-notification box button:disabled, .app-notification box button.flat:disabled label, .app-notification.frame box button.flat.image-button:disabled label, .app-notification box button.flat:disabled,
-    .app-notification.frame box button.flat.image-button:disabled,
+    notebook > header > tabs > arrow:disabled label, button.titlebutton:disabled label, notebook > header > tabs > arrow:disabled, button.titlebutton:disabled,
     button:disabled label,
     button:disabled {
       color: #999999; }
-    notebook > header > tabs > arrow:disabled:active, button.titlebutton:disabled:active, .app-notification box button:disabled:active, notebook > header > tabs > arrow:disabled:checked, button.titlebutton:disabled:checked, .app-notification box button:disabled:checked, .app-notification box button.flat:disabled:active, .app-notification box button.flat:disabled:checked,
+    notebook > header > tabs > arrow:disabled:active, button.titlebutton:disabled:active, notebook > header > tabs > arrow:disabled:checked, button.titlebutton:disabled:checked,
     button:disabled:active,
     button:disabled:checked {
       border-color: #242424;
       background-image: image(#2a2a2a);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      notebook > header > tabs > arrow:disabled:active label, button.titlebutton:disabled:active label, .app-notification box button:disabled:active label, notebook > header > tabs > arrow:disabled:active, button.titlebutton:disabled:active, .app-notification box button:disabled:active, notebook > header > tabs > arrow:disabled:checked label, button.titlebutton:disabled:checked label, .app-notification box button:disabled:checked label, notebook > header > tabs > arrow:disabled:checked, button.titlebutton:disabled:checked, .app-notification box button:disabled:checked, .app-notification box button.flat:disabled:active label, .app-notification box button.flat:disabled:active, .app-notification box button.flat:disabled:checked label, .app-notification box button.flat:disabled:checked,
+      notebook > header > tabs > arrow:disabled:active label, button.titlebutton:disabled:active label, notebook > header > tabs > arrow:disabled:active, button.titlebutton:disabled:active, notebook > header > tabs > arrow:disabled:checked label, button.titlebutton:disabled:checked label, notebook > header > tabs > arrow:disabled:checked, button.titlebutton:disabled:checked,
       button:disabled:active label,
       button:disabled:active,
       button:disabled:checked label,
       button:disabled:checked {
         color: #999999; }
-  notebook > header > tabs > arrow.image-button, button.image-button.titlebutton, .app-notification box button.image-button, .app-notification box button.image-button.flat,
+  notebook > header > tabs > arrow.image-button, button.image-button.titlebutton,
   button.image-button {
     min-width: 24px;
     padding-left: 2px;
     padding-right: 2px; }
-  notebook > header > tabs > arrow.text-button, button.text-button.titlebutton, .app-notification box button.text-button, .app-notification box button.text-button.flat,
-  .app-notification.frame box button.text-button.flat.image-button,
+  notebook > header > tabs > arrow.text-button, button.text-button.titlebutton,
   button.text-button {
     padding-left: 16px;
     padding-right: 16px; }
-  notebook > header > tabs > arrow.text-button.image-button, button.text-button.image-button.titlebutton, .app-notification box button.text-button.image-button, .app-notification box button.text-button.image-button.flat,
+  notebook > header > tabs > arrow.text-button.image-button, button.text-button.image-button.titlebutton,
   button.text-button.image-button {
     padding-left: 8px;
     padding-right: 8px; }
-    notebook > header > tabs > arrow.text-button.image-button label, button.text-button.image-button.titlebutton label, .app-notification box button.text-button.image-button label, .app-notification box button.text-button.image-button.flat label,
+    notebook > header > tabs > arrow.text-button.image-button label, button.text-button.image-button.titlebutton label,
     button.text-button.image-button label {
       padding-left: 8px;
       padding-right: 8px; }
-  combobox:drop(active) button.combo, notebook > header > tabs > arrow:drop(active), button.titlebutton:drop(active), .app-notification box button:drop(active),
-  .app-notification.frame box button:drop(active), .app-notification box button.flat:drop(active), .app-notification box button.flat.image-button:drop(active),
-  .app-notification.frame box button.flat:drop(active),
-  .app-notification.frame box button.flat.image-button:drop(active),
+  combobox:drop(active) button.combo, notebook > header > tabs > arrow:drop(active), button.titlebutton:drop(active),
   button:drop(active) {
     color: #318d3e;
     border-color: #318d3e;
     box-shadow: inset 0 0 0 1px #318d3e; }
 
-row:selected button.sidebar-button:not(:active):not(:checked):not(:hover):not(disabled), row:selected .app-notification box button.flat:not(:active):not(:checked):not(:hover):not(disabled), .app-notification box row:selected button.flat:not(:active):not(:checked):not(:hover):not(disabled), row:selected
+row:selected button.sidebar-button:not(:active):not(:checked):not(:hover):not(disabled), row:selected
 button.flat:not(:active):not(:checked):not(:hover):not(disabled) {
   color: #ffffff;
   border-color: transparent; }
-  row:selected button.sidebar-button:not(:active):not(:checked):not(:hover):not(disabled):backdrop, row:selected .app-notification box button.flat:not(:active):not(:checked):not(:hover):not(disabled):backdrop, .app-notification box row:selected button.flat:not(:active):not(:checked):not(:hover):not(disabled):backdrop, row:selected
+  row:selected button.sidebar-button:not(:active):not(:checked):not(:hover):not(disabled):backdrop, row:selected
   button.flat:not(:active):not(:checked):not(:hover):not(disabled):backdrop {
     color: #999999; }
 
-.app-notification box button.osd.flat,
-.app-notification.frame box button.osd.flat.image-button,
+
 button.osd {
   min-width: 26px;
   min-height: 32px;
@@ -700,10 +677,10 @@ button.osd {
   outline-color: rgba(238, 238, 236, 0.3);
   border: none;
   box-shadow: none; }
-  .app-notification box button.osd.image-button.flat,
+  
   button.osd.image-button {
     min-width: 34px; }
-  .app-notification box button.osd.flat:hover,
+  
   button.osd:hover {
     color: white;
     border-color: rgba(0, 0, 0, 0.7);
@@ -716,7 +693,7 @@ button.osd {
     outline-color: rgba(238, 238, 236, 0.3);
     border: none;
     box-shadow: none; }
-  .app-notification box button.osd.flat:active, .app-notification box button.osd.flat:checked,
+  
   button.osd:active,
   button.osd:checked {
     color: white;
@@ -730,7 +707,7 @@ button.osd {
     outline-color: rgba(238, 238, 236, 0.3);
     border: none;
     box-shadow: none; }
-  .app-notification box button.osd.flat:disabled:backdrop, .app-notification box button.osd.flat:disabled,
+  
   button.osd:disabled:backdrop,
   button.osd:disabled {
     color: #868685;
@@ -742,7 +719,7 @@ button.osd {
     text-shadow: none;
     -gtk-icon-shadow: none;
     border: none; }
-  .app-notification box button.osd.flat:backdrop,
+  
   button.osd:backdrop {
     color: #eeeeec;
     border-color: rgba(0, 0, 0, 0.7);
@@ -756,10 +733,6 @@ button.osd {
 
 .csd popover.background.touch-selection button, .csd popover.background.magnifier button, popover.background.touch-selection button, popover.background.magnifier button, .app-notification button,
 .app-notification.frame button,
-.osd .app-notification box button.flat,
-.app-notification box .osd button.flat,
-.osd .app-notification.frame box button.flat.image-button,
-.app-notification.frame box .osd button.flat.image-button,
 .osd
 button {
   color: #eeeeec;
@@ -772,8 +745,6 @@ button {
   -gtk-icon-shadow: 0 1px black;
   outline-color: rgba(238, 238, 236, 0.3); }
   popover.background.touch-selection button:hover, popover.background.magnifier button:hover, .app-notification button:hover,
-  .osd .app-notification box button.flat:hover,
-  .app-notification box .osd button.flat:hover,
   .osd
   button:hover {
     color: white;
@@ -786,14 +757,6 @@ button {
     -gtk-icon-shadow: 0 1px black;
     outline-color: rgba(238, 238, 236, 0.3); }
   popover.background.touch-selection button:active:backdrop, popover.background.magnifier button:active:backdrop, .app-notification button:active:backdrop, popover.background.touch-selection button:active, popover.background.magnifier button:active, .app-notification button:active, popover.background.touch-selection button:checked:backdrop, popover.background.magnifier button:checked:backdrop, .app-notification button:checked:backdrop, popover.background.touch-selection button:checked, popover.background.magnifier button:checked, .app-notification button:checked,
-  .osd .app-notification box button.flat:active:backdrop,
-  .app-notification box .osd button.flat:active:backdrop,
-  .osd .app-notification box button.flat:active,
-  .app-notification box .osd button.flat:active,
-  .osd .app-notification box button.flat:checked:backdrop,
-  .app-notification box .osd button.flat:checked:backdrop,
-  .osd .app-notification box button.flat:checked,
-  .app-notification box .osd button.flat:checked,
   .osd
   button:active:backdrop,
   .osd
@@ -812,10 +775,6 @@ button {
     -gtk-icon-shadow: none;
     outline-color: rgba(238, 238, 236, 0.3); }
   popover.background.touch-selection button:disabled:backdrop, popover.background.magnifier button:disabled:backdrop, .app-notification button:disabled:backdrop, popover.background.touch-selection button:disabled, popover.background.magnifier button:disabled, .app-notification button:disabled,
-  .osd .app-notification box button.flat:disabled:backdrop,
-  .app-notification box .osd button.flat:disabled:backdrop,
-  .osd .app-notification box button.flat:disabled,
-  .app-notification box .osd button.flat:disabled,
   .osd
   button:disabled:backdrop,
   .osd
@@ -829,8 +788,6 @@ button {
     text-shadow: none;
     -gtk-icon-shadow: none; }
   popover.background.touch-selection button:backdrop, popover.background.magnifier button:backdrop, .app-notification button:backdrop,
-  .osd .app-notification box button.flat:backdrop,
-  .app-notification box .osd button.flat:backdrop,
   .osd
   button:backdrop {
     color: #eeeeec;
@@ -842,10 +799,6 @@ button {
     text-shadow: none;
     -gtk-icon-shadow: none; }
   popover.background.touch-selection button.flat, popover.background.magnifier button.flat, .app-notification button.flat,
-  .osd .app-notification box button.flat,
-  .app-notification box .osd button.flat,
-  .osd .app-notification.frame box button.flat.image-button,
-  .app-notification.frame box .osd button.flat.image-button,
   .osd
   button.flat {
     border-color: transparent;
@@ -858,8 +811,6 @@ button {
     text-shadow: 0 1px black;
     -gtk-icon-shadow: 0 1px black; }
     popover.background.touch-selection button.flat:hover, popover.background.magnifier button.flat:hover, .app-notification button.flat:hover,
-    .osd .app-notification box button.flat:hover,
-    .app-notification box .osd button.flat:hover,
     .osd
     button.flat:hover {
       color: white;
@@ -872,8 +823,6 @@ button {
       -gtk-icon-shadow: 0 1px black;
       outline-color: rgba(238, 238, 236, 0.3); }
     popover.background.touch-selection button.flat:disabled, popover.background.magnifier button.flat:disabled, .app-notification button.flat:disabled,
-    .osd .app-notification box button.flat:disabled,
-    .app-notification box .osd button.flat:disabled,
     .osd
     button.flat:disabled {
       color: #868685;
@@ -888,8 +837,6 @@ button {
       border-color: transparent;
       box-shadow: none; }
     popover.background.touch-selection button.flat:backdrop, popover.background.magnifier button.flat:backdrop, .app-notification button.flat:backdrop,
-    .osd .app-notification box button.flat:backdrop,
-    .app-notification box .osd button.flat:backdrop,
     .osd
     button.flat:backdrop {
       border-color: transparent;
@@ -899,10 +846,6 @@ button {
       text-shadow: none;
       -gtk-icon-shadow: none; }
     popover.background.touch-selection button.flat:active, popover.background.magnifier button.flat:active, .app-notification button.flat:active, popover.background.touch-selection button.flat:checked, popover.background.magnifier button.flat:checked, .app-notification button.flat:checked,
-    .osd .app-notification box button.flat:active,
-    .app-notification box .osd button.flat:active,
-    .osd .app-notification box button.flat:checked,
-    .app-notification box .osd button.flat:checked,
     .osd
     button.flat:active,
     .osd
@@ -917,19 +860,17 @@ button {
       -gtk-icon-shadow: none;
       outline-color: rgba(238, 238, 236, 0.3); }
 
-.app-notification box button.suggested-action.flat,
-.app-notification.frame box button.suggested-action.flat.image-button,
+
 button.suggested-action {
   color: white;
   outline-color: rgba(255, 255, 255, 0.3);
-  border-color: #24672e;
-  border-bottom-color: #17411d;
-  background-image: linear-gradient(to top, #30893d 2px, #318d3e);
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.701961);
-  -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.701961);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
-  .selection-mode button.titlebutton, .app-notification box button.suggested-action.flat,
-  .app-notification.frame box button.suggested-action.flat.image-button,
+  border-color: #318d3e;
+  border-bottom-color: #24672e;
+  background-image: linear-gradient(to top, #3daf4d 2px, #3EB34F);
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.621961);
+  -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.621961);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07); }
+  .selection-mode button.titlebutton,
   button.suggested-action.flat {
     border-color: transparent;
     background-color: transparent;
@@ -937,50 +878,50 @@ button.suggested-action {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0);
     text-shadow: none;
     -gtk-icon-shadow: none;
-    color: #318d3e; }
-  .app-notification box button.suggested-action.flat:hover,
+    color: #3EB34F; }
+  
   button.suggested-action:hover {
     color: white;
     outline-color: rgba(255, 255, 255, 0.3);
-    border-color: #24672e;
-    border-bottom-color: #17411d;
-    text-shadow: 0 -1px rgba(0, 0, 0, 0.653961);
-    -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.653961);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
-    background-image: linear-gradient(to top, #30893d, #329140 1px); }
-  .app-notification box button.suggested-action.flat:active, .app-notification box button.suggested-action.flat:checked,
+    border-color: #318d3e;
+    border-bottom-color: #24672e;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.573961);
+    -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.573961);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
+    background-image: linear-gradient(to top, #3daf4d, #3fb751 1px); }
+  
   button.suggested-action:active,
   button.suggested-action:checked {
     color: white;
     outline-color: rgba(255, 255, 255, 0.3);
-    border-color: #24672e;
-    background-image: image(#256b2f);
+    border-color: #318d3e;
+    background-image: image(#329140);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0);
     text-shadow: none;
     -gtk-icon-shadow: none; }
-  .app-notification box button.suggested-action.flat:backdrop, .selection-mode button.titlebutton:backdrop, .app-notification box button.suggested-action.flat:backdrop,
+  .selection-mode button.titlebutton:backdrop,
   button.suggested-action:backdrop,
   button.suggested-action.flat:backdrop {
-    border-color: #24672e;
-    background-image: image(#318d3e);
+    border-color: #318d3e;
+    background-image: image(#3EB34F);
     text-shadow: none;
     -gtk-icon-shadow: none;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-    .app-notification box button.suggested-action.flat:backdrop label, .app-notification box button.suggested-action.flat:backdrop, .selection-mode button.titlebutton:backdrop label, .app-notification box button.suggested-action.flat:backdrop label, .selection-mode button.titlebutton:backdrop, .app-notification box button.suggested-action.flat:backdrop,
+    .selection-mode button.titlebutton:backdrop label, .selection-mode button.titlebutton:backdrop,
     button.suggested-action:backdrop label,
     button.suggested-action:backdrop,
     button.suggested-action.flat:backdrop label,
     button.suggested-action.flat:backdrop {
-      color: #d6e8d8; }
-    .app-notification box button.suggested-action.flat:backdrop:active, .app-notification box button.suggested-action.flat:backdrop:checked, .selection-mode button.titlebutton:backdrop:active, .app-notification box button.suggested-action.flat:backdrop:active, .selection-mode button.titlebutton:backdrop:checked, .app-notification box button.suggested-action.flat:backdrop:checked,
+      color: #d8f0dc; }
+    .selection-mode button.titlebutton:backdrop:active, .selection-mode button.titlebutton:backdrop:checked,
     button.suggested-action:backdrop:active,
     button.suggested-action:backdrop:checked,
     button.suggested-action.flat:backdrop:active,
     button.suggested-action.flat:backdrop:checked {
-      border-color: #24672e;
-      background-image: image(#2b7035);
+      border-color: #318d3e;
+      background-image: image(#369144);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      .app-notification box button.suggested-action.flat:backdrop:active label, .app-notification box button.suggested-action.flat:backdrop:active, .app-notification box button.suggested-action.flat:backdrop:checked label, .app-notification box button.suggested-action.flat:backdrop:checked, .selection-mode button.titlebutton:backdrop:active label, .app-notification box button.suggested-action.flat:backdrop:active label, .selection-mode button.titlebutton:backdrop:active, .app-notification box button.suggested-action.flat:backdrop:active, .selection-mode button.titlebutton:backdrop:checked label, .app-notification box button.suggested-action.flat:backdrop:checked label, .selection-mode button.titlebutton:backdrop:checked, .app-notification box button.suggested-action.flat:backdrop:checked,
+      .selection-mode button.titlebutton:backdrop:active label, .selection-mode button.titlebutton:backdrop:active, .selection-mode button.titlebutton:backdrop:checked label, .selection-mode button.titlebutton:backdrop:checked,
       button.suggested-action:backdrop:active label,
       button.suggested-action:backdrop:active,
       button.suggested-action:backdrop:checked label,
@@ -989,8 +930,8 @@ button.suggested-action {
       button.suggested-action.flat:backdrop:active,
       button.suggested-action.flat:backdrop:checked label,
       button.suggested-action.flat:backdrop:checked {
-        color: #d5e2d7; }
-    .app-notification box button.suggested-action.flat:backdrop:disabled, .selection-mode button.titlebutton:backdrop:disabled, .app-notification box button.suggested-action.flat:backdrop:disabled,
+        color: #d7e9da; }
+    .selection-mode button.titlebutton:backdrop:disabled,
     button.suggested-action:backdrop:disabled,
     button.suggested-action.flat:backdrop:disabled {
       border-color: #282828;
@@ -998,27 +939,27 @@ button.suggested-action {
       text-shadow: none;
       -gtk-icon-shadow: none;
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      .app-notification box button.suggested-action.flat:backdrop:disabled label, .app-notification box button.suggested-action.flat:backdrop:disabled, .selection-mode button.titlebutton:backdrop:disabled label, .app-notification box button.suggested-action.flat:backdrop:disabled label, .selection-mode button.titlebutton:backdrop:disabled, .app-notification box button.suggested-action.flat:backdrop:disabled,
+      .selection-mode button.titlebutton:backdrop:disabled label, .selection-mode button.titlebutton:backdrop:disabled,
       button.suggested-action:backdrop:disabled label,
       button.suggested-action:backdrop:disabled,
       button.suggested-action.flat:backdrop:disabled label,
       button.suggested-action.flat:backdrop:disabled {
         color: #616161; }
-      .app-notification box button.suggested-action.flat:backdrop:disabled:active, .app-notification box button.suggested-action.flat:backdrop:disabled:checked, .selection-mode button.titlebutton:backdrop:disabled:active, .app-notification box button.suggested-action.flat:backdrop:disabled:active, .selection-mode button.titlebutton:backdrop:disabled:checked, .app-notification box button.suggested-action.flat:backdrop:disabled:checked,
+      .selection-mode button.titlebutton:backdrop:disabled:active, .selection-mode button.titlebutton:backdrop:disabled:checked,
       button.suggested-action:backdrop:disabled:active,
       button.suggested-action:backdrop:disabled:checked,
       button.suggested-action.flat:backdrop:disabled:active,
       button.suggested-action.flat:backdrop:disabled:checked {
-        border-color: #24672e;
-        background-image: image(#2b7035);
+        border-color: #318d3e;
+        background-image: image(#369144);
         box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-        .app-notification box button.suggested-action.flat:backdrop:disabled:active label, .app-notification box button.suggested-action.flat:backdrop:disabled:checked label, .selection-mode button.titlebutton:backdrop:disabled:active label, .app-notification box button.suggested-action.flat:backdrop:disabled:active label, .selection-mode button.titlebutton:backdrop:disabled:checked label, .app-notification box button.suggested-action.flat:backdrop:disabled:checked label,
+        .selection-mode button.titlebutton:backdrop:disabled:active label, .selection-mode button.titlebutton:backdrop:disabled:checked label,
         button.suggested-action:backdrop:disabled:active label,
         button.suggested-action:backdrop:disabled:checked label,
         button.suggested-action.flat:backdrop:disabled:active label,
         button.suggested-action.flat:backdrop:disabled:checked label {
-          color: #75a27c; }
-  .selection-mode button.titlebutton:backdrop, .app-notification box button.suggested-action.flat:backdrop, .selection-mode button.titlebutton:disabled, .app-notification box button.suggested-action.flat:disabled, .selection-mode button.titlebutton:backdrop:disabled, .app-notification box button.suggested-action.flat:backdrop:disabled,
+          color: #7db885; }
+  .selection-mode button.titlebutton:backdrop, .selection-mode button.titlebutton:disabled, .selection-mode button.titlebutton:backdrop:disabled,
   button.suggested-action.flat:backdrop,
   button.suggested-action.flat:disabled,
   button.suggested-action.flat:backdrop:disabled {
@@ -1028,53 +969,53 @@ button.suggested-action {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0);
     text-shadow: none;
     -gtk-icon-shadow: none;
-    color: rgba(49, 141, 62, 0.8); }
-  .app-notification box button.suggested-action.flat:disabled,
+    color: rgba(62, 179, 79, 0.8); }
+  
   button.suggested-action:disabled {
     border-color: #242424;
     background-image: image(#373737);
     text-shadow: none;
     -gtk-icon-shadow: none;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-    .app-notification box button.suggested-action.flat:disabled label, .app-notification box button.suggested-action.flat:disabled,
+    
     button.suggested-action:disabled label,
     button.suggested-action:disabled {
       color: #999999; }
-    .app-notification box button.suggested-action.flat:disabled:active, .app-notification box button.suggested-action.flat:disabled:checked,
+    
     button.suggested-action:disabled:active,
     button.suggested-action:disabled:checked {
-      border-color: #24672e;
-      background-image: image(#286932);
+      border-color: #318d3e;
+      background-image: image(#348a41);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      .app-notification box button.suggested-action.flat:disabled:active label, .app-notification box button.suggested-action.flat:disabled:active, .app-notification box button.suggested-action.flat:disabled:checked label, .app-notification box button.suggested-action.flat:disabled:checked,
+      
       button.suggested-action:disabled:active label,
       button.suggested-action:disabled:active,
       button.suggested-action:disabled:checked label,
       button.suggested-action:disabled:checked {
-        color: #a9c3ad; }
-  .osd .app-notification box button.suggested-action.flat, .app-notification box .osd button.suggested-action.flat, .osd
+        color: #aed0b3; }
+  .osd
   button.suggested-action {
     color: #eeeeec;
     border-color: rgba(0, 0, 0, 0.7);
     background-color: transparent;
-    background-image: image(rgba(49, 141, 62, 0.5));
+    background-image: image(rgba(62, 179, 79, 0.5));
     background-clip: padding-box;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
     text-shadow: 0 1px black;
     -gtk-icon-shadow: 0 1px black;
     outline-color: rgba(238, 238, 236, 0.3); }
-    .osd .app-notification box button.suggested-action.flat:hover, .app-notification box .osd button.suggested-action.flat:hover, .osd
+    .osd
     button.suggested-action:hover {
       color: white;
       border-color: rgba(0, 0, 0, 0.7);
       background-color: transparent;
-      background-image: image(rgba(49, 141, 62, 0.7));
+      background-image: image(rgba(62, 179, 79, 0.7));
       background-clip: padding-box;
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
       text-shadow: 0 1px black;
       -gtk-icon-shadow: 0 1px black;
       outline-color: rgba(238, 238, 236, 0.3); }
-    .osd .app-notification box button.suggested-action.flat:active:backdrop, .app-notification box .osd button.suggested-action.flat:active:backdrop, .osd .app-notification box button.suggested-action.flat:active, .app-notification box .osd button.suggested-action.flat:active, .osd .app-notification box button.suggested-action.flat:checked:backdrop, .app-notification box .osd button.suggested-action.flat:checked:backdrop, .osd .app-notification box button.suggested-action.flat:checked, .app-notification box .osd button.suggested-action.flat:checked, .osd
+    .osd
     button.suggested-action:active:backdrop, .osd
     button.suggested-action:active, .osd
     button.suggested-action:checked:backdrop, .osd
@@ -1082,13 +1023,13 @@ button.suggested-action {
       color: white;
       border-color: rgba(0, 0, 0, 0.7);
       background-color: transparent;
-      background-image: image(#318d3e);
+      background-image: image(#3EB34F);
       background-clip: padding-box;
       box-shadow: none;
       text-shadow: none;
       -gtk-icon-shadow: none;
       outline-color: rgba(238, 238, 236, 0.3); }
-    .osd .app-notification box button.suggested-action.flat:disabled:backdrop, .app-notification box .osd button.suggested-action.flat:disabled:backdrop, .osd .app-notification box button.suggested-action.flat:disabled, .app-notification box .osd button.suggested-action.flat:disabled, .osd
+    .osd
     button.suggested-action:disabled:backdrop, .osd
     button.suggested-action:disabled {
       color: #868685;
@@ -1099,19 +1040,18 @@ button.suggested-action {
       box-shadow: none;
       text-shadow: none;
       -gtk-icon-shadow: none; }
-    .osd .app-notification box button.suggested-action.flat:backdrop, .app-notification box .osd button.suggested-action.flat:backdrop, .osd
+    .osd
     button.suggested-action:backdrop {
       color: #eeeeec;
       border-color: rgba(0, 0, 0, 0.7);
       background-color: transparent;
-      background-image: image(rgba(49, 141, 62, 0.5));
+      background-image: image(rgba(62, 179, 79, 0.5));
       background-clip: padding-box;
       box-shadow: none;
       text-shadow: none;
       -gtk-icon-shadow: none; }
 
-.app-notification box button.destructive-action.flat,
-.app-notification.frame box button.destructive-action.flat.image-button,
+
 button.destructive-action {
   color: white;
   outline-color: rgba(255, 255, 255, 0.3);
@@ -1121,8 +1061,7 @@ button.destructive-action {
   text-shadow: 0 -1px rgba(0, 0, 0, 0.631373);
   -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.631373);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07); }
-  .app-notification box button.destructive-action.flat,
-  .app-notification.frame box button.destructive-action.flat.image-button,
+  
   button.destructive-action.flat {
     border-color: transparent;
     background-color: transparent;
@@ -1131,7 +1070,7 @@ button.destructive-action {
     text-shadow: none;
     -gtk-icon-shadow: none;
     color: #d81329; }
-  .app-notification box button.destructive-action.flat:hover,
+  
   button.destructive-action:hover {
     color: white;
     outline-color: rgba(255, 255, 255, 0.3);
@@ -1141,7 +1080,7 @@ button.destructive-action {
     -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.583373);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
     background-image: linear-gradient(to top, #d31228, #dd132a 1px); }
-  .app-notification box button.destructive-action.flat:active, .app-notification box button.destructive-action.flat:checked,
+  
   button.destructive-action:active,
   button.destructive-action:checked {
     color: white;
@@ -1151,7 +1090,7 @@ button.destructive-action {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0);
     text-shadow: none;
     -gtk-icon-shadow: none; }
-  .app-notification box button.destructive-action.flat:backdrop, .app-notification box button.destructive-action.flat:backdrop,
+  
   button.destructive-action:backdrop,
   button.destructive-action.flat:backdrop {
     border-color: #a90f20;
@@ -1159,13 +1098,13 @@ button.destructive-action {
     text-shadow: none;
     -gtk-icon-shadow: none;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-    .app-notification box button.destructive-action.flat:backdrop label, .app-notification box button.destructive-action.flat:backdrop, .app-notification box button.destructive-action.flat:backdrop label, .app-notification box button.destructive-action.flat:backdrop,
+    
     button.destructive-action:backdrop label,
     button.destructive-action:backdrop,
     button.destructive-action.flat:backdrop label,
     button.destructive-action.flat:backdrop {
       color: #f7d0d4; }
-    .app-notification box button.destructive-action.flat:backdrop:active, .app-notification box button.destructive-action.flat:backdrop:checked, .app-notification box button.destructive-action.flat:backdrop:active, .app-notification box button.destructive-action.flat:backdrop:checked,
+    
     button.destructive-action:backdrop:active,
     button.destructive-action:backdrop:checked,
     button.destructive-action.flat:backdrop:active,
@@ -1173,7 +1112,7 @@ button.destructive-action {
       border-color: #a90f20;
       background-image: image(#ad1526);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      .app-notification box button.destructive-action.flat:backdrop:active label, .app-notification box button.destructive-action.flat:backdrop:active, .app-notification box button.destructive-action.flat:backdrop:checked label, .app-notification box button.destructive-action.flat:backdrop:checked, .app-notification box button.destructive-action.flat:backdrop:active label, .app-notification box button.destructive-action.flat:backdrop:active, .app-notification box button.destructive-action.flat:backdrop:checked label, .app-notification box button.destructive-action.flat:backdrop:checked,
+      
       button.destructive-action:backdrop:active label,
       button.destructive-action:backdrop:active,
       button.destructive-action:backdrop:checked label,
@@ -1183,7 +1122,7 @@ button.destructive-action {
       button.destructive-action.flat:backdrop:checked label,
       button.destructive-action.flat:backdrop:checked {
         color: #efd0d4; }
-    .app-notification box button.destructive-action.flat:backdrop:disabled, .app-notification box button.destructive-action.flat:backdrop:disabled,
+    
     button.destructive-action:backdrop:disabled,
     button.destructive-action.flat:backdrop:disabled {
       border-color: #282828;
@@ -1191,13 +1130,13 @@ button.destructive-action {
       text-shadow: none;
       -gtk-icon-shadow: none;
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      .app-notification box button.destructive-action.flat:backdrop:disabled label, .app-notification box button.destructive-action.flat:backdrop:disabled, .app-notification box button.destructive-action.flat:backdrop:disabled label, .app-notification box button.destructive-action.flat:backdrop:disabled,
+      
       button.destructive-action:backdrop:disabled label,
       button.destructive-action:backdrop:disabled,
       button.destructive-action.flat:backdrop:disabled label,
       button.destructive-action.flat:backdrop:disabled {
         color: #616161; }
-      .app-notification box button.destructive-action.flat:backdrop:disabled:active, .app-notification box button.destructive-action.flat:backdrop:disabled:checked, .app-notification box button.destructive-action.flat:backdrop:disabled:active, .app-notification box button.destructive-action.flat:backdrop:disabled:checked,
+      
       button.destructive-action:backdrop:disabled:active,
       button.destructive-action:backdrop:disabled:checked,
       button.destructive-action.flat:backdrop:disabled:active,
@@ -1205,13 +1144,13 @@ button.destructive-action {
         border-color: #a90f20;
         background-image: image(#ad1526);
         box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-        .app-notification box button.destructive-action.flat:backdrop:disabled:active label, .app-notification box button.destructive-action.flat:backdrop:disabled:checked label, .app-notification box button.destructive-action.flat:backdrop:disabled:active label, .app-notification box button.destructive-action.flat:backdrop:disabled:checked label,
+        
         button.destructive-action:backdrop:disabled:active label,
         button.destructive-action:backdrop:disabled:checked label,
         button.destructive-action.flat:backdrop:disabled:active label,
         button.destructive-action.flat:backdrop:disabled:checked label {
           color: #ca6772; }
-  .app-notification box button.destructive-action.flat:backdrop, .app-notification box button.destructive-action.flat:disabled, .app-notification box button.destructive-action.flat:backdrop:disabled,
+  
   button.destructive-action.flat:backdrop,
   button.destructive-action.flat:disabled,
   button.destructive-action.flat:backdrop:disabled {
@@ -1222,30 +1161,30 @@ button.destructive-action {
     text-shadow: none;
     -gtk-icon-shadow: none;
     color: rgba(216, 19, 41, 0.8); }
-  .app-notification box button.destructive-action.flat:disabled,
+  
   button.destructive-action:disabled {
     border-color: #242424;
     background-image: image(#373737);
     text-shadow: none;
     -gtk-icon-shadow: none;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-    .app-notification box button.destructive-action.flat:disabled label, .app-notification box button.destructive-action.flat:disabled,
+    
     button.destructive-action:disabled label,
     button.destructive-action:disabled {
       color: #999999; }
-    .app-notification box button.destructive-action.flat:disabled:active, .app-notification box button.destructive-action.flat:disabled:checked,
+    
     button.destructive-action:disabled:active,
     button.destructive-action:disabled:checked {
       border-color: #a90f20;
       background-image: image(#a41424);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
-      .app-notification box button.destructive-action.flat:disabled:active label, .app-notification box button.destructive-action.flat:disabled:active, .app-notification box button.destructive-action.flat:disabled:checked label, .app-notification box button.destructive-action.flat:disabled:checked,
+      
       button.destructive-action:disabled:active label,
       button.destructive-action:disabled:active,
       button.destructive-action:disabled:checked label,
       button.destructive-action:disabled:checked {
         color: #daa1a7; }
-  .osd .app-notification box button.destructive-action.flat, .app-notification box .osd button.destructive-action.flat, .osd
+  .osd
   button.destructive-action {
     color: #eeeeec;
     border-color: rgba(0, 0, 0, 0.7);
@@ -1256,7 +1195,7 @@ button.destructive-action {
     text-shadow: 0 1px black;
     -gtk-icon-shadow: 0 1px black;
     outline-color: rgba(238, 238, 236, 0.3); }
-    .osd .app-notification box button.destructive-action.flat:hover, .app-notification box .osd button.destructive-action.flat:hover, .osd
+    .osd
     button.destructive-action:hover {
       color: white;
       border-color: rgba(0, 0, 0, 0.7);
@@ -1267,7 +1206,7 @@ button.destructive-action {
       text-shadow: 0 1px black;
       -gtk-icon-shadow: 0 1px black;
       outline-color: rgba(238, 238, 236, 0.3); }
-    .osd .app-notification box button.destructive-action.flat:active:backdrop, .app-notification box .osd button.destructive-action.flat:active:backdrop, .osd .app-notification box button.destructive-action.flat:active, .app-notification box .osd button.destructive-action.flat:active, .osd .app-notification box button.destructive-action.flat:checked:backdrop, .app-notification box .osd button.destructive-action.flat:checked:backdrop, .osd .app-notification box button.destructive-action.flat:checked, .app-notification box .osd button.destructive-action.flat:checked, .osd
+    .osd
     button.destructive-action:active:backdrop, .osd
     button.destructive-action:active, .osd
     button.destructive-action:checked:backdrop, .osd
@@ -1281,7 +1220,7 @@ button.destructive-action {
       text-shadow: none;
       -gtk-icon-shadow: none;
       outline-color: rgba(238, 238, 236, 0.3); }
-    .osd .app-notification box button.destructive-action.flat:disabled:backdrop, .app-notification box .osd button.destructive-action.flat:disabled:backdrop, .osd .app-notification box button.destructive-action.flat:disabled, .app-notification box .osd button.destructive-action.flat:disabled, .osd
+    .osd
     button.destructive-action:disabled:backdrop, .osd
     button.destructive-action:disabled {
       color: #868685;
@@ -1292,7 +1231,7 @@ button.destructive-action {
       box-shadow: none;
       text-shadow: none;
       -gtk-icon-shadow: none; }
-    .osd .app-notification box button.destructive-action.flat:backdrop, .app-notification box .osd button.destructive-action.flat:backdrop, .osd
+    .osd
     button.destructive-action:backdrop {
       color: #eeeeec;
       border-color: rgba(0, 0, 0, 0.7);
@@ -1303,31 +1242,28 @@ button.destructive-action {
       text-shadow: none;
       -gtk-icon-shadow: none; }
 
-.app-notification box .stack-switcher > button.flat,
-.app-notification.frame box .stack-switcher > button.flat.image-button, .stack-switcher >
+.stack-switcher >
 button {
   outline-offset: -3px; }
-  .app-notification box .stack-switcher > button.flat > label, .app-notification.frame box .stack-switcher > button.flat.image-button > label, .stack-switcher >
+  .stack-switcher >
   button > label {
     padding-left: 6px;
     padding-right: 6px; }
-  .app-notification box .stack-switcher > button.flat > image, .app-notification.frame box .stack-switcher > button.flat.image-button > image, .stack-switcher >
+  .stack-switcher >
   button > image {
     padding-left: 6px;
     padding-right: 6px;
     padding-top: 3px;
     padding-bottom: 3px; }
-  .app-notification box .stack-switcher > button.text-button.flat, .stack-switcher >
+  .stack-switcher >
   button.text-button {
     padding-left: 10px;
     padding-right: 10px; }
-  .app-notification box .stack-switcher > button.image-button.flat, .stack-switcher >
+  .stack-switcher >
   button.image-button {
     padding-left: 2px;
     padding-right: 2px; }
-  .app-notification box .stack-switcher > button.needs-attention.flat:active > label,
-  .app-notification box .stack-switcher > button.needs-attention.flat:active > image, .app-notification box .stack-switcher > button.needs-attention.flat:checked > label,
-  .app-notification box .stack-switcher > button.needs-attention.flat:checked > image, .stack-switcher >
+  .stack-switcher >
   button.needs-attention:active > label,
   .stack-switcher >
   button.needs-attention:active > image, .stack-switcher >
@@ -1337,29 +1273,26 @@ button {
     animation: none;
     background-image: none; }
 
-.app-notification box button.font.flat separator, .app-notification.frame box button.font.flat.image-button separator, .app-notification box button.file.flat separator, .app-notification.frame box button.file.flat.image-button separator,
+
 button.font separator,
 button.file separator {
   background-color: transparent; }
 
-.app-notification box button.font.flat > box > box > label, .app-notification.frame box button.font.flat.image-button > box > box > label,
+
 button.font > box > box > label {
   font-weight: bold; }
 
-.inline-toolbar .app-notification box button.flat, .app-notification box .inline-toolbar button.flat,
-.inline-toolbar .app-notification.frame box button.flat.image-button, .app-notification.frame box .inline-toolbar button.flat.image-button, .inline-toolbar .app-notification box button.flat:backdrop, .app-notification box .inline-toolbar button.flat:backdrop, .inline-toolbar
+.inline-toolbar
 button, .inline-toolbar
 button:backdrop {
   border-radius: 2px;
   border-width: 1px; }
 
-.primary-toolbar .app-notification box button.flat, .app-notification box .primary-toolbar button.flat,
-.primary-toolbar .app-notification.frame box button.flat.image-button, .app-notification.frame box .primary-toolbar button.flat.image-button, .primary-toolbar
+.primary-toolbar
 button {
   -gtk-icon-shadow: none; }
 
-.app-notification box button.circular.flat,
-.app-notification.frame box button.circular.flat.image-button,
+
 button.circular {
   border-radius: 9999px;
   -gtk-outline-radius: 9999px;
@@ -1367,12 +1300,12 @@ button.circular {
   /* circles instead of ellipses */
   background-origin: padding-box, border-box;
   background-clip: padding-box, border-box; }
-  .app-notification box button.circular.flat label, .app-notification.frame box button.circular.flat.image-button label,
+  
   button.circular label {
     padding: 0; }
-  .app-notification box button.circular.flat:not(.flat):not(:checked):not(:active):not(:disabled):not(:backdrop),
+  
   button.circular:not(.flat):not(:checked):not(:active):not(:disabled):not(:backdrop) {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -1382,9 +1315,9 @@ button.circular {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
     background-image: linear-gradient(to top, #383838 2px, #3a3a3a), linear-gradient(to top, #0d0d0d 25%, #242424 50%);
     border-color: transparent; }
-  .app-notification box button.circular.flat:hover:not(:checked):not(:active):not(:disabled):not(:backdrop),
+  
   button.circular:hover:not(:checked):not(:active):not(:disabled):not(:backdrop) {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -1395,25 +1328,22 @@ button.circular {
     background-image: linear-gradient(to top, #383838, #3d3d3d 1px), linear-gradient(to top, #0d0d0d 25%, #242424 50%);
     border-color: transparent; }
 
-.app-notification box .stack-switcher > button.needs-attention.flat > label,
-.app-notification box .stack-switcher > button.needs-attention.flat > image, .stack-switcher > button.needs-attention > label,
+.stack-switcher > button.needs-attention > label,
 .stack-switcher > button.needs-attention > image, stacksidebar row.needs-attention > label {
   animation: needs_attention 150ms ease-in;
   background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#6dd3d5), to(transparent)), -gtk-gradient(radial, center center, 0, center center, 0.45, to(rgba(0, 0, 0, 0.816627)), to(transparent));
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
   background-position: right 3px, right 2px; }
-  .app-notification box .stack-switcher > button.needs-attention.flat > label:backdrop,
-  .app-notification box .stack-switcher > button.needs-attention.flat > image:backdrop, .stack-switcher > button.needs-attention > label:backdrop,
+  .stack-switcher > button.needs-attention > label:backdrop,
   .stack-switcher > button.needs-attention > image:backdrop, stacksidebar row.needs-attention > label:backdrop {
     background-size: 6px 6px, 0 0; }
-  .app-notification box .stack-switcher > button.needs-attention.flat > label:dir(rtl),
-  .app-notification box .stack-switcher > button.needs-attention.flat > image:dir(rtl), .stack-switcher > button.needs-attention > label:dir(rtl),
+  .stack-switcher > button.needs-attention > label:dir(rtl),
   .stack-switcher > button.needs-attention > image:dir(rtl), stacksidebar row.needs-attention > label:dir(rtl) {
     background-position: left 3px, left 2px; }
 
 .inline-toolbar toolbutton > button {
-  color: #f7f7f7;
+  color: #F7F7F7;
   outline-color: rgba(247, 247, 247, 0.3);
   border-color: #242424;
   border-bottom-color: #0d0d0d;
@@ -1422,7 +1352,7 @@ button.circular {
   -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
   .inline-toolbar toolbutton > button:hover {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -1431,7 +1361,7 @@ button.circular {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
     background-image: linear-gradient(to top, #383838, #3d3d3d 1px); }
   .inline-toolbar toolbutton > button:active, .inline-toolbar toolbutton > button:checked {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     background-image: image(#242424);
@@ -1482,9 +1412,7 @@ button.circular {
           color: #616161; }
 
 toolbar.inline-toolbar toolbutton > button.flat,
-toolbar.inline-toolbar toolbutton:backdrop > button.flat, .linked:not(.vertical) > spinbutton:not(.vertical), .linked:not(.vertical) > entry, .inline-toolbar .app-notification box button.flat, .app-notification box .inline-toolbar button.flat,
-.inline-toolbar .app-notification.frame box button.flat.image-button, .app-notification.frame box .inline-toolbar button.flat.image-button, .inline-toolbar button, .inline-toolbar button:backdrop, .app-notification box .linked > button.flat,
-.app-notification.frame box .linked > button.flat.image-button, .linked > button,
+toolbar.inline-toolbar toolbutton:backdrop > button.flat, .linked:not(.vertical) > spinbutton:not(.vertical), .linked:not(.vertical) > entry, .inline-toolbar button, .inline-toolbar button:backdrop, .linked > button,
 .linked > button:hover,
 .linked > button:active,
 .linked > button:checked,
@@ -1492,7 +1420,7 @@ toolbar.inline-toolbar toolbutton:backdrop > button.flat, .linked:not(.vertical)
   border-radius: 0;
   border-right-style: none; }
 
-.linked:not(.vertical) > spinbutton:first-child:not(.vertical), .linked:not(.vertical) > entry:first-child, .inline-toolbar .app-notification box button.flat:first-child, .app-notification box .inline-toolbar button.flat:first-child, .inline-toolbar button:first-child, .app-notification box .linked > button.flat:first-child, .linked > button:first-child, toolbar.inline-toolbar toolbutton:first-child > button.flat,
+.linked:not(.vertical) > spinbutton:first-child:not(.vertical), .linked:not(.vertical) > entry:first-child, .inline-toolbar button:first-child, .linked > button:first-child, toolbar.inline-toolbar toolbutton:first-child > button.flat,
 toolbar.inline-toolbar toolbutton:backdrop:first-child > button.flat, combobox.linked button:nth-child(2):dir(rtl), .linked:not(.vertical) > combobox:first-child > box > button.combo, filechooser .path-bar.linked > button:dir(ltr):first-child, filechooser .path-bar.linked > button:dir(rtl):last-child {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -1500,7 +1428,7 @@ toolbar.inline-toolbar toolbutton:backdrop:first-child > button.flat, combobox.l
   border-bottom-right-radius: 0;
   border-right-style: none; }
 
-.linked:not(.vertical) > spinbutton:last-child:not(.vertical), .linked:not(.vertical) > entry:last-child, .inline-toolbar .app-notification box button.flat:last-child, .app-notification box .inline-toolbar button.flat:last-child, .inline-toolbar button:last-child, .app-notification box .linked > button.flat:last-child, .linked > button:last-child, toolbar.inline-toolbar toolbutton:last-child > button.flat,
+.linked:not(.vertical) > spinbutton:last-child:not(.vertical), .linked:not(.vertical) > entry:last-child, .inline-toolbar button:last-child, .linked > button:last-child, toolbar.inline-toolbar toolbutton:last-child > button.flat,
 toolbar.inline-toolbar toolbutton:backdrop:last-child > button.flat, combobox.linked button:nth-child(2):dir(ltr), .linked:not(.vertical) > combobox:last-child > box > button.combo, filechooser .path-bar.linked > button:dir(ltr):last-child, filechooser .path-bar.linked > button:dir(rtl):first-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1508,7 +1436,7 @@ toolbar.inline-toolbar toolbutton:backdrop:last-child > button.flat, combobox.li
   border-bottom-right-radius: 4px;
   border-right-style: solid; }
 
-.linked:not(.vertical) > spinbutton:only-child:not(.vertical), .linked:not(.vertical) > entry:only-child, .inline-toolbar .app-notification box button.flat:only-child, .app-notification box .inline-toolbar button.flat:only-child, .inline-toolbar button:only-child, .app-notification box .linked > button.flat:only-child, .linked > button:only-child, toolbar.inline-toolbar toolbutton:only-child > button.flat,
+.linked:not(.vertical) > spinbutton:only-child:not(.vertical), .linked:not(.vertical) > entry:only-child, .inline-toolbar button:only-child, .linked > button:only-child, toolbar.inline-toolbar toolbutton:only-child > button.flat,
 toolbar.inline-toolbar toolbutton:backdrop:only-child > button.flat, .linked:not(.vertical) > combobox:only-child > box > button.combo {
   border-radius: 4px;
   border-style: solid; }
@@ -1517,7 +1445,7 @@ filechooser .path-bar.linked > button:only-child {
   border-radius: 4px;
   border-style: solid; }
 
-.linked.vertical > spinbutton:not(.vertical), .linked.vertical > entry, .app-notification box .linked.vertical > button.flat, .linked.vertical > button,
+.linked.vertical > spinbutton:not(.vertical), .linked.vertical > entry, .linked.vertical > button,
 .linked.vertical > button:hover,
 .linked.vertical > button:active,
 .linked.vertical > button:checked,
@@ -1525,16 +1453,16 @@ filechooser .path-bar.linked > button:only-child {
   border-style: solid solid none solid;
   border-radius: 0; }
 
-.linked.vertical > spinbutton:first-child:not(.vertical), .linked.vertical > entry:first-child, .app-notification box .linked.vertical > button.flat:first-child, .linked.vertical > button:first-child, .linked.vertical > combobox:first-child > box > button.combo {
+.linked.vertical > spinbutton:first-child:not(.vertical), .linked.vertical > entry:first-child, .linked.vertical > button:first-child, .linked.vertical > combobox:first-child > box > button.combo {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px; }
 
-.linked.vertical > spinbutton:last-child:not(.vertical), .linked.vertical > entry:last-child, .app-notification box .linked.vertical > button.flat:last-child, .linked.vertical > button:last-child, .linked.vertical > combobox:last-child > box > button.combo {
+.linked.vertical > spinbutton:last-child:not(.vertical), .linked.vertical > entry:last-child, .linked.vertical > button:last-child, .linked.vertical > combobox:last-child > box > button.combo {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   border-style: solid; }
 
-.linked.vertical > spinbutton:only-child:not(.vertical), .linked.vertical > entry:only-child, .app-notification box .linked.vertical > button.flat:only-child, .linked.vertical > button:only-child, .linked.vertical > combobox:only-child > box > button.combo {
+.linked.vertical > spinbutton:only-child:not(.vertical), .linked.vertical > entry:only-child, .linked.vertical > button:only-child, .linked.vertical > combobox:only-child > box > button.combo {
   border-radius: 4px;
   border-style: solid; }
 
@@ -1545,43 +1473,19 @@ modelbutton.flat,
 button:visited, button:link:hover, button:link:active, button:link:checked,
 button:visited:hover,
 button:visited:active,
-button:visited:checked, calendar.button, .scale-popup button:hover, .scale-popup button:backdrop:hover, .scale-popup button:backdrop:disabled, .scale-popup button:backdrop, headerbar button.titlebutton.maximize, headerbar button.titlebutton.maximize:backdrop,
-.titlebar button.titlebutton.maximize,
-.titlebar button.titlebutton.maximize:backdrop,
-headerbar.selection-mode button.titlebutton.maximize,
-headerbar.selection-mode button.titlebutton.maximize:backdrop, headerbar button.titlebutton.maximize:hover, headerbar button.titlebutton.maximize:hover:backdrop,
-.titlebar button.titlebutton.maximize:hover,
-.titlebar button.titlebutton.maximize:hover:backdrop,
-headerbar.selection-mode button.titlebutton.maximize:hover,
-headerbar.selection-mode button.titlebutton.maximize:hover:backdrop, headerbar button.titlebutton.maximize:active, headerbar button.titlebutton.maximize:active:backdrop,
-.titlebar button.titlebutton.maximize:active,
-.titlebar button.titlebutton.maximize:active:backdrop,
-headerbar.selection-mode button.titlebutton.maximize:active,
-headerbar.selection-mode button.titlebutton.maximize:active:backdrop, headerbar button.titlebutton.minimize, headerbar button.titlebutton.minimize:backdrop,
-.titlebar button.titlebutton.minimize,
-.titlebar button.titlebutton.minimize:backdrop,
-headerbar.selection-mode button.titlebutton.minimize,
-headerbar.selection-mode button.titlebutton.minimize:backdrop, headerbar button.titlebutton.minimize:hover, headerbar button.titlebutton.minimize:hover:backdrop,
-.titlebar button.titlebutton.minimize:hover,
-.titlebar button.titlebutton.minimize:hover:backdrop,
-headerbar.selection-mode button.titlebutton.minimize:hover,
-headerbar.selection-mode button.titlebutton.minimize:hover:backdrop, headerbar button.titlebutton.minimize:active, headerbar button.titlebutton.minimize:active:backdrop,
-.titlebar button.titlebutton.minimize:active,
-.titlebar button.titlebutton.minimize:active:backdrop,
-headerbar.selection-mode button.titlebutton.minimize:active,
-headerbar.selection-mode button.titlebutton.minimize:active:backdrop, headerbar button.titlebutton.close, headerbar button.titlebutton.close:backdrop,
-.titlebar button.titlebutton.close,
-.titlebar button.titlebutton.close:backdrop,
-headerbar.selection-mode button.titlebutton.close,
-headerbar.selection-mode button.titlebutton.close:backdrop, headerbar button.titlebutton.close:hover, headerbar button.titlebutton.close:hover:backdrop,
-.titlebar button.titlebutton.close:hover,
-.titlebar button.titlebutton.close:hover:backdrop,
-headerbar.selection-mode button.titlebutton.close:hover,
-headerbar.selection-mode button.titlebutton.close:hover:backdrop, headerbar button.titlebutton.close:active, headerbar button.titlebutton.close:active:backdrop,
-.titlebar button.titlebutton.close:active,
-.titlebar button.titlebutton.close:active:backdrop,
-headerbar.selection-mode button.titlebutton.close:active,
-headerbar.selection-mode button.titlebutton.close:active:backdrop {
+button:visited:checked, calendar.button, .scale-popup button:hover, .scale-popup button:backdrop:hover, .scale-popup button:backdrop:disabled, .scale-popup button:backdrop, headerbar button.titlebutton:not(.appmenu), headerbar button.titlebutton:not(.appmenu):backdrop,
+.titlebar button.titlebutton:not(.appmenu),
+.titlebar button.titlebutton:not(.appmenu):backdrop,
+headerbar.selection-mode button.titlebutton:not(.appmenu),
+headerbar.selection-mode button.titlebutton:not(.appmenu):backdrop, headerbar button.titlebutton:not(.appmenu):hover, headerbar button.titlebutton:not(.appmenu):hover:backdrop,
+.titlebar button.titlebutton:not(.appmenu):hover,
+.titlebar button.titlebutton:not(.appmenu):hover:backdrop,
+headerbar.selection-mode button.titlebutton:not(.appmenu):hover,
+headerbar.selection-mode button.titlebutton:not(.appmenu):hover:backdrop, headerbar button.titlebutton:not(.appmenu):active, headerbar button.titlebutton:not(.appmenu):active:backdrop,
+.titlebar button.titlebutton:not(.appmenu):active,
+.titlebar button.titlebutton:not(.appmenu):active:backdrop,
+headerbar.selection-mode button.titlebutton:not(.appmenu):active,
+headerbar.selection-mode button.titlebutton:not(.appmenu):active:backdrop {
   background-color: transparent;
   background-image: none;
   border-color: transparent;
@@ -1620,7 +1524,7 @@ button.color {
 list row button.image-button:not(.flat) {
   border: 1px solid rgba(36, 36, 36, 0.5); }
   list row button.image-button:not(.flat):hover {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -1629,7 +1533,7 @@ list row button.image-button:not(.flat) {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
     background-image: linear-gradient(to top, #383838, #3d3d3d 1px); }
   list row button.image-button:not(.flat):active, list row button.image-button:not(.flat):checked {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     background-image: image(#242424);
@@ -1760,7 +1664,7 @@ spinbutton:not(.vertical) {
     spinbutton:not(.vertical) button:dir(rtl) {
       border-style: none solid none none; }
     spinbutton:not(.vertical) button:hover {
-      color: #f7f7f7;
+      color: #F7F7F7;
       background-color: rgba(247, 247, 247, 0.05); }
     spinbutton:not(.vertical) button:disabled {
       color: rgba(153, 153, 153, 0.3);
@@ -2050,14 +1954,14 @@ headerbar {
     color: #ffffff;
     border-color: #0a1b0c;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
-    background: #318d3e linear-gradient(to top, #369c45, #39a448);
-    box-shadow: inset 0 1px rgba(56, 145, 69, 0.535); }
+    background: #3EB34F linear-gradient(to top, #46bf58, #4ec25f);
+    box-shadow: inset 0 1px rgba(68, 181, 85, 0.535); }
     .selection-mode .titlebar:backdrop:not(headerbar), .selection-mode.titlebar:backdrop:not(headerbar), .selection-mode
     headerbar:backdrop,
     headerbar.selection-mode:backdrop {
-      background-color: #318d3e;
+      background-color: #3EB34F;
       background-image: none;
-      box-shadow: inset 0 1px rgba(59, 147, 72, 0.442); }
+      box-shadow: inset 0 1px rgba(72, 183, 88, 0.442); }
       .selection-mode .titlebar:backdrop:not(headerbar) label, .selection-mode.titlebar:backdrop:not(headerbar) label, .selection-mode
       headerbar:backdrop label,
       headerbar.selection-mode:backdrop label {
@@ -2068,12 +1972,12 @@ headerbar {
     headerbar.selection-mode button {
       color: #ffffff;
       outline-color: rgba(255, 255, 255, 0.3);
-      border-color: #24672e;
-      border-bottom-color: #17411d;
-      background-image: linear-gradient(to top, #30893d 2px, #318d3e);
-      text-shadow: 0 -1px rgba(0, 0, 0, 0.701961);
-      -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.701961);
-      box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
+      border-color: #318d3e;
+      border-bottom-color: #24672e;
+      background-image: linear-gradient(to top, #3daf4d 2px, #3EB34F);
+      text-shadow: 0 -1px rgba(0, 0, 0, 0.621961);
+      -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.621961);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07); }
       .selection-mode .titlebar:not(headerbar) button.flat, .selection-mode.titlebar:not(headerbar) button.flat, .selection-mode
       headerbar button.flat,
       headerbar.selection-mode button.flat {
@@ -2088,12 +1992,12 @@ headerbar {
       headerbar.selection-mode button:hover {
         color: #ffffff;
         outline-color: rgba(255, 255, 255, 0.3);
-        border-color: #24672e;
-        border-bottom-color: #17411d;
-        text-shadow: 0 -1px rgba(0, 0, 0, 0.653961);
-        -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.653961);
-        box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
-        background-image: linear-gradient(to top, #30893d, #329140 1px); }
+        border-color: #318d3e;
+        border-bottom-color: #24672e;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.573961);
+        -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.573961);
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
+        background-image: linear-gradient(to top, #3daf4d, #3fb751 1px); }
       .selection-mode .titlebar:not(headerbar) button:active, .selection-mode .titlebar:not(headerbar) button:checked, .selection-mode .titlebar:not(headerbar) button.toggle:checked, .selection-mode .titlebar:not(headerbar) button.toggle:active, .selection-mode.titlebar:not(headerbar) button:active, .selection-mode.titlebar:not(headerbar) button:checked, .selection-mode.titlebar:not(headerbar) button.toggle:checked, .selection-mode.titlebar:not(headerbar) button.toggle:active, .selection-mode
       headerbar button:active, .selection-mode
       headerbar button:checked, .selection-mode
@@ -2105,8 +2009,8 @@ headerbar {
       headerbar.selection-mode button.toggle:active {
         color: #ffffff;
         outline-color: rgba(255, 255, 255, 0.3);
-        border-color: #24672e;
-        background-image: image(#256b2f);
+        border-color: #318d3e;
+        background-image: image(#329140);
         box-shadow: inset 0 1px rgba(255, 255, 255, 0);
         text-shadow: none;
         -gtk-icon-shadow: none; }
@@ -2115,8 +2019,8 @@ headerbar {
       headerbar button:backdrop,
       headerbar.selection-mode button:backdrop.flat,
       headerbar.selection-mode button:backdrop {
-        border-color: #24672e;
-        background-image: image(#318d3e);
+        border-color: #318d3e;
+        background-image: image(#3EB34F);
         text-shadow: none;
         -gtk-icon-shadow: none;
         box-shadow: inset 0 1px rgba(255, 255, 255, 0);
@@ -2131,7 +2035,7 @@ headerbar {
         headerbar.selection-mode button:backdrop.flat,
         headerbar.selection-mode button:backdrop label,
         headerbar.selection-mode button:backdrop {
-          color: #d6e8d8; }
+          color: #d8f0dc; }
         .selection-mode .titlebar:not(headerbar) button:backdrop.flat:active, .selection-mode .titlebar:not(headerbar) button:backdrop.flat:checked, .selection-mode .titlebar:not(headerbar) button:backdrop:active, .selection-mode .titlebar:not(headerbar) button:backdrop:checked, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:active, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:checked, .selection-mode.titlebar:not(headerbar) button:backdrop:active, .selection-mode.titlebar:not(headerbar) button:backdrop:checked, .selection-mode
         headerbar button:backdrop.flat:active, .selection-mode
         headerbar button:backdrop.flat:checked, .selection-mode
@@ -2141,8 +2045,8 @@ headerbar {
         headerbar.selection-mode button:backdrop.flat:checked,
         headerbar.selection-mode button:backdrop:active,
         headerbar.selection-mode button:backdrop:checked {
-          border-color: #24672e;
-          background-image: image(#2b7035);
+          border-color: #318d3e;
+          background-image: image(#369144);
           box-shadow: inset 0 1px rgba(255, 255, 255, 0);
           border-color: #0a1b0c; }
           .selection-mode .titlebar:not(headerbar) button:backdrop.flat:active label, .selection-mode .titlebar:not(headerbar) button:backdrop.flat:active, .selection-mode .titlebar:not(headerbar) button:backdrop.flat:checked label, .selection-mode .titlebar:not(headerbar) button:backdrop.flat:checked, .selection-mode .titlebar:not(headerbar) button:backdrop:active label, .selection-mode .titlebar:not(headerbar) button:backdrop:active, .selection-mode .titlebar:not(headerbar) button:backdrop:checked label, .selection-mode .titlebar:not(headerbar) button:backdrop:checked, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:active label, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:active, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:checked label, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:checked, .selection-mode.titlebar:not(headerbar) button:backdrop:active label, .selection-mode.titlebar:not(headerbar) button:backdrop:active, .selection-mode.titlebar:not(headerbar) button:backdrop:checked label, .selection-mode.titlebar:not(headerbar) button:backdrop:checked, .selection-mode
@@ -2162,14 +2066,14 @@ headerbar {
           headerbar.selection-mode button:backdrop:active,
           headerbar.selection-mode button:backdrop:checked label,
           headerbar.selection-mode button:backdrop:checked {
-            color: #d5e2d7; }
+            color: #d7e9da; }
         .selection-mode .titlebar:not(headerbar) button:backdrop.flat:disabled, .selection-mode .titlebar:not(headerbar) button:backdrop:disabled, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:disabled, .selection-mode.titlebar:not(headerbar) button:backdrop:disabled, .selection-mode
         headerbar button:backdrop.flat:disabled, .selection-mode
         headerbar button:backdrop:disabled,
         headerbar.selection-mode button:backdrop.flat:disabled,
         headerbar.selection-mode button:backdrop:disabled {
-          border-color: #24672e;
-          background-image: image(#317f3c);
+          border-color: #318d3e;
+          background-image: image(#3ca04b);
           text-shadow: none;
           -gtk-icon-shadow: none;
           box-shadow: inset 0 1px rgba(255, 255, 255, 0);
@@ -2183,7 +2087,7 @@ headerbar {
           headerbar.selection-mode button:backdrop.flat:disabled,
           headerbar.selection-mode button:backdrop:disabled label,
           headerbar.selection-mode button:backdrop:disabled {
-            color: #79ac80; }
+            color: #80c18a; }
           .selection-mode .titlebar:not(headerbar) button:backdrop.flat:disabled:active, .selection-mode .titlebar:not(headerbar) button:backdrop.flat:disabled:checked, .selection-mode .titlebar:not(headerbar) button:backdrop:disabled:active, .selection-mode .titlebar:not(headerbar) button:backdrop:disabled:checked, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:disabled:active, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:disabled:checked, .selection-mode.titlebar:not(headerbar) button:backdrop:disabled:active, .selection-mode.titlebar:not(headerbar) button:backdrop:disabled:checked, .selection-mode
           headerbar button:backdrop.flat:disabled:active, .selection-mode
           headerbar button:backdrop.flat:disabled:checked, .selection-mode
@@ -2193,8 +2097,8 @@ headerbar {
           headerbar.selection-mode button:backdrop.flat:disabled:checked,
           headerbar.selection-mode button:backdrop:disabled:active,
           headerbar.selection-mode button:backdrop:disabled:checked {
-            border-color: #24672e;
-            background-image: image(#2b7035);
+            border-color: #318d3e;
+            background-image: image(#369144);
             box-shadow: inset 0 1px rgba(255, 255, 255, 0);
             border-color: #0a1b0c; }
             .selection-mode .titlebar:not(headerbar) button:backdrop.flat:disabled:active label, .selection-mode .titlebar:not(headerbar) button:backdrop.flat:disabled:checked label, .selection-mode .titlebar:not(headerbar) button:backdrop:disabled:active label, .selection-mode .titlebar:not(headerbar) button:backdrop:disabled:checked label, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:disabled:active label, .selection-mode.titlebar:not(headerbar) button:backdrop.flat:disabled:checked label, .selection-mode.titlebar:not(headerbar) button:backdrop:disabled:active label, .selection-mode.titlebar:not(headerbar) button:backdrop:disabled:checked label, .selection-mode
@@ -2206,7 +2110,7 @@ headerbar {
             headerbar.selection-mode button:backdrop.flat:disabled:checked label,
             headerbar.selection-mode button:backdrop:disabled:active label,
             headerbar.selection-mode button:backdrop:disabled:checked label {
-              color: #75a27c; }
+              color: #7db885; }
       .selection-mode .titlebar:not(headerbar) button.flat:backdrop, .selection-mode .titlebar:not(headerbar) button.flat:disabled, .selection-mode .titlebar:not(headerbar) button.flat:backdrop:disabled, .selection-mode.titlebar:not(headerbar) button.flat:backdrop, .selection-mode.titlebar:not(headerbar) button.flat:disabled, .selection-mode.titlebar:not(headerbar) button.flat:backdrop:disabled, .selection-mode
       headerbar button.flat:backdrop, .selection-mode
       headerbar button.flat:disabled, .selection-mode
@@ -2223,8 +2127,8 @@ headerbar {
       .selection-mode .titlebar:not(headerbar) button:disabled, .selection-mode.titlebar:not(headerbar) button:disabled, .selection-mode
       headerbar button:disabled,
       headerbar.selection-mode button:disabled {
-        border-color: #24672e;
-        background-image: image(#317f3c);
+        border-color: #318d3e;
+        background-image: image(#3ca04b);
         text-shadow: none;
         -gtk-icon-shadow: none;
         box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
@@ -2233,14 +2137,14 @@ headerbar {
         headerbar button:disabled,
         headerbar.selection-mode button:disabled label,
         headerbar.selection-mode button:disabled {
-          color: #98bf9e; }
+          color: #9ed0a5; }
         .selection-mode .titlebar:not(headerbar) button:disabled:active, .selection-mode .titlebar:not(headerbar) button:disabled:checked, .selection-mode.titlebar:not(headerbar) button:disabled:active, .selection-mode.titlebar:not(headerbar) button:disabled:checked, .selection-mode
         headerbar button:disabled:active, .selection-mode
         headerbar button:disabled:checked,
         headerbar.selection-mode button:disabled:active,
         headerbar.selection-mode button:disabled:checked {
-          border-color: #24672e;
-          background-image: image(#286932);
+          border-color: #318d3e;
+          background-image: image(#348a41);
           box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
           .selection-mode .titlebar:not(headerbar) button:disabled:active label, .selection-mode .titlebar:not(headerbar) button:disabled:active, .selection-mode .titlebar:not(headerbar) button:disabled:checked label, .selection-mode .titlebar:not(headerbar) button:disabled:checked, .selection-mode.titlebar:not(headerbar) button:disabled:active label, .selection-mode.titlebar:not(headerbar) button:disabled:active, .selection-mode.titlebar:not(headerbar) button:disabled:checked label, .selection-mode.titlebar:not(headerbar) button:disabled:checked, .selection-mode
           headerbar button:disabled:active label, .selection-mode
@@ -2251,11 +2155,11 @@ headerbar {
           headerbar.selection-mode button:disabled:active,
           headerbar.selection-mode button:disabled:checked label,
           headerbar.selection-mode button:disabled:checked {
-            color: #a9c3ad; }
+            color: #aed0b3; }
       .selection-mode .titlebar:not(headerbar) button.suggested-action, .selection-mode.titlebar:not(headerbar) button.suggested-action, .selection-mode
       headerbar button.suggested-action,
       headerbar.selection-mode button.suggested-action {
-        color: #f7f7f7;
+        color: #F7F7F7;
         outline-color: rgba(247, 247, 247, 0.3);
         border-color: #242424;
         border-bottom-color: #0d0d0d;
@@ -2267,7 +2171,7 @@ headerbar {
         .selection-mode .titlebar:not(headerbar) button.suggested-action:hover, .selection-mode.titlebar:not(headerbar) button.suggested-action:hover, .selection-mode
         headerbar button.suggested-action:hover,
         headerbar.selection-mode button.suggested-action:hover {
-          color: #f7f7f7;
+          color: #F7F7F7;
           outline-color: rgba(247, 247, 247, 0.3);
           border-color: #242424;
           border-bottom-color: #0d0d0d;
@@ -2279,7 +2183,7 @@ headerbar {
         .selection-mode .titlebar:not(headerbar) button.suggested-action:active, .selection-mode.titlebar:not(headerbar) button.suggested-action:active, .selection-mode
         headerbar button.suggested-action:active,
         headerbar.selection-mode button.suggested-action:active {
-          color: #f7f7f7;
+          color: #F7F7F7;
           outline-color: rgba(247, 247, 247, 0.3);
           border-color: #242424;
           background-image: image(#242424);
@@ -2337,8 +2241,8 @@ headerbar {
     headerbar .selection-menu,
     headerbar.selection-mode .selection-menu:backdrop,
     headerbar.selection-mode .selection-menu {
-      border-color: rgba(49, 141, 62, 0);
-      background-color: rgba(49, 141, 62, 0);
+      border-color: rgba(62, 179, 79, 0);
+      background-color: rgba(62, 179, 79, 0);
       background-image: none;
       box-shadow: none;
       min-height: 20px;
@@ -2543,7 +2447,7 @@ window.devel headerbar.titlebar:not(.selection-mode) {
   background: #3a3a3a -gtk-icontheme("system-run-symbolic") 90% 0/256px 256px no-repeat, linear-gradient(to right, transparent 65%, rgba(55, 188, 190, 0.1)), linear-gradient(to top, #292929 3px, #2e2e2e);
   color: rgba(247, 247, 247, 0.1); }
   window.devel headerbar.titlebar:not(.selection-mode) label {
-    color: #f7f7f7; }
+    color: #F7F7F7; }
   window.devel headerbar.titlebar:not(.selection-mode):backdrop {
     background: #3a3a3a -gtk-icontheme("system-run-symbolic") 90% 0/256px 256px no-repeat, image(#3a3a3a);
     /* background-color would flash */
@@ -2663,7 +2567,7 @@ treeview.view {
       box-shadow: none;
       transition: none; }
     treeview.view header button:active {
-      color: #f7f7f7;
+      color: #F7F7F7;
       transition: none; }
   treeview.view button.dnd:active, treeview.view button.dnd:selected, treeview.view button.dnd:hover, treeview.view button.dnd,
   treeview.view header.button.dnd:active,
@@ -3005,7 +2909,7 @@ notebook > header {
         border-color: transparent;
         background-color: transparent; }
     notebook > header tab:checked {
-      color: #f7f7f7; }
+      color: #F7F7F7; }
       notebook > header tab:checked.reorderable-page {
         border-color: rgba(36, 36, 36, 0.5);
         background-color: rgba(58, 58, 58, 0.5); }
@@ -3124,12 +3028,12 @@ scrollbar {
       margin: 0;
       min-width: 3px;
       min-height: 3px;
-      background-color: #f7f7f7;
+      background-color: #F7F7F7;
       border: 1px solid black; }
     scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
       min-width: 5px;
       min-height: 5px;
-      background-color: #f7f7f7;
+      background-color: #F7F7F7;
       background-clip: padding-box;
       border-radius: 100%;
       border: 1px solid black;
@@ -3226,14 +3130,14 @@ switch {
   outline-offset: -4px;
   border: 1px solid #242424;
   border-radius: 14px;
-  color: #f7f7f7;
+  color: #F7F7F7;
   background-color: #2f2f2f;
   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
   /* only show i / o for the accessible theme */ }
   switch:checked {
     color: #ffffff;
     border-color: #0a1b0c;
-    background-color: #318d3e;
+    background-color: #3EB34F;
     text-shadow: 0 1px rgba(10, 27, 12, 0.5), 0 0 2px rgba(255, 255, 255, 0.6); }
   switch:disabled {
     color: #999999;
@@ -3248,7 +3152,7 @@ switch {
     transition: 200ms ease-out; }
     switch:backdrop:checked {
       border-color: #0a1b0c;
-      background-color: #318d3e; }
+      background-color: #3EB34F; }
     switch:backdrop:disabled {
       color: #616161;
       border-color: #282828;
@@ -3261,7 +3165,7 @@ switch {
     border-radius: 50%;
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -gtk-outline-radius: 20px;
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #171717;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.768627);
@@ -3271,7 +3175,7 @@ switch {
   switch image {
     color: transparent; }
   switch:hover slider {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #171717;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
@@ -3315,7 +3219,7 @@ switch {
   min-width: 32px;
   min-height: 32px;
   color: transparent;
-  background-color: rgba(49, 141, 62, 0.95);
+  background-color: rgba(62, 179, 79, 0.95);
   border-radius: 5px;
   background-image: none;
   transition: 200ms;
@@ -3330,7 +3234,7 @@ switch {
   min-width: 32px;
   min-height: 32px;
   color: transparent;
-  background-color: rgba(49, 141, 62, 0.95);
+  background-color: rgba(62, 179, 79, 0.95);
   border-radius: 5px;
   background-image: none;
   transition: 200ms;
@@ -3345,7 +3249,7 @@ switch {
   min-width: 32px;
   min-height: 32px;
   color: transparent;
-  background-color: rgba(49, 141, 62, 0.95);
+  background-color: rgba(62, 179, 79, 0.95);
   border-radius: 5px;
   background-image: none;
   transition: 200ms;
@@ -3360,7 +3264,7 @@ switch {
   min-width: 32px;
   min-height: 32px;
   color: transparent;
-  background-color: rgba(95, 95, 95, 0.95);
+  background-color: rgba(121, 121, 121, 0.95);
   border-radius: 5px;
   background-image: none;
   transition: 200ms;
@@ -3375,7 +3279,7 @@ switch {
   min-width: 32px;
   min-height: 32px;
   color: #eeeeec;
-  background-color: rgba(49, 141, 62, 0.95);
+  background-color: rgba(62, 179, 79, 0.95);
   border-radius: 5px;
   background-image: none;
   transition: 200ms;
@@ -3390,7 +3294,7 @@ switch {
   min-width: 32px;
   min-height: 32px;
   color: #eeeeec;
-  background-color: rgba(49, 141, 62, 0.95);
+  background-color: rgba(62, 179, 79, 0.95);
   border-radius: 5px;
   background-image: none;
   transition: 200ms;
@@ -3405,7 +3309,7 @@ switch {
   min-width: 32px;
   min-height: 32px;
   color: #eeeeec;
-  background-color: rgba(49, 141, 62, 0.95);
+  background-color: rgba(62, 179, 79, 0.95);
   border-radius: 5px;
   background-image: none;
   transition: 200ms;
@@ -3420,7 +3324,7 @@ switch {
   min-width: 32px;
   min-height: 32px;
   color: rgba(238, 238, 236, 0.8);
-  background-color: rgba(95, 95, 95, 0.95);
+  background-color: rgba(121, 121, 121, 0.95);
   border-radius: 5px;
   background-image: none;
   transition: 200ms;
@@ -3444,7 +3348,7 @@ radio {
   min-width: 14px;
   border: 1px solid;
   -gtk-icon-source: none;
-  color: #f7f7f7;
+  color: #F7F7F7;
   outline-color: rgba(247, 247, 247, 0.3);
   border-color: #0d0d0d;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
@@ -3466,12 +3370,12 @@ radio {
   radio:hover {
     color: #ffffff;
     outline-color: rgba(255, 255, 255, 0.3);
-    border-color: #17411d;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
-    background-image: linear-gradient(to bottom, #318d3e 20%, #2c7e38 90%); }
+    border-color: #24672e;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
+    background-image: linear-gradient(to bottom, #3EB34F 20%, #39a448 90%); }
   check:hover:not(:checked),
   radio:hover:not(:checked) {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #0d0d0d;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
@@ -3480,8 +3384,8 @@ radio {
   radio:active {
     color: #ffffff;
     outline-color: rgba(255, 255, 255, 0.3);
-    border-color: #24672e;
-    background-image: image(#256b2f);
+    border-color: #318d3e;
+    background-image: image(#329140);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0);
     text-shadow: none;
     -gtk-icon-shadow: none; }
@@ -3489,11 +3393,11 @@ radio {
   radio:checked {
     color: #ffffff;
     outline-color: rgba(255, 255, 255, 0.3);
-    border-color: #17411d;
-    text-shadow: 0 -1px rgba(0, 0, 0, 0.701961);
-    -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.701961);
-    background-image: linear-gradient(to bottom, #2d8239 20%, #297634 90%);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07); }
+    border-color: #24672e;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.621961);
+    -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.621961);
+    background-image: linear-gradient(to bottom, #3aa84a 20%, #369c45 90%);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07); }
   check:disabled,
   radio:disabled {
     border-color: #242424;
@@ -3737,7 +3641,7 @@ scale {
       border-color: transparent;
       background-color: transparent; }
   scale slider {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #0d0d0d;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
@@ -3749,7 +3653,7 @@ scale {
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition-property: background, border, box-shadow; }
     scale slider:hover {
-      color: #f7f7f7;
+      color: #F7F7F7;
       outline-color: rgba(247, 247, 247, 0.3);
       border-color: #0d0d0d;
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
@@ -4407,7 +4311,7 @@ levelbar block {
  * Print dialog *
 *****************/
 printdialog paper {
-  color: #f7f7f7;
+  color: #F7F7F7;
   border: 1px solid #242424;
   background: white;
   padding: 0; }
@@ -4611,7 +4515,7 @@ calendar {
   calendar.button {
     color: rgba(247, 247, 247, 0.45); }
     calendar.button:hover {
-      color: #f7f7f7; }
+      color: #F7F7F7; }
     calendar.button:backdrop {
       color: rgba(153, 153, 153, 0.45); }
     calendar.button:disabled {
@@ -4702,7 +4606,7 @@ separator.sidebar {
     background-color: #282828; }
   separator.sidebar.selection-mode,
   .selection-mode separator.sidebar {
-    background-color: #17411d; }
+    background-color: #24672e; }
 
 /****************
  * File chooser *
@@ -4840,11 +4744,11 @@ infobar {
       background-color: #1f1f1f;
       border-bottom: 1px solid #303030; }
       infobar.info:backdrop > revealer > box label, infobar.info:backdrop > revealer > box, infobar.info > revealer > box label, infobar.info > revealer > box, infobar.question:backdrop > revealer > box label, infobar.question:backdrop > revealer > box, infobar.question > revealer > box label, infobar.question > revealer > box, infobar.warning:backdrop > revealer > box label, infobar.warning:backdrop > revealer > box, infobar.warning > revealer > box label, infobar.warning > revealer > box, infobar.error:backdrop > revealer > box label, infobar.error:backdrop > revealer > box, infobar.error > revealer > box label, infobar.error > revealer > box {
-        color: #f7f7f7; }
+        color: #F7F7F7; }
     infobar.info:backdrop, infobar.question:backdrop, infobar.warning:backdrop, infobar.error:backdrop {
       text-shadow: none; }
     infobar.info button, infobar.question button, infobar.warning button, infobar.error button {
-      color: #f7f7f7;
+      color: #F7F7F7;
       outline-color: rgba(247, 247, 247, 0.3);
       border-color: #242424;
       border-bottom-color: #0d0d0d;
@@ -4853,7 +4757,7 @@ infobar {
       -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
       infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover {
-        color: #f7f7f7;
+        color: #F7F7F7;
         outline-color: rgba(247, 247, 247, 0.3);
         border-color: #242424;
         border-bottom-color: #0d0d0d;
@@ -4862,7 +4766,7 @@ infobar {
         box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
         background-image: linear-gradient(to top, #383838, #3d3d3d 1px); }
       infobar.info button:active, infobar.info button:checked, infobar.question button:active, infobar.question button:checked, infobar.warning button:active, infobar.warning button:checked, infobar.error button:active, infobar.error button:checked {
-        color: #f7f7f7;
+        color: #F7F7F7;
         outline-color: rgba(247, 247, 247, 0.3);
         border-color: #242424;
         background-image: image(#242424);
@@ -4896,7 +4800,7 @@ infobar {
           infobar.info button:backdrop:disabled label, infobar.info button:backdrop:disabled, infobar.question button:backdrop:disabled label, infobar.question button:backdrop:disabled, infobar.warning button:backdrop:disabled label, infobar.warning button:backdrop:disabled, infobar.error button:backdrop:disabled label, infobar.error button:backdrop:disabled {
             color: #616161; }
       infobar.info button:backdrop label, infobar.info button:backdrop, infobar.info button label, infobar.info button, infobar.question button:backdrop label, infobar.question button:backdrop, infobar.question button label, infobar.question button, infobar.warning button:backdrop label, infobar.warning button:backdrop, infobar.warning button label, infobar.warning button, infobar.error button:backdrop label, infobar.error button:backdrop, infobar.error button label, infobar.error button {
-        color: #f7f7f7; }
+        color: #F7F7F7; }
     infobar.info selection, infobar.question selection, infobar.warning selection, infobar.error selection {
       background-color: #212121; }
     infobar.info *:link, infobar.info button:link,
@@ -5000,7 +4904,7 @@ colorswatch#add-color-button {
   colorswatch#add-color-button:only-child {
     border-radius: 5px; }
   colorswatch#add-color-button overlay {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -5009,7 +4913,7 @@ colorswatch#add-color-button {
     -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
     colorswatch#add-color-button overlay:hover {
-      color: #f7f7f7;
+      color: #F7F7F7;
       outline-color: rgba(247, 247, 247, 0.3);
       border-color: #242424;
       border-bottom-color: #0d0d0d;
@@ -5119,8 +5023,8 @@ button.titlebutton {
 .selection-mode .titlebar button.titlebutton,
 headerbar.selection-mode button.titlebutton,
 .titlebar.selection-mode button.titlebutton {
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.701961);
-  -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.701961); }
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.621961);
+  -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.621961); }
   .selection-mode headerbar button.titlebutton:backdrop,
   .selection-mode .titlebar button.titlebutton:backdrop,
   headerbar.selection-mode button.titlebutton:backdrop,
@@ -5208,7 +5112,7 @@ cursor-handle {
   padding-bottom: 3px;
   padding-left: 6px;
   padding-right: 6px;
-  color: #f7f7f7;
+  color: #F7F7F7;
   background-color: #323232;
   border: 1px solid;
   border-color: #242424;
@@ -5298,6 +5202,7 @@ popover.emoji-completion contents row box {
 popover.emoji-completion .emoji:hover {
   background: rgba(247, 247, 247, 0.15); }
 
+/* set $ambiance to null, unless already defined */
 /***********
  * Tweak Tool *
  ***********/
@@ -5313,7 +5218,7 @@ list.tweak-categories separator {
   .nautilus-window:backdrop {
     background-color: #343434; }
   .nemo-window .view:backdrop, .nemo-window iconview:backdrop,
-  *scrolledwindow:backdrop {
+  .nautilus-window *scrolledwindow:backdrop {
     opacity: 0.9; }
   .nautilus-window paned box.floating-bar {
     background: #3a3a3a;
@@ -5377,15 +5282,15 @@ list.tweak-categories separator {
     border-width: 0px 1px 0px 1px;
     border-radius: 0px 0px 0px 0px; }
 
-/***********
+/************
  * Terminal *
- ***********/
+ ************/
 terminal-window .terminal-screen {
   background-color: #326868;
   color: white; }
   terminal-window .terminal-screen:backdrop {
     background-color: #356f6f;
-    color: #999999; }
+    color: #d6d6d6; }
 
 terminal-window notebook scrollbar {
   background-color: transparent;
@@ -5533,7 +5438,7 @@ headerbar button image ~ window decoration ~ menu separator {
   .nemo-window toolbar.horizontal.primary-toolbar .linked button {
     margin-right: 0; }
   .nemo-window toolbar.horizontal.primary-toolbar button {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -5542,7 +5447,7 @@ headerbar button image ~ window decoration ~ menu separator {
     -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
   .nemo-window toolbar.horizontal.primary-toolbar button:hover {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -5551,7 +5456,7 @@ headerbar button image ~ window decoration ~ menu separator {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
     background-image: linear-gradient(to top, #383838, #3d3d3d 1px); }
   .nemo-window toolbar.horizontal.primary-toolbar button:active, .nemo-window toolbar.horizontal.primary-toolbar button:checked {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     background-image: image(#242424);
@@ -5652,7 +5557,7 @@ window.background.chromium menu {
   border: 1px solid #404040; }
 
 normal-button {
-  color: #f7f7f7;
+  color: #F7F7F7;
   outline-color: rgba(247, 247, 247, 0.3);
   border-color: #242424;
   border-bottom-color: #0d0d0d;
@@ -5661,7 +5566,7 @@ normal-button {
   -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
   normal-button:hover {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     border-bottom-color: #0d0d0d;
@@ -5670,7 +5575,7 @@ normal-button {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
     background-image: linear-gradient(to top, #383838, #3d3d3d 1px); }
   normal-button:active {
-    color: #f7f7f7;
+    color: #F7F7F7;
     outline-color: rgba(247, 247, 247, 0.3);
     border-color: #242424;
     background-image: image(#242424);
@@ -5714,6 +5619,58 @@ normal-button {
 assistant.background scrolledwindow .vertical checkbutton {
   margin-left: 1px; }
 
+/***********
+* Unity7 *
+***********/
+UnityDecoration {
+  -UnityDecoration-extents: 24px 1px 1px 1px;
+  -UnityDecoration-input-extents: 10px;
+  -UnityDecoration-shadow-offset-x: 1px;
+  -UnityDecoration-shadow-offset-y: 1px;
+  -UnityDecoration-active-shadow-color: rgba(0, 0, 0, 0.5);
+  -UnityDecoration-active-shadow-radius: 10px;
+  -UnityDecoration-inactive-shadow-color: rgba(0, 0, 0, 0.001);
+  -UnityDecoration-inactive-shadow-radius: 0px;
+  -UnityDecoration-glow-size: 0px;
+  -UnityDecoration-glow-color: #37bcbe;
+  -UnityDecoration-title-indent: 0px;
+  -UnityDecoration-title-fade: 0px;
+  -UnityDecoration-title-alignment: 0; }
+  UnityDecoration .top {
+    border: none;
+    border-radius: 7px 7px 0 0;
+    padding: 1px 7px 0 7px;
+    background-color: #323030;
+    color: #F7F7F7;
+    text-shadow: none;
+    box-shadow: inset 0 1px #474444; }
+    UnityDecoration .top:backdrop {
+      border: none;
+      background-color: #323030;
+      color: #bcbbbb;
+      box-shadow: none; }
+  UnityDecoration .left, UnityDecoration .right, UnityDecoration .bottom {
+    background-color: transparent; }
+    UnityDecoration .left:backdrop, UnityDecoration .right:backdrop, UnityDecoration .bottom:backdrop {
+      background-color: transparent; }
+
+UnityPanelWidget, .unity-panel {
+  background-color: #1d1d1d;
+  color: #F7F7F7;
+  border: 0; }
+
+.unity-panel.menuitem, .unity-panel .menuitem {
+  border-width: 0 1px;
+  color: #F7F7F7;
+  background-color: transparent; }
+  .unity-panel.menuitem:hover, .unity-panel.menuitem *:hover, .unity-panel .menuitem:hover, .unity-panel .menuitem *:hover {
+    box-shadow: inset 0 -2px 0 0 #37bcbe;
+    background-color: transparent;
+    color: #F7F7F7; }
+
+SheetStyleDialog.unity-force-quit {
+  background-color: #3a3a3a; }
+
 headerbar * {
   text-shadow: none;
   -gtk-icon-shadow: none; }
@@ -5724,49 +5681,53 @@ headerbar * {
 spinner:not(:backdrop) {
   color: #19B6EE; }
 
-button.titlebutton.maximize, button.titlebutton.minimize, button.titlebutton.close {
-  border-radius: 4px;
+button.titlebutton:not(.appmenu) {
   min-height: 24px;
   min-width: 24px;
   padding: 2px; }
-  button.titlebutton.maximize.maximize:hover, button.titlebutton.maximize.maximize:backdrop:hover, button.titlebutton.maximize.minimize:hover, button.titlebutton.maximize.minimize:backdrop:hover, button.titlebutton.minimize.maximize:hover, button.titlebutton.minimize.maximize:backdrop:hover, button.titlebutton.minimize.minimize:hover, button.titlebutton.minimize.minimize:backdrop:hover, button.titlebutton.close.maximize:hover, button.titlebutton.close.maximize:backdrop:hover, button.titlebutton.close.minimize:hover, button.titlebutton.close.minimize:backdrop:hover {
+  headerbar button.titlebutton:not(.appmenu).maximize:hover, headerbar button.titlebutton:not(.appmenu).maximize:backdrop:hover, headerbar button.titlebutton:not(.appmenu).minimize:hover, headerbar button.titlebutton:not(.appmenu).minimize:backdrop:hover,
+  .titlebar button.titlebutton:not(.appmenu).maximize:hover,
+  .titlebar button.titlebutton:not(.appmenu).maximize:backdrop:hover,
+  .titlebar button.titlebutton:not(.appmenu).minimize:hover,
+  .titlebar button.titlebutton:not(.appmenu).minimize:backdrop:hover,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).maximize:hover,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).maximize:backdrop:hover,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).minimize:hover,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).minimize:backdrop:hover, button.titlebutton:not(.appmenu).maximize:hover, button.titlebutton:not(.appmenu).maximize:backdrop:hover, button.titlebutton:not(.appmenu).minimize:hover, button.titlebutton:not(.appmenu).minimize:backdrop:hover {
     background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(rgba(247, 247, 247, 0.15)), to(transparent)); }
-  button.titlebutton.maximize.maximize:active, button.titlebutton.maximize.maximize:backdrop:active, button.titlebutton.maximize.minimize:active, button.titlebutton.maximize.minimize:backdrop:active, button.titlebutton.minimize.maximize:active, button.titlebutton.minimize.maximize:backdrop:active, button.titlebutton.minimize.minimize:active, button.titlebutton.minimize.minimize:backdrop:active, button.titlebutton.close.maximize:active, button.titlebutton.close.maximize:backdrop:active, button.titlebutton.close.minimize:active, button.titlebutton.close.minimize:backdrop:active {
+  headerbar button.titlebutton:not(.appmenu).maximize:active, headerbar button.titlebutton:not(.appmenu).maximize:backdrop:active, headerbar button.titlebutton:not(.appmenu).minimize:active, headerbar button.titlebutton:not(.appmenu).minimize:backdrop:active,
+  .titlebar button.titlebutton:not(.appmenu).maximize:active,
+  .titlebar button.titlebutton:not(.appmenu).maximize:backdrop:active,
+  .titlebar button.titlebutton:not(.appmenu).minimize:active,
+  .titlebar button.titlebutton:not(.appmenu).minimize:backdrop:active,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).maximize:active,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).maximize:backdrop:active,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).minimize:active,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).minimize:backdrop:active, button.titlebutton:not(.appmenu).maximize:active, button.titlebutton:not(.appmenu).maximize:backdrop:active, button.titlebutton:not(.appmenu).minimize:active, button.titlebutton:not(.appmenu).minimize:backdrop:active {
     background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(rgba(247, 247, 247, 0.25)), to(transparent)); }
-  button.titlebutton.maximize.close, button.titlebutton.minimize.close, button.titlebutton.close.close {
+  headerbar button.titlebutton:not(.appmenu).close,
+  .titlebar button.titlebutton:not(.appmenu).close,
+  headerbar.selection-mode button.titlebutton:not(.appmenu).close, button.titlebutton:not(.appmenu).close {
     color: #ffffff;
     background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#37bcbe), to(transparent)); }
-    button.titlebutton.maximize.close:hover, button.titlebutton.minimize.close:hover, button.titlebutton.close.close:hover {
+    headerbar button.titlebutton:not(.appmenu).close:hover,
+    .titlebar button.titlebutton:not(.appmenu).close:hover,
+    headerbar.selection-mode button.titlebutton:not(.appmenu).close:hover, button.titlebutton:not(.appmenu).close:hover {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#37bcbe), to(transparent));
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#45c7c9), to(transparent)); }
-    button.titlebutton.maximize.close:active, button.titlebutton.minimize.close:active, button.titlebutton.close.close:active {
+    headerbar button.titlebutton:not(.appmenu).close:active,
+    .titlebar button.titlebutton:not(.appmenu).close:active,
+    headerbar.selection-mode button.titlebutton:not(.appmenu).close:active, button.titlebutton:not(.appmenu).close:active {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#37bcbe), to(transparent));
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#31a8aa), to(transparent)); }
-    button.titlebutton.maximize.close:backdrop, button.titlebutton.minimize.close:backdrop, button.titlebutton.close.close:backdrop {
+    headerbar button.titlebutton:not(.appmenu).close:backdrop,
+    .titlebar button.titlebutton:not(.appmenu).close:backdrop,
+    headerbar.selection-mode button.titlebutton:not(.appmenu).close:backdrop, button.titlebutton:not(.appmenu).close:backdrop {
       background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#575757), to(transparent)); }
-      button.titlebutton.maximize.close:backdrop:hover, button.titlebutton.minimize.close:backdrop:hover, button.titlebutton.close.close:backdrop:hover {
+      headerbar button.titlebutton:not(.appmenu).close:backdrop:hover,
+      .titlebar button.titlebutton:not(.appmenu).close:backdrop:hover,
+      headerbar.selection-mode button.titlebutton:not(.appmenu).close:backdrop:hover, button.titlebutton:not(.appmenu).close:backdrop:hover {
         background-image: -gtk-gradient(radial, center center, 0, center center, 0.35714, to(#636363), to(transparent)); }
-
-check:not(.selected), check:hover:not(.selected), check:active:not(.selected), check:checked:not(.selected), check:disabled:not(.selected),
-radio:not(.selected),
-radio:hover:not(.selected),
-radio:active:not(.selected),
-radio:checked:not(.selected),
-radio:disabled:not(.selected) {
-  box-shadow: none;
-  background-image: none;
-  -gtk-icon-shadow: none; }
-
-check:not(:backdrop):checked:not(.selected),
-radio:not(:backdrop):checked:not(.selected) {
-  border-color: #318d3e;
-  background-image: image(#318d3e);
-  color: #ffffff; }
-
-check:not(:backdrop):disabled:checked,
-radio:not(:backdrop):disabled:checked {
-  background-image: image(#34623b);
-  border-color: #34623b; }
 
 headerbar, headerbar.titlebar:not(headerbar) {
   border-color: #212121;
@@ -5776,12 +5737,12 @@ headerbar, headerbar.titlebar:not(headerbar) {
 menu menuitem:hover,
 .menu menuitem:hover,
 .context-menu menuitem:hover {
-  color: #f7f7f7;
+  color: #F7F7F7;
   background-color: rgba(247, 247, 247, 0.15); }
 
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
-  color: #f7f7f7; }
+  color: #F7F7F7; }
 
 .app-notification,
 .app-notification.frame {
@@ -5793,6 +5754,161 @@ menubar > menuitem:hover,
   background-color: #333333;
   border: 1px solid #242424;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+  .app-notification button.text-button, .app-notification button.image-button, .app-notification button, .app-notification button:dir(ltr).text-button, .app-notification button:dir(ltr).image-button, .app-notification button:dir(ltr), .app-notification button:dir(rtl).text-button, .app-notification button:dir(rtl).image-button, .app-notification button:dir(rtl),
+  .app-notification.frame button.text-button,
+  .app-notification.frame button.image-button,
+  .app-notification.frame button,
+  .app-notification.frame button:dir(ltr).text-button,
+  .app-notification.frame button:dir(ltr).image-button,
+  .app-notification.frame button:dir(ltr),
+  .app-notification.frame button:dir(rtl).text-button,
+  .app-notification.frame button:dir(rtl).image-button,
+  .app-notification.frame button:dir(rtl) {
+    color: #F7F7F7;
+    outline-color: rgba(247, 247, 247, 0.3);
+    border-color: #242424;
+    border-bottom-color: #0d0d0d;
+    background-image: linear-gradient(to top, #383838 2px, #3a3a3a);
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
+    -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.816627);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07); }
+    .app-notification button.text-button.flat, .app-notification button.image-button.flat, .app-notification button.flat, .app-notification button:dir(ltr).text-button.flat, .app-notification button:dir(ltr).image-button.flat, .app-notification button:dir(ltr).flat, .app-notification button:dir(rtl).text-button.flat, .app-notification button:dir(rtl).image-button.flat, .app-notification button:dir(rtl).flat,
+    .app-notification.frame button.text-button.flat,
+    .app-notification.frame button.image-button.flat,
+    .app-notification.frame button.flat,
+    .app-notification.frame button:dir(ltr).text-button.flat,
+    .app-notification.frame button:dir(ltr).image-button.flat,
+    .app-notification.frame button:dir(ltr).flat,
+    .app-notification.frame button:dir(rtl).text-button.flat,
+    .app-notification.frame button:dir(rtl).image-button.flat,
+    .app-notification.frame button:dir(rtl).flat {
+      border-color: transparent;
+      background-color: transparent;
+      background-image: none;
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+      text-shadow: none;
+      -gtk-icon-shadow: none; }
+    .app-notification button.text-button:hover, .app-notification button.image-button:hover, .app-notification button:hover, .app-notification button:dir(ltr).text-button:hover, .app-notification button:dir(ltr).image-button:hover, .app-notification button:dir(ltr):hover, .app-notification button:dir(rtl).text-button:hover, .app-notification button:dir(rtl).image-button:hover, .app-notification button:dir(rtl):hover,
+    .app-notification.frame button.text-button:hover,
+    .app-notification.frame button.image-button:hover,
+    .app-notification.frame button:hover,
+    .app-notification.frame button:dir(ltr).text-button:hover,
+    .app-notification.frame button:dir(ltr).image-button:hover,
+    .app-notification.frame button:dir(ltr):hover,
+    .app-notification.frame button:dir(rtl).text-button:hover,
+    .app-notification.frame button:dir(rtl).image-button:hover,
+    .app-notification.frame button:dir(rtl):hover {
+      color: #F7F7F7;
+      outline-color: rgba(247, 247, 247, 0.3);
+      border-color: #242424;
+      border-bottom-color: #0d0d0d;
+      text-shadow: 0 -1px rgba(0, 0, 0, 0.768627);
+      -gtk-icon-shadow: 0 -1px rgba(0, 0, 0, 0.768627);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
+      background-image: linear-gradient(to top, #383838, #3d3d3d 1px); }
+    .app-notification button.text-button:active, .app-notification button.image-button:active, .app-notification button:active, .app-notification button:dir(ltr).text-button:active, .app-notification button:dir(ltr).image-button:active, .app-notification button:dir(ltr):active, .app-notification button:dir(rtl).text-button:active, .app-notification button:dir(rtl).image-button:active, .app-notification button:dir(rtl):active,
+    .app-notification.frame button.text-button:active,
+    .app-notification.frame button.image-button:active,
+    .app-notification.frame button:active,
+    .app-notification.frame button:dir(ltr).text-button:active,
+    .app-notification.frame button:dir(ltr).image-button:active,
+    .app-notification.frame button:dir(ltr):active,
+    .app-notification.frame button:dir(rtl).text-button:active,
+    .app-notification.frame button:dir(rtl).image-button:active,
+    .app-notification.frame button:dir(rtl):active {
+      color: #F7F7F7;
+      outline-color: rgba(247, 247, 247, 0.3);
+      border-color: #242424;
+      background-image: image(#242424);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+      text-shadow: none;
+      -gtk-icon-shadow: none; }
+    .app-notification button.text-button:backdrop, .app-notification button.image-button:backdrop, .app-notification button:backdrop, .app-notification button:dir(ltr).text-button:backdrop, .app-notification button:dir(ltr).image-button:backdrop, .app-notification button:dir(ltr):backdrop, .app-notification button:dir(rtl).text-button:backdrop, .app-notification button:dir(rtl).image-button:backdrop, .app-notification button:dir(rtl):backdrop,
+    .app-notification.frame button.text-button:backdrop,
+    .app-notification.frame button.image-button:backdrop,
+    .app-notification.frame button:backdrop,
+    .app-notification.frame button:dir(ltr).text-button:backdrop,
+    .app-notification.frame button:dir(ltr).image-button:backdrop,
+    .app-notification.frame button:dir(ltr):backdrop,
+    .app-notification.frame button:dir(rtl).text-button:backdrop,
+    .app-notification.frame button:dir(rtl).image-button:backdrop,
+    .app-notification.frame button:dir(rtl):backdrop {
+      border-color: #282828;
+      background-image: image(#3a3a3a);
+      text-shadow: none;
+      -gtk-icon-shadow: none;
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
+      .app-notification button.text-button:backdrop label, .app-notification button.text-button:backdrop, .app-notification button.image-button:backdrop label, .app-notification button.image-button:backdrop, .app-notification button:backdrop label, .app-notification button:backdrop, .app-notification button:dir(ltr).text-button:backdrop label, .app-notification button:dir(ltr).text-button:backdrop, .app-notification button:dir(ltr).image-button:backdrop label, .app-notification button:dir(ltr).image-button:backdrop, .app-notification button:dir(ltr):backdrop label, .app-notification button:dir(ltr):backdrop, .app-notification button:dir(rtl).text-button:backdrop label, .app-notification button:dir(rtl).text-button:backdrop, .app-notification button:dir(rtl).image-button:backdrop label, .app-notification button:dir(rtl).image-button:backdrop, .app-notification button:dir(rtl):backdrop label, .app-notification button:dir(rtl):backdrop,
+      .app-notification.frame button.text-button:backdrop label,
+      .app-notification.frame button.text-button:backdrop,
+      .app-notification.frame button.image-button:backdrop label,
+      .app-notification.frame button.image-button:backdrop,
+      .app-notification.frame button:backdrop label,
+      .app-notification.frame button:backdrop,
+      .app-notification.frame button:dir(ltr).text-button:backdrop label,
+      .app-notification.frame button:dir(ltr).text-button:backdrop,
+      .app-notification.frame button:dir(ltr).image-button:backdrop label,
+      .app-notification.frame button:dir(ltr).image-button:backdrop,
+      .app-notification.frame button:dir(ltr):backdrop label,
+      .app-notification.frame button:dir(ltr):backdrop,
+      .app-notification.frame button:dir(rtl).text-button:backdrop label,
+      .app-notification.frame button:dir(rtl).text-button:backdrop,
+      .app-notification.frame button:dir(rtl).image-button:backdrop label,
+      .app-notification.frame button:dir(rtl).image-button:backdrop,
+      .app-notification.frame button:dir(rtl):backdrop label,
+      .app-notification.frame button:dir(rtl):backdrop {
+        color: #999999; }
+      .app-notification button.text-button:backdrop.flat, .app-notification button.image-button:backdrop.flat, .app-notification button:backdrop.flat, .app-notification button:dir(ltr).text-button:backdrop.flat, .app-notification button:dir(ltr).image-button:backdrop.flat, .app-notification button:dir(ltr):backdrop.flat, .app-notification button:dir(rtl).text-button:backdrop.flat, .app-notification button:dir(rtl).image-button:backdrop.flat, .app-notification button:dir(rtl):backdrop.flat,
+      .app-notification.frame button.text-button:backdrop.flat,
+      .app-notification.frame button.image-button:backdrop.flat,
+      .app-notification.frame button:backdrop.flat,
+      .app-notification.frame button:dir(ltr).text-button:backdrop.flat,
+      .app-notification.frame button:dir(ltr).image-button:backdrop.flat,
+      .app-notification.frame button:dir(ltr):backdrop.flat,
+      .app-notification.frame button:dir(rtl).text-button:backdrop.flat,
+      .app-notification.frame button:dir(rtl).image-button:backdrop.flat,
+      .app-notification.frame button:dir(rtl):backdrop.flat {
+        border-color: transparent;
+        background-color: transparent;
+        background-image: none;
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+        text-shadow: none;
+        -gtk-icon-shadow: none; }
+    .app-notification button.text-button:disabled, .app-notification button.image-button:disabled, .app-notification button:disabled, .app-notification button:dir(ltr).text-button:disabled, .app-notification button:dir(ltr).image-button:disabled, .app-notification button:dir(ltr):disabled, .app-notification button:dir(rtl).text-button:disabled, .app-notification button:dir(rtl).image-button:disabled, .app-notification button:dir(rtl):disabled,
+    .app-notification.frame button.text-button:disabled,
+    .app-notification.frame button.image-button:disabled,
+    .app-notification.frame button:disabled,
+    .app-notification.frame button:dir(ltr).text-button:disabled,
+    .app-notification.frame button:dir(ltr).image-button:disabled,
+    .app-notification.frame button:dir(ltr):disabled,
+    .app-notification.frame button:dir(rtl).text-button:disabled,
+    .app-notification.frame button:dir(rtl).image-button:disabled,
+    .app-notification.frame button:dir(rtl):disabled {
+      border-color: #242424;
+      background-image: image(#373737);
+      text-shadow: none;
+      -gtk-icon-shadow: none;
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
+      .app-notification button.text-button:disabled label, .app-notification button.text-button:disabled, .app-notification button.image-button:disabled label, .app-notification button.image-button:disabled, .app-notification button:disabled label, .app-notification button:disabled, .app-notification button:dir(ltr).text-button:disabled label, .app-notification button:dir(ltr).text-button:disabled, .app-notification button:dir(ltr).image-button:disabled label, .app-notification button:dir(ltr).image-button:disabled, .app-notification button:dir(ltr):disabled label, .app-notification button:dir(ltr):disabled, .app-notification button:dir(rtl).text-button:disabled label, .app-notification button:dir(rtl).text-button:disabled, .app-notification button:dir(rtl).image-button:disabled label, .app-notification button:dir(rtl).image-button:disabled, .app-notification button:dir(rtl):disabled label, .app-notification button:dir(rtl):disabled,
+      .app-notification.frame button.text-button:disabled label,
+      .app-notification.frame button.text-button:disabled,
+      .app-notification.frame button.image-button:disabled label,
+      .app-notification.frame button.image-button:disabled,
+      .app-notification.frame button:disabled label,
+      .app-notification.frame button:disabled,
+      .app-notification.frame button:dir(ltr).text-button:disabled label,
+      .app-notification.frame button:dir(ltr).text-button:disabled,
+      .app-notification.frame button:dir(ltr).image-button:disabled label,
+      .app-notification.frame button:dir(ltr).image-button:disabled,
+      .app-notification.frame button:dir(ltr):disabled label,
+      .app-notification.frame button:dir(ltr):disabled,
+      .app-notification.frame button:dir(rtl).text-button:disabled label,
+      .app-notification.frame button:dir(rtl).text-button:disabled,
+      .app-notification.frame button:dir(rtl).image-button:disabled label,
+      .app-notification.frame button:dir(rtl).image-button:disabled,
+      .app-notification.frame button:dir(rtl):disabled label,
+      .app-notification.frame button:dir(rtl):disabled {
+        color: #999999; }
   .app-notification:backdrop,
   .app-notification.frame:backdrop {
     background-color: #3a3a3a;
@@ -5803,12 +5919,15 @@ menubar > menuitem:hover,
   .app-notification.frame border {
     border: none; }
 
+switch {
+  font-size: 0; }
+
 /* GTK NAMED COLORS
    ----------------
    use responsibly! */
 /*
 widget text/foreground color */
-@define-color theme_fg_color #f7f7f7;
+@define-color theme_fg_color #F7F7F7;
 /*
 text color for entries, views and content in general */
 @define-color theme_text_color white;
@@ -5868,7 +5987,7 @@ these are pretty self explicative */
 /*
 these colors are exported for the window manager and shouldn't be used in applications,
 read if you used those and something break with a version upgrade you're on your own... */
-@define-color wm_title shade(#f7f7f7, 1.8);
+@define-color wm_title shade(#F7F7F7, 1.8);
 @define-color wm_unfocused_title #999999;
 @define-color wm_highlight rgba(0, 0, 0, 0);
 @define-color wm_borders_edge rgba(247, 247, 247, 0.07);
