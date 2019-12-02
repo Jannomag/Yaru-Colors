@@ -259,15 +259,37 @@ mv $source30_path/gtk_dark_generated.css $gtk30d_path/gtk.css
 mv $source30_path/gtk_light_generated.css $gtk30l_path/gtk.css
 cp -R $source30_path/assets $gtk30_path
 
+#creating css files for dark and light theme, which can be used by apps on their own settings
+#settings strings as variables...
 dark32_link='@import url("../../Yaru-'"$color"'-dark/gtk-3.20/gtk.css");'
 light32_link='@import url("../../Yaru-'"$color"'-light/gtk-3.20/gtk.css");'
 dark30_link='@import url("../../Yaru-'"$color"'-dark/gtk-3.0/gtk.css");'
 light30_link='@import url("../../Yaru-'"$color"'-light/gtk-3.0/gtk.css");'
-
+#...and echo them into the files
 echo $dark32_link >> $gtk32_path/gtk-dark.css
 echo $light32_link >> $gtk32_path/gtk-light.css
 echo $dark30_link >> $gtk30_path/gtk-dark.css
 echo $light30_link >> $gtk30_path/gtk-light.css
+
+#link create links to the files for each flavor
+cd $gtk32d_path
+ln -rs ../../Yaru-$color/gtk-3.20/gtk-dark.css ./gtk-dark.css
+ln -rs ../../Yaru-$color/gtk-3.20/gtk-light.css ./gtk-light.css
+
+cd $gtk32l_path
+ln -rs ../../Yaru-$color/gtk-3.20/gtk-dark.css ./gtk-dark.css
+ln -rs ../../Yaru-$color/gtk-3.20/gtk-light.css ./gtk-light.css
+
+cd $gtk30d_path
+ln -rs ../../Yaru-$color/gtk-3.0/gtk-dark.css ./gtk-dark.css
+ln -rs ../../Yaru-$color/gtk-3.20/gtk-light.css ./gtk-light.css
+
+cd $gtk30l_path
+ln -rs ../../Yaru-$color/gtk-3.0/gtk-dark.css ./gtk-dark.css
+ln -rs ../../Yaru-$color/gtk-3.0/gtk-light.css ./gtk-light.css
+
+cd $WORKDIR
+
 
 #creating symlinks to the assets directories for each flavor
 cd $gtk30l_path
@@ -388,8 +410,12 @@ echo -e " "
 echo -e "Compiling gnome-shell theme ..."
 
 #compile
-sassc $source_path/light/gnome-shell.scss $source_path/light/gnome-shell-generated.css
-sassc $source_path/dark/gnome-shell.scss $source_path/dark/gnome-shell-generated.css
+cp $source_path/light/gnome-shell.scss $source_path/gnome-shell-light.scss
+sassc $source_path/gnome-shell-light.scss $source_path/gnome-shell-generated-light.css
+rm $source_path/gnome-shell-light.scss
+cp $source_path/dark/gnome-shell.scss $source_path/gnome-shell-dark.scss
+sassc $source_path/gnome-shell-dark.scss $source_path/gnome-shell-generated-dark.css
+rm $source_path/gnome-shell-dark.scss
 sassc $source_path/gnome-shell-high-contrast.scss $source_path/gnome-shell-high-contrast-generated.css
 
 #Changing the stock colors in the svg files
@@ -425,9 +451,9 @@ sed -i -e "s/e95420/$base_col/g" $svg4
 echo -e " "
 #copy everything
 echo -e "copy files to the theme directory ..."
-cp $source_path/light/gnome-shell-generated.css $shell_path/gnome-shell.css
-mv $source_path/light/gnome-shell-generated.css $shell_light_path/gnome-shell.css
-mv $source_path/dark/gnome-shell-generated.css $shell_dark_path/gnome-shell.css
+cp $source_path/gnome-shell-generated-light.css $shell_path/gnome-shell.css
+mv $source_path/gnome-shell-generated-light.css $shell_light_path/gnome-shell.css
+mv $source_path/gnome-shell-generated-dark.css $shell_dark_path/gnome-shell.css
 mv $source_path/gnome-shell-high-contrast-generated.css $shell_light_path/gnome-shell-high-contrast.css
 
 #cp -R $source_path/*.css $shell_light_path
@@ -499,7 +525,7 @@ source20l_path=$WORKDIR/light/gtk-2.0
 source20d_path=$WORKDIR/dark/gtk-2.0
 
 #creating backups of original files
-echo -e "Sichere Original-Dateien ..."
+echo -e "Backing up original files ..."
 cp $source20_path/gtkrc $source20_path/BAK_gtkrc
 cp $source20_path/assets.svg $source20_path/BAK_assets.svg
 cp -R $source20_path/assets $source20_path/BAK_assets
@@ -570,7 +596,7 @@ INDEX="assets.txt"
 SRC_FILE_EXTERNAL="assets-external.svg"
 INDEX_EXTERNAL="assets-external.txt"
 
-rm assets/*.png
+rm -rf assets/*
 for i in `cat $INDEX`
 do 
 if [ -f $ASSETS_DIR/$i.png ]; then
@@ -614,7 +640,7 @@ INDEX="assets.txt"
 SRC_FILE_EXTERNAL="assets-external.svg"
 INDEX_EXTERNAL="assets-external.txt"
 
-rm assets/*.png
+rm -rf assets/*
 for i in `cat $INDEX`
 do 
 if [ -f $ASSETS_DIR/$i.png ]; then
@@ -659,7 +685,7 @@ INDEX="assets.txt"
 SRC_FILE_EXTERNAL="assets-external.svg"
 INDEX_EXTERNAL="assets-external.txt"
 
-rm assets/*.png
+rm -rf assets/*
 for i in `cat $INDEX`
 do 
 if [ -f $ASSETS_DIR/$i.png ]; then

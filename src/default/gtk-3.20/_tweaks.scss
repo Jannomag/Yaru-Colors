@@ -13,14 +13,16 @@ $_titlebutton_height: 24px;
                                   to(transparent));
 }
 
-// with a flatter headerbar and buttons, we dont need that heavy shadows in the headerbar
-headerbar * {
+// with a flatter headerbar and buttons, we dont need that heavy shadows, remove this when upstream agrees
+headerbar *, button * {
   text-shadow: none;
   -gtk-icon-shadow: none;
 }
-// same for the rest of the theme, but not axe the icon shadows, otherwise things don't work
-* {
-  text-shadow: none;
+// headerbar border-color is a bit too strong in the dark theme
+headerbar {
+  &, &.titlebar:not(headerbar) {
+    border-color: lighten($alt_borders_color, if($variant=='light', 0%, 8%));
+  }
 }
 
 // blue spinner
@@ -104,15 +106,6 @@ button.titlebutton:not(.appmenu) {
         &:hover { @include draw_circle(lighten($inkstone, if($variant=='light', if($ambiance==true, 20%, 45%), 15%))); }
       }
     }
-  }
-}
-
-// upstream headerbar is not exactly perfect, thus a tiny change to the bg and border colors
-headerbar {
-  &, &.titlebar:not(headerbar) {
-    border-color: if($variant=='light', #c8c9ca, lighten($alt_borders_color, 8%));
-
-    @include headerbar_fill(if($variant=='light', #e7eaed, darken($bg_color, 10%)));
   }
 }
 

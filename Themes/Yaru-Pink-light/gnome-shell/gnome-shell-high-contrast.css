@@ -160,8 +160,8 @@ StScrollBar {
   -barlevel-height: 0.2em;
   -barlevel-background-color: rgba(247, 247, 247, 0.1);
   -barlevel-border-color: #212121;
-  -barlevel-active-background-color: #19B6EE;
-  -barlevel-active-border-color: #19B6EE;
+  -barlevel-active-background-color: #0f9dcf;
+  -barlevel-active-border-color: #0f9dcf;
   -barlevel-overdrive-color: #d81329;
   -barlevel-overdrive-border-color: #a90f20;
   -barlevel-overdrive-separator-width: 0.2em;
@@ -595,7 +595,7 @@ StScrollBar {
     height: 0.6em;
     -barlevel-height: 0.3em;
     -barlevel-background-color: rgba(238, 238, 236, 0.1);
-    -barlevel-active-background-color: #19B6EE;
+    -barlevel-active-background-color: #0f9dcf;
     -barlevel-overdrive-color: #d81329;
     -barlevel-overdrive-separator-width: 0.2em; }
 
@@ -1837,7 +1837,8 @@ StScrollBar {
 
 .login-dialog-message-hint {
   padding-top: 0;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  color: #d6d6d1; }
 
 .login-dialog-user-selection-box {
   padding: 100px 0px; }
