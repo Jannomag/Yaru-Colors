@@ -457,6 +457,7 @@ mv $source_path/gnome-shell-generated-dark.css $shell_dark_path/gnome-shell.css
 mv $source_path/gnome-shell-high-contrast-generated.css $shell_light_path/gnome-shell-high-contrast.css
 
 #cp -R $source_path/*.css $shell_light_path
+cp -R $source_path/*.svg $shell_path
 cp -R $source_path/*.svg $shell_light_path
 cp -R $source_path/*.svg $shell_dark_path
 
@@ -526,20 +527,23 @@ source20d_path=$WORKDIR/dark/gtk-2.0
 
 #creating backups of original files
 echo -e "Backing up original files ..."
-cp $source20_path/gtkrc $source20_path/BAK_gtkrc
-cp $source20_path/assets.svg $source20_path/BAK_assets.svg
-cp -R $source20_path/assets $source20_path/BAK_assets
+mkdir $source20_path/backup
+cp $source20_path/gtkrc $source20_path/backup/gtkrc
+cp $source20_path/assets.svg $source20_path/backup/assets.svg
+cp -R $source20_path/assets $source20_path/backup/assets
 
-cp $source20l_path/gtkrc $source20l_path/BAK_gtkrc
-cp $source20l_path/assets.svg $source20l_path/BAK_assets.svg
-cp -R $source20l_path/assets $source20l_path/BAK_assets
+mkdir $source20l_path/backup
+cp $source20l_path/gtkrc $source20l_path/backup/gtkrc
+cp $source20l_path/assets.svg $source20l_path/backup/assets.svg
+cp -R $source20l_path/assets $source20l_path/backup/assets
 
-cp $source20d_path/gtkrc $source20d_path/BAK_gtkrc
-cp $source20d_path/assets.svg $source20d_path/BAK_assets.svg
-cp -R $source20d_path/assets $source20d_path/BAK_assets
+mkdir $source20d_path/backup
+cp $source20d_path/gtkrc $source20d_path/backup/gtkrc
+cp $source20d_path/assets.svg $source20d_path/backup/assets.svg
+cp -R $source20d_path/assets $source20d_path/backup/assets
 
 #cheking if backup worked, if not, exit.
-if [ ! -f "$source20_path/BAK_gtkrc" ] || [ ! -f "$source20l_path/BAK_gtkrc" ] || [ ! -f "$source20d_path/BAK_gtkrc" ]
+if [ ! -d "$source20_path/backup" ] || [ ! -d "$source20l_path/backup" ] || [ ! -d "$source20d_path/backup" ]
 then
 	echo -e "BACKUP FAILED, EXITING NOW!"
 	exit
@@ -730,26 +734,31 @@ cp $source20_path/gtkrc $gtk20_path
 cp $source20l_path/gtkrc $gtk20l_path
 cp $source20d_path/gtkrc $gtk20d_path
 
+#Restore backup
 rm -rf $source20_path/gtkrc
-mv $source20_path/BAK_gtkrc $source20_path/gtkrc
 rm -rf $source20_path/assets.svg
-mv $source20_path/BAK_assets.svg $source20_path/assets.svg
 rm -rf $source20_path/assets
-mv $source20_path/BAK_assets $source20_path/assets
+sleep 1
+cp -R $source20_path/backup/* $source20_path/
+sleep 1
+rm -rf $source20_path/backup
 
 rm -rf $source20l_path/gtkrc
-mv $source20l_path/BAK_gtkrc $source20l_path/gtkrc
 rm -rf $source20l_path/assets.svg
-mv $source20l_path/BAK_assets.svg $source20l_path/assets.svg
 rm -rf $source20l_path/assets
-mv $source20l_path/BAK_assets $source20l_path/assets
+sleep 1
+cp -R $source20l_path/backup/* $source20l_path/
+sleep 1
+rm -rf $source20l_path/backup
 
 rm -rf $source20d_path/gtkrc
-mv $source20d_path/BAK_gtkrc $source20d_path/gtkrc
 rm -rf $source20d_path/assets.svg
-mv $source20d_path/BAK_assets.svg $source20d_path/assets.svg
 rm -rf $source20d_path/assets
-mv $source20d_path/BAK_assets $source20d_path/assets
+sleep 1
+cp -R $source20d_path/backup/* $source20d_path/
+sleep 1
+rm -rf $source20d_path/backup
+
 
 cd $WORKDIR
 

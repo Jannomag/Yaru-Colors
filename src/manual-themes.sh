@@ -23,7 +23,7 @@ do
 	cp -R $theme/Yaru-$color/gtk-3.0/assets $theme/Yaru-$color-dark/gtk-3.0/
 	cp -R $theme/Yaru-$color/gtk-3.20/assets $theme/Yaru-$color-dark/gtk-3.20/
 	cd $root
-	tar -czvf ../Yaru-$color-v2.2.tar.gz *	# pack each folder in seperate archives
+	tar -czvf ../Yaru-$color-v2.3.2.tar.gz *	# pack each folder in seperate archives
 	cd ../
 	rm -rf $root
 done
