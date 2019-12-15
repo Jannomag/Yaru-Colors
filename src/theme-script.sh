@@ -725,14 +725,18 @@ echo -e "Copy theme..."
 
 #Copy everything
 cp -R $source20_path/assets $gtk20_path
+cp $source20_path/backup/assets/scrollbar-arrow*.png $gtk20_path/assets
 cp $source20_path/*.rc $gtk20_path
 cp -R $source20l_path/assets $gtk20l_path
+cp $source20l_path/backup/assets/scrollbar-arrow*.png $gtk20l_path/assets
 cp $source20l_path/*.rc $gtk20l_path
 cp -R $source20d_path/assets $gtk20d_path
+cp $source20d_path/backup/assets/scrollbar-arrow*.png $gtk20d_path/assets
 cp $source20d_path/*.rc $gtk20d_path
 cp $source20_path/gtkrc $gtk20_path
 cp $source20l_path/gtkrc $gtk20l_path
 cp $source20d_path/gtkrc $gtk20d_path
+
 
 #Restore backup
 rm -rf $source20_path/gtkrc
