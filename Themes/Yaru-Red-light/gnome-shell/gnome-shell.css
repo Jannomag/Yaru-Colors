@@ -1112,20 +1112,15 @@ StScrollBar {
   icon-size: 1.09em; }
 
 .window-close {
-  background-color: #e92020;
-  color: white;
-  border-radius: 24px;
-  border: 2px solid #e92020;
-  height: 24px;
-  width: 24px;
-  -shell-close-overlap: 11px;
-  box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.5); }
+  background-image: url("close-window.svg");
+  background-size: 32px;
+  height: 32px;
+  width: 32px;
+  -shell-close-overlap: 16px; }
   .window-close:hover {
-    background-color: #eb3737;
-    border-color: #eb3737; }
+    background-image: url("close-window-hover.svg"); }
   .window-close:active {
-    background-color: #da1616;
-    border-color: #da1616; }
+    background-image: url("close-window-active.svg"); }
 
 .pie-timer {
   width: 60px;
