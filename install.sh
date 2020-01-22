@@ -1114,7 +1114,8 @@ select seticon in yes no
   done
 fi
 
-             
+echo ".nautilus-desktop.nautilus-canvas-item { color: #FFFFFF;text-shadow: 1px 1px @desktop_item_text_shadow; }" > ~/.config/gtk-3.0/gtk.css
+
 echo -e " "
 echo -e "${BGre} We're done!${RCol}"
 echo -e " "
