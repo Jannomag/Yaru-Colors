@@ -288,6 +288,8 @@ gtk32l_path=$WORKDIR/Themes/Yaru-$color-light/gtk-3.20
 gtk30l_path=$WORKDIR/Themes/Yaru-$color-light/gtk-3.0
 gtk20l_path=$WORKDIR/Themes/Yaru-$color-light/gtk-2.0
 
+
+
 #creating directories
 mkdir -p $gtk32_path
 mkdir -p $gtk30_path
@@ -1036,16 +1038,62 @@ cd $WORKDIR
 echo -e "Done"
 
 comp_gtk2="false"
-done
 
+done
 ### END OF CHAPTER 6 ###
 
+######## CHAPTER #######
+## C7 - Unity (20.04) ##
+########################
+if [ $everything == "false" ]; then
+
+
+	echo -e "Do you want to compile the Unity theme?"
+	select yn in "Yes" "No"; do
+		case $yn in
+			Yes)
+			     comp_unity="true"
+			     break
+		 	     ;;
+			No)
+        	 comp_unity="false"
+        	 break;;
+		esac
+	done
+fi
+while [ $comp_unity == "true" ]
+do
+#set path for unity theme (20.04+)
+unity_path=$WORKDIR/Themes/Yaru-$color/unity
+
+echo -e "Modifying the Unity files..."
+
+unity_source_path=$WORKDIR/default/unity
+mkdir -p $unity_path
+mkdir -p $unity_source_path/backup
+cp $unity_source_path/*.svg $unity_source_path/backup
+sed -i -e "s/e95420/$svg2_color/gI" $unity_source_path/*.svg
+sed -i -e "s/fa6140/$svg1_color/gI" $unity_source_path/*.svg
+sed -i -e "s/E84425/$svg3_color/gI" $unity_source_path/*.svg
+
+
+cp $unity_source_path/*.svg $unity_path
+mv $unity_source_path/backup/*.svg $unity_source_path
+rm -r $unity_source_path/backup
+
+comp_unity="false"
+echo -e "Unity done!"
+
+done
+
+### END OF CHAPTER 7 ###
+
 ######## CHAPTER ########
-## C7 - Icon compiling ##
+## C8 - Icon compiling ##
 #########################
 
-### ICON COMPILING -- TESTING ###
-: ' ICON TESTING COMMENT BEGIN >>>>>>>
+### ICON COMPILING - TESTING ###
+: 'ICON TESTING COMMENT BEGIN >>>>>>>
 echo -e "Do you want to compile the icons theme (this may take a while)?"
 select yn in "Yes" "No"; do
 	case $yn in
