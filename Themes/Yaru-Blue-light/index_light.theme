@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Blue
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru theme - forked with a stylish Blue base color
+Encoding=UTF-8
+GtkTheme=Yaru-Blue
+IconTheme=Yaru-Blue
+CursorTheme=Yaru
+CursorSize=24

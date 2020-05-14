@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Orange
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru theme - forked with a stylish Orange base color
+Encoding=UTF-8
+GtkTheme=Yaru-Orange
+IconTheme=Yaru-Orange
+CursorTheme=Yaru
+CursorSize=24
