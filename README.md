@@ -4,6 +4,10 @@
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)
 
+*Update 20.04.1: Updated everything with Yaru's source for Ubuntu 20.04, including new icons.
+*Also new color (Orange) added, Purple changed.
+*PLEASE NOTE: Description will change in the next days, Screenshots will be added, soon!
+
 *Update 2.0: Yaru developers updated the original theme, so I did. It cointains now the new light version from 19.10.*
 *Maybe I'm able to create "Yaru-Classic" theme with the old darker header bars, but for now it was enough work to create 2.0*
 
@@ -75,8 +79,9 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 | Yaru-Green | `#3eb34f` | `#123d18` |
 | Yaru-Grey | `#9c9c9c` | `#4d4d4d` |
 | Yaru-MATE | `#78ab50` | `#4f6326` |
+| Yaru-Orange | `#e95420` | `#a6401c` |
 | Yaru-Pink | `#e920a3` | `#742558` |
-| Yaru-Purple | `#a064d8` | `#4c1f7a` |
+| Yaru-Purple | `#924d8b` | `#5e2750` |
 | Yaru-Red | `#e92020` | `#742525` |
 | Yaru-Yellow | `#e9ba20` | `#746225` |
 
