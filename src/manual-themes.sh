@@ -4,7 +4,7 @@
 # then pack it into seperate archives
 
 # creating array for every color
-array=( Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow )
+array=( Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Yellow )
 
 # setting variable for every color
 for color in "${array[@]}"
@@ -27,4 +27,3 @@ do
 	cd ../
 	rm -rf $root
 done
-

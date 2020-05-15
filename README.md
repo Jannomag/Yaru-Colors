@@ -4,9 +4,8 @@
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)
 
-*Update 20.04.1: Updated everything with Yaru's source for Ubuntu 20.04, including new icons.
-*Also new color (Orange) added, Purple changed.
-*PLEASE NOTE: Description will change in the next days, Screenshots will be added, soon!
+*Update 20.04.1: Updated everything with Yaru's source for Ubuntu 20.04, including new icons, new orange theme and new purple color.*
+
 
 *Update 2.0: Yaru developers updated the original theme, so I did. It cointains now the new light version from 19.10.*
 *Maybe I'm able to create "Yaru-Classic" theme with the old darker header bars, but for now it was enough work to create 2.0*
@@ -18,6 +17,7 @@ Yaru-Colors themes conataing following:
 - Gnome-Shell theme
 - Yaru icons
 - Ubuntu-Dock theme (indicators)
+- Unity support (brought with Yaru 20.04)
 - Wallpapers (see below)
 
 **Following changes are made by me:**
@@ -27,7 +27,7 @@ Yaru-Colors themes conataing following:
 - The dock got recolored app running indicators, which are changed by script, not by file
 
 I tried to make the installation as easy as possible.
-Therefore I created an installation script called install.sh. 
+Therefore I created an installation script called install.sh.
 
 The installer will do a backup if something needs to be overwritten (only Ubuntu 18.10+).
 It will guide you through everything and allows you to choose what you want to install.
@@ -54,14 +54,14 @@ It will guide you through everything and allows you to choose what you want to i
 `gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color 'HEXCODE' 2> /dev/null`   
 (or do it with the script, it'll do it for you...)
 
-   
-      
-      
+
+
+
 ***Have fun with it!   
 For any suggestions send me a message here or on Reddit /u/jannomag***
 
 **Wallpaper information**
-All wallpapers are made by me from scratch. 
+All wallpapers are made by me from scratch.
 I made a wallpaper for each color and one with Ubuntu's stock colors.
 I also added a bonus photo wallpaper, also made by me.
 
@@ -88,4 +88,3 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 
 
 All other colors in the themes are generated while compiling the css from Yaru's source.
-

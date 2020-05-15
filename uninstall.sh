@@ -178,11 +178,11 @@ echo -e " "
 while true; do
     echo -e "${BWhi}Is this correct? [yes / no]${RCol}" && read -r confirm
     case $confirm in
-        [yes]* ) 
-		uninstall="true" 
+        [yes]* )
+		uninstall="true"
 		break
 		;;
-        [no]* ) 
+        [no]* )
 		uninstall="false"
 		echo -e "${BYel}Okay, exiting now...${RCol}"
 		sleep 1
@@ -207,6 +207,7 @@ if [[ $uninstall = "true" ]] && [[ $remthemes = "true" ]]; then
 	rm -rf $themepath/Yaru-Green*
 	rm -rf $themepath/Yaru-Grey*
 	rm -rf $themepath/Yaru-MATE*
+	rm -rf $themepath/Yaru-Orange*
 	rm -rf $themepath/Yaru-Pink*
 	rm -rf $themepath/Yaru-Purple*
 	rm -rf $themepath/Yaru-Red*
@@ -226,6 +227,7 @@ if [[ $uninstall = "true" ]] && [[ $remicons = "true" ]]; then
 	rm -rf $iconpath/Yaru-Green*
 	rm -rf $iconpath/Yaru-Grey*
 	rm -rf $iconpath/Yaru-MATE*
+	rm -rf $iconpath/Yaru-Orange*
 	rm -rf $iconpath/Yaru-Pink*
 	rm -rf $iconpath/Yaru-Purple*
 	rm -rf $iconpath/Yaru-Red*
@@ -274,11 +276,11 @@ do
 			sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru' 2> /dev/null
 		elif [[ $isroot = "false" ]]; then
 			gsettings set org.gnome.desktop.interface gtk-theme 'Yaru' 2> /dev/null
-		fi	
+		fi
 		sleep 0.5
 		echo -e "${BYel}Done.${RCol}"
 		echo -e " "
-		sleep 0.3		
+		sleep 0.3
 		echo -e "${BYel}Restoring Yaru GTK icons...${RCol}"
 		if [[ $isroot = "true" ]]; then
 			sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru' 2> /dev/null
@@ -298,11 +300,10 @@ do
 		*)
 		echo -e "${BYel}Please type 1 or 2...${RCol}"
 		;;
-	
+
 	esac
 done
 echo $isroot
 echo -e "${BGre}Everything finished! Bye!${RCol}"
 sleep 1
 exit
-

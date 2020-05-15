@@ -44,6 +44,8 @@ echo -e "# ---------------------------------------------------- #"
 echo -e "# THIS THEMES WERE RELEASED BY ME IN APRIL 2019        #"
 echo -e "# ON gnome-looks.org                                   #"
 echo -e "##########----------      NOTE      ----------##########"
+echo -e ""
+echo -e "Version 20.04.1"
 sleep 1
 #getting home directory
 homedir=$( getent passwd "$USER" | cut -d: -f6 )
@@ -100,41 +102,10 @@ do
 		echo -e "${Yel}$gtkpath doesn't exist, creating now${RCol}"
 		mkdir -p $gtkpath
 	fi
-	
+
         echo -e "${Yel}Copying the themes to $gtkpath...${RCol}"
 	cp -R ./Themes/* $gtkpath
-	ln -s $gtkpath/Yaru-Aqua/gtk-3.0/assets $gtkpath/Yaru-Aqua-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Aqua/gtk-3.20/assets $gtkpath/Yaru-Aqua-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Blue/gtk-3.0/assets $gtkpath/Yaru-Blue-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Blue/gtk-3.20/assets $gtkpath/Yaru-Blue-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Brown/gtk-3.0/assets $gtkpath/Yaru-Brown-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Brown/gtk-3.20/assets $gtkpath/Yaru-Brown-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Deepblue/gtk-3.0/assets $gtkpath/Yaru-Deepblue-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Deepblue/gtk-3.20/assets $gtkpath/Yaru-Deepblue-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Green/gtk-3.0/assets $gtkpath/Yaru-Green-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Green/gtk-3.20/assets $gtkpath/Yaru-Green-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Grey/gtk-3.0/assets $gtkpath/Yaru-Grey-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Grey/gtk-3.20/assets $gtkpath/Yaru-Grey-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-MATE/gtk-3.0/assets $gtkpath/Yaru-MATE-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-MATE/gtk-3.20/assets $gtkpath/Yaru-MATE-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Pink/gtk-3.0/assets $gtkpath/Yaru-Pink-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Pink/gtk-3.20/assets $gtkpath/Yaru-Pink-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Purple/gtk-3.0/assets $gtkpath/Yaru-Purple-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Purple/gtk-3.20/assets $gtkpath/Yaru-Purple-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Red/gtk-3.0/assets $gtkpath/Yaru-Red-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Red/gtk-3.20/assets $gtkpath/Yaru-Red-dark/gtk-3.20/
-
-	ln -s $gtkpath/Yaru-Yellow/gtk-3.0/assets $gtkpath/Yaru-Yellow-dark/gtk-3.0/
-	ln -s $gtkpath/Yaru-Yellow/gtk-3.20/assets $gtkpath/Yaru-Yellow-dark/gtk-3.20/
+	
 	echo -e "${Yel}Done.${RCol}"
         sleep 0.3
         echo -e " "
@@ -155,7 +126,7 @@ do
 	echo -e " "
         echo -e "${BWhi}Okay, which one should it be?${RCol}"
         break
-        ;; 
+        ;;
      *)
         echo -e "${BYel}Oi, no comprende. Please select by typing 1 or 2!${RCol}"
         ;;
@@ -170,17 +141,7 @@ if [[ $packinstall = "no" ]];
 	select themeinstall in Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
 	do
 	  case $themeinstall in
-	    Aqua) 
-        	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
-		gtkpath="${gtkpath:-$gtkpathdef}"
-		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
-		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
-		echo -e "${BWhi}Done...${RCol}"
-        	break
-        	;; 
-	    Blue) 
+	    Aqua)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -190,7 +151,7 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
- 	    Brown) 
+	    Blue)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -200,7 +161,7 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
-	    Deepblue) 
+ 	    Brown)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -210,7 +171,7 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
-	    Green) 
+	    Deepblue)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -220,7 +181,7 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
-	    Grey) 
+	    Green)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -230,7 +191,7 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
-	    MATE) 
+	    Grey)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -240,7 +201,7 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
-	    Pink) 
+	    MATE)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -250,7 +211,17 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
-	    Purple) 
+			Orange)
+		     	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
+		gtkpath="${gtkpath:-$gtkpathdef}"
+		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
+		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
+		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+	  ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+		echo -e "${BWhi}Done...${RCol}"
+		        	break
+		        	;;
+	    Pink)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -260,7 +231,7 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
-	    Red) 
+	    Purple)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -270,7 +241,17 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
-	    Yellow) 
+	    Red)
+        	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
+		gtkpath="${gtkpath:-$gtkpathdef}"
+		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
+		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
+		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+		echo -e "${BWhi}Done...${RCol}"
+        	break
+        	;;
+	    Yellow)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -390,13 +371,20 @@ fi
 	    echo -e "${BWhi}Done...${RCol}"
 	    break
             ;;
-	Pink)
+	Orange)
 	    echo -e "${Yel}Please enter your icon path [$iconpathdef]: ${RCol}" && read -e iconpath
 	    iconpath="${iconpath:-$iconpathdef}"
 	    echo -e "${Yel}Copying Yaru-$selecticoninstall icon pack to $iconpath"
 	    echo -e "${BWhi}Done...${RCol}"
 	    break
             ;;
+  Pink)
+	    echo -e "${Yel}Please enter your icon path [$iconpathdef]: ${RCol}" && read -e iconpath
+			iconpath="${iconpath:-$iconpathdef}"
+			echo -e "${Yel}Copying Yaru-$selecticoninstall icon pack to $iconpath"
+			echo -e "${BWhi}Done...${RCol}"
+			break
+			      ;;
 	Purple)
 	    echo -e "${Yel}Please enter your icon path [$iconpathdef]: ${RCol}" && read -e iconpath
 	    iconpath="${iconpath:-$iconpathdef}"
@@ -427,7 +415,7 @@ fi
 	    ;;
     esac
   done
-	     	
+
 
 fi
 
@@ -445,7 +433,7 @@ if [[ -d "/usr/share/gnome-shell/theme/Yaru" && $isroot = "false" ]]; then
     sleep 3
 fi
 
-if [[ -d "/usr/share/gnome-shell/theme/Yaru" && $isroot = "true" ]]; then 
+if [[ -d "/usr/share/gnome-shell/theme/Yaru" && $isroot = "true" ]]; then
 ###########################################################################################################
 #Check if Ubuntu >18.10's Yaru gnome-shell theme is installed AND this script runs with root privileges
 #This is needed for changing the login screen background color (this purple gradient).
@@ -455,11 +443,11 @@ if [[ -d "/usr/share/gnome-shell/theme/Yaru" && $isroot = "true" ]]; then
     echo -e ""
     sleep 3
     echo -e "${BWhi}Do you want to do this now?${RCol}"
-    
+
 ###########################################################################################################
 #If one theme is installed, and not the whole pack, install shell theme
 
-    
+
     select origshell in yes no;
     do
       case $origshell in
@@ -477,7 +465,7 @@ if [[ -d "/usr/share/gnome-shell/theme/Yaru" && $isroot = "true" ]]; then
           	  cp -R ./Themes/Yaru-$themeinstall/gnome-shell /usr/share/gnome-shell/theme/Yaru
           	  sleep 1
           	  echo -e "${Yel}Done.${RCol}"
-         	 else 
+         	 else
           	  echo -e "${BRed}Something went wrong!"
           	  echo -e "Check /usr/share/gnome-shell/theme"
         	  echo -e "The Yaru-Backup directory doesn't exist!"
@@ -494,33 +482,33 @@ if [[ -d "/usr/share/gnome-shell/theme/Yaru" && $isroot = "true" ]]; then
              echo -e "${BYel}Really? Again? Hmpf, type 1 or 2, nothing else!${RCol}"
              ;;
       esac
-    done 
+    done
 fi
 
 ###########################################################################################################
 #If the whole pack was installed, select which shell theme should be installed
     if [[ $packshell = "true" ]]; then
-    
+
      echo -e "${Yel}Creating backup...${RCol}"
      mv /usr/share/gnome-shell/theme/Yaru /usr/share/gnome-shell/theme/Yaru-BACKUP
      sleep 1
      ### Check if backup was created, if not, exit
 	if [ -d "/usr/share/gnome-shell/theme/Yaru-BACKUP" ]; then
 	  echo -e "${Yel}Done. Backup created under /usr/share/gnome-shell/theme/Yaru-BACKUP${RCol}"
-	 else 
+	 else
           echo -e "${BRed}Something went wrong!"
           echo -e "Check /usr/share/gnome-shell/theme"
           echo -e "The Yaru-Backup directory doesn't exist!"
           echo -e "Stopping here${RCol}"
           exit
-        fi 
+        fi
 
 ### Select theme
     echo -e "${BWhi}Please select which themed shell theme you want to install: ${RCol}"
     select origshellcolor in Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
     do
       case $origshellcolor in
-	Aqua) 
+	Aqua)
 	    echo -e "${Yel}Copying files from Yaru-$origshellcolor/gnome-shell to /usr/share/gnome-shell/theme/Yaru${RCol}"
 	    cp -R ./Themes/Yaru-$origshellcolor/gnome-shell /usr/share/gnome-shell/theme/Yaru
 	    echo -e "${BWhi}Done...${RCol}"
@@ -562,6 +550,12 @@ fi
 	    echo -e "${BWhi}Done...${RCol}"
             break
 	    ;;
+	Orange)
+			echo -e "${Yel}Copying files from Yaru-$origshellcolor/gnome-shell to /usr/share/gnome-shell/theme/Yaru${RCol}"
+			cp -R ./Themes/Yaru-$origshellcolor/gnome-shell /usr/share/gnome-shell/theme/Yaru
+			echo -e "${BWhi}Done...${RCol}"
+		        break
+			;;
 	Pink)
 	    echo -e "${Yel}Copying files from Yaru-$origshellcolor/gnome-shell to /usr/share/gnome-shell/theme/Yaru${RCol}"
 	    cp -R ./Themes/Yaru-$origshellcolor/gnome-shell /usr/share/gnome-shell/theme/Yaru
@@ -595,7 +589,7 @@ fi
    done
 fi
 echo -e " "
-echo -e "${Yel}All things copied.${RCol}"  
+echo -e "${Yel}All things copied.${RCol}"
 echo -e "${BYel}You can cancel this script with CTRL+C${RCol}"
 echo -e "${BYel}Or follow the next steps to enable what you want${RCol}"
 echo -e " "
@@ -620,7 +614,7 @@ echo -e " "
     select enablecolor in No Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
     do
       case $enablecolor in
-	Aqua) 
+	Aqua)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -636,7 +630,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Blue) 
+	Blue)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -652,7 +646,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Brown) 
+	Brown)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -668,7 +662,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Deepblue) 
+	Deepblue)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -684,7 +678,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Green) 
+	Green)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -700,7 +694,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Grey) 
+	Grey)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -716,7 +710,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	MATE) 
+	MATE)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -732,7 +726,24 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Pink) 
+	Orange)
+					  echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
+					  sleep 0.5
+					  echo -e "${BGre}3${RCol}"
+					  sleep 1
+					  echo -e "${BGre}2${RCol}"
+					  sleep 1
+					  echo -e "${BGre}1${RCol}"
+					  sleep 1
+					  echo -e "${BGre}IGNITION${RCol}"
+			#Run the gsettings command and supress errors, for this the user name is relevant
+			sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Orange' 2> /dev/null
+			echo -e "${BGre}AND LIFT OFF!${RCol}"
+			sleep 1
+					  break
+					  ;;
+
+	Pink)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -748,7 +759,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Purple) 
+	Purple)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -764,7 +775,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Red) 
+	Red)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -780,7 +791,7 @@ echo -e " "
 	    sleep 1
             break
             ;;
-	Yellow) 
+	Yellow)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
             echo -e "${BGre}3${RCol}"
@@ -809,7 +820,7 @@ echo -e " "
 if [[ $packinstall = "no" ]]; then
 echo -e "${BWhi}Do you want to enable the GTK theme?${RCol}"
 select setgtk in yes no
-  do 
+  do
     case $setgtk in
       yes)
         echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!"
@@ -836,6 +847,8 @@ select setgtk in yes no
 		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Grey' 2> /dev/null
 	elif [[ $themeinstall = "MATE" ]]
 		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-MATE' 2> /dev/null
+	elif [[ $themeinstall = "Orange" ]]
+		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Orange' 2> /dev/null
 	elif [[ $themeinstall = "Pink" ]]
 		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Pink' 2> /dev/null
 	elif [[ $themeinstall = "Purple" ]]
@@ -844,7 +857,7 @@ select setgtk in yes no
 		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Red' 2> /dev/null
 	elif [[ $themeinstall = "Yellow" ]]
 		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Yellow' 2> /dev/null
-		
+
 	fi
 	echo -e "${BGre}AND LIFT OFF!${RCol}"
 	sleep 1
@@ -867,10 +880,11 @@ elif [[ $packinstall = "yes" ]]; then
 #choose if dock should also be themed
 echo -e "${BWhi}Do you also want to theme the Ubuntu dock? (indicators)${RCol}"
 echo -e "${BWhi}You can revert and change the colors with the script 'dockcolor.sh'${RCol}"
+echo -e "${BWhi}If you want orange dots, you can skip this."
 
 echo -e " "
 ### If yes, select color
-  select dockchoosecolor in NOPE Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow 
+  select dockchoosecolor in NOPE Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
   do
     case $dockchoosecolor in
       Aqua)
@@ -964,7 +978,7 @@ echo -e " "
 	NOPE)
 	   echo -e "${BGre}Okay, the indicators won't be touched${RCol}"
 	   break
-           ;;       
+           ;;
 	*)
 	   echo -e "${BYel}You know what? I should set EVERYTHING to black. Just for fun...please select 1-12!${RCol}"
 	   break
@@ -977,7 +991,7 @@ echo -e " "
 #check if icons are installed and ask if they should be enabled
 if [[ $packinstall = "yes" ]]; then
 echo -e "${BWhi}And last but not least, do you want to enable an icon pack?"${RCol}
-  select iconcolor in None Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow 
+  select iconcolor in None Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
     do
       case $iconcolor in
 	None)
@@ -1033,6 +1047,13 @@ echo -e "${BWhi}And last but not least, do you want to enable an icon pack?"${RC
 	    echo -e "${BGre}Done!${RCol}"
 	    break
 	    ;;
+	Orange)
+			echo -e "${Yel}Setting Yaru-MATE icons...${RCol}"
+			sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-MATE' 2> /dev/null
+			sleep 0.5
+			echo -e "${BGre}Done!${RCol}"
+			break
+		  ;;
 	Pink)
 	    echo -e "${Yel}Setting Yaru-Pink icons...${RCol}"
 	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Pink' 2> /dev/null
@@ -1070,7 +1091,7 @@ echo -e " "
 if [[ $packinstall = "no" ]]; then
 echo -e "${BWhi}And last but not least, do you want to enable the installed icon pack?"${RCol}
 select seticon in yes no
-  do 
+  do
     case $seticon in
       yes)
         echo -e "${BGre}Okay, setting Yaru-$themeinstall icons..."
@@ -1089,6 +1110,8 @@ select seticon in yes no
 	elif [[ $themeinstall = "Grey" ]]; then
 	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Grey' 2> /dev/null
 	elif [[ $themeinstall = "MATE" ]]; then
+	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-MATE' 2> /dev/null
+	elif [[ $themeinstall = "Orange" ]]; then
 	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-MATE' 2> /dev/null
 	elif [[ $themeinstall = "Pink" ]]; then
 	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Pink' 2> /dev/null
@@ -1114,7 +1137,7 @@ select seticon in yes no
   done
 fi
 
-             
+
 echo -e " "
 echo -e "${BGre} We're done!${RCol}"
 echo -e " "
@@ -1124,8 +1147,5 @@ sleep 0.5
 echo -e "${Yel}To change the dock indicator, please run dockcolor.sh.${RCol}"
 echo -e "${BCya}Bye bye!${RCol}"
 
-echo -e "${BCya}...and thanks for choosing my Yaru-Colors pack!${RCol}" 
+echo -e "${BCya}...and thanks for choosing my Yaru-Colors pack!${RCol}"
 sleep 1
-               
-  
-        
