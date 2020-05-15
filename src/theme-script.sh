@@ -1244,6 +1244,11 @@ done
 ## C8 - Icon compiling ##
 #########################
 
+###### IMPORTANT NOTE ######
+# To speed up the whole process, it's not needed to render EVERY icon. Just remove every unneded icon (not directories, they need to stay!).
+# The script will render the needed icons, only and then sets Yaru as inherit theme.
+# If you don't have the Yaru theme, download it from Yarus git or somewhere else.
+
 ### ICON COMPILING - TESTING ###
 if [[ $everything == "false" ]] && [[ $no_icons == "false" ]] && [[ $singlestep == "false" ]]; then
 	echo -e "Do you want to compile the icons and cursors?"
@@ -1279,7 +1284,7 @@ while [[ $comp_icons == "true" ]]; do
 	if [[ ! -d $icon_dir/Suru_BAK ]]
 	then
 		mv $icon_dir/Suru $icon_dir/Suru_BAK
-		cp -R $icon_dir/Suru_BAK $icon_dir/Suru_WORK
+	#	cp -R $icon_dir/Suru_BAK $icon_dir/Suru_WORK
 		mkdir $icon_dir/Suru
 	fi
 	if [[ ! -d $icon_dir/src_BAK ]]
@@ -1345,25 +1350,33 @@ while [[ $comp_icons == "true" ]]; do
 
 
 
-	cp -R $icon_dir/Suru/* $icon_dir/Suru_WORK/
-	rm -rf $icon_dir/Suru
-	mv $icon_dir/Suru_WORK $icon_dir/Suru
+#	cp -R $icon_dir/Suru/* $icon_dir/Suru_WORK/
+#	rm -rf $icon_dir/Suru
+#	mv $icon_dir/Suru_WORK $icon_dir/Suru
+if [[ $cursors_done == "false" ]]; then
+	mv $icon_dir/src/symlinks/fullcolor/cursors.list $icon_dir/src/symlinks/fullcolor/cursors.list.BAK
+fi
 	cd $icon_dir/src/symlinks
 	./generate-symlinks.sh -a
 	mv $icon_dir/Suru/* $icon_theme_dir #copy the compiled icons
-
+	mv $icon_dir/src/symlinks/fullcolor/cursors.list.BAK $icon_dir/src/symlinks/fullcolor/cursors.list
 	#cleaning up, restoring backups
 	rm -rf $icon_dir/src
 	rm -rf $icon_dir/Suru
   mv $icon_dir/src_BAK $icon_dir/src
 	mv $icon_dir/Suru_BAK $icon_dir/Suru
 
+	cp $icon_dir/Suru/index.theme $icon_theme_dir
 	sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/index.theme
+	sed -i -e "s/Inherits=Humanity,hicolor/Inherits=Yaru,Humanity,hicolor/g" $icon_theme_dir/index.theme
 	sed -i -e "s/COLOR/$color/g" $icon_theme_dir/index.theme
+
 	if [[ $cursors_done == "true" ]]; then
+		cp $icon_dir/Suru/cursor.theme $icon_theme_dir
 		sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/cursor.theme
 		sed -i -e "s/COLOR/$color/g" $icon_theme_dir/cursor.theme
 	fi
+
 	comp_icons="false"
 
 done
