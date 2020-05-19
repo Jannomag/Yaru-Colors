@@ -20,18 +20,158 @@
 #		 |- C6-4 - copying and cleaning
 # C7 - Icon compiling (commented out, just testing)
 
+
+function show_usage (){
+    printf "Usage: $0 [color] <option>\n"
+    printf "\n"
+		printf "Colors: Aqua, Blue, Brown, Green, Grey, MATE, Orange, Pink, Purple, Red, Yellow\n"
+    printf "Options:\n"
+    printf " -a|--all, Compile everything without asking\n"
+    printf " -n|--noicons, Compile everything but icons without asking\n"
+    printf " -3|--gtk3, Compile gtk3 theme, only\n"
+    printf " -2|--gtk2, Compile gtk2 theme, only\n"
+    printf " -s|--shell, Compile Gnome-Shell theme, only\n"
+    printf " -u|--unity, Compile Unity theme, only\n"
+		printf " -i|--icons, Compile icons, only\n"
+		printf " -c|--cursors, Compile cursors, only\n"
+    printf " -h|--help, Print help\n"
+		printf " without option, the script will ask for each step.\n\n"
+
+return 0
+}
+
+
 WORKDIR=$(pwd)
 COMPILED=$WORKDIR/_compiled
 color=$1
 withoutask=$2
 
+
 comp_shell="false"
 comp_gtk2="false"
 comp_gtk3="false"
 comp_icons="false"
+comp_cursors="false"
 singlestep="false"
 everything="false"
 no_icons="false"
+compile_done="false"
+
+while [ ! -z "$1" ]; do
+	case "$1" in
+			Aqua|aqua)
+						break
+						;;
+			Blue|blue)
+						break
+						;;
+			Brown|brown)
+						break
+						;;
+			Deepblue|deepblue)
+						break
+						;;
+			Green|green)
+						break
+						;;
+			Grey|grey)
+						break
+						;;
+			MATE|mate)
+						break
+						;;
+			Orange|orange)
+						break
+						;;
+			Pink|pink)
+						break
+						;;
+			Purple|purple)
+						break
+						;;
+			Red|red)
+						break
+						;;
+			Yellow|yellow)
+						break
+						;;
+			*)
+						echo "You've entered a wrong color!"
+						break
+						;;
+	esac
+done
+
+
+while [ ! -z "$2" ]; do
+	case "$2" in
+		--all|-a)
+			shift
+			echo "Compiling everything without asking!"
+			everything="true"
+			comp_shell="true"
+			comp_gtk2="true"
+			comp_gtk3="true"
+			comp_unity="true"
+			comp_icons="true"
+			comp_cursors="true"
+			;;
+		--gtk3|-3)
+			shift
+			echo "Compiling just gtk3 without asking!"
+			comp_gtk3="true"
+			singlestep="true"
+			;;
+		--gtk2|-2)
+			shift
+			echo "Compiling just gtk2 without asking!"
+			comp_gtk2="true"
+			singlestep="true"
+			;;
+		--shell|-s)
+			shift
+			echo "Compiling just shell without asking!"
+			comp_shell="true"
+			singlestep="true"
+			;;
+		--unity|-u)
+			shift
+			echo "Compiling just unity without asking!"
+			comp_unity="true"
+			singlestep="true"
+			;;
+		--icons|-i)
+			shift
+			echo "Compiling just icons without asking!"
+			comp_icons="true"
+			singlestep="true"
+			;;
+		--cursors|-c)
+			shift
+			echo "Compiling just cursors without asking!"
+			comp_cursors="true"
+			singlestep="true"
+			;;
+		--noicons|-n)
+			shift
+			echo "Compiling everything but icons without asking!"
+			everything="true"
+			comp_shell="true"
+			comp_gtk2="true"
+			comp_gtk3="true"
+			comp_unity="true"
+			singlestep="true"
+			;;
+		*)
+		  show_usage
+			break
+		  ;;
+	esac
+
+done
+
+
+
 #colors: Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Yellow
 
 #define colors:
@@ -149,6 +289,12 @@ g_Purple=(924D8B 8E4D8B 8A4D8C 874D8D 834D8E 7F4D8E 7C4D8F 784D90 744D91 714D92)
 g_Red=(E92020 EB2621 ED2D23 F03424 F23A26 F54127 F74829 FA4E2A FC552C FF5C2E)
 g_Yellow=(E9BA20 E9BF20 E9C420 E9C920 E9CE20 E9D320 E9D820 E9DD20 E9E220 E9E820)
 
+#set first letter of color to uppercase, for MATE set every letter to uppercase
+if [[ $color == "mate" ]]; then
+	color="${color^^}"
+else
+	color="${color^}"
+fi
 
 #interprete command
 if [[ "$color" == "Aqua" ]]; then
@@ -256,10 +402,15 @@ elif [[ "$color" == "Custom" ]]; then
 	echo "Enter color / theme name for 'Yaru-NAME': "
 	read color
 	no_icons = "true"
-
 fi
-	echo "Color $color set!"
 
+if [[ ! -z $color ]]; then
+	echo "Color $color set!"
+else
+	echo "Missing color!"
+	show_usage
+	exit
+fi
 
 #Check if needed packages are installed, if not exit.
 if [[ $(dpkg-query -W -f='${Status}' inkscape 2>/dev/null | grep -c "ok installed") -eq 0 ]];
@@ -311,71 +462,6 @@ then
   exit
 fi
 
-
-if [[ "$withoutask" == "all" ]] ; then
-	echo "Compiling everything without asking!"
-	everything="true"
-	comp_shell="true"
-	comp_gtk2="true"
-	comp_gtk3="true"
-	comp_unity="true"
-	comp_icons="true"
-elif [[ $withoutask == "gtk3" ]]; then
-	echo "Compiling just gtk3 without asking!"
-	everything="false"
-	comp_shell="false"
-	comp_gtk2="false"
-	comp_gtk3="true"
-	comp_unity="false"
-	comp_icons="false"
-	singlestep="true"
-elif [[ $withoutask == "gtk2" ]]; then
-	echo "Compiling just gtk2 without asking!"
-	everything="false"
-	comp_shell="false"
-	comp_gtk2="true"
-	comp_gtk3="false"
-	comp_unity="false"
-	comp_icons="false"
-	singlestep="true"
-elif [[ $withoutask == "shell" ]]; then
-	echo "Compiling just shell without asking!"
-	everything="false"
-	comp_shell="true"
-	comp_gtk2="false"
-	comp_gtk3="false"
-	comp_unity="false"
-	comp_icons="false"
-	singlestep="true"
-elif [[ $withoutask == "unity" ]]; then
-	echo "Compiling just unity without asking!"
-	everything="false"
-	comp_shell="false"
-	comp_gtk2="false"
-	comp_gtk3="false"
-	comp_unity="true"
-	comp_icons="false"
-	singlestep="true"
-elif [[ $withoutask == "icons" ]]; then
-	echo "Compiling just icons without asking!"
-	everything="false"
-	comp_shell="false"
-	comp_gtk2="false"
-	comp_gtk3="false"
-	comp_unity="false"
-	comp_icons="true"
-	singlestep="true"
-elif [[ $withoutask == "noicons" ]]; then
-	echo "Compiling everything but icons without asking!"
-	everything="true"
-	comp_shell="true"
-	comp_gtk2="true"
-	comp_gtk3="true"
-	comp_unity="true"
-	comp_icons="false"
-	singlestep="true"
-fi
-
 if [[ "$base_col" == "" ]] || [[ "$purple_col" == "" ]]; then
 	echo "Unknown color entered. Colors are case sensitive:"
 	echo "Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Yellow, Custom"
@@ -395,6 +481,11 @@ if [[ $everything == "false" ]] && [[ $singlestep == "false" ]]; then
 		esac
 	done
 fi
+
+echo $#
+
+while [[ $compile_done == "false" ]]; do
+
 
 while [[ $comp_gtk3 == "true" ]]; do
 #set paths for defaul theme
@@ -418,14 +509,11 @@ gtk20l_path=$COMPILED/Themes/Yaru-$color-light/gtk-2.0
 #creating directories
 mkdir -p $gtk32_path
 mkdir -p $gtk30_path
-mkdir -p $gtk20_path
-mkdir -p $shell_path
 mkdir -p $gtk32d_path
 mkdir -p $gtk30d_path
-mkdir -p $gtk20d_path
 mkdir -p $gtk32l_path
 mkdir -p $gtk30l_path
-mkdir -p $gtk20l_path
+
 
 
 ############## CHAPTER ###############
@@ -744,7 +832,6 @@ echo -e "Compiling shell theme..."
 ############ CHAPTER #############
 ### C5 - COMPILING SHELL THEME ###
 ##################################
-
 #Setting paths for the theme
 theme_path=$COMPILED/Themes/Yaru-$color
 theme_light_path=$COMPILED/Themes/Yaru-$color-light
@@ -859,7 +946,6 @@ done
 ############ CHAPTER ############
 ### C6 - COMPILING GTK2 THEME ###
 #################################
-
 
 if [[ $everything == "false" ]] && [[ $singlestep == "false" ]]; then
 	echo -e "Do you want to compile the gtk2 theme (this may take a while)?"
@@ -1148,6 +1234,7 @@ echo -e "Copy theme..."
 #Copy everything
 cp -R $source20_path/assets $gtk20_path
 cp $source20_path/*.rc $gtk20_path
+cp $source20_path/backup/assets/scrollbar-arrow*.png $gtk20_path/assets
 cp -R $source20l_path/assets $gtk20l_path
 cp $source20l_path/backup/assets/scrollbar-arrow*.png $gtk20l_path/assets
 cp $source20l_path/*.rc $gtk20l_path
@@ -1260,8 +1347,26 @@ if [[ $everything == "false" ]] && [[ $no_icons == "false" ]] && [[ $singlestep 
 	done
 fi
 
+if [[ $comp_icons == "true" ]]; then
+	echo -e "Do you want to compile cursors, as well? (this will take a bit)"
+	select yn in "Yes" "No"; do
+	  case $yn in
+		  Yes)
+			    	comp_cursors="true"
+			 		  cursors_done="false"
+						break
+						;;
+			No)
+				  	comp_cursors="false"
+						cursors_done="false"
+						break;;
+	  esac
+	done
+fi
+
 while [[ $comp_icons == "true" ]]; do
-	#define variables for the directories and files needed for the process
+
+  #define variables for the directories and files needed for the process
 	icon_dir=$WORKDIR/icons
 	icon_theme_dir=$COMPILED/Icons/Yaru-$color
 	folders_file=$icon_dir/src/fullcolor/places/folders.svg
@@ -1279,7 +1384,6 @@ while [[ $comp_icons == "true" ]]; do
 	if [[ ! -d $icon_dir/Suru_BAK ]]
 	then
 		mv $icon_dir/Suru $icon_dir/Suru_BAK
-		cp -R $icon_dir/Suru_BAK $icon_dir/Suru_WORK
 		mkdir $icon_dir/Suru
 	fi
 	if [[ ! -d $icon_dir/src_BAK ]]
@@ -1329,25 +1433,22 @@ while [[ $comp_icons == "true" ]]; do
 
 	mkdir -p $icon_theme_dir #create the folder for the compiled icons
 
-	cursors_done="false" #leave this but...
-	#Creating cursors...
-	#comment this out if you don't want to compile them - it'll take a while
-  cd $icon_dir/src/cursors
-	sed -i -e "s/19b6ee/$svg2_color/gI" ./source-cursors.svg #replace the blue color in the source-cursors.svg
-	rm -rf bitmaps/24x24 bitmaps/32x32 bitmaps/48x48 bitmaps/64x64	bitmaps/96x96
-	python ./render-cursors.py ./source-cursors.svg #execute the python script, special thanks to Suru devs for prividing this!
-# python ./anicursorgen.py #doesn't work, freezes
-	mkdir -p $icon_theme_dir/cursors
-	./x11-make.sh #also thanks to Suru devs for both scripts!
-	./w32-make.sh #""
-	cursors_done="true"
-	## cursor section end
+	while [[ $comp_cursors == "true" ]]
+	do
+		#Creating cursors...
+		cd $icon_dir/src/cursors
+		sed -i -e "s/19b6ee/$svg2_color/gI" ./source-cursors.svg #replace the blue color in the source-cursors.svg
+		rm -rf bitmaps/24x24 bitmaps/32x32 bitmaps/48x48 bitmaps/64x64	bitmaps/96x96
+		python ./render-cursors.py ./source-cursors.svg #execute the python script, special thanks to Suru devs for prividing this!
+		# python ./anicursorgen.py #doesn't work, freezes
+		mkdir -p $icon_theme_dir/cursors
+		./x11-make.sh #also thanks to Suru devs for both scripts!
+		./w32-make.sh #""
+		cursors_done="true"
+		## cursor section end
+		comp_cursors="false"
+	done
 
-
-
-	cp -R $icon_dir/Suru/* $icon_dir/Suru_WORK/
-	rm -rf $icon_dir/Suru
-	mv $icon_dir/Suru_WORK $icon_dir/Suru
 	cd $icon_dir/src/symlinks
 	./generate-symlinks.sh -a
 	mv $icon_dir/Suru/* $icon_theme_dir #copy the compiled icons
@@ -1357,10 +1458,14 @@ while [[ $comp_icons == "true" ]]; do
 	rm -rf $icon_dir/Suru
   mv $icon_dir/src_BAK $icon_dir/src
 	mv $icon_dir/Suru_BAK $icon_dir/Suru
-
+	cp $icon_dir/Suru/index.theme $icon_theme_dir/
 	sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/index.theme
 	sed -i -e "s/COLOR/$color/g" $icon_theme_dir/index.theme
+  sed -i -e "s/Inherits=Humanity,hicolor/Inherits=Yaru,Humanity,hicolor/g" $icon_theme_dir/index.theme
+
+
 	if [[ $cursors_done == "true" ]]; then
+		cp $icon_dir/Suru/cursor.theme $icon_theme_dir/
 		sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/cursor.theme
 		sed -i -e "s/COLOR/$color/g" $icon_theme_dir/cursor.theme
 	fi
@@ -1368,4 +1473,9 @@ while [[ $comp_icons == "true" ]]; do
 
 done
 
-echo -e "Everything's done now, your files are stored in the Themes directory!"
+if [[ $comp_gtk3 == "false" ]] && [[ $comp_gtk2 == "false" ]] && [[ $comp_shell == "false" ]] && [[ $comp_unity == "false" ]] && [[ $comp_icons == "false" ]] && [[ $comp_cursors == "false" ]]; then
+	compile_done="true"
+	echo -e "Everything's done now, your files are stored in the Themes directory!"
+fi
+
+done
