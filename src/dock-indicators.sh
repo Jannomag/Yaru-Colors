@@ -84,7 +84,10 @@ elif [ "$color" == "Yellow" ]; then
 elif [ "$color" == "Stock" ]; then
 	base_col=$original_base
 	purple_col=$original_purple
-	
+elif [ "$color" == "Orange" ]; then
+	base_col=$original_base
+	purple_col=$original_purple
+
 elif [ "$color" == "Custom" ]; then
 	echo "Enter base color (without # like E95420): "
 	read base_col
@@ -110,7 +113,7 @@ select yn in "Yes" "No"; do
 			sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color "#$base_col" 2> /dev/null
 	   		sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color "#$base_col" 2> /dev/null
 			echo -e "Done!"
-			echo -e "You can get back to stock orange with the "Stock" argument when executing this script!"					
+			echo -e "You can get back to stock orange with the "Stock" argument when executing this script!"
 			break
 			exit
 			;;
