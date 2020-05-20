@@ -160,6 +160,7 @@ while [ ! -z "$2" ]; do
 			comp_gtk2="true"
 			comp_gtk3="true"
 			comp_unity="true"
+      comp_icons="false"
 			singlestep="true"
 			;;
 		*)
@@ -1331,14 +1332,9 @@ done
 ## C8 - Icon compiling ##
 #########################
 
-###### IMPORTANT NOTE ######
-# To speed up the whole process, it's not needed to render EVERY icon. Just remove every unneded icon (not directories, they need to stay!).
-# The script will render the needed icons, only and then sets Yaru as inherit theme.
-# If you don't have the Yaru theme, download it from Yarus git or somewhere else.
-
 ### ICON COMPILING - TESTING ###
 if [[ $everything == "false" ]] && [[ $no_icons == "false" ]] && [[ $singlestep == "false" ]]; then
-	echo -e "Do you want to compile the icons and cursors?"
+	echo -e "Do you want to compile the icons?"
 	select yn in "Yes" "No"; do
 		case $yn in
 			Yes)
@@ -1349,23 +1345,6 @@ if [[ $everything == "false" ]] && [[ $no_icons == "false" ]] && [[ $singlestep 
         	 comp_icons="false"
         	 break;;
 		esac
-	done
-fi
-
-if [[ $comp_icons == "true" ]]; then
-	echo -e "Do you want to compile cursors, as well? (this will take a bit)"
-	select yn in "Yes" "No"; do
-	  case $yn in
-		  Yes)
-			    	comp_cursors="true"
-			 		  cursors_done="false"
-						break
-						;;
-			No)
-				  	comp_cursors="false"
-						cursors_done="false"
-						break;;
-	  esac
 	done
 fi
 
@@ -1389,10 +1368,6 @@ while [[ $comp_icons == "true" ]]; do
 	if [[ ! -d $icon_dir/Suru_BAK ]]
 	then
 		mv $icon_dir/Suru $icon_dir/Suru_BAK
-<<<<<<< HEAD
-=======
-	#	cp -R $icon_dir/Suru_BAK $icon_dir/Suru_WORK
->>>>>>> master
 		mkdir $icon_dir/Suru
 	fi
 	if [[ ! -d $icon_dir/src_BAK ]]
@@ -1441,67 +1416,66 @@ while [[ $comp_icons == "true" ]]; do
   python ./render-bitmaps.py #execute the python script, special thanks to Suru devs for providing this!
 
 	mkdir -p $icon_theme_dir #create the folder for the compiled icons
+echo "BEVOR"
 
-	while [[ $comp_cursors == "true" ]]
-	do
-		#Creating cursors...
-		cd $icon_dir/src/cursors
-		sed -i -e "s/19b6ee/$svg2_color/gI" ./source-cursors.svg #replace the blue color in the source-cursors.svg
-		rm -rf bitmaps/24x24 bitmaps/32x32 bitmaps/48x48 bitmaps/64x64	bitmaps/96x96
-		python ./render-cursors.py ./source-cursors.svg #execute the python script, special thanks to Suru devs for prividing this!
-		# python ./anicursorgen.py #doesn't work, freezes
-		mkdir -p $icon_theme_dir/cursors
-		./x11-make.sh #also thanks to Suru devs for both scripts!
-		./w32-make.sh #""
-		cursors_done="true"
-		## cursor section end
-		comp_cursors="false"
-	done
 
-<<<<<<< HEAD
-=======
-#	cp -R $icon_dir/Suru/* $icon_dir/Suru_WORK/
-#	rm -rf $icon_dir/Suru
-#	mv $icon_dir/Suru_WORK $icon_dir/Suru
-if [[ $cursors_done == "false" ]]; then
-	mv $icon_dir/src/symlinks/fullcolor/cursors.list $icon_dir/src/symlinks/fullcolor/cursors.list.BAK
-fi
->>>>>>> master
 	cd $icon_dir/src/symlinks
 	./generate-symlinks.sh -a
 	mv $icon_dir/Suru/* $icon_theme_dir #copy the compiled icons
-	mv $icon_dir/src/symlinks/fullcolor/cursors.list.BAK $icon_dir/src/symlinks/fullcolor/cursors.list
+
 	#cleaning up, restoring backups
 	rm -rf $icon_dir/src
 	rm -rf $icon_dir/Suru
   mv $icon_dir/src_BAK $icon_dir/src
 	mv $icon_dir/Suru_BAK $icon_dir/Suru
-<<<<<<< HEAD
 	cp $icon_dir/Suru/index.theme $icon_theme_dir/
-=======
-
-	cp $icon_dir/Suru/index.theme $icon_theme_dir
->>>>>>> master
 	sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/index.theme
-	sed -i -e "s/Inherits=Humanity,hicolor/Inherits=Yaru,Humanity,hicolor/g" $icon_theme_dir/index.theme
 	sed -i -e "s/COLOR/$color/g" $icon_theme_dir/index.theme
-<<<<<<< HEAD
   sed -i -e "s/Inherits=Humanity,hicolor/Inherits=Yaru,Humanity,hicolor/g" $icon_theme_dir/index.theme
 
+  comp_icons="false"
 
-	if [[ $cursors_done == "true" ]]; then
-		cp $icon_dir/Suru/cursor.theme $icon_theme_dir/
-=======
+done
 
-	if [[ $cursors_done == "true" ]]; then
-		cp $icon_dir/Suru/cursor.theme $icon_theme_dir
->>>>>>> master
-		sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/cursor.theme
-		sed -i -e "s/COLOR/$color/g" $icon_theme_dir/cursor.theme
-	fi
 
-	comp_icons="false"
+if [[ $everything == "false" ]] && [[ $no_icons == "false" ]]&& [[ $singlestep == "false" ]]; then
+	echo -e "Do you want to compile cursors? (this will take a bit)"
+	select yn in "Yes" "No"; do
+	  case $yn in
+		  Yes)
+			    	comp_cursors="true"
+			 		  cursors_done="false"
+						break
+						;;
+			No)
+				  	comp_cursors="false"
+						cursors_done="false"
+						break
+            ;;
+	  esac
+	done
+fi
 
+while [[ $comp_cursors == "true" ]]; do
+  icon_dir=$WORKDIR/icons
+  icon_theme_dir=$COMPILED/Icons/Yaru-$color
+  cursor_dir=$WORKDIR/icons/src/cursors
+  cursor_backup=$WORKDIR/icons/src/BAK_cursors
+  cp -R $cursor_dir $cursor_backup
+  #Creating cursors...
+  cd $cursor_dir
+  sed -i -e "s/19b6ee/$svg2_color/gI" ./source-cursors.svg #replace the blue color in the source-cursors.svg
+  rm -rf bitmaps/24x24 bitmaps/32x32 bitmaps/48x48 bitmaps/64x64	bitmaps/96x96
+  python ./render-cursors.py ./source-cursors.svg #execute the python script, special thanks to Suru devs for prividing this!
+  # python ./anicursorgen.py #doesn't work, freezes
+  mkdir -p $icon_theme_dir/cursors
+  ./x11-make.sh #also thanks to Suru devs for both scripts!
+  ./w32-make.sh #""
+  ## cursor section end
+  cp $icon_dir/Suru/cursor.theme $icon_theme_dir/
+  sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/cursor.theme
+  sed -i -e "s/COLOR/$color/g" $icon_theme_dir/cursor.theme
+  comp_cursors="false"
 done
 
 if [[ $comp_gtk3 == "false" ]] && [[ $comp_gtk2 == "false" ]] && [[ $comp_shell == "false" ]] && [[ $comp_unity == "false" ]] && [[ $comp_icons == "false" ]] && [[ $comp_cursors == "false" ]]; then

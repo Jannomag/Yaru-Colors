@@ -11,6 +11,10 @@ while [ ! -z "$1" ]; do
 					shift
 					param="-i"
 					;;
+		--cursors|-c)
+					shift
+					param="-c"
+					;;
 		--noicons|-n)
 					shift
 					param="-n"
@@ -23,9 +27,9 @@ done
 
 for i in "${color[@]}"
 do
-	echo $param
+	echo "Compiling $i with parameter $param..."
 	./theme-script.sh $i $param
+	echo "Done!"
+
 done
-
-
-echo -e "Everything compiled!"
+echo "Compiled EVERYTHING with parameter $param!"
