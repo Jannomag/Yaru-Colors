@@ -52,6 +52,7 @@ comp_gtk2="false"
 comp_gtk3="false"
 comp_icons="false"
 comp_cursors="false"
+comp_unity="false"
 singlestep="false"
 everything="false"
 no_icons="false"
@@ -482,8 +483,6 @@ if [[ $everything == "false" ]] && [[ $singlestep == "false" ]]; then
 		esac
 	done
 fi
-
-echo $#
 
 while [[ $compile_done == "false" ]]; do
 
@@ -1461,6 +1460,8 @@ while [[ $comp_cursors == "true" ]]; do
   icon_theme_dir=$COMPILED/Icons/Yaru-$color
   cursor_dir=$WORKDIR/icons/src/cursors
   cursor_backup=$WORKDIR/icons/src/BAK_cursors
+  suru_dir=$WORKDIR/icons/Suru
+  cp -R $suru_dir/cursors $suru_dir/BAK_cursors
   cp -R $cursor_dir $cursor_backup
   #Creating cursors...
   cd $cursor_dir
@@ -1472,9 +1473,14 @@ while [[ $comp_cursors == "true" ]]; do
   ./x11-make.sh #also thanks to Suru devs for both scripts!
   ./w32-make.sh #""
   ## cursor section end
+  cp -R $icon_dir/Suru/cursors $icon_theme_dir/
   cp $icon_dir/Suru/cursor.theme $icon_theme_dir/
   sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/cursor.theme
   sed -i -e "s/COLOR/$color/g" $icon_theme_dir/cursor.theme
+  rm -rf $cursor_dir
+  mv $cursor_backup $cursor_dir
+  rm -rf $suru_dir/cursors
+  mv $suru_dir/BAK_cursors $suru_dir/cursors
   comp_cursors="false"
 done
 
