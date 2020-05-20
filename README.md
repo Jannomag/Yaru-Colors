@@ -20,6 +20,7 @@ Yaru-Colors themes are containing following:
 - Ubuntu-Dock theme (indicators)
 - Unity support (brought with Yaru 20.04)
 - Wallpapers (see below)
+Please note: I've added Yarus source files for gtk2/3, gnome-shell, unity, icons and cursors to my git, to be able to work with them. I'll update them as soon as I'm working on a next version of Yaru-Colors. 
 
 **Following changes are made by me:**
 - .css files for GTK3 and Gnome-Shell are edited. I changed all orange and purple tinted colors
