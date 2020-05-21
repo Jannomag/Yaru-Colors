@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-MATE
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru theme - forked with a stylish MATE base color
+Encoding=UTF-8
+GtkTheme=Yaru-MATE
+IconTheme=Yaru-MATE
+CursorTheme=Yaru
+CursorSize=24

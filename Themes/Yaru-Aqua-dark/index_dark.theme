@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Aqua-dark
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru-Dark theme - forked with a stylish Aqua base color
+Encoding=UTF-8
+GtkTheme=Yaru-Aqua
+IconTheme=Yaru-Aqua
+CursorTheme=Yaru
+CursorSize=24

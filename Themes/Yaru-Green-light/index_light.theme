@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Green
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru theme - forked with a stylish Green base color
+Encoding=UTF-8
+GtkTheme=Yaru-Green
+IconTheme=Yaru-Green
+CursorTheme=Yaru
+CursorSize=24
