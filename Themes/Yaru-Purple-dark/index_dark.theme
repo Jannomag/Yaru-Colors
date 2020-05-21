@@ -1,9 +1,0 @@
-[X-GNOME-Metatheme]
-Name=Yaru-Purple-dark
-Type=X-GNOME-Metatheme
-Comment=Ubuntu Yaru-Dark theme - forked with a stylish Purple base color
-Encoding=UTF-8
-GtkTheme=Yaru-Purple
-IconTheme=Yaru-Purple
-CursorTheme=Yaru
-CursorSize=24

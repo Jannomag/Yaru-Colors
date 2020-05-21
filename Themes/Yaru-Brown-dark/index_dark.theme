@@ -1,9 +1,0 @@
-[X-GNOME-Metatheme]
-Name=Yaru-Brown-dark
-Type=X-GNOME-Metatheme
-Comment=Ubuntu Yaru-Dark theme - forked with a stylish Brown base color
-Encoding=UTF-8
-GtkTheme=Yaru-Brown
-IconTheme=Yaru-Brown
-CursorTheme=Yaru
-CursorSize=24
