@@ -47,7 +47,7 @@ echo -e "##########----------      NOTE      ----------##########"
 echo -e "${BRed}########################################################"
 echo -e "#                                                      #"
 echo -e "#                     UNINSTALLER                      #"
-echo -e "#                                                      #"
+echo -e "#                     for 20.04.x                      #"
 echo -e "########################################################${RCol}"
 sleep 1
 #Check if root
@@ -69,8 +69,11 @@ if [[ "$EUID" -ne 0 ]]; then
 	sleep 0.5
 else
 	isroot="true"
-	defthemepath="/usr/share/themes"
-	deficonpath="/usr/share/icons"
+	homedir=$( getent passwd "$SUDO_USER" | cut -d: -f6 )
+	linkthemepath="/usr/share/themes"
+	linkiconpath="/usr/share/icons"
+	defthemepath="$homedir/.local/share/themes"
+	deficonpath="$homedir/.icons"
 	echo -e "${BGre}You ran this script as root.${RCol}"
 fi
 
@@ -86,6 +89,11 @@ echo -e "${Yel}Yaru-Path is set to $iconpath${RCol}"
 iconpathset="true"
 
 sleep 0.5
+
+### NOTE ###
+### OBSOLETE WITH 20.04 DUE TO AN COMPATIBILITY ISSUE
+### MAYBE USEFUL LATER, MAYBE NOT
+: << 'GNOMESHELL'
 echo -e "${BWhi}Did you install the gnome-shell theme to /usr/share/gnome-shell/theme/Yaru?${RCol}"
 select shellreplace in yes no
 do
@@ -117,6 +125,7 @@ do
 		;;
 	esac
 done
+GNOMESHELL
 
 echo -e "${BWhi}Do you want to change the Dock indicators back to Orange (if changed)?${RCol}"
 select setdockrestore in yes no
@@ -157,6 +166,7 @@ elif [[ $iconpathset = "false" ]]; then
 	remicons="false"
 fi
 sleep 0.5
+: << 'GNOMESHELL'
 if [[ $setremshell = "true" ]]; then
 	echo -e "${BGre}REMOVE shell theme and RESTORE the backup...${RCol}"
 	remshell="true"
@@ -165,6 +175,18 @@ elif [[ $setremshell = "false" ]]; then
 	remshell="false"
 fi
 sleep 0.5
+GNOMESHELL
+
+if [[ $isroot = "true" ]] && [[ $themepathset = "true" ]]; then
+	echo -e "${BGre}REMOVE linked files in /usr/share/themes...${RCol}"
+	find /usr/share/themes/ -type l -delete
+fi
+
+if [[ $isroot = "true" ]] && [[ $iconpathset = "true" ]]; then
+	echo -e "${BGre}REMOVE linked files in /usr/share/icons...${RCol}"
+	find /usr/share/icons/ -type l -delete
+fi
+
 if [[ $setdockrestore = "yes" ]]; then
 	echo -e "${BGre}RESTORE dock indicator color...${RCol}"
 	dockrestore="true"

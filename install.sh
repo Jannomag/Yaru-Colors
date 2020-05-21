@@ -58,10 +58,27 @@ if [[ "$EUID" -ne 0 ]]; then
 	echo -e " "
 	sleep 0.5
 else
-        isroot="true"
-	themeinstallpath="/usr/share/themes"
-	iconinstallpath="/usr/share/icons"
+  isroot="true"
+	homedir=$( getent passwd "$SUDO_USER" | cut -d: -f6 )
 	echo -e "${BGre}You ran this script as root, default install path is set to\n'/usr/share/' which can also be changed later!${RCol}"
+	echo -e "${BGre}Do you want to install to '/usr',\n or do you want to install them to '/home' and link the files to '/usr'?${RCol}"
+	select linkroot in link root
+	do
+			case $linkroot in
+				link)
+						themeinstallpath="$homedir/.local/share/themes"
+						iconinstallpath="$homedir/.icons"
+						echo -e "${Yel}Okay, themes will be installed to '/home' and linked to '/usr'${RCol}"
+						linkfiles="true"
+						break ;;
+				root)
+						themeinstallpath="/usr/share/themes"
+						iconinstallpath="/usr/share/icons"
+						echo -e "${Yel}Okay, themes will be installed to '/usr'${RCol}"
+						linkfiles="false"
+						break ;;
+			esac
+	done
 fi
 
 #Determine user name for later
@@ -105,7 +122,7 @@ do
 
         echo -e "${Yel}Copying the themes to $gtkpath...${RCol}"
 	cp -R ./Themes/* $gtkpath
-	
+
 	echo -e "${Yel}Done.${RCol}"
         sleep 0.3
         echo -e " "
@@ -421,6 +438,26 @@ fi
 
 ##############################
 #
+# Link files if wanted above
+#
+###########################################################################################################
+if [[ $linkfiles == "true" ]]; then
+	echo -e "${Yel}Linking files to '/usr'...${RCol}"
+	ln -sf $themeinstallpath/Yaru-* /usr/share/themes/
+	ln -sf $iconinstallpath/Yaru-* /usr/share/icons/
+	chown -R $SUDO_USER $themeinstallpath
+	chown -R $SUDO_USER $iconinstallpath
+	sleep 0.5
+	echo -e "${Yel}Done.${RCol}"
+	echo -e ""
+fi
+
+### NOTE ###
+### FOLLOWIN GNOME-SHELL PART IS OBSOLETE UNTIL I'VE FOUND A FIX FOR THE GNOME-SHELL ISSUE
+### BUT MAYBE IT'S NOT NEEDED ANYMORE!
+: <<'GNOMESHELL'
+##############################
+#
 # Install Yaru-Color shell theme as system standard
 #
 ###########################################################################################################
@@ -594,7 +631,7 @@ echo -e "${BYel}You can cancel this script with CTRL+C${RCol}"
 echo -e "${BYel}Or follow the next steps to enable what you want${RCol}"
 echo -e " "
 
-
+GNOMESHELL
 
 ##################
 ##################
@@ -611,7 +648,7 @@ echo -e " "
     if [[ $packinstall = "yes" ]]; then
     echo -e "${BWhi}Do you want to enable a GTK theme?${RCol}"
 ### Select theme
-    select enablecolor in No Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
+    select enablecolor in No Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Yellow
     do
       case $enablecolor in
 	Aqua)
@@ -884,7 +921,7 @@ echo -e "${BWhi}If you want orange dots, you can skip this."
 
 echo -e " "
 ### If yes, select color
-  select dockchoosecolor in NOPE Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
+  select dockchoosecolor in NOPE Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Yellow
   do
     case $dockchoosecolor in
       Aqua)
@@ -991,7 +1028,7 @@ echo -e " "
 #check if icons are installed and ask if they should be enabled
 if [[ $packinstall = "yes" ]]; then
 echo -e "${BWhi}And last but not least, do you want to enable an icon pack?"${RCol}
-  select iconcolor in None Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
+  select iconcolor in None Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Yellow
     do
       case $iconcolor in
 	None)
@@ -1042,7 +1079,7 @@ echo -e "${BWhi}And last but not least, do you want to enable an icon pack?"${RC
 	    ;;
 	MATE)
 	    echo -e "${Yel}Setting Yaru-MATE icons...${RCol}"
-	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-MATE' 2> /dev/null
+	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Orange' 2> /dev/null
 	    sleep 0.5
 	    echo -e "${BGre}Done!${RCol}"
 	    break
@@ -1112,7 +1149,7 @@ select seticon in yes no
 	elif [[ $themeinstall = "MATE" ]]; then
 	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-MATE' 2> /dev/null
 	elif [[ $themeinstall = "Orange" ]]; then
-	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-MATE' 2> /dev/null
+	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Orange' 2> /dev/null
 	elif [[ $themeinstall = "Pink" ]]; then
 	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Pink' 2> /dev/null
 	elif [[ $themeinstall = "Purple" ]]; then

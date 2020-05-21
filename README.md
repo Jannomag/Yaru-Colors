@@ -1,6 +1,7 @@
 ![Logo](Yaru-Colors-Logo-Transparent.png)
 
 **Yaru-Colors is a theme project to bring different colors to Ubuntu's awesome Yaru theme.**
+**Version 20.04.1**
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)
 
