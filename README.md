@@ -44,7 +44,10 @@ It will guide you through everything and allows you to choose what you want to i
 **Installation with script:**
 1. Run the installer with `./install.sh`
 2. Follow the installer
-3. Done
+3. Set your themes with gnome-tweak-tool
+4. For gnome-shell you need the [User Themes Extension](https://extensions.gnome.org/extension/19/user-themes/) for Gnome-Shell
+5. To change the dock indicators, simply run the dock-indicators.sh in `src`
+6. Done
 
 **Removal with script:**
 1. Rund the uninstaller with `./uninstall.sh`
