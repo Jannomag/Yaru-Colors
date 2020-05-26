@@ -163,8 +163,9 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+# commented out because files are existing and symlinks are not needed anymore
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -173,8 +174,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -183,8 +184,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -193,8 +194,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -203,8 +204,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -213,8 +214,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -223,8 +224,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -233,8 +234,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-	  ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#	  ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
 		        	break
 		        	;;
@@ -243,8 +244,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -253,8 +254,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -263,8 +264,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
@@ -273,8 +274,8 @@ if [[ $packinstall = "no" ]];
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
 		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
-		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;

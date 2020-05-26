@@ -522,7 +522,7 @@ mkdir -p $gtk30l_path
 
 #set source paths
 source32_path=$WORKDIR/default/gtk-3.20
-source30_path=$WORKDIR/default/gtk-3.0
+
 
 #creating backups for the original files if something fails
 echo -e "Backing up original _ubuntu-colors.scss and _colors.scss ..."
@@ -616,7 +616,7 @@ cd
 ############## CHAPTER ###############
 ## C2 - GTK3.00 section begins here ##
 ######################################
-
+source30_path=$WORKDIR/default/gtk-3.0
 echo -e " "
 echo -e "Compiling gtk.scss of default, light and dark for GTK 3.00 ..."
 
@@ -624,32 +624,38 @@ echo -e "Compiling gtk.scss of default, light and dark for GTK 3.00 ..."
 #default
 cd $source30_path
 
+
+## OBSOLETE
 #creating backups for the original files if something fails
-echo -e "Backing up original _ubuntu-colors.scss and _colors.scss ..."
-cp $source30_path/_ubuntu-colors.scss $source30_path/BAK_ubuntu-colors.scss
-cp $source30_path/_colors.scss $source30_path/BAK_colors.scss
+#echo -e "Backing up original _ubuntu-colors.scss and _colors.scss ..."
+#cp $source30_path/_ubuntu-colors.scss $source30_path/BAK_ubuntu-colors.scss
+#cp $source30_path/_colors.scss $source30_path/BAK_colors.scss
 
 #check if the backups are there, if not exit
-if [[ ! -f "$source30_path/BAK_ubuntu-colors.scss" ]] && [[ ! -f "$source30_path/BAK_colors.scss" ]]
-then
-	echo -e "BACKUP DIDN'T WORK, EXITING NOW!"
-	exit
-fi
+#if [[ ! -f "$source30_path/BAK_ubuntu-colors.scss" ]] && [[ ! -f "$source30_path/BAK_colors.scss" ]]
+#then
+#	echo -e "BACKUP DIDN'T WORK, EXITING NOW!"
+#	exit
+#fi
 
 ###################
 ### CSS Section ###
 ###################
+#obsolete, _ubuntu-colors.scss is a symlink to gtk-3.20
 #replace the color values in _ubuntu-colors.scss
-echo -e "Find and replace the color values in _ubuntu-colors.scss ..."
-sed -i -e "s/E95420/$base_col/g" $source30_path/_ubuntu-colors.scss
-#Obsolete purple color for <20.04 - newer below
-sed -i -e "s/762572/$purple_col/g" $source30_path/_ubuntu-colors.scss
-#Addition for 20.04 - new purple color is $aubergine = #924D8B!
-sed -i -e "s/924D8B/$base_col/g" $source30_path/_ubuntu-colors.scss
+#echo -e "Find and replace the color values in _ubuntu-colors.scss ..."
+#sed -i -e "s/E95420/$base_col/g" $source30_path/_ubuntu-colors.scss
+##Obsolete purple color for <20.04 - newer below
+#sed -i -e "s/762572/$purple_col/g" $source30_path/_ubuntu-colors.scss
+##Addition for 20.04 - new purple color is $aubergine = #924D8B!
+#sed -i -e "s/924D8B/$base_col/g" $source30_path/_ubuntu-colors.scss
 
-echo -e "Find and replace the color values in _colors.scss ..."
+#echo -e "Find and replace the color values in _colors.scss ..."
 #replace the color values in _colors.scss
-sed -i -e "s/E95420/$base_col/g" $source30_path/_colors.scss
+#obsolete:
+#sed -i -e "s/E95420/$base_col/g" $source30_path/_colors.scss
+### END OF OBSOLETE PART
+
 sassc -a ./gtk.scss ./gtk_generated.css
 #dark
 sassc -a ./gtk-dark.scss ./gtk_dark_generated.css
@@ -759,8 +765,8 @@ ln -rs ../../Yaru-$color/gtk-3.0/assets ./assets
 #restore the backup
 mv $source32_path/BAK_ubuntu-colors.scss $source32_path/_ubuntu-colors.scss
 mv $source32_path/BAK_colors.scss $source32_path/_colors.scss
-mv $source30_path/BAK_ubuntu-colors.scss $source30_path/_ubuntu-colors.scss
-mv $source30_path/BAK_colors.scss $source30_path/_colors.scss
+#mv $source30_path/BAK_ubuntu-colors.scss $source30_path/_ubuntu-colors.scss
+#mv $source30_path/BAK_colors.scss $source30_path/_colors.scss
 
 cd $WORKDIR
 
