@@ -981,6 +981,14 @@ echo -e " "
 	   echo -e "${BGre}Aww, look there, MATE styled dots!${RCol}"
 	   break
 	   ;;
+      Orange)
+	   echo -e "${BGre}Okay, let's set the indicator color to Orange...${RCol}"
+	   sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#e95420' 2> /dev/null
+	   sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color '#e95420' 2> /dev/null
+	   sleep 0.5
+	   echo -e "${BGre}Aww, look there, orange colored dots!${RCol}"
+	   break
+	   ;;
       Pink)
 	   echo -e "${BGre}Okay, let's set the indicator color to Pink...${RCol}"
 	   sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#e920a3' 2> /dev/null
@@ -1080,18 +1088,18 @@ echo -e "${BWhi}And last but not least, do you want to enable an icon pack?"${RC
 	    ;;
 	MATE)
 	    echo -e "${Yel}Setting Yaru-MATE icons...${RCol}"
-	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Orange' 2> /dev/null
+	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-MATE' 2> /dev/null
 	    sleep 0.5
 	    echo -e "${BGre}Done!${RCol}"
 	    break
 	    ;;
 	Orange)
-			echo -e "${Yel}Setting Yaru-MATE icons...${RCol}"
-			sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-MATE' 2> /dev/null
-			sleep 0.5
-			echo -e "${BGre}Done!${RCol}"
-			break
-		  ;;
+	    echo -e "${Yel}Setting Yaru-Orange icons...${RCol}"
+	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Orange' 2> /dev/null
+	    sleep 0.5
+	    echo -e "${BGre}Done!${RCol}"
+	    break
+	    ;;
 	Pink)
 	    echo -e "${Yel}Setting Yaru-Pink icons...${RCol}"
 	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Pink' 2> /dev/null
