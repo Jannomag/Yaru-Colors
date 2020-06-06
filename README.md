@@ -50,7 +50,7 @@ It will guide you through everything and allows you to choose what you want to i
 6. Done
 
 **Removal with script:**
-1. Rund the uninstaller with `./uninstall.sh`
+1. Run the uninstaller with `./uninstall.sh`
 2. Follow the script
 3. Done
 
