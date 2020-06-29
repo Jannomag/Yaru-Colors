@@ -1437,7 +1437,8 @@ echo "BEVOR"
 	sed -i -e "s/@ThemeName@/Yaru-COLOR/g" $icon_theme_dir/index.theme
 	sed -i -e "s/COLOR/$color/g" $icon_theme_dir/index.theme
   sed -i -e "s/Inherits=Humanity,hicolor/Inherits=Yaru,Humanity,hicolor/g" $icon_theme_dir/index.theme
-
+  find $icon_theme_dir -type l -exec test ! -e {} \; -delete #removing unneeded symlinks
+  cd $WORKDIR
   comp_icons="false"
 
 done
