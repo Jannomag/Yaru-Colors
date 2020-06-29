@@ -45,7 +45,7 @@ echo -e "# THIS THEMES WERE RELEASED BY ME IN APRIL 2019        #"
 echo -e "# ON gnome-looks.org                                   #"
 echo -e "##########----------      NOTE      ----------##########"
 echo -e ""
-echo -e "Version 20.04.1"
+echo -e "Version 20.04.4"
 sleep 1
 #getting home directory
 homedir=$( getent passwd "$USER" | cut -d: -f6 )

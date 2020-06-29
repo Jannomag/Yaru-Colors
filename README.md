@@ -5,6 +5,12 @@
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)
 
+*Update 20.04.4: Broken symlinks were now removed, yay! Updated compiling script for this, as well.*
+
+*Update 20.04.3: Some other fixes - tried to remove broken symlinks. Didn't work somehow.*
+
+*Update 20.04.2: Just some fixes*
+
 *Update 20.04.1: Updated everything with Yaru's source for Ubuntu 20.04, including new icons, new orange theme and new purple color.*
 
 
@@ -21,7 +27,7 @@ Yaru-Colors themes are containing following:
 - Ubuntu-Dock theme (indicators)
 - Unity support (brought with Yaru 20.04)
 - Wallpapers (see below)
-Please note: I've added Yarus source files for gtk2/3, gnome-shell, unity, icons and cursors to my git, to be able to work with them. I'll update them as soon as I'm working on a next version of Yaru-Colors. 
+Please note: I've added Yarus source files for gtk2/3, gnome-shell, unity, icons and cursors to my git, to be able to work with them. I'll update them as soon as I'm working on a next version of Yaru-Colors.
 
 **Following changes are made by me:**
 - .css files for GTK3 and Gnome-Shell are edited. I changed all orange and purple tinted colors
