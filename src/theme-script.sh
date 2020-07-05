@@ -202,6 +202,8 @@ purple_base='924d8b' #NEW Ubuntu 20.04 Aubergine color, old was a064d8
 purple_purple='5e2750'
 red_base='e92020'
 red_purple='742525'
+teal_base='16a085'
+teal_purple='16a085'
 yellow_base='e9ba20'
 yellow_purple='746225'
 
@@ -263,6 +265,10 @@ svg1_Red='fc4949'
 svg2_Red='e92020'
 svg3_Red='ad1d1d'
 
+svg1_teal='2cbfa2'
+svg2_teal='16a085'
+svg3_teal='0d8069'
+
 svg1_Yellow='f5d058'
 svg2_Yellow='e9ba20'
 svg3_Yellow='b59222'
@@ -290,6 +296,7 @@ g_Pink=(E920A3 E929A8 EA32AD EB3CB2 EC45B7 ED4EBD EE58C2 EF61C7 F06ACC F174D2)
 g_Purple=(924D8B 8E4D8B 8A4D8C 874D8D 834D8E 7F4D8E 7C4D8F 784D90 744D91 714D92)
 g_Red=(E92020 EB2621 ED2D23 F03424 F23A26 F54127 F74829 FA4E2A FC552C FF5C2E)
 g_Yellow=(E9BA20 E9BF20 E9C420 E9C920 E9CE20 E9D320 E9D820 E9DD20 E9E220 E9E820)
+g_Teal=(16a085 15a68a 15ad8f 14b394 14ba99 13c09f 13c7a4 12cda9 12d4ae 12dbb4)
 
 #set first letter of color to uppercase, for MATE set every letter to uppercase
 if [[ $color == "mate" ]]; then
@@ -386,6 +393,14 @@ elif [[ "$color" == "Red" ]]; then
 	svg2_color=$svg2_Red
 	svg3_color=$svg3_Red
 	g_color=("${g_Red[@]}")
+
+elif [[ "$color" == "Teal" ]]; then
+  base_col=$teal_base
+  purple_col=$teal_purple
+  svg1_color=$svg1_Teal
+  svg2_color=$svg2_Teal
+  svg3_color=$svg3_Teal
+  g_color=("${g_Teal[@]}")
 
 elif [[ "$color" == "Yellow" ]]; then
 	base_col=$yellow_base

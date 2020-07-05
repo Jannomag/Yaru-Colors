@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Teal-dark
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru-Dark theme - forked with a stylish Teal base color
+Encoding=UTF-8
+GtkTheme=Yaru-Teal
+IconTheme=Yaru-Teal
+CursorTheme=Yaru
+CursorSize=24
