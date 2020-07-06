@@ -140,7 +140,7 @@ do
         break
         ;;
     no)
-	echo -e " "
+        echo -e " "
         echo -e "${BWhi}Okay, which one should it be?${RCol}"
         break
         ;;
@@ -155,7 +155,7 @@ done
 
 if [[ $packinstall = "no" ]];
   then
-	select themeinstall in Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow
+	select themeinstall in Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Teal Yellow
 	do
 	  case $themeinstall in
 	    Aqua)
@@ -269,6 +269,16 @@ if [[ $packinstall = "no" ]];
 		echo -e "${BWhi}Done...${RCol}"
         	break
         	;;
+            Teal)
+        	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
+		gtkpath="${gtkpath:-$gtkpathdef}"
+		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
+		cp -R ./Themes/Yaru-$themeinstall* $gtkpath
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.0/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.0/
+#		ln -s $gtkpath/Yaru-$themeinstall/gtk-3.20/assets $gtkpath/Yaru-$themeinstall-dark/gtk-3.20/
+		echo -e "${BWhi}Done...${RCol}"
+        	break
+        	;;
 	    Yellow)
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
@@ -337,7 +347,7 @@ fi
 
   if [[ $selecticon = "true" ]]; then
     echo -e "${BWhi}Which one do you want to install?"
-    select selecticoninstall in Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Yellow Nothing
+    select selecticoninstall in Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Teal Yellow Nothing
     do
       case $selecticoninstall in
 	Aqua)
@@ -417,6 +427,13 @@ fi
 	    echo -e "${BWhi}Done...${RCol}"
 	    break
             ;;
+       Teal)
+	    echo -e "${Yel}Please enter your icon path [$iconpathdef]: ${RCol}" && read -e iconpath
+	    iconpath="${iconpath:-$iconpathdef}"
+	    echo -e "${Yel}Copying Yaru-$selecticoninstall icon pack to $iconpath"
+	    echo -e "${BWhi}Done...${RCol}"
+	    break
+            ;;
 	Yellow)
 	    echo -e "${Yel}Please enter your icon path [$iconpathdef]: ${RCol}" && read -e iconpath
 	    iconpath="${iconpath:-$iconpathdef}"
@@ -442,16 +459,16 @@ fi
 # Link files if wanted above
 #
 ###########################################################################################################
-if [[ $linkfiles == "true" ]]; then
-	echo -e "${Yel}Linking files to '/usr'...${RCol}"
-	ln -sf $themeinstallpath/Yaru-* /usr/share/themes/
-	ln -sf $iconinstallpath/Yaru-* /usr/share/icons/
-	chown -R $SUDO_USER $themeinstallpath
-	chown -R $SUDO_USER $iconinstallpath
-	sleep 0.5
-	echo -e "${Yel}Done.${RCol}"
-	echo -e ""
-fi
+#if [[ $linkfiles == "true" ]]; then
+#	echo -e "${Yel}Linking files to '/usr'...${RCol}"
+#	ln -sf $themeinstallpath/Yaru-* /usr/share/themes/
+#	ln -sf $iconinstallpath/Yaru-* /usr/share/icons/
+#	chown -R $SUDO_USER $themeinstallpath
+#	chown -R $SUDO_USER $iconinstallpath
+#	sleep 0.5
+#	echo -e "${Yel}Done.${RCol}"
+#	echo -e ""
+#fi
 
 ### NOTE ###
 ### FOLLOWIN GNOME-SHELL PART IS OBSOLETE UNTIL I'VE FOUND A FIX FOR THE GNOME-SHELL ISSUE
@@ -649,7 +666,7 @@ GNOMESHELL
     if [[ $packinstall = "yes" ]]; then
     echo -e "${BWhi}Do you want to enable a GTK theme?${RCol}"
 ### Select theme
-    select enablecolor in No Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Yellow
+    select enablecolor in No Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Teal Yellow
     do
       case $enablecolor in
 	Aqua)
@@ -829,6 +846,22 @@ GNOMESHELL
 	    sleep 1
             break
             ;;
+        Teal)
+            echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
+            sleep 0.5
+            echo -e "${BGre}3${RCol}"
+            sleep 1
+            echo -e "${BGre}2${RCol}"
+            sleep 1
+            echo -e "${BGre}1${RCol}"
+            sleep 1
+            echo -e "${BGre}IGNITION${RCol}"
+	    #Run the gsettings command and supress errors, for this the user name is relevant
+	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Teal' 2> /dev/null
+	    echo -e "${BGre}AND LIFT OFF!${RCol}"
+	    sleep 1
+            break
+            ;;
 	Yellow)
             echo -e "${BGre}Okay, countdown of T-3 seconds for Yaru-$themeinstall!${RCol}"
             sleep 0.5
@@ -893,6 +926,8 @@ select setgtk in yes no
 		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Purple' 2> /dev/null
 	elif [[ $themeinstall = "Red" ]]
 		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Red' 2> /dev/null
+	elif [[ $themeinstall = "Teal" ]]
+		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Teal' 2> /dev/null
 	elif [[ $themeinstall = "Yellow" ]]
 		then sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-Yellow' 2> /dev/null
 
@@ -914,7 +949,7 @@ select setgtk in yes no
 
 echo -e " "
 
-elif [[ $packinstall = "yes" ]]; then
+#elif [[ $packinstall = "yes" ]]; then
 #choose if dock should also be themed
 echo -e "${BWhi}Do you also want to theme the Ubuntu dock? (indicators)${RCol}"
 echo -e "${BWhi}You can revert and change the colors with the script 'dockcolor.sh'${RCol}"
@@ -922,7 +957,7 @@ echo -e "${BWhi}If you want orange dots, you can skip this."
 
 echo -e " "
 ### If yes, select color
-  select dockchoosecolor in NOPE Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Yellow
+  select dockchoosecolor in NOPE Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Teal Yellow
   do
     case $dockchoosecolor in
       Aqua)
@@ -1013,6 +1048,14 @@ echo -e " "
 	   echo -e "${BGre}Aww, look there, Red colored dots!${RCol}"
 	   break
 	   ;;
+      Teal)
+	   echo -e "${BGre}Okay, let's set the indicator color to Teal...${RCol}"
+	   sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#16A085' 2> /dev/null
+	   sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color '#16A085' 2> /dev/null
+	   sleep 0.5
+	   echo -e "${BGre}Aww, look there, Teal colored dots!${RCol}"
+	   break
+	   ;;
       Yellow)
 	   echo -e "${BGre}Okay, let's set the indicator color to Yellow...${RCol}"
 	   sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#e9ba20' 2> /dev/null
@@ -1037,7 +1080,7 @@ echo -e " "
 #check if icons are installed and ask if they should be enabled
 if [[ $packinstall = "yes" ]]; then
 echo -e "${BWhi}And last but not least, do you want to enable an icon pack?"${RCol}
-  select iconcolor in None Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Yellow
+  select iconcolor in None Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Teal Yellow
     do
       case $iconcolor in
 	None)
@@ -1121,6 +1164,13 @@ echo -e "${BWhi}And last but not least, do you want to enable an icon pack?"${RC
 	    echo -e "${BGre}Done!${RCol}"
 	    break
 	    ;;
+	Teal)
+	    echo -e "${Yel}Setting Yaru-Teal icons...${RCol}"
+	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Teal' 2> /dev/null
+	    sleep 0.5
+	    echo -e "${BGre}Done!${RCol}"
+	    break
+	    ;;
 	Yellow)
 	    echo -e "${Yel}Setting Yaru-Yellow icons...${RCol}"
 	    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Yellow' 2> /dev/null
@@ -1165,6 +1215,8 @@ select seticon in yes no
 	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Purple' 2> /dev/null
 	elif [[ $themeinstall = "Red" ]]; then
 	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Red' 2> /dev/null
+	elif [[ $themeinstall = "Teal" ]]; then
+	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Teal' 2> /dev/null
 	elif [[ $themeinstall = "Yellow" ]]; then
 	  sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.desktop.interface icon-theme 'Yaru-Yellow' 2> /dev/null
 	fi

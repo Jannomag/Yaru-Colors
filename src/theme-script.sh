@@ -413,15 +413,17 @@ elif [[ "$color" == "Yellow" ]]; then
 	svg3_color=$svg3_Yellow
 	g_color=("${g_Yellow[@]}")
 
-elif [[ "$color" == "Custom" ]]; then
-	echo "Enter base color (without # like E95420): "
-	read base_col
-	echo "Enter purple color (without # like 762572): "
-	read purple_col
-	echo "Custom colors $base_col and $purple_col are set!"
-	echo "Enter color / theme name for 'Yaru-NAME': "
-	read color
-	no_icons = "true"
+## disabling the custom options due to compatibility issues - maybe it'll get removed completely, maybe I'll add better compatibility...who knows.
+#elif [[ "$color" == "Custom" ]]; then
+#	echo "Enter base color (without # like E95420): "
+#	read base_col
+#	echo "Enter purple color (without # like 762572): "
+#	read purple_col
+#	echo "Custom colors $base_col and $purple_col are set!"
+#	echo "Enter color / theme name for 'Yaru-NAME': "
+#	read color
+#	no_icons = "true"
+
 fi
 
 if [[ ! -z $color ]]; then
@@ -484,7 +486,7 @@ fi
 
 if [[ "$base_col" == "" ]] || [[ "$purple_col" == "" ]]; then
 	echo "Unknown color entered. Colors are case sensitive:"
-	echo "Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Yellow, Custom"
+	echo "Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Teal, and Yellow"
 	exit
 fi
 
