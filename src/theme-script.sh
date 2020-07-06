@@ -93,6 +93,9 @@ while [ ! -z "$1" ]; do
 			Red|red)
 						break
 						;;
+      Teal|teal)
+      			break
+      			;;
 			Yellow|yellow)
 						break
 						;;
@@ -203,7 +206,7 @@ purple_purple='5e2750'
 red_base='e92020'
 red_purple='742525'
 teal_base='16a085'
-teal_purple='16a085'
+teal_purple='094a3d'
 yellow_base='e9ba20'
 yellow_purple='746225'
 
@@ -265,9 +268,9 @@ svg1_Red='fc4949'
 svg2_Red='e92020'
 svg3_Red='ad1d1d'
 
-svg1_teal='2cbfa2'
-svg2_teal='16a085'
-svg3_teal='0d8069'
+svg1_Teal='2cbfa2'
+svg2_Teal='16a085'
+svg3_Teal='0d8069'
 
 svg1_Yellow='f5d058'
 svg2_Yellow='e9ba20'
@@ -537,7 +540,6 @@ mkdir -p $gtk30l_path
 
 #set source paths
 source32_path=$WORKDIR/default/gtk-3.20
-
 
 #creating backups for the original files if something fails
 echo -e "Backing up original _ubuntu-colors.scss and _colors.scss ..."
@@ -882,6 +884,15 @@ then
 	exit
 fi
 
+#replacing resource path to the total path of shell source files (fix for purple switches in shell
+#but creating backup first...
+cp -R $sass_path/widgets $sass_path/BAK_widgets
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_switches.scss
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_workspace-thumbnails.scss
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_dash.scss
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_check-box.scss
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_calendar.scss
+
 
 #replacing colors
 echo -e "Find and replace original colors in _ubuntu-colors.scss ..."
@@ -951,10 +962,12 @@ cp -R $source_path/*.svg $shell_dark_path
 mv svg_backup/*.svg .
 rm -rf svg_backup
 
-#restoring _ubuntu-colors.scss
+#restoring other backups
 mv $sass_path/BAK_ubuntu-colors.scss $sass_path/_ubuntu-colors.scss
 mv $source_path/BAK-gnome-shell.scss.in $source_path/gnome-shell.scss.in
 mv $source_path/BAK-gnome-shell-high-contrast.scss $source_path/gnome-shell-high-contrast.scss
+rm -rf $sass_path/widgets
+mv $sass_path/BAK_widgets $sass_path/widgets
 cd
 
 echo -e "Done!"
