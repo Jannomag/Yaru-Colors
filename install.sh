@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#set -x
 #Install script for Yaru-Blue Theme by Jannomag
 
 RCol='\e[0m'    # Text Reset
@@ -51,34 +51,20 @@ sleep 1
 homedir=$( getent passwd "$USER" | cut -d: -f6 )
 #Check if root
 if [[ "$EUID" -ne 0 ]]; then
-	themeinstallpath="$homedir/.local/share/themes"
-	iconinstallpath="$homedir/.icons"
-        isroot="false"
-	echo -e "${BGre}You ran this script as normal user, default install path is set to\n'$homedir/.local/share/' and '$homedir/.icons/'\nwhich can also be changed later!${RCol}"
+  isroot="false"
+	theme_install_dir="$homedir/.themes"
+	icon_install_dir="$homedir/.icons"
+	echo -e "${BGre}You ran this script as normal user, default install path is set to\n'$theme_install_dir' and '$icon_install_dir'\nwhich can also be changed later!${RCol}"
 	echo -e " "
 	sleep 0.5
 else
   isroot="true"
 	homedir=$( getent passwd "$SUDO_USER" | cut -d: -f6 )
-	echo -e "${BGre}You ran this script as root, default install path is set to\n'/usr/share/' which can also be changed later!${RCol}"
-	echo -e "${BGre}Do you want to install to '/usr',\n or do you want to install them to '/home' and link the files to '/usr'?${RCol}"
-	select linkroot in link root
-	do
-			case $linkroot in
-				link)
-						themeinstallpath="$homedir/.local/share/themes"
-						iconinstallpath="$homedir/.icons"
-						echo -e "${Yel}Okay, themes will be installed to '/home' and linked to '/usr'${RCol}"
-						linkfiles="true"
-						break ;;
-				root)
-						themeinstallpath="/usr/share/themes"
-						iconinstallpath="/usr/share/icons"
-						echo -e "${Yel}Okay, themes will be installed to '/usr'${RCol}"
-						linkfiles="false"
-						break ;;
-			esac
-	done
+	theme_install_dir="/usr/share/themes"
+	icon_install_dir="/usr/share/icons"
+	echo -e "${BGre}You ran this script as root, default install path is set to\n'$theme_install_dir' and '$icon_install_dir' which can also be changed later!${RCol}"
+
+
 fi
 
 #Determine user name for later
@@ -91,7 +77,229 @@ echo -e ""
 echo -e "${Yel}This script will guide you through the installation of this theme.${RCol}"
 echo -e ""
 
+###################
+#                 #
+# PICKING SECTION #
+#                 #
+###################
+picking=true
+install=false
 
+package_install=false
+color=none
+
+colors=(Amber Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Teal Yellow)
+
+package_color_menu () {
+  select package_color in "${@:2}"; do
+    if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#-1)) ]; then
+      echo -e "${Yel}Okay, '$package_color' is set!${RCol}"
+      break;
+    else
+      echo -e "${Yel}Incorrect input, please enter a number from the list!${RCol}"
+    fi
+  done
+}
+
+icon_color_menu () {
+  select icon_color in "${@:2}"; do
+    if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#-1)) ]; then
+      echo -e "${Yel}Okay, '$icon_color' is set for the icons!${RCol}"
+      break;
+    else
+      echo -e "${Yel}Incorrect input, please enter a number from the list!${RCol}"
+    fi
+  done
+}
+
+echo -e ""
+echo -e "${Yel}Let me ask you some questions...${RCol}"
+
+while [ "$picking" == "true" ] && [ "$install" == "false" ]
+do
+
+  echo -e "${BYel}Do you want to install the complete package?${RCol}"
+  echo -e "${Yel}This contains all themes, icons and cursors for every color.${RCol}"
+
+  select ask_install_type in yes no
+  do
+    case $ask_install_type in
+      yes)
+        package_install=true
+        break
+        ;;
+      no)
+        package_install=false
+        break
+        ;;
+      *)
+        echo -e "${Yel}Please choose 1 or 2.${RCol}"
+        ;;
+    esac
+  done
+
+  if [ "$package_install" == "false" ]; then
+    echo -e "${BYel}Okay, which color do you want to install?${RCol}"
+    package_color_menu "${colors[@]}"
+    main_color_set=true
+    install_theme=true
+
+    echo -e "${BYel}Do you want to install an icon pack, if yes, maybe a different color?${RCol}"
+    select ask_install_icons in yes different no
+    do
+      case $ask_install_icons in
+        yes)
+          install_icons=true
+          icon_color=$package_color
+          change_icon_color=false
+          break ;;
+        different)
+          install_icons=true
+          change_icon_color=true
+          break ;;
+        no)
+          install_icons=false
+          break ;;
+        *)
+          echo -e "${Yel}Wrong input, please enter a number from the list above...${RCol}"
+          ;;
+        esac
+    done
+
+    if [ "$install_icons" == "true" ] && [ "$change_icon_color" == "true" ]; then
+      echo -e "${BYel}Which color do you want to install for your icons?${RCol}"
+      icon_color_menu "${colors[@]}"
+
+    fi
+
+    echo -e ""
+    echo -e "${BYel}Okay, that should be enough for now...${RCol}"
+    echo -e "${Byel}I'll do following for you:${RCol}"
+
+    if [ "$package_install" == "true" ]; then
+      echo -e "${BGre} - Install the complete package${RCol}"
+      echo -e "${Gre}   Which includes the themes, icons and cursors of every color.${RCol}"
+    fi
+
+    if [ "$package_install" == "false" ]; then
+      echo -e "${BGre} - Install Yaru-$package_color theme.${RCol}"
+      if [ "$install_icons" == "true" ] && [ "$change_icon_color" == "true" ]; then
+        echo -e "${BGre} - Install Yaru-$icon_color icons.${RCol}"
+      elif [ "$install_icons" == "true" ] && [ "$change_icon_color" == "false" ]; then
+        echo -e "${BGre} - Install Yaru-$icon_color icons.${RCol}"
+      else
+        echo -e "${BGre} - DON'T install any icons.${RCol}"
+      fi
+    fi
+
+    echo -e "${BYel}Is this correct?${RCol}"
+
+    select ask_list_correct in yes no
+    do
+      case $ask_list_correct in
+        yes)
+          echo -e "${Yel}Great! I'll do it!${RCol}"
+          start_install=true
+          break ;;
+        no)
+          echo -e "${Yel}Okay...Let's start over...${RCol}"
+          echo -e ""
+          echo -e ""
+          echo -e ""
+          start_install=false
+          startover=true
+          break ;;
+        *)
+          echo -e "${BYel}Incorrect answer!${RCol}"
+          ;;
+        esac
+      done
+
+  fi
+
+  if [ "$package_install" == "true" ]; then
+    echo -e ""
+    echo -e "${BYel}Okay, I'll install the complete package!${RCol}"
+    start_install=true
+  fi
+
+  if [ "$start_install" == "true" ]; then
+    picking=false
+    install=true
+    install_done=false
+  fi
+
+done
+
+
+######################
+#                    #
+# INSTALLING SECTION #
+#                    #
+######################
+
+while [ "$picking" == "false" ] && [ "$install" == "true" ] && [ "$install_done" == "false" ]; do
+
+  themes_source="./Themes/"
+  icon_source="./Icons/"
+  theme_dir_def="$homedir/.themes/"
+  icon_dir_def="$homedir/.icons/"
+
+  if [ "$isroot" == "true" ]; then
+    echo -e "${BRed}Root privileges detected!${RCol}"
+    echo -e "${Yel}This isn't a problem, I just want you to tell this...${RCol}"
+    theme_dir_def="/usr/share/themes"
+    icon_dir_def="/usr/share/icons"
+  fi
+
+  echo -e ""
+  echo -e "${BYel}Where do you want to install the themes?${RCol}"
+  echo -e ""
+  echo -e "${BYel}Please enter your theme path [$theme_dir_def]: ${RCol}" && read -e theme_dir
+  theme_dir="${theme_dir:-$theme_dir_def}"
+  if [[ ! -d "$theme_dir" ]]; then
+		echo -e "${Yel}$theme_dir doesn't exist, creating now${RCol}"
+		mkdir -p $theme_dir
+	fi
+  echo -e "${BYel}Please enter your icon path [$icon_dir_def]: ${RCol}" && read -e icon_dir
+  icon_dir="${icon_dir:-$icon_dir_def}"
+  if [[ ! -d "$icon_dir" ]]; then
+    echo -e "${Yel}$theme_dir doesn't exist, creating now${RCol}"
+    mkdir -p $theme_dir
+  fi
+
+  echo -e "${BYel}Copying files...${RCol}"
+  if [ "$package_install" == "true" ]; then
+    cp -R $themes_source/* $theme_dir
+    cp -R $icon_source/* $icon_dir
+  fi
+  if [ "$package_install" == "false" ]; then
+    cp -R $themes_source/Yaru-$package_color* $theme_dir/
+    cp -R $icon_source/Yaru-$icon_color $icon_dir/
+  fi
+  echo -e "${BYel}Done!"
+  echo -e ""
+
+  install_done=true
+
+
+
+done
+
+
+##### Okay, enough for today. What's done?
+# - Picking colors and package / single method
+# - Copying files 
+#
+# What's not done?
+# - Enabling themes, icons and cursors
+# - Setting dock colors
+# - ADDING COMMENTS!!!!! IMPORTANT !!!1111
+
+################################################################################################
+####### AFTER HERE, THERE'S THE OLD, AND HOPEFULLY, OBSOLETE PART ##############################
+################################################################################################
+: << "OLD"
 ###################
 ###################
 #                 #
@@ -103,8 +311,8 @@ echo -e ""
 ###########################################################################################################
 #Choose yes or no for complete theme pack installation
 
-gtkpathdef="$themeinstallpath"
-iconpathdef="$iconinstallpath"
+gtkpathdef="$theme_install_dir"
+iconpathdef="$icon_install_dir"
 
 echo -e "${BWhi}Do you want to install the the complete pack including icons?${RCol}"
 select packinstall in yes no
@@ -155,10 +363,11 @@ done
 
 if [[ $packinstall = "no" ]];
   then
-	select themeinstall in Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Teal Yellow
+	select themeinstall in Amber Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Red Teal Yellow
 	do
 	  case $themeinstall in
 	    Aqua)
+				colorset=Amber
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -170,6 +379,7 @@ if [[ $packinstall = "no" ]];
         	break
         	;;
 	    Blue)
+				colorset=Amber
         	echo -e "${Yel}Please enter your theme path [$gtkpathdef]: ${RCol}" && read -e gtkpath
 		gtkpath="${gtkpath:-$gtkpathdef}"
 		echo -e "${Yel}Copying Yaru-$themeinstall to $gtkpath..."
@@ -1247,3 +1457,4 @@ echo -e "${BCya}Bye bye!${RCol}"
 
 echo -e "${BCya}...and thanks for choosing my Yaru-Colors pack!${RCol}"
 sleep 1
+OLD

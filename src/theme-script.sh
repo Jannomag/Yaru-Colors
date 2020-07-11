@@ -178,11 +178,13 @@ done
 
 
 #colors: Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Yellow
-
+#I've created the "purple" color just buy using a simple color wheel and looked for a daker color in the same hue.
 #define colors:
 original_base='E95420'
 original_purple='762572'
 original_aubergine='924D8B'
+amber_base='eea834' #POP-OS based amber
+amber_purple='8c5e11'
 aqua_base='41c6c8'
 aqua_purple='326868'
 blue_base='208fe9'
@@ -195,7 +197,7 @@ green_base='3eb34f'
 green_purple='123d18'
 grey_base='9c9c9c'
 grey_purple='4d4d4d'
-mate_base='78ab50'
+mate_base='78ab50' #MATE based green
 mate_purple='4f6326'
 orange_base='e95420'
 orange_purple='a6401c'
@@ -205,7 +207,7 @@ purple_base='924d8b' #NEW Ubuntu 20.04 Aubergine color, old was a064d8
 purple_purple='5e2750'
 red_base='e92020'
 red_purple='742525'
-teal_base='16a085'
+teal_base='16a085' #Manjaro based teal
 teal_purple='094a3d'
 yellow_base='e9ba20'
 yellow_purple='746225'
@@ -214,6 +216,7 @@ yellow_purple='746225'
 
 
 #SVG Colors
+#I've just used a color wheel to choose the colors, one brighter, one darker.
 #stock:
 svg1_aubergine='aa5b9c' #Bright purple color from checkboxes or radio
 svg2_aubergine='975187' #Dark purple color from checkboxes or radio
@@ -224,6 +227,10 @@ svg_shell_bright='bb74b3'
 svg_shell_dark='7c436f'
 
 #Yaru-Colors variants:
+svg1_Amber='f5b242'
+svg2_Amber='eea834'
+svg3_Amber='a3711d'
+
 svg1_Aqua='7ccbcc'
 svg2_Aqua='41c6c8'
 svg3_Aqua='25a7a8'
@@ -287,7 +294,9 @@ svg3_color=svg3_${color}
 #Here's are the variable arrays for every color:
 g_yaru=(2c001e 370626 55163b 772953 7c2b51 8b314b 8b314b a33a41 c44732 e65524)
 g_yaru_desktop=(FB7C38 9B33AE) #colors in the user-desktop.svg
-g_Aqua=(41c6c8 41c6c8 3fc9c4 3dcdc1 3bd1be 39d5bb 37d8b7 35dcb4 33e0b1 31e4ae 30e8ab)
+g_Amber=(EEA834 EEAD34 EEB234 EEB734 EEBC34 EEC134 EEC634 EECB34 EED034 EED534)
+#Alternative with PopOS-Turquoise: g_Amber=(eea834 dea944 cfab54 c0ac64 b1ae74 a2af85 93b195 84b2a5 75b4b5 66b6c6)
+g_Aqua=(41c6c8 41c6c8 3fc9c4 3dcdc1 3bd1be 39d5bb 37d8b7 35dcb4 33e0b1 31e4ae)
 g_Blue=(208FE9 1D96EA 1B9DEB 18A4ED 16ABEE 13B2EF 11B9F1 0EC0F2 0CC7F3 0ACEF5)
 g_Brown=(995640 9B5942 9D5C45 9F5F48 A1624A A4664D A66950 A86C52 AA6F55 AD7358)
 g_Deepblue=(25469D 214BA4 1D50AC 1955B4 155ABC 115FC3 0D64CB 0969D3 056EDB 0274E3)
@@ -309,8 +318,16 @@ else
 fi
 
 #interprete command
-if [[ "$color" == "Aqua" ]]; then
-	base_col=$aqua_base
+if [[ "$color" == "Amber" ]]; then
+  base_col=$amber_base
+  purple_col=$amber_purple
+  svg1_color=$svg1_Amber
+  svg2_color=$svg2_Amber
+  svg3_color=$svg3_Amber
+  g_color=("${g_Amber[@]}")
+
+elif [[ "$color" == "Aqua" ]]; then
+  base_col=$aqua_base
 	purple_col=$aqua_purple
 	svg1_color=$svg1_Aqua
 	svg2_color=$svg2_Aqua

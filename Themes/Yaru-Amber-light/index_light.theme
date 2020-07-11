@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Amber
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru theme - forked with a stylish Amber base color
+Encoding=UTF-8
+GtkTheme=Yaru-Amber
+IconTheme=Yaru-Amber
+CursorTheme=Yaru
+CursorSize=24
