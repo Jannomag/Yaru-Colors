@@ -1,9 +1,10 @@
 ![Logo](Yaru-Colors-Logo-Transparent.png)
 
 **Yaru-Colors is a theme project to bring different colors to Ubuntu's awesome Yaru theme.**
-**Version 20.04.1**
+**Version 20.04.5** (not released, yet)
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)
+*Update 20.04.5: Rewritten install.sh script to make it way shorter than before and a bit more user friendly. Also added Teal and Amber themes*
 
 *Update 20.04.4: Broken symlinks were now removed, yay! Updated compiling script for this, as well.*
 
@@ -50,10 +51,13 @@ It will guide you through everything and allows you to choose what you want to i
 **Installation with script:**
 1. Run the installer with `./install.sh`
 2. Follow the installer
-3. Set your themes with gnome-tweak-tool
+3. Set your themes with gnome-tweak-tool (if not done with the script)
 4. For gnome-shell you need the [User Themes Extension](https://extensions.gnome.org/extension/19/user-themes/) for Gnome-Shell
 5. To change the dock indicators, simply run the dock-indicators.sh in `src`
 6. Done
+
+*Installation notes:*
+*Due to an old bug in user-themes, the glib-2 schemas for this extensions aren't available systemwide. This causes and error, when trying to change the shell theme with gsettings command, because the schema for this is missing. I've added the fix from https://gist.github.com/atiensivu/fcc3183e9a6fd74ec1a283e3b9ad05f0 to the installer. It needs root privileges but the script will ask for this.*
 
 **Removal with script:**
 1. Run the uninstaller with `./uninstall.sh`
@@ -61,12 +65,12 @@ It will guide you through everything and allows you to choose what you want to i
 3. Done
 
 **Manual install:**
-1. Copy your desired theme into your desired theme directory (example `~/.local/share/themes`)
+1. Copy your desired theme into your desired theme directory (example `~/.themes`)
 2. Copy you desired icon pack into your desired theme directory (example `/usr/share/icons` or `~/.icons`)
 4. Enable your themes with gsettings commands or with gnome-tweak-tool
 5. To change the dock indicator color (Ubuntu's Dash-To-Dock only), find the hex code for your desired color in the list below and enter following two commands (replace HEXCODE with your color code including #):   
-`gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color 'HEXCODE' 2> /dev/null`   
-`gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color 'HEXCODE' 2> /dev/null`   
+`gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-color '#HEXCODE' 2> /dev/null`   
+`gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color '#HEXCODE' 2> /dev/null`   
 (or do it with the script, it'll do it for you...)
 
 
@@ -87,6 +91,7 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 | Theme | ORANGE | PURPLE |
 | :--- | :---: | :---: |
 | Yaru-ORIGINAL | ![#E95420](https://via.placeholder.com/15/E95420/000000?text=+) `#E95420` | ![#762572](https://via.placeholder.com/15/762572/000000?text=+) `#762572` |
+| Yaru-Amber | ![#eea834](https://via.placeholder.com/15/eea834/000000?text=+) `#eea834` | ![#8c5e11](https://via.placeholder.com/15/8c5e11/000000?text=+) `#8c5e11` |
 | Yaru-Aqua | ![#41c6c8](https://via.placeholder.com/15/41c6c8/000000?text=+) `#41c6c8` | ![#326868](https://via.placeholder.com/15/326868/000000?text=+) `#326868` |
 | Yaru-Blue | ![#208fe9](https://via.placeholder.com/15/208fe9/000000?text=+) `#208fe9` | ![#255074](https://via.placeholder.com/15/255074/000000?text=+) `#255074` |
 | Yaru-Brown | ![#995640](https://via.placeholder.com/15/995640/000000?text=+) `#995640` | ![#462e1b](https://via.placeholder.com/15/462e1b/000000?text=+) `#462e1b` |
@@ -98,6 +103,7 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 | Yaru-Pink | ![#e920a3](https://via.placeholder.com/15/e920a3/000000?text=+) `#e920a3` | ![#742558](https://via.placeholder.com/15/742558/000000?text=+) `#742558` |
 | Yaru-Purple | ![#924d8b](https://via.placeholder.com/15/924d8b/000000?text=+) `#924d8b` | ![#5e2750](https://via.placeholder.com/15/5e2750/000000?text=+) `#5e2750` |
 | Yaru-Red | ![#e92020](https://via.placeholder.com/15/e92020/000000?text=+) `#e92020` | ![#742525](https://via.placeholder.com/15/742525/000000?text=+) `#742525` |
+| Yaru-Teal | ![#16a085](https://via.placeholder.com/15/16a085/000000?text=+) `#16a085` | ![#094a3d](https://via.placeholder.com/15/094a3d/000000?text=+) `#094a3d` |
 | Yaru-Yellow | ![#e9ba20](https://via.placeholder.com/15/e9ba20/000000?text=+) `#e9ba20` | ![](https://via.placeholder.com/15/746225/000000?text=+) `#746225` |
 
 

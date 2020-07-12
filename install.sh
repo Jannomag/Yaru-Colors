@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -x
 #Install script for Yaru-Blue Theme by Jannomag
-
+clear # clear the termainl
 RCol='\e[0m'    # Text Reset
 
 # Regular           Bold                Underline           High Intensity      BoldHigh Intens     Background          High Intensity Backgrounds
@@ -28,9 +28,18 @@ echo -e "${BBlu}8b      ${BYel}88    88 ${BPur}88     ${BCya} 88    88${BGre} 88
 echo -e "${BBlu}Y8b  d8 ${BYel}\`8b  d8'${BPur} 88booo.${BCya} \`8b  d8'${BGre} 88 \`88. ${BRed}db   8D ";
 echo -e "${BBlu} \`Y88P'${BYel}  \`Y88P'${BPur}  Y88888P${BCya}  \`Y88P'${BGre}  88   YD ${BRed}\`8888Y' ";
 echo -e "                                                  ";
-echo -e "                                                  ";
+VERSION=$(grep -F 'Version' ./README.md | egrep -o "([0-9]{1,}\.)+[0-9]{1,}") # Extracting version from readme.me so I just have to change it there.
+echo -e "Version $VERSION                                             ";
 echo -e "${RCol}"
 
+#Intro
+echo -e "${RCol}"
+echo -e "${BBlu}WELCOME FRIEND!${RCol}"
+echo -e "${BBlu}This script will guide you through the installation of this theme.${RCol}"
+echo -e ""
+echo -e "${BYel}Press any key to start the installer or CTRL-C to quit at any time...${RCol}"
+read -n 1 # wait for user input "any key"
+clear # clear terminmal again
 echo -e "${BWhi}##########----------      NOTE      ----------##########"
 echo -e "# THIS THEME IS JUST A FORK OF THE ORIGINAL YARU THEME #"
 echo -e "# I MODIFIED THE COLORS AND SOME IMAGES / SVG GRAPHICS #"
@@ -39,22 +48,15 @@ echo -e "# UBUNTU DEVELOPER TEAM!                               #"
 echo -e "# ---------------------------------------------------- #"
 echo -e "# FEEL FREE TO MODIFY MY FORK                          #"
 echo -e "# ---------------------------------------------------- #"
-echo -e "# MY E-MAIL FOR SUGGESTIONS:       jannomag@gmx.de     #"
+echo -e "# MY E-MAIL FOR SUGGESTIONS:       jannomag@gmail.com  #"
 echo -e "# ---------------------------------------------------- #"
 echo -e "# THIS THEMES WERE RELEASED BY ME IN APRIL 2019        #"
 echo -e "# ON gnome-looks.org                                   #"
 echo -e "##########----------      NOTE      ----------##########"
 echo -e ""
-echo -e "Version 20.04.5"
-sleep 1
+
 #getting home directory
 homedir=$( getent passwd "$USER" | cut -d: -f6 )
-#Intro
-echo -e "${RCol}"
-echo -e "${BBlu}WELCOME FRIEND!${RCol}"
-echo -e "${BBlu}This script will guide you through the installation of this theme.${RCol}"
-echo -e ""
-
 
 #Check if root
 if [[ "$EUID" -ne 0 ]]; then
@@ -338,9 +340,9 @@ while [ "$install" == false ] && [ "$picking" == "false" ] && [ "$enable" == "tr
 
   ### Theme questions
   if [ "$package_install" == "true" ]; then
-    echo -e "${BYel}Do you want to enable a theme?${RCol}" # Ask for "a" theme if the complete package was installed
+    echo -e "${BYel}Do you want to enable a theme, if yes, which variant?${RCol}" # Ask for "a" theme if the complete package was installed
   else
-    echo -e "${BYel}Do you want to enable the theme?${RCol}" # Ask for "the" theme if just one was installed
+    echo -e "${BYel}Do you want to enable the theme if yes, which variant?${RCol}" # Ask for "the" theme if just one was installed
   fi
   # Asking for yes / no just as usual to set the enable_theme variable
   select ask_enable_theme in light normal dark no
@@ -379,12 +381,13 @@ while [ "$install" == false ] && [ "$picking" == "false" ] && [ "$enable" == "tr
   echo -e ""
   if [ ! -d $homedir/.local/share/gnome-shell/extensions/user-theme* ]; then # checking if the user-themes extension of gnome-shell is enabled, it's needed to be able to set a different gnome-shell theme (why, though?)
     echo -e "${Red}I just wanted to ask you if I should enable a gnome-shell theme...\nBut the user-themes extension is not installed.\nPlease install it to be able to set a gnome-shell theme.${RCol}" #...and if not, just tell this to the user
+    echo -e "${Red}You can get this by using 'apt install gnome-shell-extensions'\nor here: https://extensions.gnome.org/extension/19/user-themes/"
   else
     echo -e "${Gre}Detected user-themes extension!${RCol}"
     if [ "$package_install" == "true" ]; then
-      echo -e "${BYel}Do you want to enable a shell theme?${RCol}" # Ask for "a" shell theme if the complete package was installed
+      echo -e "${BYel}Do you want to enable a shell theme if yes, which variant?${RCol}" # Ask for "a" shell theme if the complete package was installed
     else
-      echo -e "${BYel}Do you want to enable the shell theme?${RCol}" # Ask for "the" shell theme if just one was installed
+      echo -e "${BYel}Do you want to enable the shell theme if yes, which variant?${RCol}" # Ask for "the" shell theme if just one was installed
     fi
     # Just the same as before...
     select ask_enable_shell in light dark no
@@ -596,14 +599,14 @@ while [ "$execute" == "true" ]; do
   # This is a bit complicated due an old bug in user-themes extensions where there's no schema set in the shell-theme settings. I'll added the fix to this script to make it as easy as possible.
   sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.user-theme name "Yaru-$enable_shell_color$shell_variant"
     if [ ! "$?" -eq "0" ]; then # so, if the above command to change the shell theme doesn't work, ask if the script should fix this.
-      echo -e "${BRed}ERROR, this is caused by an old bug. Don't worry!\nI can fix it, but I need root privileges.${RCol}"
-      echo -e "${BRed}Is this okay for you?${RCol}"
+      echo -e "${BRed}ERROR, this is caused by an old bug in the extension.\nDon't worry! I can fix it, but I need root privileges.${RCol}"
+      echo -e "${BRed}Is this okay for you? Take a look in the readme learn more.${RCol}"
       select shell_error_fix in yes no
       do
         case $shell_error_fix in
           yes)
-            echo -e "${Yel}Okay, I'll fix this, please read the readme to see what I've done.${RCol}"
-            echo -e "${Yel}Please enter your passwort...${RCol}"
+            echo -e "${Yel}Okay, I'll fix this.${RCol}"
+            echo -e "${Yel}Please enter your passwort if asked.${RCol}"
             # I've got this fix from here: https://gist.github.com/atiensivu/fcc3183e9a6fd74ec1a283e3b9ad05f0 - it puts the missing file from ~ to the glib-2.0 directory and re-compiles the glib schemas
             sudo cp $HOME/.local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/schemas/org.gnome.shell.extensions.user-theme.gschema.xml /usr/share/glib-2.0/schemas && sudo glib-compile-schemas /usr/share/glib-2.0/schemas
             break ;;
