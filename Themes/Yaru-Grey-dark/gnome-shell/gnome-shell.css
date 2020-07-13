@@ -177,16 +177,16 @@ StEntry {
 .check-box StBin {
   width: 24px;
   height: 22px;
-  background-image: url("resource:///org/gnome/shell/theme/checkbox-off-dark.svg"); }
+  background-image: url("checkbox-off-dark.svg"); }
 
 .check-box:focus StBin {
-  background-image: url("resource:///org/gnome/shell/theme/checkbox-off-focused-dark.svg"); }
+  background-image: url("checkbox-off-focused-dark.svg"); }
 
 .check-box:checked StBin {
-  background-image: url("resource:///org/gnome/shell/theme/checkbox-dark.svg"); }
+  background-image: url("checkbox-dark.svg"); }
 
 .check-box:focus:checked StBin {
-  background-image: url("resource:///org/gnome/shell/theme/checkbox-focused-dark.svg"); }
+  background-image: url("checkbox-focused-dark.svg"); }
 
 /* Switches */
 .toggle-switch {
@@ -194,9 +194,9 @@ StEntry {
   height: 22px;
   width: 46px;
   background-size: contain;
-  background-image: url("resource:///org/gnome/shell/theme/toggle-off-dark.svg"); }
+  background-image: url("toggle-off-dark.svg"); }
   .toggle-switch:checked {
-    background-image: url("resource:///org/gnome/shell/theme/toggle-on-dark.svg"); }
+    background-image: url("toggle-on-dark.svg"); }
 
 /* Slider */
 .slider {
@@ -516,7 +516,7 @@ StScrollBar {
         background-color: #999999;
         color: #ffffff; }
   .calendar .calendar-day-with-events {
-    background-image: url("resource:///org/gnome/shell/theme/calendar-today.svg"); }
+    background-image: url("calendar-today.svg"); }
     .calendar .calendar-day-with-events.calendar-work-day {
       color: white;
       font-weight: bold; }
@@ -1530,7 +1530,7 @@ StScrollBar {
     border-radius: 0 6px 6px 0;
     border-left-width: 0; }
   .workspace-thumbnails .placeholder {
-    background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    background-image: url("dash-placeholder.svg");
     background-size: contain;
     height: 24px; }
 

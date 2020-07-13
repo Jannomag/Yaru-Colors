@@ -13,6 +13,9 @@ color=$1
 #define colors:
 original_base='E95420'
 original_purple='762572'
+original_aubergine='924D8B'
+amber_base='eea834' #POP-OS based amber
+amber_purple='8c5e11'
 aqua_base='41c6c8'
 aqua_purple='326868'
 blue_base='208fe9'
@@ -25,19 +28,28 @@ green_base='3eb34f'
 green_purple='123d18'
 grey_base='9c9c9c'
 grey_purple='4d4d4d'
-mate_base='78ab50'
+mate_base='78ab50' #MATE based green
 mate_purple='4f6326'
+orange_base='e95420'
+orange_purple='a6401c'
 pink_base='e920a3'
 pink_purple='742558'
-purple_base='a064d8'
-purple_purple='4c1f7a'
+purple_base='924d8b' #NEW Ubuntu 20.04 Aubergine color, old was a064d8
+purple_purple='5e2750'
 red_base='e92020'
 red_purple='742525'
+teal_base='16a085' #Manjaro based teal
+teal_purple='094a3d'
 yellow_base='e9ba20'
 yellow_purple='746225'
 
+
 #interpres command
-if [ "$color" == "Aqua" ]; then
+if [ "$color" == "Amber" ]; then
+	base_col=$amber_base
+	purple_col=$amber_purple
+	
+elif [ "$color" == "Aqua" ]; then
 	base_col=$aqua_base
 	purple_col=$aqua_purple
 
@@ -73,6 +85,10 @@ elif [ "$color" == "Purple" ]; then
 	base_col=$purple_base
 	purple_col=$purple_purple
 
+elif [ "$color" == "Teal" ]; then
+	base_col=$Teal_base
+	purple_col=$Teal_purple
+
 elif [ "$color" == "Red" ]; then
 	base_col=$red_base
 	purple_col=$red_purple
@@ -102,7 +118,7 @@ fi
 
 if [ "$base_col" == "" ] || [ "$purple_col" == "" ]; then
 	echo "Unknown color entered. Colors are case sensitive:"
-	echo "Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Yellow, Custom, Stock"
+	echo "Amber, Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Teal, Red, Yellow, Custom, Stock (Orange)"
 	exit
 fi
 

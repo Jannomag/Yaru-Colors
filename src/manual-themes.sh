@@ -4,7 +4,7 @@
 # then pack it into seperate archives
 
 # creating array for every color
-array=( Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Yellow )
+array=( Amber Aqua Blue Brown Deepblue Green Grey MATE Orange Pink Purple Red Teal Yellow )
 
 # setting variable for every color
 for color in "${array[@]}"
@@ -23,7 +23,7 @@ do
 	cp -R $theme/Yaru-$color/gtk-3.0/assets $theme/Yaru-$color-dark/gtk-3.0/
 	cp -R $theme/Yaru-$color/gtk-3.20/assets $theme/Yaru-$color-dark/gtk-3.20/
 	cd $root
-	tar -czvf ../Yaru-$color-v20.04.2.tar.gz *	# pack each folder in seperate archives
+	tar -czvf ../Yaru-$color-v20.04.5.tar.gz *	# pack each folder in seperate archives
 	cd ../
 	rm -rf $root
 done
