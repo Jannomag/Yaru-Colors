@@ -283,8 +283,8 @@ while [ "$picking" == "false" ] && [ "$install" == "true" ] && [ "$install_done"
   echo -e "${BYel}Please enter your icon path [$icon_dir_def]: ${RCol}" && read -e icon_dir # asking for the path, if nothing is entered by the user 'icon_dir_def' will be used - new variable: 'icon_dir'
   icon_dir="${icon_dir:-$icon_dir_def}"
   if [[ ! -d "$icon_dir" ]]; then # and if this directory doesn't exists, create it.
-    echo -e "${Yel}$theme_dir doesn't exist, creating now${RCol}"
-    mkdir -p $theme_dir
+    echo -e "${Yel}$icon_dir doesn't exist, creating now${RCol}"
+    mkdir -p $icon_dir
   fi
 
   # as the echo says, copy the files
