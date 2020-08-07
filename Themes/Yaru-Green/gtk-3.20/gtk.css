@@ -5477,7 +5477,7 @@ spinner:not(:backdrop) {
 
 button.suggested-action spinner, button.destructive-action spinner {
   color: #ffffff; }
-  button.suggested-action spinner:backrop, button.destructive-action spinner:backrop {
+  button.suggested-action spinner:backdrop, button.destructive-action spinner:backdrop {
     color: #fcfcfc; }
 
 button.titlebutton:not(.appmenu) {
