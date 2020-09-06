@@ -110,7 +110,7 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 All other colors in the themes are generated while compiling the css from Yaru's source.
 
 **KNOWN BUGS**    
-1)
+*Transparent window borders*   
 Snap applications like Ubuntu Software become transparent. 
 This isn't really a Yaru-Colors issue. Snap has its own theme directory and I'm not able to add Yaru-Colors to this.
 Currently, I don't have any way to create a Yaru-Colors Snap.
@@ -118,8 +118,8 @@ There are two solutions:
 1) Set Yaru as theme using GTK Inspector - this is just temporary.
 2) Completely remove Snap and install Ubuntu Software and other applications via the repositories.
 For this there are many tutorials on the WWW.
-
-2)
+    
+*Missing icons in gnome / failing to apply Yaru-Colors*  
 On some distros the icon pack fails to apply (Arch in this case). 
 Fix by @tur1ngb0x (see issue #55):
 1. Install humanity-icon-theme (dependency)
