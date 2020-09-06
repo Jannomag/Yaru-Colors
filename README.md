@@ -117,3 +117,14 @@ There are two solutions:
 1) Set Yaru as theme using GTK Inspector - this is just temporary.
 2) Completely remove Snap and install Ubuntu Software and other applications via the repositories.
 For this there are many tutorials on the WWW.
+
+On some distros the icon pack fails to apply. 
+Fix by @tur1ngb0x (#55):
+1. Install humanity-icon-theme (dependency)
+   * Debian/Ubuntu (should be installed by default): `sudo apt install humanity-icon-theme`
+   * Arch/Manjaro: `sudo yay -S humanity-icon-theme`
+2. Open GNOME Tweak Tool, apply any Yaru-Color icon pack.
+3. Restart GNOME Shell.
+4. GNOME panel icons will now show applied Yaru icon pack.
+
+
