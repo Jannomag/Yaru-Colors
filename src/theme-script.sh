@@ -60,6 +60,9 @@ compile_done="false"
 
 while [ ! -z "$1" ]; do
 	case "$1" in
+      Amber|amber)
+            break
+            ;;
 			Aqua|aqua)
 						break
 						;;
@@ -69,6 +72,9 @@ while [ ! -z "$1" ]; do
 			Brown|brown)
 						break
 						;;
+      Cinnamon|cinnamon) # new ubuntu cinnamon based color!
+            break
+            ;;
 			Deepblue|deepblue)
 						break
 						;;
@@ -191,6 +197,8 @@ blue_base='208fe9'
 blue_purple='255074'
 brown_base='995640'
 brown_purple='462e1b'
+cinnamon_base='dd682a' #Ubuntu Cinnamon Remix based orange
+cinnamon_purple='5e2c12'
 deepblue_base='25469d'
 deepblue_purple='1a318b'
 green_base='3eb34f'
@@ -242,6 +250,10 @@ svg3_Blue='1571bd'
 svg1_Brown='ad7a6a'
 svg2_Brown='995640'
 svg3_Brown='633627'
+
+svg1_Cinnamon='eb8046'
+svg2_Cinnamon='dd682a'
+svg3_Cinnamon='a64511'
 
 svg1_Deepblue='485e99'
 svg2_Deepblue='25469d'
@@ -299,6 +311,7 @@ g_Amber=(EEA834 EEAD34 EEB234 EEB734 EEBC34 EEC134 EEC634 EECB34 EED034 EED534)
 g_Aqua=(41c6c8 41c6c8 3fc9c4 3dcdc1 3bd1be 39d5bb 37d8b7 35dcb4 33e0b1 31e4ae)
 g_Blue=(208FE9 1D96EA 1B9DEB 18A4ED 16ABEE 13B2EF 11B9F1 0EC0F2 0CC7F3 0ACEF5)
 g_Brown=(995640 9B5942 9D5C45 9F5F48 A1624A A4664D A66950 A86C52 AA6F55 AD7358)
+g_Cinnamon=(DD682A E06F25 E47620 E87D1C EC8417 EF8C12 F3930E F79A09 FBA104 FFA901)
 g_Deepblue=(25469D 214BA4 1D50AC 1955B4 155ABC 115FC3 0D64CB 0969D3 056EDB 0274E3)
 g_Green=(3EB34F 48B851 52BD54 5DC256 67C759 72CC5B 7CD15E 87D660 91DB63 9CE166)
 g_Grey=(9C9C9C A1A1A1 A6A6A6 ABABAB B0B0B0 B5B5B5 BABABA BFBFBF C4C4C4 C9C9C9)
@@ -349,6 +362,14 @@ elif [[ "$color" == "Brown" ]]; then
 	svg2_color=$svg2_Brown
 	svg3_color=$svg3_Brown
 	g_color=("${g_Brown[@]}")
+
+elif [[ "$color" == "Cinnamon" ]]; then
+	base_col=$cinnamon_base
+	purple_col=$cinnamon_purple
+	svg1_color=$svg1_Cinnamon
+	svg2_color=$svg2_Cinnamon
+	svg3_color=$svg3_Cinnamon
+	g_color=("${g_Cinnamon[@]}")
 
 elif [[ "$color" == "Deepblue" ]]; then
 	base_col=$deepblue_base

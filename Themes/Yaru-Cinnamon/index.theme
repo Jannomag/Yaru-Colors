@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Cinnamon
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru theme - forked with a stylish Cinnamon base color
+Encoding=UTF-8
+GtkTheme=Yaru-Cinnamon
+IconTheme=Yaru-Cinnamon
+CursorTheme=Yaru
+CursorSize=24
