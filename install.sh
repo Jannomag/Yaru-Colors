@@ -131,7 +131,7 @@ package_install=false
 color=none
 
 # The color array - THIS revolutionized my old script...I can add colors as much as I want, if they're present as themes...nice
-colors=(Amber Aqua Blue Brown Deepblue Green Grey MATE Pink Purple Orange Red Teal Yellow)
+colors=(Amber Aqua Blue Brown Cinnamon Deepblue Green Grey MATE Pink Purple Orange Red Teal Yellow)
 
 
 
