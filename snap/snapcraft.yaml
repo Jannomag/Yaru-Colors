@@ -151,7 +151,7 @@ parts:
 
   utils:
     plugin: dump
-    source: snap
+    source: utils
     prime:
       - -*
     build-packages:
