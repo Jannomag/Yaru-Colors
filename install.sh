@@ -32,28 +32,48 @@ VERSION=$(grep -F 'Version' ./README.md | egrep -o "([0-9]{1,}\.)+[0-9]{1,}") # 
 echo -e "Version $VERSION                                             ";
 echo -e "${RCol}"
 
+#options for creating snap package
+#for testing with snap only!
+#SNAPCRAFT_PART_INSTALL=/home/jan/snap_test
+
+while [ ! -z "$1" ]; do
+  case "$1" in
+    --snap|-s)
+    shift
+    icon_dir="$SNAPCRAFT_PART_INSTALL/share/icons"
+    theme_dir="$SNAPCRAFT_PART_INSTALL/share/themes"
+    mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons
+    mkdir -p $SNAPCRAFT_PART_INSTALL/share/themes
+    snap_install=true
+    echo "Installing using snapcraft, no question will be asked!"
+    ;;
+  esac
+done
+
 #Intro
-echo -e "${RCol}"
-echo -e "${BBlu}WELCOME FRIEND!${RCol}"
-echo -e "${BBlu}This script will guide you through the installation of this theme.${RCol}"
-echo -e ""
-echo -e "${BYel}Press any key to start the installer or CTRL-C to quit at any time...${RCol}"
-read -n 1 # wait for user input "any key"
-clear # clear terminmal again
-echo -e "${BWhi}##########----------      NOTE      ----------##########"
-echo -e "# THIS THEME IS JUST A FORK OF THE ORIGINAL YARU THEME #"
-echo -e "# I MODIFIED THE COLORS AND SOME IMAGES / SVG GRAPHICS #"
-echo -e "# THE ORIGINAL CREDITS FOR THIS GREAT WORK GO TO THE   #"
-echo -e "# UBUNTU DEVELOPER TEAM!                               #"
-echo -e "# ---------------------------------------------------- #"
-echo -e "# FEEL FREE TO MODIFY MY FORK                          #"
-echo -e "# ---------------------------------------------------- #"
-echo -e "# MY E-MAIL FOR SUGGESTIONS:       jannomag@gmail.com  #"
-echo -e "# ---------------------------------------------------- #"
-echo -e "# THIS THEMES WERE RELEASED BY ME IN APRIL 2019        #"
-echo -e "# ON gnome-looks.org                                   #"
-echo -e "##########----------      NOTE      ----------##########"
-echo -e ""
+if [ "$snap_install" == "false" ]; then
+  echo -e "${RCol}"
+  echo -e "${BBlu}WELCOME FRIEND!${RCol}"
+  echo -e "${BBlu}This script will guide you through the installation of this theme.${RCol}"
+  echo -e ""
+  echo -e "${BYel}Press any key to start the installer or CTRL-C to quit at any time...${RCol}"
+  read -n 1 # wait for user input "any key"
+  clear # clear terminmal again
+  echo -e "${BWhi}##########----------      NOTE      ----------##########"
+  echo -e "# THIS THEME IS JUST A FORK OF THE ORIGINAL YARU THEME #"
+  echo -e "# I MODIFIED THE COLORS AND SOME IMAGES / SVG GRAPHICS #"
+  echo -e "# THE ORIGINAL CREDITS FOR THIS GREAT WORK GO TO THE   #"
+  echo -e "# UBUNTU DEVELOPER TEAM!                               #"
+  echo -e "# ---------------------------------------------------- #"
+  echo -e "# FEEL FREE TO MODIFY MY FORK                          #"
+  echo -e "# ---------------------------------------------------- #"
+  echo -e "# MY E-MAIL FOR SUGGESTIONS:       jannomag@gmail.com  #"
+  echo -e "# ---------------------------------------------------- #"
+  echo -e "# THIS THEMES WERE RELEASED BY ME IN APRIL 2019        #"
+  echo -e "# ON gnome-looks.org                                   #"
+  echo -e "##########----------      NOTE      ----------##########"
+  echo -e ""
+fi
 
 #getting home directory
 homedir=$( getent passwd "$USER" | cut -d: -f6 )
@@ -71,13 +91,13 @@ else
 	theme_install_dir="/usr/share/themes"
 	icon_install_dir="/usr/share/icons"
 	echo -e "${BRed}You ran this script as root, default install path is set to\n'$theme_install_dir' and '$icon_install_dir' which can also be changed later!${RCol}"
-
-
 fi
 
 #Determine user name for later
 RUID=$(who | awk 'FNR == 1 {print $1}')
 RUSER_UID=$(id -u ${RUID})
+
+
 
 
 
@@ -123,12 +143,19 @@ icon_color_menu () {
 #
 
 # setting variables for the first while loop.
-picking=true
-install=false
-enable=false
-
-package_install=false
-color=none
+if [ "$snap_install" == "false" ]; then
+  picking=true
+  install=false
+  enable=false
+  package_install=false
+  color=none
+elif [ "$snap_install" == "true" ]; then
+  themes_source="./Themes/"
+  icon_source="./Icons/"
+  cp -R $themes_source/* $theme_dir
+  cp -R $icon_source/* $icon_dir
+  exit
+fi
 
 # The color array - THIS revolutionized my old script...I can add colors as much as I want, if they're present as themes...nice
 colors=(Amber Aqua Blue Brown Cinnamon Deepblue Green Grey MATE Pink Purple Orange Red Teal Yellow)
