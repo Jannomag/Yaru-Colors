@@ -7,16 +7,22 @@ RCol='\e[0m'    # Text Reset
 #options for creating snap package
 #for testing with snap only!
 #SNAPCRAFT_PART_INSTALL=/home/jan/snap_test
-
+snap=false
+snapicons_install=false
+snapthemes_install=false
+path=$2
 while [ ! -z "$1" ]; do
   case "$1" in
-    --snap|-s)
-    shift
-    icon_dir="$2/share/icons"
-    theme_dir="$3/share/themes"
-    snap_install=true
-    echo "Installing using snapcraft, no question will be asked!"
-    ;;
+    --snapicons|-si)
+      icon_dir="$path"
+      snapicons_install=true
+      break
+      ;;
+    --snapthemes|-st)
+      theme_dir="$path"
+      snapthemes_install=true
+      break
+      ;;
   esac
 done
 
@@ -30,13 +36,19 @@ Pur='\e[0;35m';     BPur='\e[1;35m';    UPur='\e[4;35m';    IPur='\e[0;95m';    
 Cya='\e[0;36m';     BCya='\e[1;36m';    UCya='\e[4;36m';    ICya='\e[0;96m';    BICya='\e[1;96m';   On_Cya='\e[46m';    On_ICya='\e[0;106m';
 Whi='\e[0;37m';     BWhi='\e[1;37m';    UWhi='\e[4;37m';    IWhi='\e[0;97m';    BIWhi='\e[1;97m';   On_Whi='\e[47m';    On_IWhi='\e[0;107m';
 
-if [ "$snap_install" == "true" ]; then
-  themes_source="./Themes/"
-  icon_source="./Icons/"
-  cp -R $themes_source/* $theme_dir
-  cp -R $icon_source/* $icon_dir
-  exit
-fi
+echo "test"
+  if [ "$snapicons_install" == "true" ]; then
+    echo "test"
+    icon_source="./Icons/"
+    cp -R $icon_source/* $icon_dir
+    exit
+  fi
+  if [ "$snapthemes_install" == "true" ]; then
+    theme_source="./Themes"
+    cp -R $themes_source/* $theme_dir
+    exit
+  fi
+
 
   echo -e "${BWhi}        db    db  .d8b.  d8888b. db    db                 ";
   echo -e "        \`8b  d8' d8' \`8b 88  \`8D 88    88                 ";

@@ -58,7 +58,7 @@ slots:
         - $SNAP/share/gtk2/Yaru-Yellow-light
         - $SNAP/share/gtk2/Yaru-Yellow-dark
 
-        
+
   gtk-3-themes:
     interface: content
     source:
@@ -105,7 +105,7 @@ slots:
         - $SNAP/share/themes/Yaru-Yellow
         - $SNAP/share/themes/Yaru-Yellow-light
         - $SNAP/share/themes/Yaru-Yellow-dark
-        
+
   icon-themes:
     interface: content
     source:
@@ -124,9 +124,9 @@ slots:
         - $SNAP/share/icons/Yaru-Red
         - $SNAP/share/icons/Yaru-Teal
         - $SNAP/share/icons/Yaru-Yellow
-        
 
-parts: 
+
+parts:
   theme:
     after: [utils]
     plugin: nil
@@ -134,15 +134,15 @@ parts:
     source-type: git
     build-packages:
       - sassc
-      - libcanberra-gtk-module 
+      - libcanberra-gtk-module
       - libglib2.0-dev
     override-build: |
         snapcraftctl build
         mkdir -p $SNAPCRAFT_PART_INSTALL/share/themes
-        ./install.sh --snap
+        ./install.sh --snapthemes $SNAPCRAFT_PART_INSTALL/share/themes
         $SNAPCRAFT_STAGE/split-gtk-theme.sh $SNAPCRAFT_PART_INSTALL
         mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons
-        ./install.sh --snap $SNAPCRAFT_PART_INSTALL/share/icons $SNAPCRAFT_PART_INSTALL/share/themes
+        ./install.sh --snapicons $SNAPCRAFT_PART_INSTALL/share/icons
         $SNAPCRAFT_STAGE/update-icon-cache.sh $SNAPCRAFT_PART_INSTALL/share/icons
     stage:
       - share/gtk2/*/gtk-2.0
