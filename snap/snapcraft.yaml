@@ -1,3 +1,4 @@
+# special thanks to github user Muqtxdir who helped me to created this!
 name: yaru-colors
 version: "20.04.6"
 base: core18
@@ -7,8 +8,8 @@ summary: Yaru-Colors GTK themes and icons
 description: |
   A snap that exports the Yaru-Colors GTK and icon themes.
 
-grade: devel
-confinement: devmode
+grade: stable
+confinement: strict
 
 slots:
   gtk-2-themes:
@@ -27,6 +28,9 @@ slots:
         - $SNAP/share/gtk2/Yaru-Brown
         - $SNAP/share/gtk2/Yaru-Brown-light
         - $SNAP/share/gtk2/Yaru-Brown-dark
+        - $SNAP/share/gtk2/Yaru-Cinnamon
+        - $SNAP/share/gtk2/Yaru-Cinnamon-light
+        - $SNAP/share/gtk2/Yaru-Cinnamon-dark
         - $SNAP/share/gtk2/Yaru-Deepblue
         - $SNAP/share/gtk2/Yaru-Deepblue-light
         - $SNAP/share/gtk2/Yaru-Deepblue-dark
@@ -75,6 +79,9 @@ slots:
         - $SNAP/share/themes/Yaru-Brown
         - $SNAP/share/themes/Yaru-Brown-light
         - $SNAP/share/themes/Yaru-Brown-dark
+        - $SNAP/share/themes/Yaru-Cinnamon
+        - $SNAP/share/themes/Yaru-Cinnamon-light
+        - $SNAP/share/themes/Yaru-Cinnamon-dark
         - $SNAP/share/themes/Yaru-Deepblue
         - $SNAP/share/themes/Yaru-Deepblue-light
         - $SNAP/share/themes/Yaru-Deepblue-dark
@@ -114,6 +121,7 @@ slots:
         - $SNAP/share/icons/Yaru-Aqua
         - $SNAP/share/icons/Yaru-Blue
         - $SNAP/share/icons/Yaru-Brown
+        - $SNAP/share/icons/Yaru-Cinnamon
         - $SNAP/share/icons/Yaru-Deepblue
         - $SNAP/share/icons/Yaru-Green
         - $SNAP/share/icons/Yaru-Grey
@@ -132,6 +140,7 @@ parts:
     plugin: nil
     source: https://github.com/Jannomag/Yaru-colors.git
     source-type: git
+    source-tag: 20.04.6
     build-packages:
       - sassc
       - libcanberra-gtk-module
