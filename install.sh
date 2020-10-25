@@ -36,15 +36,13 @@ Pur='\e[0;35m';     BPur='\e[1;35m';    UPur='\e[4;35m';    IPur='\e[0;95m';    
 Cya='\e[0;36m';     BCya='\e[1;36m';    UCya='\e[4;36m';    ICya='\e[0;96m';    BICya='\e[1;96m';   On_Cya='\e[46m';    On_ICya='\e[0;106m';
 Whi='\e[0;37m';     BWhi='\e[1;37m';    UWhi='\e[4;37m';    IWhi='\e[0;97m';    BIWhi='\e[1;97m';   On_Whi='\e[47m';    On_IWhi='\e[0;107m';
 
-echo "test"
   if [ "$snapicons_install" == "true" ]; then
-    echo "test"
     icon_source="./Icons/"
     cp -R $icon_source/* $icon_dir
     exit
   fi
   if [ "$snapthemes_install" == "true" ]; then
-    theme_source="./Themes"
+    themes_source="./Themes"
     cp -R $themes_source/* $theme_dir
     exit
   fi
