@@ -4,37 +4,9 @@
 clear # clear the termainl
 RCol='\e[0m'    # Text Reset
 
-# Regular           Bold                Underline           High Intensity      BoldHigh Intens     Background          High Intensity Backgrounds
-Bla='\e[0;30m';     BBla='\e[1;30m';    UBla='\e[4;30m';    IBla='\e[0;90m';    BIBla='\e[1;90m';   On_Bla='\e[40m';    On_IBla='\e[0;100m';
-Red='\e[0;31m';     BRed='\e[1;31m';    URed='\e[4;31m';    IRed='\e[0;91m';    BIRed='\e[1;91m';   On_Red='\e[41m';    On_IRed='\e[0;101m';
-Gre='\e[0;32m';     BGre='\e[1;32m';    UGre='\e[4;32m';    IGre='\e[0;92m';    BIGre='\e[1;92m';   On_Gre='\e[42m';    On_IGre='\e[0;102m';
-Yel='\e[0;33m';     BYel='\e[1;33m';    UYel='\e[4;33m';    IYel='\e[0;93m';    BIYel='\e[1;93m';   On_Yel='\e[43m';    On_IYel='\e[0;103m';
-Blu='\e[0;34m';     BBlu='\e[1;34m';    UBlu='\e[4;34m';    IBlu='\e[0;94m';    BIBlu='\e[1;94m';   On_Blu='\e[44m';    On_IBlu='\e[0;104m';
-Pur='\e[0;35m';     BPur='\e[1;35m';    UPur='\e[4;35m';    IPur='\e[0;95m';    BIPur='\e[1;95m';   On_Pur='\e[45m';    On_IPur='\e[0;105m';
-Cya='\e[0;36m';     BCya='\e[1;36m';    UCya='\e[4;36m';    ICya='\e[0;96m';    BICya='\e[1;96m';   On_Cya='\e[46m';    On_ICya='\e[0;106m';
-Whi='\e[0;37m';     BWhi='\e[1;37m';    UWhi='\e[4;37m';    IWhi='\e[0;97m';    BIWhi='\e[1;97m';   On_Whi='\e[47m';    On_IWhi='\e[0;107m';
-
-echo -e "${BWhi}        db    db  .d8b.  d8888b. db    db                 ";
-echo -e "        \`8b  d8' d8' \`8b 88  \`8D 88    88                 ";
-echo -e "         \`8bd8'  88ooo88 88oobY' 88    88                 ";
-echo -e "           88    88~~~88 88\`8b   88    88                 ";
-echo -e "           88    88   88 88 \`88. 88b  d88                 ";
-echo -e "           YP    YP   YP 88   YD ~Y8888P'                 ";
-
-echo -e "${BBlu} .o88b. ${BYel} .d88b.  ${BPur}88       ${BCya}.d88b.  ${BGre}d8888b. ${BRed}.d8888. ";
-echo -e "${BBlu}d8P  Y8 ${BYel}.8P  Y8. ${BPur}88     ${BCya} .8P  Y8.${BGre} 88  \`8D ${BRed}88'  YP ";
-echo -e "${BBlu}8P      ${BYel}88    88 ${BPur}88     ${BCya} 88    88${BGre} 88oobY' ${BRed}\`8bo.   ";
-echo -e "${BBlu}8b      ${BYel}88    88 ${BPur}88     ${BCya} 88    88${BGre} 88\`8b     ${BRed}\`Y8b. ";
-echo -e "${BBlu}Y8b  d8 ${BYel}\`8b  d8'${BPur} 88booo.${BCya} \`8b  d8'${BGre} 88 \`88. ${BRed}db   8D ";
-echo -e "${BBlu} \`Y88P'${BYel}  \`Y88P'${BPur}  Y88888P${BCya}  \`Y88P'${BGre}  88   YD ${BRed}\`8888Y' ";
-echo -e "                                                  ";
-VERSION=$(grep -F 'Version' ./README.md | egrep -o "([0-9]{1,}\.)+[0-9]{1,}") # Extracting version from readme.me so I just have to change it there.
-echo -e "Version $VERSION                                             ";
-echo -e "${RCol}"
-
 #options for creating snap package
 #for testing with snap only!
-#SNAPCRAFT_PART_INSTALL=/home/jan/snap_test
+SNAPCRAFT_PART_INSTALL=/home/jan/snap_test
 
 while [ ! -z "$1" ]; do
   case "$1" in
@@ -50,8 +22,46 @@ while [ ! -z "$1" ]; do
   esac
 done
 
+# Regular           Bold                Underline           High Intensity      BoldHigh Intens     Background          High Intensity Backgrounds
+Bla='\e[0;30m';     BBla='\e[1;30m';    UBla='\e[4;30m';    IBla='\e[0;90m';    BIBla='\e[1;90m';   On_Bla='\e[40m';    On_IBla='\e[0;100m';
+Red='\e[0;31m';     BRed='\e[1;31m';    URed='\e[4;31m';    IRed='\e[0;91m';    BIRed='\e[1;91m';   On_Red='\e[41m';    On_IRed='\e[0;101m';
+Gre='\e[0;32m';     BGre='\e[1;32m';    UGre='\e[4;32m';    IGre='\e[0;92m';    BIGre='\e[1;92m';   On_Gre='\e[42m';    On_IGre='\e[0;102m';
+Yel='\e[0;33m';     BYel='\e[1;33m';    UYel='\e[4;33m';    IYel='\e[0;93m';    BIYel='\e[1;93m';   On_Yel='\e[43m';    On_IYel='\e[0;103m';
+Blu='\e[0;34m';     BBlu='\e[1;34m';    UBlu='\e[4;34m';    IBlu='\e[0;94m';    BIBlu='\e[1;94m';   On_Blu='\e[44m';    On_IBlu='\e[0;104m';
+Pur='\e[0;35m';     BPur='\e[1;35m';    UPur='\e[4;35m';    IPur='\e[0;95m';    BIPur='\e[1;95m';   On_Pur='\e[45m';    On_IPur='\e[0;105m';
+Cya='\e[0;36m';     BCya='\e[1;36m';    UCya='\e[4;36m';    ICya='\e[0;96m';    BICya='\e[1;96m';   On_Cya='\e[46m';    On_ICya='\e[0;106m';
+Whi='\e[0;37m';     BWhi='\e[1;37m';    UWhi='\e[4;37m';    IWhi='\e[0;97m';    BIWhi='\e[1;97m';   On_Whi='\e[47m';    On_IWhi='\e[0;107m';
+
+if [ "$snap_install" == "true" ]; then
+  themes_source="./Themes/"
+  icon_source="./Icons/"
+  cp -R $themes_source/* $theme_dir
+  cp -R $icon_source/* $icon_dir
+  exit
+fi
+
+  echo -e "${BWhi}        db    db  .d8b.  d8888b. db    db                 ";
+  echo -e "        \`8b  d8' d8' \`8b 88  \`8D 88    88                 ";
+  echo -e "         \`8bd8'  88ooo88 88oobY' 88    88                 ";
+  echo -e "           88    88~~~88 88\`8b   88    88                 ";
+  echo -e "           88    88   88 88 \`88. 88b  d88                 ";
+  echo -e "           YP    YP   YP 88   YD ~Y8888P'                 ";
+
+  echo -e "${BBlu} .o88b. ${BYel} .d88b.  ${BPur}88       ${BCya}.d88b.  ${BGre}d8888b. ${BRed}.d8888. ";
+  echo -e "${BBlu}d8P  Y8 ${BYel}.8P  Y8. ${BPur}88     ${BCya} .8P  Y8.${BGre} 88  \`8D ${BRed}88'  YP ";
+  echo -e "${BBlu}8P      ${BYel}88    88 ${BPur}88     ${BCya} 88    88${BGre} 88oobY' ${BRed}\`8bo.   ";
+  echo -e "${BBlu}8b      ${BYel}88    88 ${BPur}88     ${BCya} 88    88${BGre} 88\`8b     ${BRed}\`Y8b. ";
+  echo -e "${BBlu}Y8b  d8 ${BYel}\`8b  d8'${BPur} 88booo.${BCya} \`8b  d8'${BGre} 88 \`88. ${BRed}db   8D ";
+  echo -e "${BBlu} \`Y88P'${BYel}  \`Y88P'${BPur}  Y88888P${BCya}  \`Y88P'${BGre}  88   YD ${BRed}\`8888Y' ";
+  echo -e "                                                  ";
+  VERSION=$(grep -F 'Version' ./README.md | egrep -o "([0-9]{1,}\.)+[0-9]{1,}") # Extracting version from readme.me so I just have to change it there.
+  echo -e "Version $VERSION                                             ";
+  echo -e "${RCol}"
+
+
+
 #Intro
-if [ "$snap_install" == "false" ]; then
+
   echo -e "${RCol}"
   echo -e "${BBlu}WELCOME FRIEND!${RCol}"
   echo -e "${BBlu}This script will guide you through the installation of this theme.${RCol}"
@@ -73,7 +83,7 @@ if [ "$snap_install" == "false" ]; then
   echo -e "# ON gnome-looks.org                                   #"
   echo -e "##########----------      NOTE      ----------##########"
   echo -e ""
-fi
+
 
 #getting home directory
 homedir=$( getent passwd "$USER" | cut -d: -f6 )
@@ -143,19 +153,12 @@ icon_color_menu () {
 #
 
 # setting variables for the first while loop.
-if [ "$snap_install" == "false" ]; then
   picking=true
   install=false
   enable=false
   package_install=false
   color=none
-elif [ "$snap_install" == "true" ]; then
-  themes_source="./Themes/"
-  icon_source="./Icons/"
-  cp -R $themes_source/* $theme_dir
-  cp -R $icon_source/* $icon_dir
-  exit
-fi
+
 
 # The color array - THIS revolutionized my old script...I can add colors as much as I want, if they're present as themes...nice
 colors=(Amber Aqua Blue Brown Cinnamon Deepblue Green Grey MATE Pink Purple Orange Red Teal Yellow)
