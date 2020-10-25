@@ -142,7 +142,7 @@ parts:
         ./install.sh --snap
         $SNAPCRAFT_STAGE/split-gtk-theme.sh $SNAPCRAFT_PART_INSTALL
         mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons
-        ./install.sh --snap
+        ./install.sh --snap $SNAPCRAFT_PART_INSTALL/share/icons $SNAPCRAFT_PART_INSTALL/share/themes
         $SNAPCRAFT_STAGE/update-icon-cache.sh $SNAPCRAFT_PART_INSTALL/share/icons
     stage:
       - share/gtk2/*/gtk-2.0

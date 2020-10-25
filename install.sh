@@ -6,16 +6,14 @@ RCol='\e[0m'    # Text Reset
 
 #options for creating snap package
 #for testing with snap only!
-SNAPCRAFT_PART_INSTALL=/home/jan/snap_test
+#SNAPCRAFT_PART_INSTALL=/home/jan/snap_test
 
 while [ ! -z "$1" ]; do
   case "$1" in
     --snap|-s)
     shift
-    icon_dir="$SNAPCRAFT_PART_INSTALL/share/icons"
-    theme_dir="$SNAPCRAFT_PART_INSTALL/share/themes"
-    mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons
-    mkdir -p $SNAPCRAFT_PART_INSTALL/share/themes
+    icon_dir="$2/share/icons"
+    theme_dir="$3/share/themes"
     snap_install=true
     echo "Installing using snapcraft, no question will be asked!"
     ;;
