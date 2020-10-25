@@ -1,9 +1,13 @@
 ![Logo](src/Yaru-Colors-Logo.svg)
 
 **Yaru-Colors is a theme project to bring different colors to Ubuntu's awesome Yaru theme.**  
-**Version 20.04.5** (not released, yet)  
+**Version 20.04.6** (not released, yet)  
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)  
+*Update 20.04.6:*
+*- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)*
+*- Added snap! Thanks for @Muqtxdir for helping creating this!*
+
 *Update 20.04.5: Rewritten install.sh script to make it way shorter than before and a bit more user friendly. Also added Teal and Amber themes*
 
 *Update 20.04.4: Broken symlinks were now removed, yay! Updated compiling script for this, as well.*
@@ -73,7 +77,13 @@ It will guide you through everything and allows you to choose what you want to i
 `gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color '#HEXCODE' 2> /dev/null`   
 (or do it with the script, it'll do it for you...)
 
-
+**Snap install**
+1. Install snap package with `snap install yaru-colors` (TBR)
+2. Add the themes to the snap theme list by following 3 commands:
+`for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done`
+`for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done`
+`for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done`
+3. Reboot or re-login
 
 
 ***Have fun with it!   
@@ -94,7 +104,8 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 | Yaru-Amber | ![#eea834](https://via.placeholder.com/15/eea834/000000?text=+) `#eea834` | ![#8c5e11](https://via.placeholder.com/15/8c5e11/000000?text=+) `#8c5e11` |
 | Yaru-Aqua | ![#41c6c8](https://via.placeholder.com/15/41c6c8/000000?text=+) `#41c6c8` | ![#326868](https://via.placeholder.com/15/326868/000000?text=+) `#326868` |
 | Yaru-Blue | ![#208fe9](https://via.placeholder.com/15/208fe9/000000?text=+) `#208fe9` | ![#255074](https://via.placeholder.com/15/255074/000000?text=+) `#255074` |
-| Yaru-Brown | ![#995640](https://via.placeholder.com/15/995640/000000?text=+) `#995640` | ![#462e1b](https://via.placeholder.com/15/462e1b/000000?text=+) `#462e1b` |
+| Yaru-Brown | ![#dd682a](https://via.placeholder.com/15/dd682a/000000?text=+) `#dd682a` | ![#5e2c12](https://via.placeholder.com/15/5e2c12/000000?text=+) `#5e2c12` |
+| Yaru-Cinnamon | ![#995640](https://via.placeholder.com/15/995640/000000?text=+) `#995640` | ![#462e1b](https://via.placeholder.com/15/462e1b/000000?text=+) `#462e1b` |
 | Yaru-Deepblue | ![#25469d](https://via.placeholder.com/15/25469d/000000?text=+) `#25469d` | ![#1a318b](https://via.placeholder.com/15/1a318b/000000?text=+) `#1a318b` |
 | Yaru-Green | ![#3eb34f](https://via.placeholder.com/15/3eb34f/000000?text=+) `#3eb34f` | ![#123d18](https://via.placeholder.com/15/123d18/000000?text=+) `#123d18` |
 | Yaru-Grey | ![#9c9c9c](https://via.placeholder.com/15/9c9c9c/000000?text=+) `#9c9c9c` | ![#4d4d4d](https://via.placeholder.com/15/4d4d4d/000000?text=+) `#4d4d4d` |
@@ -111,16 +122,17 @@ All other colors in the themes are generated while compiling the css from Yaru's
 
 **KNOWN BUGS**    
 *Transparent window borders*   
-Snap applications like Ubuntu Software become transparent. 
+Snap applications like Ubuntu Software become transparent.
 This isn't really a Yaru-Colors issue. Snap has its own theme directory and I'm not able to add Yaru-Colors to this.
 Currently, I don't have any way to create a Yaru-Colors Snap.
 There are two solutions:
 1) Set Yaru as theme using GTK Inspector - this is just temporary.
 2) Completely remove Snap and install Ubuntu Software and other applications via the repositories.
 For this there are many tutorials on the WWW.
-    
+***FIX: Install yaru-colors snap package and read above!***
+
 *Missing icons in gnome / failing to apply Yaru-Colors*  
-On some distros the icon pack fails to apply (Arch in this case). 
+On some distros the icon pack fails to apply (Arch in this case).
 Fix by @tur1ngb0x (see issue #55):
 1. Install humanity-icon-theme (dependency)
    * Debian/Ubuntu (should be installed by default): `sudo apt install humanity-icon-theme`
@@ -128,5 +140,3 @@ Fix by @tur1ngb0x (see issue #55):
 2. Open GNOME Tweak Tool, apply any Yaru-Color icon pack.
 3. Restart GNOME Shell.
 4. GNOME panel icons will now show applied Yaru icon pack.
-
-

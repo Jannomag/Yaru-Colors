@@ -22,6 +22,8 @@ blue_base='208fe9'
 blue_purple='255074'
 brown_base='995640'
 brown_purple='462e1b'
+cinnamon_base='dd682a' #Ubuntu Cinnamon Remix based orange
+cinnamon_purple='5e2c12'
 deepblue_base='25469d'
 deepblue_purple='1a318b'
 green_base='3eb34f'
@@ -48,7 +50,7 @@ yellow_purple='746225'
 if [ "$color" == "Amber" ]; then
 	base_col=$amber_base
 	purple_col=$amber_purple
-	
+
 elif [ "$color" == "Aqua" ]; then
 	base_col=$aqua_base
 	purple_col=$aqua_purple
@@ -60,6 +62,10 @@ elif [ "$color" == "Blue" ]; then
 elif [ "$color" == "Brown" ]; then
 	base_col=$brown_base
 	purple_col=$brown_purple
+
+elif [ "$color" == "Cinnamon" ]; then
+	base_col=$cinnamon_base
+	purple_col=$cinnamon_purple
 
 elif [ "$color" == "Deepblue" ]; then
 	base_col=$deepblue_base
