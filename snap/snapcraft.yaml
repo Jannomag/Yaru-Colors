@@ -140,7 +140,7 @@ parts:
     plugin: nil
     source: https://github.com/Jannomag/Yaru-colors.git
     source-type: git
-    source-tag: 20.04.6
+    source-tag: 20.04.6snap
     build-packages:
       - sassc
       - libcanberra-gtk-module
