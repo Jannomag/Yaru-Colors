@@ -90,7 +90,7 @@ It will guide you through everything and allows you to choose what you want to i
 3. Reboot or re-login
 
 **Other distros than Ubuntu**    
-**Or when you notice any issues**    
+**Or when you notice any issues with the icon packs**    
 *Thanks to tur1ngb0x for this hint*    
 1. Install dependencies
 - - Debian/Ubuntu: `sudo apt install humanity-icon-theme yaru-theme-icon hicolor-icon-theme`    
