@@ -1,9 +1,12 @@
 ![Logo](src/Yaru-Colors-Logo.svg)
 
 **Yaru-Colors is a theme project to bring different colors to Ubuntu's awesome Yaru theme.**  
-**Version 20.04.6** (not released, yet)  
+**Version 20.04.6** 
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)  
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/yaru-colors)
+
 *Update 20.04.6:*
 *- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)*
 *- Added snap! Thanks for @Muqtxdir for helping creating this!*
@@ -78,11 +81,12 @@ It will guide you through everything and allows you to choose what you want to i
 (or do it with the script, it'll do it for you...)
 
 **Snap install**
+**special thanks to Muqtxdir**
 1. Install snap package with `snap install yaru-colors` (TBR)
-2. Add the themes to the snap theme list by following 3 commands:
-`for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done`
-`for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done`
-`for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done`
+2. Add the themes to the snap theme list by following 3 commands:    
+`for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done`    
+`for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done`    
+`for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done`    
 3. Reboot or re-login
 
 
