@@ -80,7 +80,7 @@ It will guide you through everything and allows you to choose what you want to i
 `gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-running-dots-border-color '#HEXCODE' 2> /dev/null`   
 (or do it with the script, it'll do it for you...)
 
-**Snap install**
+**Snap install**    
 **special thanks to Muqtxdir**
 1. Install snap package with `snap install yaru-colors` (TBR)
 2. Add the themes to the snap theme list by following 3 commands:    
