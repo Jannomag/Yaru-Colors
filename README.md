@@ -89,6 +89,16 @@ It will guide you through everything and allows you to choose what you want to i
 `for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done`    
 3. Reboot or re-login
 
+**Other distros than Ubuntu**
+**Or when you notice any issues**
+*Thanks to tur1ngb0x for this hint*
+1. Install dependencies
+- - Debian/Ubuntu: `sudo apt install humanity-icon-theme yaru-theme-icon hicolor-icon-theme`    
+- - Arch/Manjaro: `yay -S humanity-icon-theme yaru-icon-theme hicolor-icon-theme`    
+2. Apply any Yaru-Color icon pack.
+3. Restart GNOME Shell / Cinnamon Shell.
+4. Panel icons will now show applied Yaru-Color icon pack.
+
 
 ***Have fun with it!   
 For any suggestions send me a message here or on Reddit /u/jannomag***
