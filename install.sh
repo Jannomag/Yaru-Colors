@@ -97,12 +97,13 @@ fi
 
 #getting home directory
 homedir=$( getent passwd "$USER" | cut -d: -f6 )
+username=$( getent passwd "$USER" | cut -d: -f1 )
 
 #Check if root
 if [[ "$EUID" -ne 0 ]]; then
   isroot="false"
-	theme_install_dir="$homedir/.themes"
-	icon_install_dir="$homedir/.icons"
+	theme_install_dir="$homedir/.local/share/themes"
+	icon_install_dir="$homedir/.local/share/icons"
 	echo -e "${BGre}You ran this script as normal user, default install path is set to\n'$theme_install_dir' and '$icon_install_dir'\nwhich can also be changed later!${RCol}"
 	sleep 0.5
 else
@@ -300,8 +301,8 @@ while [ "$picking" == "false" ] && [ "$install" == "true" ] && [ "$install_done"
   # setting path variables for normal users
   themes_source="./Themes/"
   icon_source="./Icons/"
-  theme_dir_def="$homedir/.themes/"
-  icon_dir_def="$homedir/.icons/"
+  theme_dir_def="$homedir/.local/share/themes/"
+  icon_dir_def="$homedir/.local/share/icons/"
 
   # and also for the snobs with root privileges
   if [ "$isroot" == "true" ]; then
@@ -332,10 +333,18 @@ while [ "$picking" == "false" ] && [ "$install" == "true" ] && [ "$install_done"
   if [ "$package_install" == "true" ]; then # just copy everything from both directories if the whole package was installed
     cp -R $themes_source/* $theme_dir
     cp -R $icon_source/* $icon_dir
+    if [ "$icon_dir" == "$homedir/.local/share/icons/" ]; then # if .local/share/icons was set as directory, link the icon directories to .icons as well to prevent bugs I notied in Ubuntu 20.10 (cursors not working)
+      mkdir -p $homedir/.icons
+      ln -sf $icon_dir/Yaru-* $homedir/.icons
+    fi
   fi
   if [ "$package_install" == "false" ]; then # and if the user just wanted one color, just copy this specific one using 'package_color' and 'icon_color' - you remember? The functions above
     cp -R $themes_source/Yaru-$package_color* $theme_dir/
     cp -R $icon_source/Yaru-$icon_color $icon_dir/
+    if [ "$icon_dir" == "$homedir/.local/share/icons/" ]; then # if .local/share/icons was set as directory, link the icon directories to .icons as well to prevent bugs I notied in Ubuntu 20.10 (cursors not working)
+      mkdir -p $homedir/.icons
+      ln -sf $icon_dir/Yaru-* $homedir/.icons
+    fi
   fi
   echo -e "${BYel}Done!${RCol}"
   echo -e ""

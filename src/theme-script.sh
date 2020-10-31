@@ -4,6 +4,7 @@
 #This script should compiles everything from the source of Ubuntu's Yaru by it's own
 #Created by Jannomag
 #Licensed under the terms of GNU GPLv3
+#Inkscape 0.92 is required!!
 
 ###### CHAPTERS ######
 # Search for chapters to find every section easily:
