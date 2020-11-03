@@ -28,9 +28,15 @@ $osd_levelbar_height:8px;
 }
 
 /* Pad OSD */
-.pad-osd-window {
+.pad-osd-window { // Yaru: Make pad OSD visible again in the light theme by using osd colors, should be ported to upstream
   padding: 32px;
-  background-color: transparentize(#000, 0.2);
+  background-color: $osd_bg_color;
+  color: $osd_fg_color;
+
+  .button {
+    @extend %button;
+    &:insensitive { color: $fg_color; }
+  }
 
   .pad-osd-title-box { spacing: 12px; }
   .pad-osd-title-menu-box { spacing: 6px; }

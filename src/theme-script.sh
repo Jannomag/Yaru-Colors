@@ -4,7 +4,6 @@
 #This script should compiles everything from the source of Ubuntu's Yaru by it's own
 #Created by Jannomag
 #Licensed under the terms of GNU GPLv3
-#Inkscape 0.92 is required!!
 
 ###### CHAPTERS ######
 # Search for chapters to find every section easily:
@@ -107,7 +106,7 @@ while [ ! -z "$1" ]; do
 						break
 						;;
 			*)
-						echo "You've entered a wrong color!"
+						show_usage
 						break
 						;;
 	esac
@@ -583,12 +582,12 @@ mkdir -p $gtk30l_path
 source32_path=$WORKDIR/default/gtk-3.20
 
 #creating backups for the original files if something fails
-echo -e "Backing up original _ubuntu-colors.scss and _colors.scss ..."
-cp $source32_path/_ubuntu-colors.scss $source32_path/BAK_ubuntu-colors.scss
+echo -e "Backing up original _palette.scss and _colors.scss ..."
+cp $source32_path/_palette.scss $source32_path/BAK_palette.scss
 cp $source32_path/_colors.scss $source32_path/BAK_colors.scss
 
 #check if the backups are there, if not exit
-if [[ ! -f "$source32_path/BAK_ubuntu-colors.scss" ]] && [[ ! -f "$source32_path/BAK_colors.scss" ]]
+if [[ ! -f "$source32_path/BAK_palette.scss" ]] && [[ ! -f "$source32_path/BAK_colors.scss" ]]
 then
 	echo -e "BACKUP DIDN'T WORK, EXITING NOW!"
 	exit
@@ -597,13 +596,13 @@ fi
 ###################
 ### CSS Section ###
 ###################
-#replace the color values in _ubuntu-colors.scss
-echo -e "Find and replace the color values in _ubuntu-colors.scss ..."
-sed -i -e "s/E95420/$base_col/g" $source32_path/_ubuntu-colors.scss
+#replace the color values in _palette.scss
+echo -e "Find and replace the color values in _palette.scss ..."
+sed -i -e "s/E95420/$base_col/g" $source32_path/_palette.scss
 #Obsolete purple color for <20.04 - newer below
-sed -i -e "s/762572/$purple_col/g" $source32_path/_ubuntu-colors.scss
+sed -i -e "s/762572/$purple_col/g" $source32_path/_palette.scss
 #Addition for 20.04 - new purple color is $aubergine = #924D8B!
-sed -i -e "s/924D8B/$base_col/g" $source32_path/_ubuntu-colors.scss
+sed -i -e "s/924D8B/$base_col/g" $source32_path/_palette.scss
 
 echo -e "Find and replace the color values in _colors.scss ..."
 #replace the color values in _colors.scss
@@ -615,6 +614,7 @@ echo -e "Compiling gtk.scss of default, light and dark for GTK 3.20 ..."
 #compiling files with sassc
 #default
 cd $source32_path
+ln -sf ../../light/gtk-3.20/gtk.scss ./gtk-light.scss
 sassc -a ./gtk.scss ./gtk_generated.css
 #dark
 sassc -a ./gtk-dark.scss ./gtk_dark_generated.css
@@ -713,7 +713,7 @@ cd $source30_path
 #obsolete:
 #sed -i -e "s/E95420/$base_col/g" $source30_path/_colors.scss
 ### END OF OBSOLETE PART
-
+ln -sf ../../light/gtk-3.0/gtk.scss ./gtk-light.scss
 sassc -a ./gtk.scss ./gtk_generated.css
 #dark
 sassc -a ./gtk-dark.scss ./gtk_dark_generated.css
@@ -821,9 +821,9 @@ cd $gtk30d_path
 ln -rs ../../Yaru-$color/gtk-3.0/assets ./assets
 
 #restore the backup
-mv $source32_path/BAK_ubuntu-colors.scss $source32_path/_ubuntu-colors.scss
+mv $source32_path/BAK_palette.scss $source32_path/_palette.scss
 mv $source32_path/BAK_colors.scss $source32_path/_colors.scss
-#mv $source30_path/BAK_ubuntu-colors.scss $source30_path/_ubuntu-colors.scss
+#mv $source30_path/BAK_palette.scss $source30_path/_palette.scss
 #mv $source30_path/BAK_colors.scss $source30_path/_colors.scss
 
 cd $WORKDIR
@@ -914,12 +914,12 @@ source_path=$WORKDIR/shell
 sass_path=$WORKDIR/shell/gnome-shell-sass
 
 #creating backup of original file
-echo -e "backing up original _ubuntu-colors.scss ..."
-cp $sass_path/_ubuntu-colors.scss $sass_path/BAK_ubuntu-colors.scss
+echo -e "backing up original _palette.scss ..."
+cp $sass_path/_palette.scss $sass_path/BAK_palette.scss
 
 
 #if backup failed, exit
-if [[ ! -f "$sass_path/BAK_ubuntu-colors.scss" ]]
+if [[ ! -f "$sass_path/BAK_palette.scss" ]]
 then
 	echo -e "BACKUP FAILED, EXITING NOW!"
 	exit
@@ -936,12 +936,12 @@ sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_c
 
 
 #replacing colors
-echo -e "Find and replace original colors in _ubuntu-colors.scss ..."
-sed -i -e "s/E95420/$base_col/g" $sass_path/_ubuntu-colors.scss
+echo -e "Find and replace original colors in _palette.scss ..."
+sed -i -e "s/E95420/$base_col/g" $sass_path/_palette.scss
 #Obsolete purple color for <20.04 - newer below
-sed -i -e "s/300A24/$purple_col/g" $sass_path/_ubuntu-colors.scss
+sed -i -e "s/300A24/$purple_col/g" $sass_path/_palette.scss
 #Addition for 20.04 - new purple color is $aubergine = #924D8B!
-sed -i -e "s/924D8B/$base_col/g" $sass_path/_ubuntu-colors.scss
+sed -i -e "s/924D8B/$base_col/g" $sass_path/_palette.scss
 
 echo -e " "
 echo -e "Compiling gnome-shell theme ..."
@@ -1004,7 +1004,7 @@ mv svg_backup/*.svg .
 rm -rf svg_backup
 
 #restoring other backups
-mv $sass_path/BAK_ubuntu-colors.scss $sass_path/_ubuntu-colors.scss
+mv $sass_path/BAK_palette.scss $sass_path/_palette.scss
 mv $source_path/BAK-gnome-shell.scss.in $source_path/gnome-shell.scss.in
 mv $source_path/BAK-gnome-shell-high-contrast.scss $source_path/gnome-shell-high-contrast.scss
 rm -rf $sass_path/widgets
@@ -1490,8 +1490,6 @@ while [[ $comp_icons == "true" ]]; do
   python ./render-bitmaps.py #execute the python script, special thanks to Suru devs for providing this!
 
 	mkdir -p $icon_theme_dir #create the folder for the compiled icons
-echo "BEVOR"
-
 
 	cd $icon_dir/src/symlinks
 	./generate-symlinks.sh -a
@@ -1543,7 +1541,7 @@ while [[ $comp_cursors == "true" ]]; do
   cd $cursor_dir
   sed -i -e "s/19b6ee/$svg2_color/gI" ./source-cursors.svg #replace the blue color in the source-cursors.svg
   rm -rf bitmaps/24x24 bitmaps/32x32 bitmaps/48x48 bitmaps/64x64	bitmaps/96x96
-  python ./render-cursors.py ./source-cursors.svg #execute the python script, special thanks to Suru devs for prividing this!
+  ./render-cursors.py ./source-cursors.svg #execute the python script, special thanks to Suru devs for prividing this!
   # python ./anicursorgen.py #doesn't work, freezes
   mkdir -p $icon_theme_dir/cursors
   ./x11-make.sh #also thanks to Suru devs for both scripts!
