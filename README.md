@@ -8,13 +8,13 @@
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/yaru-colors)
 
 *Update 20.10.1:*    
-- Updated every theme to 20.10!
-- Added new Wallpapers made by @fer-moreira (They're awesome, thanks a lot!)
-- Icons and Cursors are unchanged
+*- Updated every theme to 20.10!     *
+*- Added new Wallpapers made by @fer-moreira (They're awesome, thanks a lot!)     *
+*- Icons and Cursors are unchanged    *
 
 *Update 20.04.6:*
-*- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)*
-*- Added snap! Thanks for @Muqtxdir for helping creating this!*
+*- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)    *
+*- Added snap! Thanks for @Muqtxdir for helping creating this!   *
 
 *Update 20.04.5: Rewritten install.sh script to make it way shorter than before and a bit more user friendly. Also added Teal and Amber themes*
 
