@@ -8,13 +8,13 @@
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/yaru-colors)
 
 *Update 20.10.1:*    
-*- Updated every theme to 20.10!     *
-*- Added new Wallpapers made by @fer-moreira (They're awesome, thanks a lot!)     *
-*- Icons and Cursors are unchanged    *
+*- Updated every theme to 20.10!*    
+*- Added new Wallpapers made by @fer-moreira (They're awesome, thanks a lot!)*    
+*- Icons and Cursors are unchanged*    
 
 *Update 20.04.6:*
-*- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)    *
-*- Added snap! Thanks for @Muqtxdir for helping creating this!   *
+*- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)*    
+*- Added snap! Thanks for @Muqtxdir for helping creating this!*    
 
 *Update 20.04.5: Rewritten install.sh script to make it way shorter than before and a bit more user friendly. Also added Teal and Amber themes*
 
@@ -147,7 +147,7 @@ Currently, I don't have any way to create a Yaru-Colors Snap.
 There are two solutions:
 1) Set Yaru as theme using GTK Inspector - this is just temporary.
 2) Completely remove Snap and install Ubuntu Software and other applications via the repositories.
-For this there are many tutorials on the WWW.
+For this there are many tutorials on the WWW.    
 ***FIX: Install yaru-colors snap package and read above!***
 
 *Missing icons in gnome / failing to apply Yaru-Colors*  
