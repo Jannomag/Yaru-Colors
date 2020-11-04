@@ -1,11 +1,16 @@
 ![Logo](src/Yaru-Colors-Logo.svg)
 
 **Yaru-Colors is a theme project to bring different colors to Ubuntu's awesome Yaru theme.**  
-**Version 20.04.6** 
+**Version 20.10.1** 
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)  
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/yaru-colors)
+
+*Update 20.10.1:*    
+- Updated every theme to 20.10!
+- Added new Wallpapers made by @fer-moreira (They're awesome, thanks a lot!)
+- Icons and Cursors are unchanged
 
 *Update 20.04.6:*
 *- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)*
