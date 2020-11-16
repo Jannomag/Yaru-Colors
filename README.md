@@ -160,8 +160,8 @@ Fix by @tur1ngb0x (see issue #55):
 3. Restart GNOME Shell.
 4. GNOME panel icons will now show applied Yaru icon pack.
 
-*Red checkboxes (mostly nautilus)*
-Install the whole color, not just dark or light. 
-So your theme directory has to contain (for example) the directories:
-Yaru-Blue, Yaru-Blue-dark, Yaru-Blue-light.
+*Red checkboxes (mostly nautilus)*    
+Install the whole color, not just dark or light.    
+So your theme directory has to contain (for example) the directories:    
+Yaru-Blue, Yaru-Blue-dark, Yaru-Blue-light.    
 Reason: to save space and work the needed asset files are in the default directory only and symlinked from light/dark to default.
