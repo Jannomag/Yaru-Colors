@@ -1,7 +1,7 @@
 ![Logo](src/Yaru-Colors-Logo.svg)
 
 **Yaru-Colors is a theme project to bring different colors to Ubuntu's awesome Yaru theme.**  
-**Version 20.10.1** 
+**Version 20.10.1**
 
 [Original Yaru's git](https://github.com/ubuntu/yaru)  
 
@@ -69,7 +69,24 @@ It will guide you through everything and allows you to choose what you want to i
 6. Done
 
 *Installation notes:*
-*Due to an old bug in user-themes, the glib-2 schemas for this extensions aren't available systemwide. This causes and error, when trying to change the shell theme with gsettings command, because the schema for this is missing. I've added the fix from https://gist.github.com/atiensivu/fcc3183e9a6fd74ec1a283e3b9ad05f0 to the installer. It needs root privileges but the script will ask for this.*
+*Due to an old bug in user-themes, the glib-2 schemas for this extensions aren't available systemwide. This causes and error, when trying to change the shell theme with gsettings command, because the schema for this is missing. I've added the fix from https://gist.github.com/atiensivu/fcc3183e9a6fd74ec1a283e3b9ad05f0 to the installer. It needs root privileges but the script will ask for this.*   
+
+**GDM3 support:**    
+The installer will ask for gdm3 enabling on Ubuntu with installed Yaru, only.
+Please note: I didn't tried it on other distros, yet (testers welcome!).    
+I don't know how gnome-shell / gdm3 works on other distros and if it's using the same files.    
+This tutorial will work on Ubuntu, but may also on other distros, if the files are the same.    
+Please let me know, if there are any problems with it. Modifying gdm3 / gnome-shell isn't that easy to handle, espacially if distros like Ubuntu do their own stuff.    
+
+Manual gdm3 installation (tested on Ubuntu 20.10 only, yet. Please give me a note if something's wrong!):    
+- Check if following file exists and create a backup:
+`/usr/share/gnome-shell/gnome-shell-theme.gresource`
+- if done copy the .gresource file of your theme to the gnome-shell directory by entering following command:    
+`sudo cp THEME_DIR/Yaru-COLOR/gnome-shell/yaru-COLOR-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource`
+- update the alternatives by using the command:    
+`sudo update-alternatives --config gdm3-theme.gresouce` - this will ask you to choose a file, choose the one from above.    
+or the direct command: `sudo update-alternatives --set gdm3-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource`    
+
 
 **Removal with script:**
 1. Run the uninstaller with `./uninstall.sh`
