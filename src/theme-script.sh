@@ -602,7 +602,7 @@ sed -i -e "s/E95420/$base_col/g" $source32_path/_palette.scss
 #Obsolete purple color for <20.04 - newer below
 sed -i -e "s/762572/$purple_col/g" $source32_path/_palette.scss
 #Addition for 20.04 - new purple color is $aubergine = #924D8B!
-sed -i -e "s/924D8B/$base_col/g" $source32_path/_palette.scss
+sed -i -e "s/924D8B/$purple_col/g" $source32_path/_palette.scss
 
 echo -e "Find and replace the color values in _colors.scss ..."
 #replace the color values in _colors.scss
@@ -706,7 +706,7 @@ cd $source30_path
 ##Obsolete purple color for <20.04 - newer below
 #sed -i -e "s/762572/$purple_col/g" $source30_path/_ubuntu-colors.scss
 ##Addition for 20.04 - new purple color is $aubergine = #924D8B!
-#sed -i -e "s/924D8B/$base_col/g" $source30_path/_ubuntu-colors.scss
+#sed -i -e "s/924D8B/$purple_col/g" $source30_path/_ubuntu-colors.scss
 
 #echo -e "Find and replace the color values in _colors.scss ..."
 #replace the color values in _colors.scss
@@ -941,11 +941,11 @@ sed -i -e "s/E95420/$base_col/g" $sass_path/_palette.scss
 #Obsolete purple color for <20.04 - newer below
 sed -i -e "s/300A24/$purple_col/g" $sass_path/_palette.scss
 #Addition for 20.04 - new purple color is $aubergine = #924D8B!
-sed -i -e "s/924D8B/$base_col/g" $sass_path/_palette.scss
+sed -i -e "s/924D8B/$purple_col/g" $sass_path/_palette.scss
 #Change purple to $base_col for login screen
 sed -i -e "s/762572/$base_col/g" $sass_path/_palette.scss
-#Change the darken value of the "purple" color. 10% is standard, but for me it was too bright on most colors
 sed -i -e "s/10%/25%/g" $sass_path/widgets/_screen-shield.scss
+#Change the darken value of the "purple" color. 10% is standard, but for me it was too bright on most colors
 
 echo -e " "
 echo -e "Compiling gnome-shell theme ..."

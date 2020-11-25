@@ -8,13 +8,13 @@
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/yaru-colors)
 
 *Update 20.10.1:*    
-- Updated every theme to 20.10!
-- Added new Wallpapers made by @fer-moreira (They're awesome, thanks a lot!)
-- Icons and Cursors are unchanged
+*- Updated every theme to 20.10!*    
+*- Added new Wallpapers made by @fer-moreira (They're awesome, thanks a lot!)*    
+*- Icons and Cursors are unchanged*    
 
 *Update 20.04.6:*
-*- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)*
-*- Added snap! Thanks for @Muqtxdir for helping creating this!*
+*- Added Cinnamon as color based on Ubuntu Cinnamon Remix' orange (slightly change to Yaru-Orange)*    
+*- Added snap! Thanks for @Muqtxdir for helping creating this!*    
 
 *Update 20.04.5: Rewritten install.sh script to make it way shorter than before and a bit more user friendly. Also added Teal and Amber themes*
 
@@ -123,8 +123,8 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 | Yaru-Amber | ![#eea834](https://via.placeholder.com/15/eea834/000000?text=+) `#eea834` | ![#8c5e11](https://via.placeholder.com/15/8c5e11/000000?text=+) `#8c5e11` |
 | Yaru-Aqua | ![#41c6c8](https://via.placeholder.com/15/41c6c8/000000?text=+) `#41c6c8` | ![#326868](https://via.placeholder.com/15/326868/000000?text=+) `#326868` |
 | Yaru-Blue | ![#208fe9](https://via.placeholder.com/15/208fe9/000000?text=+) `#208fe9` | ![#255074](https://via.placeholder.com/15/255074/000000?text=+) `#255074` |
-| Yaru-Brown | ![#dd682a](https://via.placeholder.com/15/dd682a/000000?text=+) `#dd682a` | ![#5e2c12](https://via.placeholder.com/15/5e2c12/000000?text=+) `#5e2c12` |
-| Yaru-Cinnamon | ![#995640](https://via.placeholder.com/15/995640/000000?text=+) `#995640` | ![#462e1b](https://via.placeholder.com/15/462e1b/000000?text=+) `#462e1b` |
+| Yaru-Brown | ![#995640](https://via.placeholder.com/15/995640/000000?text=+) `#995640` | ![#5e2c12](https://via.placeholder.com/15/5e2c12/000000?text=+) `#5e2c12` |
+| Yaru-Cinnamon | ![#dd682a](https://via.placeholder.com/15/dd682a/000000?text=+) `#dd682a` | ![#462e1b](https://via.placeholder.com/15/462e1b/000000?text=+) `#462e1b` |
 | Yaru-Deepblue | ![#25469d](https://via.placeholder.com/15/25469d/000000?text=+) `#25469d` | ![#1a318b](https://via.placeholder.com/15/1a318b/000000?text=+) `#1a318b` |
 | Yaru-Green | ![#3eb34f](https://via.placeholder.com/15/3eb34f/000000?text=+) `#3eb34f` | ![#123d18](https://via.placeholder.com/15/123d18/000000?text=+) `#123d18` |
 | Yaru-Grey | ![#9c9c9c](https://via.placeholder.com/15/9c9c9c/000000?text=+) `#9c9c9c` | ![#4d4d4d](https://via.placeholder.com/15/4d4d4d/000000?text=+) `#4d4d4d` |
@@ -147,7 +147,7 @@ Currently, I don't have any way to create a Yaru-Colors Snap.
 There are two solutions:
 1) Set Yaru as theme using GTK Inspector - this is just temporary.
 2) Completely remove Snap and install Ubuntu Software and other applications via the repositories.
-For this there are many tutorials on the WWW.
+For this there are many tutorials on the WWW.    
 ***FIX: Install yaru-colors snap package and read above!***
 
 *Missing icons in gnome / failing to apply Yaru-Colors*  
@@ -159,3 +159,9 @@ Fix by @tur1ngb0x (see issue #55):
 2. Open GNOME Tweak Tool, apply any Yaru-Color icon pack.
 3. Restart GNOME Shell.
 4. GNOME panel icons will now show applied Yaru icon pack.
+
+*Red checkboxes (mostly nautilus)*    
+Install the whole color, not just dark or light.    
+So your theme directory has to contain (for example) the directories:    
+Yaru-Blue, Yaru-Blue-dark, Yaru-Blue-light.    
+Reason: to save space and work the needed asset files are in the default directory only and symlinked from light/dark to default.
