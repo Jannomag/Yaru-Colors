@@ -130,7 +130,7 @@ RUSER_UID=$(id -u ${RUID})
 
 #### Function for package color selection
 package_color_menu () {
-  select package_color in "${@:2}"; do
+  select package_color in "${@}"; do
     if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#-1)) ]; then
       echo -e "${Yel}Okay, '$package_color' is set!${RCol}"
       break;
@@ -142,7 +142,7 @@ package_color_menu () {
 
 #### Function for icon color selection
 icon_color_menu () {
-  select icon_color in "${@:2}"; do
+  select icon_color in "${@}"; do
     if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#-1)) ]; then
       echo -e "${Yel}Okay, '$icon_color' is set for the icons!${RCol}"
       break;
@@ -465,6 +465,26 @@ while [ "$install" == false ] && [ "$picking" == "false" ] && [ "$enable" == "tr
       shell_color_set=true # Setting a new variable to check if color was chosen or not
     fi
   fi
+  # ask for enabling the gdm3 compatibility - this will work on Ubuntu only, because every distro may use it's own gnome-shell theme resources.
+  # For non Ubuntu-Distros: Please install it manually, check the readme!
+  if [ "$enable_shell" == "true" ] && [ -d "/usr/share/gnome-shell/theme/Yaru" ]; then
+    echo -e "${BYel}Do you want to enable the GDM3 theme (root required!)?${RCol}"
+    select ask_enable_gdm3 in yes no
+    do
+      case $ask_enable_gdm3 in
+        yes)
+          enable_gdm3=true
+          break ;;
+        no)
+          enable_gdm3=false
+          break ;;
+        *)
+          echo -e "${Red}Wrong input!${RCol}"
+          ;;
+      esac
+    done
+  fi
+
   ### Shell done
 
   ### Icons questions
@@ -580,6 +600,13 @@ while [ "$install" == false ] && [ "$picking" == "false" ] && [ "$enable" == "tr
   elif [ "$enable_shell" == "false" ]; then # If the user don't want to enable a shell theme
     echo -e "${BRed} - NOT changing SHELL theme${RCol}"
   fi
+  if [ "$enable_gdm3" == "true" ]; then
+    if [ "$shell_color_set" == "true" ]; then
+      echo -e "${BGre} - ENABLE Yaru-$enable_shell_color (user selected) GDM3 compatibility${RCol}"
+    elif [ "$enable_shell" == "true" ]; then
+      echo -e "${BGre} - ENABLE Yaru-$package_color GDM3 compatibility${RCol}"
+    fi
+  fi
 
   # Icon part:
   if [ "$icon_color_set" == "true" ]; then # If package was installed and user selected a color...
@@ -629,7 +656,6 @@ while [ "$install" == false ] && [ "$picking" == "false" ] && [ "$enable" == "tr
     enable=false
     execute=true
   fi
-
 done
 
 ### Execute the things the user wants...
@@ -669,6 +695,11 @@ while [ "$execute" == "true" ]; do
         esac
       done
     fi
+    if [ "$enable_gdm3" == "true" ]; then
+      sudo cp /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource.bakup_yarucolors
+      sudo cp $theme_dir/Yaru-$enable_shell_color/gnome-shell/*.gresource /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource
+      sudo update-alternatives --set gdm3-theme.gresource /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource
+    fi
   elif [ "$enable_shell" == "true" ]; then # If package was not installed theres just one color defined with $package_color ...
   # And the same as above, including the fix.
   sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.shell.extensions.user-theme name "Yaru-$package_color$shell_variant"
@@ -693,6 +724,11 @@ while [ "$execute" == "true" ]; do
             ;;
         esac
       done
+    fi
+    if [ "$enable_gdm3" == "true" ]; then
+      sudo cp /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource.bakup_yarucolors
+      sudo cp $theme_dir/Yaru-$package_color/gnome-shell/*.gresource /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource
+      sudo update-alternatives --set gdm3-theme.gresource /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource
     fi
   fi
 

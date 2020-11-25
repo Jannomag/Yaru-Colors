@@ -12,7 +12,7 @@
 # C2 - GKT 3.0
 # C3 - Creating Theme directory
 # C4 - Creating index.theme file
-# C5 - Gnome-Shell
+# - Gnome-Shell
 # C6 - GTK 2.0
 #	   |- C6-1 - GTK 2.0 assets for default
 #    |- C6-2 - GTK 2.0 assets for light
@@ -942,6 +942,10 @@ sed -i -e "s/E95420/$base_col/g" $sass_path/_palette.scss
 sed -i -e "s/300A24/$purple_col/g" $sass_path/_palette.scss
 #Addition for 20.04 - new purple color is $aubergine = #924D8B!
 sed -i -e "s/924D8B/$base_col/g" $sass_path/_palette.scss
+#Change purple to $base_col for login screen
+sed -i -e "s/762572/$base_col/g" $sass_path/_palette.scss
+#Change the darken value of the "purple" color. 10% is standard, but for me it was too bright on most colors
+sed -i -e "s/10%/25%/g" $sass_path/widgets/_screen-shield.scss
 
 echo -e " "
 echo -e "Compiling gnome-shell theme ..."
@@ -977,6 +981,7 @@ sassc $source_path/gnome-shell-high-contrast.scss $source_path/gnome-shell-high-
 
 #setting svg variables
 cd $source_path
+
 #backing up original svgs
 mkdir svg_backup
 cp *.svg svg_backup/
@@ -990,10 +995,14 @@ sed -i -e "s/$svg_shell_dark/$svg3_color/gI" *.svg
 
 echo -e " "
 #copy everything
+
 echo -e "copy files to the theme directory ..."
 mv $source_path/gnome-shell-generated-light.css $shell_path/gnome-shell.css
 mv $source_path/gnome-shell-generated-dark.css $shell_dark_path/gnome-shell.css
 mv $source_path/gnome-shell-high-contrast-generated.css $shell_path/gnome-shell-high-contrast.css
+cp $source_path/pad-osd.css $shell_path/pad-osd.css
+#copy the xml file for the gresource creation to the shell path for use later
+cp ../yaru-colors-shell-theme.gresource.xml $shell_path
 
 #cp -R $source_path/*.css $shell_light_path
 cp -R $source_path/*.svg $shell_path
@@ -1002,6 +1011,8 @@ cp -R $source_path/*.svg $shell_dark_path
 #restoring svg backups
 mv svg_backup/*.svg .
 rm -rf svg_backup
+#cp data/gnome-shell-theme.gresource.xml .
+
 
 #restoring other backups
 mv $sass_path/BAK_palette.scss $sass_path/_palette.scss
@@ -1009,6 +1020,15 @@ mv $source_path/BAK-gnome-shell.scss.in $source_path/gnome-shell.scss.in
 mv $source_path/BAK-gnome-shell-high-contrast.scss $source_path/gnome-shell-high-contrast.scss
 rm -rf $sass_path/widgets
 mv $sass_path/BAK_widgets $sass_path/widgets
+
+cd $shell_path
+#copy the dark css to the light shell path for gresource creation process
+cp $shell_dark_path/gnome-shell.css $shell_path/gnome-shell-dark.css
+#create the gresource file, used for gdm3 theming, I didn't found another way to do it. The file needs to be placed to /usr/share/gnome-shell/(theme/Yaru/) manually
+glib-compile-resources yaru-colors-shell-theme.gresource.xml --target=yaru-$color-shell-theme.gresource
+#delete both files
+rm -rf yaru-colors-shell-theme.gresource.xml
+rm -rf $shell_path/gnome-shell-dark.css
 cd
 
 echo -e "Done!"
