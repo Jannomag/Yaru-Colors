@@ -86,7 +86,7 @@ Manual gdm3 installation (tested on Ubuntu 20.10 only, yet. Please give me a not
 - update the alternatives by using the command:    
 `sudo update-alternatives --config gdm3-theme.gresouce` - this will ask you to choose a file, choose the one from above.    
 or the direct command: `sudo update-alternatives --set gdm3-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource`    
-
+- Reboot or restart shell by using <kbd>Alt</kbd>+<kbd>F2</kbd>, enter <kbd>r</kbd> and hit <kbd>Enter</kbd>    
 
 **Removal with script:**
 1. Run the uninstaller with `./uninstall.sh`
