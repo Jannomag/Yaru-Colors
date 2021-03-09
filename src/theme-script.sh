@@ -615,6 +615,7 @@ echo -e "Compiling gtk.scss of default, light and dark for GTK 3.20 ..."
 #default
 cd $source32_path
 ln -sf ../../light/gtk-3.20/gtk.scss ./gtk-light.scss
+ln -sf ../../dark/gtk-3.20/gtk.scss ./gtk-dark.scss
 sassc -a ./gtk.scss ./gtk_generated.css
 #dark
 sassc -a ./gtk-dark.scss ./gtk_dark_generated.css
@@ -714,6 +715,7 @@ cd $source30_path
 #sed -i -e "s/E95420/$base_col/g" $source30_path/_colors.scss
 ### END OF OBSOLETE PART
 ln -sf ../../light/gtk-3.0/gtk.scss ./gtk-light.scss
+ln -sf ../../dark/gtk-3.0/gtk.scss ./gtk-dark.scss
 sassc -a ./gtk.scss ./gtk_generated.css
 #dark
 sassc -a ./gtk-dark.scss ./gtk_dark_generated.css
