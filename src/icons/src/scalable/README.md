@@ -1,14 +1,22 @@
-## Symbolic Icons Source
+# Symbolic Icons Source
 
- - To add or modify a symbolic icon, edit source SVG file found in this directory
- - For simplified development, has various scripts to extract or render icons from the larger SVG source files.
- - To edit the icons you will need `inkscape` and you'll need `ruby` installed to run the render script.
+To add or modify a symbolic icon, edit its source SVG file, under `src/scalable/<context>` folder, using [inkscape]. Each icon should be drawn within an 16x16 pixel square and use only 1 colour.
 
-**[source-symbolic.svg](./source-symbolic.svg) - the source files that contains all of the symbolic icons**
- - each layer in this source file corresponds to a icon `context` and the icons are sorted accordingly
- - each icon should be drawn within an 16x16 pixel square and use only 1 colour
- - when complete, group all elements within a 16x16 rectangle (with no fill or stroke) and label that group with the `icon-name`
+The subfolders **actions**, **apps**, **categories**, **devices**, **emblems**, **mimetypes**, **places**, **status**, containing all the symbolic icons, also represents the gnome icon `contexts`.
 
-**[extract-symbolic-icons.rb](./extract-symbolic-icons.rb) - the render script**
- - extract any new symbolic icons from the source SVG by passing the icon name to this script: `./extract-symbolic-icons.rb <icon-name>`
- - or, if run generall, this script will look through the entire source file to render any new icons (if a new icon does not have a correct label the script will fail)
+To render the image and move it to the proper release folder, `Suru/scalable/<context>`, run the script `render-symbolic-icons.sh`. You will need to install [scour] to run the render script.
+
+
+
+## The render script
+
+The [render-symbolic-icons.sh](render-symbolic-icons.sh) script allows you to render (i.e. optimize) the SVG icon, as well as to move it to the proper destination folder under `Suru/scalable/<context>` directory, ready to be released.
+
+The script can render:
+- a single SVG file, using both `--file` and `--context` flag.
+- all the SVG files in a context, using the `--context` flag only.
+- all the SVG files, using the `--all` flag only.
+
+
+[inkscape]: https://inkscape.org/
+[scour]: https://github.com/scour-project/scour
