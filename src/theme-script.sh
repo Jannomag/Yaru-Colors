@@ -1674,7 +1674,7 @@ while [[ $comp_icons == "true" ]]; do
 				((i++)) #increase the number of i by oneIt'll speed up the compiling process
 	done
 	sed -i -e 's/'"77216f"'/'"${g_color[0]}"'/g' $document_export
-	sed -i -e 's/'"7d2b51"'/'"${g_color[0]}"'/g' $emblem_symbolic
+	sed -i -e 's/'"762572"'/'"${g_color[0]}"'/g' $emblem_symbolic
 
 	find $devices_dir -type f -exec sed -i -e "s/$original_aubergine_stock/$base_col/gI" {} \;
 
@@ -1685,7 +1685,7 @@ while [[ $comp_icons == "true" ]]; do
 
 
 	cd $icon_dir/src/fullcolor/ #move to the directory for compiling
-  python ./render-bitmaps.py #execute the python script, special thanks to Suru devs for providing this!
+  python3 ./render-bitmaps.py #execute the python script, special thanks to Suru devs for providing this!
 
 	mkdir -p $icon_theme_dir #create the folder for the compiled icons
 
