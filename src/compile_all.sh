@@ -1,5 +1,5 @@
 #!/bin/bash
-declare -a color=("amber" "aqua" "blue" "brown" "cinnamon" "deepblue" "green" "grey" "mate" "orange" "pink" "purple" "red" "teal" "yellow")
+declare -a color=("amber" "aqua" "aubergine" "blue" "brown" "cinnamon" "deepblue" "green" "grey" "lavender" "mate" "orange" "pink" "purple" "red" "teal" "yellow")
 param=$1
 while [ ! -z "$1" ]; do
 	case "$1" in

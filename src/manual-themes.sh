@@ -4,7 +4,7 @@
 # then pack it into seperate archives
 
 # creating array for every color
-array=( Amber Aqua Blue Brown Cinnamon Deepblue Green Grey MATE Orange Pink Purple Red Teal Yellow )
+array=( Amber Aqua Aubergine Blue Brown Cinnamon Deepblue Green Grey Lavender MATE Orange Pink Purple Red Teal Yellow )
 
 # setting variable for every color
 for color in "${array[@]}"

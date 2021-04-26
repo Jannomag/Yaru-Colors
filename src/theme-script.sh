@@ -1,6 +1,6 @@
 #!/bin/bash
 #Yaru-Color Color-Script
-#Now working with 20.04! (at least it should...)
+#Now working with 21.04! (at least it should...)
 #This script should compiles everything from the source of Ubuntu's Yaru by it's own
 #Created by Jannomag
 #Licensed under the terms of GNU GPLv3
@@ -24,7 +24,7 @@
 function show_usage (){
     printf "Usage: $0 [color] <option>\n"
     printf "\n"
-		printf "Colors: Aqua, Blue, Brown, Green, Grey, MATE, Orange, Pink, Purple, Red, Yellow\n"
+		printf "Colors: Amber, Aqua, Aubergine, Blue, Brown, Green, Grey, Lavender, MATE, Orange, Pink, Purple, Red, Teal or Yellow\n"
     printf "Options:\n"
     printf " -a|--all, Compile everything without asking\n"
     printf " -n|--noicons, Compile everything but icons without asking\n"
@@ -66,13 +66,16 @@ while [ ! -z "$1" ]; do
 			Aqua|aqua)
 						break
 						;;
+			Aubergine|aubergine)
+						break
+						;;
 			Blue|blue)
 						break
 						;;
 			Brown|brown)
 						break
 						;;
-      Cinnamon|cinnamon) # new ubuntu cinnamon based color!
+      Cinnamon|cinnamon)
             break
             ;;
 			Deepblue|deepblue)
@@ -82,6 +85,9 @@ while [ ! -z "$1" ]; do
 						break
 						;;
 			Grey|grey)
+						break
+						;;
+			Lavender|lavender)
 						break
 						;;
 			MATE|mate)
@@ -183,16 +189,18 @@ done
 
 
 
-#colors: Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Yellow
+#colors: Amber, Aqua, Aubergine, Blue, Brown, Deepblue, Green, Grey, Lavender, MATE, Pink, Purple, Red, Teal, Yellow
 #I've created the "purple" color just buy using a simple color wheel and looked for a daker color in the same hue.
 #define colors:
 original_base='E95420'
 original_purple='762572'
-original_aubergine='924D8B'
+original_aubergine_stock='255074' # Old Color: '924D8B'
 amber_base='eea834' #POP-OS based amber
 amber_purple='8c5e11'
 aqua_base='41c6c8'
 aqua_purple='326868'
+aubergine_base='77216F'
+aubergine_purple='5e2750'
 blue_base='208fe9'
 blue_purple='255074'
 brown_base='995640'
@@ -205,6 +213,8 @@ green_base='3eb34f'
 green_purple='123d18'
 grey_base='9c9c9c'
 grey_purple='4d4d4d'
+lavender_base='6a39cb'
+lavender_purple='3c1d79'
 mate_base='78ab50' #MATE based green
 mate_purple='4f6326'
 orange_base='e95420'
@@ -220,88 +230,136 @@ teal_purple='094a3d'
 yellow_base='e9ba20'
 yellow_purple='746225'
 
-
-
-
 #SVG Colors
+# With 21.04 it get's a bit messy since Yaru added a few new purpleish colors.
+# I needed to replace them all, including some other colors in the svg files.
+# I tried to keep it as simple as possible because I just use 3-4 base colors each color scheme (svg1-3)
 #I've just used a color wheel to choose the colors, one brighter, one darker.
 #stock:
-svg1_aubergine='aa5b9c' #Bright purple color from checkboxes or radio
-svg2_aubergine='975187' #Dark purple color from checkboxes or radio
-svg3_aubergine='773f72' #Very dark purple from text arrows or sliders
+svg1_aubergine_stock='77216F' # OLD COLOR BEFORE 21.04 and still used for GTK2!: 'aa5b9c' #Bright purple color from checkboxes or radio
+svg2_aubergine_stock='5E2750' # OLD COLOR BEFORE 21.04 and still used for GTK2!: '975187' #Dark purple color from checkboxes or radio
+svg3_aubergine_stock='2C001E' #Very dark purple from text arrows or sliders
+
+gtk32_assets_aubergine_medium='9e3c8e' # replace with svg1
+gtk32_assets_aubergine_dark='8b2782' # replace with svg3
+gtk30_assets_aubergine_light='aa5b9c' #replace with svg1
+gtk30_assets_aubergine_medium='975187' # replace with svg2
+gtk30_assets_aubergine_dark='773f72' # replace with svg3
+
+svg1_aubergine_stock_gtk2='aa5b9c' # NEW for 21.04 - like stock aubergine but a bit lighter
+svg2_aubergine_stock_gtk2='975187' # NEW for 21.04 - like stock aubergine
+svg3_aubergine_stock_gtk2='8A367D' # NEW for 21.04 - dark color for dark theme (slider knob)
+svg4_aubergine_stock_gtk2='B889B0' # NEW for 21.04 - bright aubergine for slider knob in light/default theme
+svg5_aubergine_stock_gtk2='9E3C8E' # NEW for 21.04 - medium aubergine for slider knob in light/default theme
+svg5_orange_stock_gtk2='f6b6a0' # NEW for 21.04 - small graphic called "fokus", just for light/default themes, replace with svg1
+
+# for _palette.scss in gtk3+:
+palette_aubergine='924D8B'
+palette_purple='762572'
+palette_laubergine=$svg1_aubergine_stock
+palette_maubergine=$svg2_aubergine_stock
+palette_daubergine=$svg3_aubergine_stock
+
 #stock colors for shell's svg files:
 svg_shell_normal='924d8b'
 svg_shell_bright='bb74b3'
 svg_shell_dark='7c436f'
 
 #Yaru-Colors variants:
-svg1_Amber='f5b242'
-svg2_Amber='eea834'
-svg3_Amber='a3711d'
+svg1_Amber='eea834'
+svg2_Amber='c08625'
+svg3_Amber='412d0b'
+aubergine_Amber='e9af4e'
 
-svg1_Aqua='7ccbcc'
-svg2_Aqua='41c6c8'
-svg3_Aqua='25a7a8'
+svg1_Aqua='412d0b'
+svg2_Aqua='34a6a8'
+svg3_Aqua='174647'
+aubergine_Aqua='78bebf'
 
-svg1_Blue='4da4eb'
-svg2_Blue='208fe9'
-svg3_Blue='1571bd'
+svg1_Aubergine='77216F'
+svg2_Aubergine='5f1958'
+svg3_Aubergine='3a0f36'
+aubergine_Aubergine='90628c'
 
-svg1_Brown='ad7a6a'
-svg2_Brown='995640'
-svg3_Brown='633627'
+svg1_Blue='208fe9'
+svg2_Blue='1d7bc8'
+svg3_Blue='208fe9'
+aubergine_Blue='59a0d9'
 
-svg1_Cinnamon='eb8046'
-svg2_Cinnamon='dd682a'
-svg3_Cinnamon='a64511'
+svg1_Brown='995640'
+svg2_Brown='7c4533'
+svg3_Brown='3f1f15'
+aubergine_Brown='a87260'
 
-svg1_Deepblue='485e99'
-svg2_Deepblue='25469d'
-svg3_Deepblue='0c2870'
+svg1_Cinnamon='dd682a'
+svg2_Cinnamon='b25422'
+svg3_Cinnamon='572911'
+aubergine_Cinnamon='db7a47'
 
-svg1_Green='65c973'
-svg2_Green='3eb34f'
-svg3_Green='2b8238'
+svg1_Deepblue='25469d'
+svg2_Deepblue='1a3681'
+svg3_Deepblue='0e1b40'
+aubergine_Deepblue='455d9c'
 
-svg1_Grey='b8b8b8'
-svg2_Grey='9c9c9c'
-svg3_Grey='666666'
+svg1_Green='3eb34f'
+svg2_Green='2e8e3c'
+svg3_Green='194820'
+aubergine_Green='68b073'
 
-svg1_MATE='99c973'
-svg2_MATE='78ab50'
-svg3_MATE='5c853d'
+svg1_Grey='9c9c9c'
+svg2_Grey='808080'
+svg3_Grey='3a3a3a'
+aubergine_Grey='afafaf'
 
-svg1_Orange='ed6d40'
-svg2_Orange='e95420'
-svg3_Orange='b33d14'
+svg1_Lavender='6a39cb'
+svg2_Lavender='582eab'
+svg3_Lavender='281352'
+aubergine_Lavender='7b54c8'
 
-svg1_Pink='fa64c6'
-svg2_Pink='e920a3'
-svg3_Pink='b31b7e'
+svg1_MATE='78ab50'
+svg2_MATE='5f893f'
+svg3_MATE='334922'
+aubergine_MATE='8ead76'
 
-svg1_Purple='a1629a'
-svg2_Purple='924d8b'
-svg3_Purple='5e2750'
+svg1_Orange='e95420'
+svg2_Orange='c6471a'
+svg3_Orange='e95420'
+aubergine_Orange='e95420'
 
-svg1_Red='fc4949'
-svg2_Red='e92020'
-svg3_Red='ad1d1d'
+svg1_Pink='e920a3'
+svg2_Pink='c31887'
+svg3_Pink='4f0c38'
+aubergine_Pink='e755b4'
 
-svg1_Teal='2cbfa2'
-svg2_Teal='16a085'
-svg3_Teal='0d8069'
+svg1_Purple='924d8b'
+svg2_Purple='733c6e'
+svg3_Purple='3c1f39'
+aubergine_Purple='90628c'
 
-svg1_Yellow='f5d058'
-svg2_Yellow='e9ba20'
-svg3_Yellow='b59222'
+svg1_Red='e92020'
+svg2_Red='c01818'
+svg3_Red='6a0f0f'
+aubergine_Red='e74d4d'
+
+svg1_Teal='16a085'
+svg2_Teal='11816b'
+svg3_Teal='08473a'
+aubergine_Teal='4da997'
+
+svg1_Yellow='e9ba20'
+svg2_Yellow='bc9618'
+svg3_Yellow='6f580f'
+aubergine_Yellow='e8c349'
 
 svg1_color=svg1_${color}
 svg2_color=svg2_${color}
 svg3_color=svg3_${color}
+aubergine_color=aubergine_${color}
 
 
 #Gradient color codes
 #the gradients are made out of 10 steps
+#created with https://colordesigner.io/gradient-generator
 #I decided to make multicolor gradients to get a fancy look
 #Here's are the variable arrays for every color:
 g_yaru=(2c001e 370626 55163b 772953 7c2b51 8b314b 8b314b a33a41 c44732 e65524)
@@ -309,12 +367,14 @@ g_yaru_desktop=(FB7C38 9B33AE) #colors in the user-desktop.svg
 g_Amber=(EEA834 EEAD34 EEB234 EEB734 EEBC34 EEC134 EEC634 EECB34 EED034 EED534)
 #Alternative with PopOS-Turquoise: g_Amber=(eea834 dea944 cfab54 c0ac64 b1ae74 a2af85 93b195 84b2a5 75b4b5 66b6c6)
 g_Aqua=(41c6c8 41c6c8 3fc9c4 3dcdc1 3bd1be 39d5bb 37d8b7 35dcb4 33e0b1 31e4ae)
+g_Aubergine=(77216f 732170 6f2071 6a2072 662073 612074 5c2075 572076 522176 4c2177)
 g_Blue=(208FE9 1D96EA 1B9DEB 18A4ED 16ABEE 13B2EF 11B9F1 0EC0F2 0CC7F3 0ACEF5)
 g_Brown=(995640 9B5942 9D5C45 9F5F48 A1624A A4664D A66950 A86C52 AA6F55 AD7358)
 g_Cinnamon=(DD682A E06F25 E47620 E87D1C EC8417 EF8C12 F3930E F79A09 FBA104 FFA901)
 g_Deepblue=(25469D 214BA4 1D50AC 1955B4 155ABC 115FC3 0D64CB 0969D3 056EDB 0274E3)
 g_Green=(3EB34F 48B851 52BD54 5DC256 67C759 72CC5B 7CD15E 87D660 91DB63 9CE166)
 g_Grey=(9C9C9C A1A1A1 A6A6A6 ABABAB B0B0B0 B5B5B5 BABABA BFBFBF C4C4C4 C9C9C9)
+g_Lavender=(6a39cb 6434c4 5e2ebc 5829b5 5224ae 4c1ea6 46189f 401398 390c91 33058a)
 g_MATE=(78AB50 7DAF56 83B35C 89B763 8FBB69 95BF70 9BC376 A1C77D A7CB83 ADD08A)
 g_Orange=(E95420 E95B20 E96320 E96B20 E97320 E97B20 E98320 E98B20 E99320 E99B20)
 g_Pink=(E920A3 E929A8 EA32AD EB3CB2 EC45B7 ED4EBD EE58C2 EF61C7 F06ACC F174D2)
@@ -337,6 +397,7 @@ if [[ "$color" == "Amber" ]]; then
   svg1_color=$svg1_Amber
   svg2_color=$svg2_Amber
   svg3_color=$svg3_Amber
+  aubergine_color=$aubergine_Amber
   g_color=("${g_Amber[@]}")
 
 elif [[ "$color" == "Aqua" ]]; then
@@ -345,7 +406,17 @@ elif [[ "$color" == "Aqua" ]]; then
 	svg1_color=$svg1_Aqua
 	svg2_color=$svg2_Aqua
 	svg3_color=$svg3_Aqua
+  aubergine_color=$aubergine_Aqua
 	g_color=("${g_Aqua[@]}")
+
+elif [[ "$color" == "Aubergine" ]]; then
+  base_col=$aubergine_base
+	purple_col=$aubergine_purple
+	svg1_color=$svg1_Aubergine
+	svg2_color=$svg2_Aubergine
+	svg3_color=$svg3_Aubergine
+  aubergine_color=$aubergine_Aubergine
+	g_color=("${g_Aubergine[@]}")
 
 elif [[ "$color" == "Blue" ]]; then
 	base_col=$blue_base
@@ -353,6 +424,7 @@ elif [[ "$color" == "Blue" ]]; then
 	svg1_color=$svg1_Blue
 	svg2_color=$svg2_Blue
 	svg3_color=$svg3_Blue
+  aubergine_color=$aubergine_Blue
 	g_color=("${g_Blue[@]}")
 
 elif [[ "$color" == "Brown" ]]; then
@@ -361,6 +433,7 @@ elif [[ "$color" == "Brown" ]]; then
 	svg1_color=$svg1_Brown
 	svg2_color=$svg2_Brown
 	svg3_color=$svg3_Brown
+  aubergine_color=$aubergine_Brown
 	g_color=("${g_Brown[@]}")
 
 elif [[ "$color" == "Cinnamon" ]]; then
@@ -369,6 +442,7 @@ elif [[ "$color" == "Cinnamon" ]]; then
 	svg1_color=$svg1_Cinnamon
 	svg2_color=$svg2_Cinnamon
 	svg3_color=$svg3_Cinnamon
+  aubergine_color=$aubergine_Cinnamon
 	g_color=("${g_Cinnamon[@]}")
 
 elif [[ "$color" == "Deepblue" ]]; then
@@ -377,6 +451,7 @@ elif [[ "$color" == "Deepblue" ]]; then
 	svg1_color=$svg1_Deepblue
 	svg2_color=$svg2_Deepblue
 	svg3_color=$svg3_Deepblue
+  aubergine_color=$aubergine_Deepblue
 	g_color=("${g_Deepblue[@]}")
 
 elif [[ "$color" == "Green" ]]; then
@@ -385,6 +460,7 @@ elif [[ "$color" == "Green" ]]; then
 	svg1_color=$svg1_Green
 	svg2_color=$svg2_Green
 	svg3_color=$svg3_Green
+  aubergine_color=$aubergine_Green
 	g_color=("${g_Green[@]}")
 
 elif [[ "$color" == "Grey" ]]; then
@@ -393,7 +469,17 @@ elif [[ "$color" == "Grey" ]]; then
 	svg1_color=$svg1_Grey
 	svg2_color=$svg2_Grey
 	svg3_color=$svg3_Grey
+  aubergine_color=$aubergine_Grey
 	g_color=("${g_Grey[@]}")
+
+elif [[ "$color" == "Lavender" ]]; then
+	base_col=$lavender_base
+	purple_col=$lavender_purple
+	svg1_color=$svg1_Lavender
+	svg2_color=$svg2_Lavender
+	svg3_color=$svg3_Lavender
+  aubergine_color=$aubergine_Lavender
+	g_color=("${g_Lavender[@]}")
 
 elif [[ "$color" == "MATE" ]]; then
 	base_col=$mate_base
@@ -401,6 +487,7 @@ elif [[ "$color" == "MATE" ]]; then
 	svg1_color=$svg1_MATE
 	svg2_color=$svg2_MATE
 	svg3_color=$svg3_MATE
+  aubergine_color=$aubergine_MATE
 	g_color=("${g_MATE[@]}")
 
 elif [[ "$color" == "Orange" ]]; then
@@ -409,6 +496,7 @@ elif [[ "$color" == "Orange" ]]; then
 	svg1_color=$svg1_Orange
 	svg2_color=$svg2_Orange
 	svg3_color=$svg3_Orange
+  aubergine_color=$aubergine_Orange
 	g_color=("${g_Orange[@]}")
 
 elif [[ "$color" == "Pink" ]]; then
@@ -417,6 +505,7 @@ elif [[ "$color" == "Pink" ]]; then
 	svg1_color=$svg1_Pink
 	svg2_color=$svg2_Pink
 	svg3_color=$svg3_Pink
+  aubergine_color=$aubergine_Pink
 	g_color=("${g_Pink[@]}")
 
 elif [[ "$color" == "Purple" ]]; then
@@ -425,6 +514,7 @@ elif [[ "$color" == "Purple" ]]; then
 	svg1_color=$svg1_Purple
 	svg2_color=$svg2_Purple
 	svg3_color=$svg3_Purple
+  aubergine_color=$aubergine_Purple
 	g_color=("${g_Purple[@]}")
 
 elif [[ "$color" == "Red" ]]; then
@@ -433,6 +523,7 @@ elif [[ "$color" == "Red" ]]; then
 	svg1_color=$svg1_Red
 	svg2_color=$svg2_Red
 	svg3_color=$svg3_Red
+  aubergine_color=$aubergine_Red
 	g_color=("${g_Red[@]}")
 
 elif [[ "$color" == "Teal" ]]; then
@@ -441,6 +532,7 @@ elif [[ "$color" == "Teal" ]]; then
   svg1_color=$svg1_Teal
   svg2_color=$svg2_Teal
   svg3_color=$svg3_Teal
+  aubergine_color=$aubergine_Teal
   g_color=("${g_Teal[@]}")
 
 elif [[ "$color" == "Yellow" ]]; then
@@ -449,6 +541,7 @@ elif [[ "$color" == "Yellow" ]]; then
 	svg1_color=$svg1_Yellow
 	svg2_color=$svg2_Yellow
 	svg3_color=$svg3_Yellow
+  aubergine_color=$aubergine_Yellow
 	g_color=("${g_Yellow[@]}")
 
 ## disabling the custom options due to compatibility issues - maybe it'll get removed completely, maybe I'll add better compatibility...who knows.
@@ -494,6 +587,13 @@ then
   exit
 fi
 
+if [[ $(dpkg-query -W -f='${Status}' libglib2.0-dev 2>/dev/null | grep -c "ok installed") -eq 0 ]];
+then
+  echo -e "LIBGLIB2.0-DEV is NOT installed!"
+  echo -e "EXITING NOW!"
+  exit
+fi
+
 if [[ $(dpkg-query -W -f='${Status}' libcanberra-gtk-module 2>/dev/null | grep -c "ok installed") -eq 0 ]];
 then
   echo -e "LIBCANBERRA-GTK-MODULE is NOT installed!"
@@ -508,7 +608,7 @@ then
   exit
 fi
 
-if [[ $(dpkg-query -W -f='${Status}' python-pil 2>/dev/null | grep -c "ok installed") -eq 0 ]];
+if [[ $(dpkg-query -W -f='${Status}' python3-pil 2>/dev/null | grep -c "ok installed") -eq 0 ]];
 then
   echo -e "PYTHON-PIL is NOT installed!"
   echo -e "EXITING NOW!"
@@ -524,7 +624,7 @@ fi
 
 if [[ "$base_col" == "" ]] || [[ "$purple_col" == "" ]]; then
 	echo "Unknown color entered. Colors are case sensitive:"
-	echo "Aqua, Blue, Brown, Deepblue, Green, Grey, MATE, Pink, Purple, Red, Teal, and Yellow"
+	echo "Amber, Aqua, Aubergine, Blue, Brown, Deepblue, Green, Grey, Lavender, MATE, Pink, Purple, Red, Teal and Yellow"
 	exit
 fi
 
@@ -596,16 +696,21 @@ fi
 ###################
 ### CSS Section ###
 ###################
+#New for 21.04: Replace every aubergine / purple color
 #replace the color values in _palette.scss
 echo -e "Find and replace the color values in _palette.scss ..."
-sed -i -e "s/E95420/$base_col/g" $source32_path/_palette.scss
+sed -i -e "s/$original_base/$base_col/g" $source32_path/_palette.scss
 #Obsolete purple color for <20.04 - newer below
-sed -i -e "s/762572/$purple_col/g" $source32_path/_palette.scss
+sed -i -e "s/$palette_purple/$purple_col/g" $source32_path/_palette.scss
 #Addition for 20.04 - new purple color is $aubergine = #924D8B!
-sed -i -e "s/924D8B/$purple_col/g" $source32_path/_palette.scss
+sed -i -e "s/$palette_aubergine/$aubergine_color/g" $source32_path/_palette.scss
+sed -i -e "s/$palette_laubergine/$svg1_color/g" $source32_path/_palette.scss
+sed -i -e "s/$palette_maubergine/$svg2_color/g" $source32_path/_palette.scss
+sed -i -e "s/$palette_daubergine/$svg3_color/g" $source32_path/_palette.scss
+
 
 echo -e "Find and replace the color values in _colors.scss ..."
-#replace the color values in _colors.scss
+#replace the color values in _colors.scss (obsolete)
 sed -i -e "s/E95420/$base_col/g" $source32_path/_colors.scss
 
 echo -e " "
@@ -630,10 +735,13 @@ ls -l $gtk32d_path
 ###################
 cp $source32_path/assets.svg $source32_path/BAK_assets.svg
 
-#changing colors in assets.svg
-sed -i -e "s/$svg1_aubergine/$svg1_color/gI" $source32_path/assets.svg
-sed -i -e "s/$svg2_aubergine/$svg2_color/gI" $source32_path/assets.svg
-sed -i -e "s/$svg3_aubergine/$svg3_color/gI" $source32_path/assets.svg
+#changing colors in assets.svg for older versions
+sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source32_path/assets.svg
+sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source32_path/assets.svg
+sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source32_path/assets.svg
+#changing colors in assets.svg for 21.04
+sed -i -e "s/$gtk32_assets_aubergine_medium/$svg1_color/gI" $source32_path/assets.svg
+sed -i -e "s/$gtk32_assets_aubergine_dark/$svg2_color/gI" $source32_path/assets.svg
 
 #########################
 ### RENDER SVG ASSETS ###
@@ -654,14 +762,14 @@ do
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 
 		echo Rendering $ASSETS_DIR/$i@2.png
 		$INKSCAPE --export-id=$i \
 		                  --export-dpi=180 \
 		                  --export-id-only \
-		                  --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
+		                  --export-filename=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
 			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 done
 
@@ -723,11 +831,14 @@ sassc -a ./gtk-dark.scss ./gtk_dark_generated.css
 sassc -a ./gtk-light.scss ./gtk_light_generated.css
 
 cp $source30_path/assets.svg $source30_path/BAK_assets.svg
-#changing colors in assets.svg
-sed -i -e "s/$svg1_aubergine/$svg1_color/gI" $source30_path/assets.svg
-sed -i -e "s/$svg2_aubergine/$svg2_color/gI" $source30_path/assets.svg
-sed -i -e "s/$svg3_aubergine/$svg3_color/gI" $source30_path/assets.svg
-
+#changing colors in assets.svg for older versions
+sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source30_path/assets.svg
+sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source30_path/assets.svg
+sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source30_path/assets.svg
+#changing colors in assets.svg for 21.04
+sed -i -e "s/$gtk30_assets_aubergine_light/$aubergine_color/gI" $source30_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_medium/$svg1_color/gI" $source30_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_dark/$svg3_color/gI" $source30_path/assets.svg
 #########################
 ### RENDER SVG ASSETS ###
 
@@ -747,14 +858,14 @@ do
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 
 				echo Rendering $ASSETS_DIR/$i@2.png
 		        $INKSCAPE --export-id=$i \
 		                  --export-dpi=180 \
 		                  --export-id-only \
-		                  --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
+		                  --export-filename=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
 			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 done
 
@@ -900,10 +1011,10 @@ echo -e "Compiling shell theme..."
 ##################################
 #Setting paths for the theme
 theme_path=$COMPILED/Themes/Yaru-$color
-theme_light_path=$COMPILED/Themes/Yaru-$color-light
+theme_light_path=$COMPILED/Themes/Yaru-$color-light ## Obsolete with 21.04!
 theme_dark_path=$COMPILED/Themes/Yaru-$color-dark
 shell_path=$theme_path/gnome-shell
-shell_light_path=$theme_light_path/gnome-shell
+shell_light_path=$theme_light_path/gnome-shell ## Obsolete with 21.04
 shell_dark_path=$theme_dark_path/gnome-shell
 
 #creating directory
@@ -943,7 +1054,8 @@ sed -i -e "s/E95420/$base_col/g" $sass_path/_palette.scss
 #Obsolete purple color for <20.04 - newer below
 sed -i -e "s/300A24/$purple_col/g" $sass_path/_palette.scss
 #Addition for 20.04 - new purple color is $aubergine = #924D8B!
-sed -i -e "s/924D8B/$purple_col/g" $sass_path/_palette.scss
+#Addition vor 21.04 - changed purple_col to base_col for brighter sliders:
+sed -i -e "s/924D8B/$base_col/g" $sass_path/_palette.scss
 #Change purple to $base_col for login screen
 sed -i -e "s/762572/$base_col/g" $sass_path/_palette.scss
 sed -i -e "s/10%/25%/g" $sass_path/widgets/_screen-shield.scss
@@ -1120,12 +1232,12 @@ fi
 
 #replacing the colors in gtkrc file
 echo -e "Seach and replace the original colors in all three gtkrc files ..."
-sed -i -e "s/e55730/$base_col/g" $source20_path/gtkrc
-sed -i -e "s/e55730/$base_col/g" $source20l_path/gtkrc
-sed -i -e "s/e55730/$base_col/g" $source20d_path/gtkrc
-sed -i -e "s/E95420/$base_col/g" $source20_path/gtkrc
-sed -i -e "s/E95420/$base_col/g" $source20l_path/gtkrc
-sed -i -e "s/E95420/$base_col/g" $source20d_path/gtkrc
+sed -i -e "s/$original_base/$base_col/g" $source20_path/gtkrc
+sed -i -e "s/$original_base/$base_col/g" $source20l_path/gtkrc
+sed -i -e "s/$original_base/$base_col/g" $source20d_path/gtkrc
+sed -i -e "s/$original_base/$base_col/g" $source20_path/gtkrc
+sed -i -e "s/$original_base/$base_col/g" $source20l_path/gtkrc
+sed -i -e "s/$original_base/$base_col/g" $source20d_path/gtkrc
 
 echo -e "Seach and replace the original colors in all three assets.svg files ..."
 ## New with 20.04: New colors were added to source, I didn't create new ones for this. Here's a list:
@@ -1143,18 +1255,52 @@ echo -e "Seach and replace the original colors in all three assets.svg files ...
 ##
 ## ... this is why I gave up variables for this section...sorry
 
+
+##############################
+##### OFFEN: Assets.svg geht weiter (siehe inkscape). Dort müssen die Checkboxen und Radioboxen noch gefärbt werden!
+##### AUSSERDEM: GTK2-DARK hat noch lila slider - generell sehr verbuggt ist GTK2!
+###############################
+
 sed -i -e "s/e55730/$base_col/g" $source20_path/assets.svg
 sed -i -e "s/c34113/$svg3_color/g" $source20_path/assets.svg
 sed -i -e "s/fea691/$svg1_color/g" $source20_path/assets.svg
 sed -i -e "s/f6b6a0/$svg1_color/g" $source20_path/assets.svg
 sed -i -e "s/975187/$svg2_color/g" $source20_path/assets.svg
 sed -i -e "s/924d8b/$svg3_color/g" $source20_path/assets.svg
+sed -i -e "s/9f2c94/$svg1_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg1_aubergine_stock_gtk2/$svg1_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg2_aubergine_stock_gtk2/$svg2_color/gI" $source20_path/assets.svg
+sed -i -e "s/$gtk32_assets_aubergine_dark/$svg2_color/gI" $source20_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_light/$aubergine_color/gI" $source20_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_medium/$svg1_color/gI" $source20_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_dark/$svg3_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg3_aubergine_stock_gtk2/$svg3_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg4_aubergine_stock_gtk2/$svg1_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg5_aubergine_stock_gtk2/$svg2_color/gI" $source20_path/assets.svg
+sed -i -e "s/$svg5_orange_stock_gtk2/$svg1_color/gI" $source20_path/assets.svg
 sed -i -e "s/e55730/$base_col/g" $source20l_path/assets.svg
 sed -i -e "s/c34113/$svg3_color/g" $source20l_path/assets.svg
 sed -i -e "s/fea691/$svg1_color/g" $source20l_path/assets.svg
-sed -i -e "s/f6b6a0/$svg1_color/g" $source20l_path/assets.svg
+sed -i -e "s/f6b6a0/$svg1_color/g" $source20l_path/assets.svgpi
 sed -i -e "s/975187/$svg2_color/g" $source20l_path/assets.svg
 sed -i -e "s/924d8b/$svg3_color/g" $source20l_path/assets.svg
+sed -i -e "s/9f2c94/$svg1_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg1_aubergine_stock_gtk2/$svg1_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg2_aubergine_stock_gtk2/$svg2_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$gtk32_assets_aubergine_dark/$svg2_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_light/$aubergine_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_medium/$svg1_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_dark/$svg3_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg3_aubergine_stock_gtk2/$svg3_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg4_aubergine_stock_gtk2/$svg1_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg5_aubergine_stock_gtk2/$svg2_color/gI" $source20l_path/assets.svg
+sed -i -e "s/$svg5_orange_stock_gtk2/$svg1_color/gI" $source20l_path/assets.svg
 sed -i -e "s/e55730/$base_col/g" $source20d_path/assets.svg
 sed -i -e "s/c34113/$svg3_color/g" $source20d_path/assets.svg
 sed -i -e "s/bf6a57/$svg1_color/g" $source20d_path/assets.svg
@@ -1162,15 +1308,45 @@ sed -i -e "s/bf6a5f/$svg1_color/g" $source20d_path/assets.svg
 sed -i -e "s/b56d54/$svg1_color/g" $source20d_path/assets.svg
 sed -i -e "s/7c436f/$svg2_color/g" $source20d_path/assets.svg
 sed -i -e "s/924d8b/$svg3_color/g" $source20d_path/assets.svg
+sed -i -e "s/9f2c94/$svg1_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$svg1_aubergine_stock_gtk2/$svg2_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$svg2_aubergine_stock_gtk2/$svg3_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$gtk32_assets_aubergine_dark/$svg2_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_light/$aubergine_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_medium/$svg1_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$gtk30_assets_aubergine_dark/$svg3_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$svg3_aubergine_stock_gtk2/$svg3_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$svg4_aubergine_stock_gtk2/$svg1_color/gI" $source20d_path/assets.svg
+sed -i -e "s/$svg5_aubergine_stock_gtk2/$svg2_color/gI" $source20d_path/assets.svg
 
 echo -e "Seach and replace the original colors in all three assets-external.svg files ..."
-sed -i -e "s/$svg1_aubergine/$svg1_color/gI" $source20_path/assets-external.svg
-sed -i -e "s/$svg2_aubergine/$svg2_color/gI" $source20_path/assets-external.svg
-sed -i -e "s/$svg3_aubergine/$svg3_color/gI" $source20_path/assets-external.svg
-sed -i -e "s/$svg1_aubergine/$svg1_color/gI" $source20l_path/assets-external.svg
-sed -i -e "s/$svg2_aubergine/$svg2_color/gI" $source20l_path/assets-external.svg
-sed -i -e "s/$svg3_aubergine/$svg3_color/gI" $source20l_path/assets-external.svg
-sed -i -e "s/$svg1_aubergine/$svg1_color/gI" $source20d_path/assets-external.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source20_path/assets-external.svg
+sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source20_path/assets-external.svg
+sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source20_path/assets-external.svg
+sed -i -e "s/$svg1_aubergine_stock_gtk2/$svg1_color/gI" $source20_path/assets-external.svg
+sed -i -e "s/$svg2_aubergine_stock_gtk2/$svg2_color/gI" $source20_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_light/$aubergine_color/gI" $source20_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_medium/$svg1_color/gI" $source20_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_dark/$svg3_color/gI" $source20_path/assets-external.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source20l_path/assets-external.svg
+sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source20l_path/assets-external.svg
+sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source20l_path/assets-external.svg
+sed -i -e "s/$svg1_aubergine_stock_gtk2/$svg1_color/gI" $source20l_path/assets-external.svg
+sed -i -e "s/$svg2_aubergine_stock_gtk2/$svg2_color/gI" $source20l_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_light/$aubergine_color/gI" $source20l_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_medium/$svg1_color/gI" $source20l_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_dark/$svg3_color/gI" $source20l_path/assets-external.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source20d_path/assets-external.svg
+sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source20d_path/assets-external.svg
+sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source20d_path/assets-external.svg
+sed -i -e "s/$svg1_aubergine_stock_gtk2/$svg2_color/gI" $source20d_path/assets-external.svg
+sed -i -e "s/$svg2_aubergine_stock_gtk2/$svg3_color/gI" $source20d_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_light/$aubergine_color/gI" $source20d_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_medium/$svg1_color/gI" $source20d_path/assets-external.svg
+sed -i -e "s/$gtk30_assets_aubergine_dark/$svg3_color/gI" $source20d_path/assets-external.svg
 sed -i -e "s/7c436f/$svg2_color/gI" $source20d_path/assets-external.svg
 sed -i -e "s/64385a/$svg3_color/gI" $source20d_path/assets-external.svg
 sed -i -e "s/3e7aba/$svg2_color/gI" $source20d_path/assets-external.svg
@@ -1209,7 +1385,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1224,7 +1400,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1255,7 +1431,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1270,7 +1446,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1301,7 +1477,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1316,7 +1492,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1500,7 +1676,7 @@ while [[ $comp_icons == "true" ]]; do
 	sed -i -e 's/'"77216f"'/'"${g_color[0]}"'/g' $document_export
 	sed -i -e 's/'"7d2b51"'/'"${g_color[0]}"'/g' $emblem_symbolic
 
-	find $devices_dir -type f -exec sed -i -e "s/$original_aubergine/$base_col/gI" {} \;
+	find $devices_dir -type f -exec sed -i -e "s/$original_aubergine_stock/$base_col/gI" {} \;
 
 	sed -i -e 's/'"${g_yaru_desktop[0]}"'/'"${g_color[0]}"'/gI' $desktop_file
   sed -i -e 's/'"${g_yaru_desktop[1]}"'/'"${g_color[9]}"'/gI' $desktop_file

@@ -18,6 +18,8 @@ amber_base='eea834' #POP-OS based amber
 amber_purple='8c5e11'
 aqua_base='41c6c8'
 aqua_purple='326868'
+aubergine_base='77216F'
+aubergine_purple='5e2750'
 blue_base='208fe9'
 blue_purple='255074'
 brown_base='995640'
@@ -30,6 +32,8 @@ green_base='3eb34f'
 green_purple='123d18'
 grey_base='9c9c9c'
 grey_purple='4d4d4d'
+lavender_base='6a39cb'
+lavender_purple='3c1d79'
 mate_base='78ab50' #MATE based green
 mate_purple='4f6326'
 orange_base='e95420'
@@ -44,7 +48,6 @@ teal_base='16a085' #Manjaro based teal
 teal_purple='094a3d'
 yellow_base='e9ba20'
 yellow_purple='746225'
-
 
 #interpres command
 if [ "$color" == "Amber" ]; then

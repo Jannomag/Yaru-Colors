@@ -16,11 +16,22 @@ $ambiance: null !default;
    * Nautilus *
    ***********/
   .nautilus-window {
+    .nautilus-canvas-item.dim-label,
+    .nautilus-list-dim-label {
+        color: mix($text_color, $base_color);
+    }
     // keep details box visible
     // details box looks ugly when many items are selected and it floats above the orange
     background-image: none;
-    background-color: if($variant=='light', white, $base_color);
-    &:backdrop { background-color: $backdrop_base_color }
+    background-color: if($variant=='light', white, $bg_color);
+    &:backdrop { background-color: if($variant=='light',  $backdrop_base_color, $backdrop_bg_color); }
+
+    placessidebar {
+      background-color: if($variant=='light', $bg_color, $base_color);
+      &:backdrop {
+        background-color: $backdrop_bg_color;
+      }
+    }
 
     // Makes icons less bright in backdrop
     @at-root %dim_icons_in_backdrop,
@@ -78,6 +89,21 @@ $ambiance: null !default;
 
       // Hide superfluous treeview drop target indication
       &.dnd { border-style: none; }
+
+      $_selection_bg: if($variant=='light', darken($bg_color, 5%), lighten($base_color, 5%));
+      treeview {
+        &:selected {
+          background-color: $_selection_bg;
+          color: $fg_color;
+          &:hover {
+            background-color: if($variant=='light', darken($_selection_bg, 5%), lighten($_selection_bg, 5%));
+          }
+          &:backdrop {
+            color: $backdrop_fg_color;
+            background-color: $_selection_bg;
+          }
+        }
+      }
     }
 
     notebook > header {
@@ -129,6 +155,7 @@ $ambiance: null !default;
       &:selected:not(:backdrop) {
         &:dir(ltr) { background-color: $selected_bg_color; }
         &:not(:dir(ltr)) { background-color: rgba(175, 175, 175, 0.5); }
+        color: $selected_fg_color;
       }
 
       &:backdrop:selected {
