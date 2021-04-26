@@ -7,6 +7,10 @@
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/yaru-colors)
 
+*NEWS*    
+*I'm currently working on 21.04!*    
+*There's no ETA but it should get read for release in the next few days*
+
 *Update 20.10.1:*    
 *- Updated every theme to 20.10!*    
 *- Added new Wallpapers made by @fer-moreira (They're awesome, thanks a lot!)*    
@@ -139,12 +143,14 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 | Yaru-ORIGINAL | ![#E95420](https://via.placeholder.com/15/E95420/000000?text=+) `#E95420` | ![#762572](https://via.placeholder.com/15/762572/000000?text=+) `#762572` |
 | Yaru-Amber | ![#eea834](https://via.placeholder.com/15/eea834/000000?text=+) `#eea834` | ![#8c5e11](https://via.placeholder.com/15/8c5e11/000000?text=+) `#8c5e11` |
 | Yaru-Aqua | ![#41c6c8](https://via.placeholder.com/15/41c6c8/000000?text=+) `#41c6c8` | ![#326868](https://via.placeholder.com/15/326868/000000?text=+) `#326868` |
+| Yaru-Aubergine | ![#77216F](https://via.placeholder.com/15/77216F/000000?text=+) `#77216F` | ![#5e2750](https://via.placeholder.com/15/5e2750/000000?text=+) `#5e2750` |
 | Yaru-Blue | ![#208fe9](https://via.placeholder.com/15/208fe9/000000?text=+) `#208fe9` | ![#255074](https://via.placeholder.com/15/255074/000000?text=+) `#255074` |
 | Yaru-Brown | ![#995640](https://via.placeholder.com/15/995640/000000?text=+) `#995640` | ![#5e2c12](https://via.placeholder.com/15/5e2c12/000000?text=+) `#5e2c12` |
 | Yaru-Cinnamon | ![#dd682a](https://via.placeholder.com/15/dd682a/000000?text=+) `#dd682a` | ![#462e1b](https://via.placeholder.com/15/462e1b/000000?text=+) `#462e1b` |
 | Yaru-Deepblue | ![#25469d](https://via.placeholder.com/15/25469d/000000?text=+) `#25469d` | ![#1a318b](https://via.placeholder.com/15/1a318b/000000?text=+) `#1a318b` |
 | Yaru-Green | ![#3eb34f](https://via.placeholder.com/15/3eb34f/000000?text=+) `#3eb34f` | ![#123d18](https://via.placeholder.com/15/123d18/000000?text=+) `#123d18` |
 | Yaru-Grey | ![#9c9c9c](https://via.placeholder.com/15/9c9c9c/000000?text=+) `#9c9c9c` | ![#4d4d4d](https://via.placeholder.com/15/4d4d4d/000000?text=+) `#4d4d4d` |
+| Yaru-Lavender | ![#6a39cb](https://via.placeholder.com/15/6a39cb/000000?text=+) `#6a39cb` | ![#3c1d79](https://via.placeholder.com/15/3c1d79/000000?text=+) `#3c1d79` |
 | Yaru-MATE | ![#78ab50](https://via.placeholder.com/15/78ab50/000000?text=+) `#78ab50` | ![#4f6326](https://via.placeholder.com/15/4f6326/000000?text=+) `#4f6326` |
 | Yaru-Orange | ![#e95420](https://via.placeholder.com/15/e95420/000000?text=+) `#e95420` | ![#a6401c](https://via.placeholder.com/15/a6401c/000000?text=+) `#a6401c` |
 | Yaru-Pink | ![#e920a3](https://via.placeholder.com/15/e920a3/000000?text=+) `#e920a3` | ![#742558](https://via.placeholder.com/15/742558/000000?text=+) `#742558` |
