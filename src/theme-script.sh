@@ -1009,6 +1009,142 @@ echo -e "Compiling shell theme..."
 ############ CHAPTER #############
 ### C5 - COMPILING SHELL THEME ###
 ##################################
+
+#setting paths for shell compiling
+theme_path=$COMPILED/Themes/Yaru-$color
+theme_light_path=$COMPILED/Themes/Yaru-$color-light
+#dark path is not needed since 21.04, where the dark shell is default
+shell_path=$theme_path/gnome-shell
+shell_light_path=$theme_light_path/gnome-shell
+
+#creating directory
+mkdir -p $shell_path
+mkdir -p $shell_light_path
+
+#setting source paths
+source_path=$WORKDIR/shell
+sass_path=$WORKDIR/shell/gnome-shell-sass
+
+#creating backup
+mkdir -p $WORKDIR/shell/backup
+rsync -a --exclude=$WORKDIR/shell/backup $WORKDIR/shell/* $WORKDIR/shell/backup/
+
+#replace file paths from gresource to local files
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_switches.scss
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_workspace-thumbnails.scss
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_dash.scss
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_check-box.scss
+sed -i -e 's,resource:\/\/\/org\/gnome\/shell\/theme\/,,g' $sass_path/widgets/_calendar.scss
+
+#replace the color values in _palette.scss
+echo -e "Find and replace the color values in _palette.scss ..."
+sed -i -e "s/$original_base/$base_col/g" $sass_path/_palette.scss
+#Obsolete purple color for <20.04 - newer below
+sed -i -e "s/$palette_purple/$purple_col/g" $sass_path/_palette.scss
+#Addition for 20.04 - new purple color is $aubergine = #924D8B!
+sed -i -e "s/$palette_aubergine/$aubergine_color/g" $sass_path/_palette.scss
+sed -i -e "s/$palette_laubergine/$svg1_color/g" $sass_path/_palette.scss
+sed -i -e "s/$palette_maubergine/$svg2_color/g" $sass_path/_palette.scss
+sed -i -e "s/$palette_daubergine/$svg3_color/g" $sass_path/_palette.scss
+
+echo -e " "
+echo -e "Compiling gnome-shell theme ..."
+
+cd $source_path
+
+#creating file variables
+input_file=$source_path/gnome-shell.scss.in
+output_file_light=$source_path/gnome-shell-generated-light.css
+output_file_dark=$source_path/gnome-shell-generated-dark.css
+
+#replacing variant variable from meson to dark
+sed -i -e "s/@ThemeVariant@/dark/g" $input_file
+#compiling css for dark/default
+sassc -a $input_file $output_file_dark
+#replacing dark variant with light variant variable
+sed -i -e "s/dark/light/g" $input_file
+#compiling css for light
+sassc -a $input_file $output_file_light
+#compiling high-contrast css
+sassc $source_path/gnome-shell-high-contrast.scss $source_path/gnome-shell-high-contrast-generated.css
+
+#moving css files to the compiled theme directories
+mv $output_file_dark $shell_path
+mv $output_file_light $shell_light_path
+mv $source_path/gnome-shell-high-contrast-generated.css $shell_path
+
+#change colors of svg files
+sed -i -e "s/$gtk32_assets_aubergine_dark/$svg1_color/gI" $source_path/checkbox.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg2_color/gI" $source_path/checkbox-dark.svg
+sed -i -e "s/$gtk32_assets_aubergine_dark/$svg1_color/gI" $source_path/checkbox-focused.svg
+sed -i -e "s/f3aa90/$aubergine_color/gI" $source_path/checkbox-focused.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg2_color/gI" $source_path/checkbox-focused-dark.svg
+sed -i -e "s/f3aa90/$aubergine_color/gI" $source_path/checkbox-focused-dark.svg
+sed -i -e "s/f3aa90/$aubergine_color/gI" $source_path/checkbox-off-focused.svg
+sed -i -e "s/f3aa90/$aubergine_color/gI" $source_path/checkbox-off-focused-dark.svg
+sed -i -e "s/$gtk32_assets_aubergine_dark/$svg1_color/gI" $source_path/toggle-on.svg
+sed -i -e "s/$svg1_aubergine_stock/$svg2_color/gI" $source_path/toggle-on-dark.svg
+sed -i -e "s/$palette_aubergine/$svg1_color/gI" $source_path/toggle-on-hc.svg
+sed -i -e "s/$palette_aubergine/$svg1_color/gI" $source_path/toggle-on-intl.svg
+
+#copying stuff
+#create icons directories first (new for 21.04)
+icons_actions_dir=$shell_path/icons/scalable/actions
+icons_status_dir=$shell_path/icons/scalable/status
+icons_actions_dir_light=$shell_light_path/icons/scalable/actions
+icons_status_dir_light=$shell_light_path/icons/scalable/status
+
+mkdir -p $icons_actions_dir
+mkdir -p $icons_status_dir
+mkdir -p $icons_actions_dir_light
+mkdir -p $icons_status_dir_light
+
+#setting arrays with file names
+#actions_icons=("color-pick.svg" "pointer-double-click-symbolic.svg" "pointer-drag-symbolic.svg" "pointer-primary-click-symbolic.svg" "pointer-secondary-click-symbolic.svg")
+#status_icons=("eye-not-looking-symbolic.svg" "eye-open-negative-filled-symbolic.svg" "keyboard-caps-lock-filled-symbolic.svg" "keyboard-enter-symbolic.svg" "keyboard-hide-symbolic.svg" "keyboard-layout-filled-symbolic.svg" "keyboard-shift-filled-symbolic.svg" "message-indicator-symbolic.svg")
+#shell_files=("calendar-today.svg" "checkbox.svg" "checkbox-dark.svg" "checkbox-focused.svg" "checkbox-focused-dark.svg" "checkbox-off.svg" "checkbox-off-dark.svg" "checkbox-off-focused.svg" "checkbox-off-focused-dark.svg" "dash-placeholder.svg" "no-events.svg" "no-notifications.svg" "pad-osd.css" "process-working.svg" "toggle-off.svg" "toggle-off-dark.svg" "toggle-off-hc.svg" "toggle-off-intl.svg" "toggle-on.svg" "toggle-on-dark.svg" "toggle-on-hc.svg" "toggle-on-intl.svg")
+
+cd $source_path
+cp *.svg $shell_path
+cp pad-osd.css $shell_path
+cp *.svg $shell_light_path
+cp pad-osd.css $shell_path
+#cp "${actions_icons[@]}" $icons_actions_dir
+#cp "${status_icons[@]}" $icons_status_dir
+#cp "${shell_files[@]}" $shell_path
+
+#cp "${actions_icons[@]}" $icons_actions_dir_light
+#cp "${status_icons[@]}" $icons_status_dir_light
+#cp "${shell_files[@]}" $shell_light_path
+
+#rename -generated css files
+mv $shell_path/gnome-shell-generated-dark.css $shell_path/gnome-shell.css
+mv $shell_path/gnome-shell-high-contrast-generated.css $shell_path/gnome-shell-high-contrast.css
+mv $shell_light_path/gnome-shell-generated-light.css $shell_light_path/gnome-shell.css
+
+#restoring backup
+cp -R $source_path/backup/* $source_path
+rm -rf $source_path/backup
+
+#gresource creation
+cp $shell_light_path/gnome-shell.css $shell_path/gnome-shell-light.css
+
+#copy the xml file for the gresource creation to the shell path for use later
+cp ../yaru-colors-shell-theme.gresource.xml $shell_path
+#create the gresource file, used for gdm3 theming, I didn't found another way to do it. The file needs to be placed to /usr/share/gnome-shell/(theme/Yaru/) manually
+cd $shell_path
+glib-compile-resources yaru-colors-shell-theme.gresource.xml --target=yaru-$color-shell-theme.gresource
+#delete both files
+rm -rf yaru-colors-shell-theme.gresource.xml
+rm -rf $shell_path/gnome-shell-light.css
+
+echo -e "Done!"
+
+comp_shell="false"
+done
+
+: << 'END COMMENT'
+
 #Setting paths for the theme
 theme_path=$COMPILED/Themes/Yaru-$color
 theme_light_path=$COMPILED/Themes/Yaru-$color-light ## Obsolete with 21.04!
@@ -1019,7 +1155,8 @@ shell_dark_path=$theme_dark_path/gnome-shell
 
 #creating directory
 mkdir -p $shell_path
-mkdir -p $shell_dark_path
+#mkdir -p $shell_dark_path
+mkdir -p $shell_light_path
 
 
 #setting source paths
@@ -1075,14 +1212,15 @@ output_file_light=$source_path/gnome-shell-generated-light.css
 output_file_dark=$source_path/gnome-shell-generated-dark.css
 cat $source_path/gnome-shell.scss.in
 
-sed -i -e "s/@ThemeVariant@/light/g" $input_file
-cat $source_path/gnome-shell.scss.in
-
-sassc -a $input_file $output_file_light
-sed -i -e "s/light/dark/g" $input_file
+sed -i -e "s/@ThemeVariant@/dark/g" $input_file
 cat $source_path/gnome-shell.scss.in
 
 sassc -a $input_file $output_file_dark
+
+sed -i -e "s/dark/light/g" $input_file
+cat $source_path/gnome-shell.scss.in
+
+sassc -a $input_file $output_file_light
 sassc $source_path/gnome-shell-high-contrast.scss $source_path/gnome-shell-high-contrast-generated.css
 
 
@@ -1111,16 +1249,16 @@ echo -e " "
 #copy everything
 
 echo -e "copy files to the theme directory ..."
-mv $source_path/gnome-shell-generated-light.css $shell_path/gnome-shell.css
-mv $source_path/gnome-shell-generated-dark.css $shell_dark_path/gnome-shell.css
+mv $source_path/gnome-shell-generated-light.css $shell_light_path/gnome-shell.css
+mv $source_path/gnome-shell-generated-dark.css $shell_path/gnome-shell.css
 mv $source_path/gnome-shell-high-contrast-generated.css $shell_path/gnome-shell-high-contrast.css
 cp $source_path/pad-osd.css $shell_path/pad-osd.css
 #copy the xml file for the gresource creation to the shell path for use later
-cp ../yaru-colors-shell-theme.gresource.xml $shell_path
+#cp ../yaru-colors-shell-theme.gresource.xml $shell_path
 
 #cp -R $source_path/*.css $shell_light_path
 cp -R $source_path/*.svg $shell_path
-cp -R $source_path/*.svg $shell_dark_path
+cp -R $source_path/*.svg $shell_light_path
 
 #restoring svg backups
 mv svg_backup/*.svg .
@@ -1137,11 +1275,11 @@ mv $sass_path/BAK_widgets $sass_path/widgets
 
 cd $shell_path
 #copy the dark css to the light shell path for gresource creation process
-cp $shell_dark_path/gnome-shell.css $shell_path/gnome-shell-dark.css
+#cp $shell_dark_path/gnome-shell.css $shell_path/gnome-shell-dark.css
 #create the gresource file, used for gdm3 theming, I didn't found another way to do it. The file needs to be placed to /usr/share/gnome-shell/(theme/Yaru/) manually
-glib-compile-resources yaru-colors-shell-theme.gresource.xml --target=yaru-$color-shell-theme.gresource
+#glib-compile-resources yaru-colors-shell-theme.gresource.xml --target=yaru-$color-shell-theme.gresource
 #delete both files
-rm -rf yaru-colors-shell-theme.gresource.xml
+#rm -rf yaru-colors-shell-theme.gresource.xml
 rm -rf $shell_path/gnome-shell-dark.css
 cd
 
@@ -1150,6 +1288,8 @@ echo -e "Done!"
 comp_shell="false"
 done
 
+
+END COMMENT
 ####### END OF CHAPTER 5 ########
 
 ############ CHAPTER ############
