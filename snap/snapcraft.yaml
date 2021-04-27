@@ -22,6 +22,9 @@ slots:
         - $SNAP/share/gtk2/Yaru-Aqua
         - $SNAP/share/gtk2/Yaru-Aqua-light
         - $SNAP/share/gtk2/Yaru-Aqua-dark
+        - $SNAP/share/gtk2/Yaru-Aubergine
+        - $SNAP/share/gtk2/Yaru-Aubergine-light
+        - $SNAP/share/gtk2/Yaru-Aubergine-dark
         - $SNAP/share/gtk2/Yaru-Blue
         - $SNAP/share/gtk2/Yaru-Blue-light
         - $SNAP/share/gtk2/Yaru-Blue-dark
@@ -40,6 +43,9 @@ slots:
         - $SNAP/share/gtk2/Yaru-Grey
         - $SNAP/share/gtk2/Yaru-Grey-light
         - $SNAP/share/gtk2/Yaru-Grey-dark
+        - $SNAP/share/gtk2/Yaru-Lavender
+        - $SNAP/share/gtk2/Yaru-Lavender-light
+        - $SNAP/share/gtk2/Yaru-Lavender-dark
         - $SNAP/share/gtk2/Yaru-MATE
         - $SNAP/share/gtk2/Yaru-MATE-light
         - $SNAP/share/gtk2/Yaru-MATE-dark
@@ -73,6 +79,9 @@ slots:
         - $SNAP/share/themes/Yaru-Aqua
         - $SNAP/share/themes/Yaru-Aqua-light
         - $SNAP/share/themes/Yaru-Aqua-dark
+        - $SNAP/share/themes/Yaru-Aubergine
+        - $SNAP/share/themes/Yaru-Aubergine-light
+        - $SNAP/share/themes/Yaru-Aubergine-dark
         - $SNAP/share/themes/Yaru-Blue
         - $SNAP/share/themes/Yaru-Blue-light
         - $SNAP/share/themes/Yaru-Blue-dark
@@ -91,6 +100,9 @@ slots:
         - $SNAP/share/themes/Yaru-Grey
         - $SNAP/share/themes/Yaru-Grey-light
         - $SNAP/share/themes/Yaru-Grey-dark
+        - $SNAP/share/themes/Yaru-Lavender
+        - $SNAP/share/themes/Yaru-Lavender-light
+        - $SNAP/share/themes/Yaru-Lavender-dark
         - $SNAP/share/themes/Yaru-MATE
         - $SNAP/share/themes/Yaru-MATE-light
         - $SNAP/share/themes/Yaru-MATE-dark
@@ -119,12 +131,14 @@ slots:
       read:
         - $SNAP/share/icons/Yaru-Amber
         - $SNAP/share/icons/Yaru-Aqua
+        - $SNAP/share/icons/Yaru-Aubergine
         - $SNAP/share/icons/Yaru-Blue
         - $SNAP/share/icons/Yaru-Brown
         - $SNAP/share/icons/Yaru-Cinnamon
         - $SNAP/share/icons/Yaru-Deepblue
         - $SNAP/share/icons/Yaru-Green
         - $SNAP/share/icons/Yaru-Grey
+        - $SNAP/share/icons/Yaru-Lavender
         - $SNAP/share/icons/Yaru-MATE
         - $SNAP/share/icons/Yaru-Orange
         - $SNAP/share/icons/Yaru-Pink
