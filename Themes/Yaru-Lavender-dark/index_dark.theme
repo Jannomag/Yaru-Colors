@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Lavender-dark
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru-Dark theme - forked with a stylish Lavender base color
+Encoding=UTF-8
+GtkTheme=Yaru-Lavender
+IconTheme=Yaru-Lavender
+CursorTheme=Yaru
+CursorSize=24

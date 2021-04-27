@@ -1,0 +1,9 @@
+[X-GNOME-Metatheme]
+Name=Yaru-Aubergine-dark
+Type=X-GNOME-Metatheme
+Comment=Ubuntu Yaru-Dark theme - forked with a stylish Aubergine base color
+Encoding=UTF-8
+GtkTheme=Yaru-Aubergine
+IconTheme=Yaru-Aubergine
+CursorTheme=Yaru
+CursorSize=24
