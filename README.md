@@ -7,12 +7,12 @@
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/yaru-colors)
 
-*Update 21.04*
-*- Update every theme to 21.04!*
-*- Updated icons to 21.04*
+*Update 21.04*    
+*- Update every theme to 21.04!*    
+*- Updated icons to 21.04*    
 *- Added two new colors as per community request: Aubergine and Lavender are now a part of the colorful family! Suggestions are ALWAYS welcome!*
-ling*
-*RELEASE FILES ARE COMING SOON™*
+ling*    
+*RELEASE FILES ARE COMING SOON™*    
 
 *Update 20.10.1:*    
 *- Updated every theme to 20.10!*    
