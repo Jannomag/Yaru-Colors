@@ -271,7 +271,7 @@ svg2_Amber='c08625'
 svg3_Amber='412d0b'
 aubergine_Amber='e9af4e'
 
-svg1_Aqua='412d0b'
+svg1_Aqua='41c6c8'
 svg2_Aqua='34a6a8'
 svg3_Aqua='174647'
 aubergine_Aqua='78bebf'
@@ -1426,7 +1426,7 @@ sed -i -e "s/c34113/$svg3_color/g" $source20l_path/assets.svg
 sed -i -e "s/fea691/$svg1_color/g" $source20l_path/assets.svg
 sed -i -e "s/f6b6a0/$svg1_color/g" $source20l_path/assets.svgpi
 sed -i -e "s/975187/$svg2_color/g" $source20l_path/assets.svg
-sed -i -e "s/924d8b/$svg3_color/g" $source20l_path/assets.svg
+sed -i -e "s/924d8b/$svg1_color/g" $source20l_path/assets.svg # changed to svg1 because sliders are too dark with svg3 
 sed -i -e "s/9f2c94/$svg1_color/gI" $source20l_path/assets.svg
 sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source20l_path/assets.svg
 sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source20l_path/assets.svg
