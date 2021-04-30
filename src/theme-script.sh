@@ -566,9 +566,32 @@ else
 fi
 
 #Check if needed packages are installed, if not exit.
-if [[ $(dpkg-query -W -f='${Status}' inkscape 2>/dev/null | grep -c "ok installed") -eq 0 ]];
+## OLD inkscape-check.
+## Inkscape 0.92.5 is NEEDED to compile everything without errors.
+## Since it's not available through any repo without dependency issues
+## We need to compile Inkscape 0.92.5 from it's source, VERY IMPORTANT
+## And because of this, dpkg-query doesn't work, so...
+
+#if [[ $(dpkg-query -W -f='${Status}' inkscape 2>/dev/null | grep -c "ok installed") -eq 0 ]];
+#then
+#  echo -e "INKSCAPE is NOT installed!"
+#  echo -e "EXITING NOW!"
+#  exit
+#fi
+
+req_ver="Inkscape 0.92.5 (2060ec1f9f, 2020-04-08)"
+inkscape_ver="$(inkscape --version)"
+echo -e ${inkscape_ver}
+if [[ ! -f "/usr/bin/inkscape" ]];
 then
-  echo -e "INKSCAPE is NOT installed!"
+  echo -e "INKSCAPE is not in /usr/bin/inkscape"
+elif [ "${inkscape_ver}" = "$req_ver" ];
+  then
+  echo -e "Version okay!"
+else
+  echo -e "Wrong version of INKSCAPE!"
+  echo -e "0.92.5 is needed for compiling without issues!"
+  echo -e "To get it you need to compile it from source, sorry!"
   echo -e "EXITING NOW!"
   exit
 fi
@@ -762,14 +785,14 @@ do
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 
 		echo Rendering $ASSETS_DIR/$i@2.png
 		$INKSCAPE --export-id=$i \
 		                  --export-dpi=180 \
 		                  --export-id-only \
-		                  --export-filename=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
+		                  --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
 			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 done
 
@@ -858,14 +881,14 @@ do
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 
 				echo Rendering $ASSETS_DIR/$i@2.png
 		        $INKSCAPE --export-id=$i \
 		                  --export-dpi=180 \
 		                  --export-id-only \
-		                  --export-filename=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
+		                  --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
 			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 done
 
@@ -1370,6 +1393,10 @@ then
 	exit
 fi
 
+### FIX for wrong assets.svg for dark variant (gets removed when Yaru devs fixed it)
+### The original assets.svg has a wrong scale-slider which I fixed temporarely
+cp $WORKDIR/assets-dark-fixed.svg $source20d_path/assets.svg
+
 #replacing the colors in gtkrc file
 echo -e "Seach and replace the original colors in all three gtkrc files ..."
 sed -i -e "s/$original_base/$base_col/g" $source20_path/gtkrc
@@ -1426,7 +1453,7 @@ sed -i -e "s/c34113/$svg3_color/g" $source20l_path/assets.svg
 sed -i -e "s/fea691/$svg1_color/g" $source20l_path/assets.svg
 sed -i -e "s/f6b6a0/$svg1_color/g" $source20l_path/assets.svgpi
 sed -i -e "s/975187/$svg2_color/g" $source20l_path/assets.svg
-sed -i -e "s/924d8b/$svg1_color/g" $source20l_path/assets.svg # changed to svg1 because sliders are too dark with svg3 
+sed -i -e "s/924d8b/$svg1_color/g" $source20l_path/assets.svg # changed to svg1 because sliders are too dark with svg3
 sed -i -e "s/9f2c94/$svg1_color/gI" $source20l_path/assets.svg
 sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source20l_path/assets.svg
 sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source20l_path/assets.svg
@@ -1525,7 +1552,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1540,7 +1567,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1571,7 +1598,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1586,7 +1613,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1617,7 +1644,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
@@ -1632,7 +1659,7 @@ else
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 fi
 done
