@@ -50,6 +50,7 @@ withoutask=$2
 comp_shell="false"
 comp_gtk2="false"
 comp_gtk3="false"
+comp_gtk4="false"
 comp_icons="false"
 comp_cursors="false"
 comp_unity="false"
@@ -128,9 +129,16 @@ while [ ! -z "$2" ]; do
 			comp_shell="true"
 			comp_gtk2="true"
 			comp_gtk3="true"
+      comp_gtk4="true"
 			comp_unity="true"
 			comp_icons="true"
 			comp_cursors="true"
+			;;
+		--gtk4|-4)
+			shift
+			echo "Compiling just gtk4 without asking!"
+			comp_gtk4="true"
+			singlestep="true"
 			;;
 		--gtk3|-3)
 			shift
@@ -579,18 +587,18 @@ fi
 #  exit
 #fi
 
-req_ver="Inkscape 0.92.5 (2060ec1f9f, 2020-04-08)"
+req_ver="Inkscape 1"
 inkscape_ver="$(inkscape --version)"
-echo -e ${inkscape_ver}
+#echo -e ${inkscape_ver}
 if [[ ! -f "/usr/bin/inkscape" ]];
 then
   echo -e "INKSCAPE is not in /usr/bin/inkscape"
-elif [ "${inkscape_ver}" = "$req_ver" ];
+elif [[ "${inkscape_ver}" == *"$req_ver"* ]];
   then
-  echo -e "Version okay!"
+  echo -e ""
 else
   echo -e "Wrong version of INKSCAPE!"
-  echo -e "0.92.5 is needed for compiling without issues!"
+  echo -e "1.0x is needed for compiling without issues!"
   echo -e "To get it you need to compile it from source, sorry!"
   echo -e "EXITING NOW!"
   exit
@@ -667,23 +675,28 @@ fi
 
 while [[ $compile_done == "false" ]]; do
 
+  #set paths for defaul theme
+  gtk32_path=$COMPILED/Themes/Yaru-$color/gtk-3.20
+  gtk30_path=$COMPILED/Themes/Yaru-$color/gtk-3.0
+  gtk20_path=$COMPILED/Themes/Yaru-$color/gtk-2.0
+  gtk40_path=$COMPILED/Themes/Yaru-$color/gtk-4.0
+  shell_path=$COMPILED/Themes/Yaru-$color/gnome-shell
+
+  #set paths for dark theme
+  gtk32d_path=$COMPILED/Themes/Yaru-$color-dark/gtk-3.20
+  gtk30d_path=$COMPILED/Themes/Yaru-$color-dark/gtk-3.0
+  gtk20d_path=$COMPILED/Themes/Yaru-$color-dark/gtk-2.0
+  gtk40d_path=$COMPILED/Themes/Yaru-$color-dark/gtk-4.0
+
+  #set paths for light theme
+  gtk32l_path=$COMPILED/Themes/Yaru-$color-light/gtk-3.20
+  gtk30l_path=$COMPILED/Themes/Yaru-$color-light/gtk-3.0
+  gtk20l_path=$COMPILED/Themes/Yaru-$color-light/gtk-2.0
+  gtk40l_path=$COMPILED/Themes/Yaru-$color-light/gtk-4.0
+
 
 while [[ $comp_gtk3 == "true" ]]; do
-#set paths for defaul theme
-gtk32_path=$COMPILED/Themes/Yaru-$color/gtk-3.20
-gtk30_path=$COMPILED/Themes/Yaru-$color/gtk-3.0
-gtk20_path=$COMPILED/Themes/Yaru-$color/gtk-2.0
-shell_path=$COMPILED/Themes/Yaru-$color/gnome-shell
 
-#set paths for dark theme
-gtk32d_path=$COMPILED/Themes/Yaru-$color-dark/gtk-3.20
-gtk30d_path=$COMPILED/Themes/Yaru-$color-dark/gtk-3.0
-gtk20d_path=$COMPILED/Themes/Yaru-$color-dark/gtk-2.0
-
-#set paths for light theme
-gtk32l_path=$COMPILED/Themes/Yaru-$color-light/gtk-3.20
-gtk30l_path=$COMPILED/Themes/Yaru-$color-light/gtk-3.0
-gtk20l_path=$COMPILED/Themes/Yaru-$color-light/gtk-2.0
 
 
 
@@ -694,7 +707,6 @@ mkdir -p $gtk32d_path
 mkdir -p $gtk30d_path
 mkdir -p $gtk32l_path
 mkdir -p $gtk30l_path
-
 
 
 ############## CHAPTER ###############
@@ -784,16 +796,16 @@ do
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
-
 		echo Rendering $ASSETS_DIR/$i@2.png
 		$INKSCAPE --export-id=$i \
 		                  --export-dpi=180 \
 		                  --export-id-only \
-		                  --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
+                      -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 done
 
 ### assets done ###
@@ -881,15 +893,17 @@ do
     $INKSCAPE --export-id=$i \
               --export-id-only \
               --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
 
 				echo Rendering $ASSETS_DIR/$i@2.png
 		        $INKSCAPE --export-id=$i \
 		                  --export-dpi=180 \
 		                  --export-id-only \
-		                  --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
+                      -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 done
 
 ### assets done ###
@@ -1551,9 +1565,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -1566,9 +1581,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -1597,9 +1613,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -1612,9 +1629,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -1643,9 +1661,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -1658,9 +1677,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              --export-background-opacity=0 \
-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -1923,7 +1943,149 @@ while [[ $comp_cursors == "true" ]]; do
   comp_cursors="false"
 done
 
-if [[ $comp_gtk3 == "false" ]] && [[ $comp_gtk2 == "false" ]] && [[ $comp_shell == "false" ]] && [[ $comp_unity == "false" ]] && [[ $comp_icons == "false" ]] && [[ $comp_cursors == "false" ]]; then
+######## CHAPTER ########
+## C9 - GTK4 compiling ##
+#########################
+
+###### TO DO
+# Script is looping endlessly
+# Copying gives error
+# Assets directory gets linked inside assets directory somehow
+
+if [[ $everything == "false" ]] && [[ $singlestep == "false" ]]; then
+	echo -e "Do you want to compile the gtk4 theme?"
+	select yn in "Yes" "No"; do
+		case $yn in
+			Yes)
+			     comp_gtk4="true"
+			     break;;
+			No)
+			     comp_gtk4="false"
+			     break;;
+		esac
+	done
+fi
+
+while [[ $comp_gtk4 == "true" ]]; do
+
+  mkdir -p $gtk40_path
+  mkdir -p $gtk40d_path
+  mkdir -p $gtk40l_path
+
+  source40_path=$WORKDIR/default/gtk-4.0
+  source40d_path=$WORKDIR/dark/gtk-4.0
+  source40l_path=$WORKDIR/light/gtk-4.0
+  #creating backups
+  backup_path=$WORKDIR/backup
+  mkdir -p $WORKDIR/backup
+  cp -R $source40_path $backup_path/40default/
+  cp -R $source40d_path $backup_path/40dark/
+  cp -R $source40l_path $backup_path/40light/
+  # check for backup
+  if [[ ! -f "$backup_path/40default/gtk.scss" ]] || [[ ! -f "$backup_path/40light/gtk.scss" ]] || [[ ! -f "$backup_path/40dark/gtk.scss" ]]
+  then
+    echo -e "BACKUP DIDN'T WORK, EXITING NOW"
+    exit
+  fi
+
+  ###################
+  ### CSS Section ###
+  ###################
+
+  #replace the color values in _palette.scss
+  echo -e "Find and replace the color values in _palette.scss ..."
+  sed -i -e "s/$original_base/$base_col/g" $source40_path/_palette.scss
+  #Obsolete purple color for <20.04 - newer below
+  sed -i -e "s/$palette_purple/$purple_col/g" $source40_path/_palette.scss
+  #Addition for 20.04 - new purple color is $aubergine = #924D8B!
+  sed -i -e "s/$palette_aubergine/$aubergine_color/g" $source40_path/_palette.scss
+  sed -i -e "s/$palette_laubergine/$svg1_color/g" $source40_path/_palette.scss
+  sed -i -e "s/$palette_maubergine/$svg2_color/g" $source40_path/_palette.scss
+  sed -i -e "s/$palette_daubergine/$svg3_color/g" $source40_path/_palette.scss
+
+  echo -e "Compiling gtk.scss of default, light and dark for GTK 4.0 ..."
+  cd $source40_path
+  ln -sf ../../light/gtk-4.0/gtk.scss ./gtk-light.scss
+  ln -sf ../../dark/gtk-4.0/gtk.scss ./gtk-dark.scss
+  sassc -a ./gtk.scss ./gtk_generated.css
+  #dark
+  sassc -a ./gtk-dark.scss ./gtk_dark_generated.css
+  #light
+  sassc -a ./gtk-light.scss ./gtk_light_generated.css
+
+  #changing colors in assets.svg for older versions
+  sed -i -e "s/$svg1_aubergine_stock/$svg1_color/gI" $source40_path/assets.svg
+  sed -i -e "s/$svg2_aubergine_stock/$svg2_color/gI" $source40_path/assets.svg
+  sed -i -e "s/$svg3_aubergine_stock/$svg3_color/gI" $source40_path/assets.svg
+  #changing colors in assets.svg for 21.04
+  sed -i -e "s/$gtk32_assets_aubergine_medium/$svg1_color/gI" $source40_path/assets.svg
+  sed -i -e "s/$gtk32_assets_aubergine_dark/$svg2_color/gI" $source40_path/assets.svg
+
+  #########################
+  ### RENDER SVG ASSETS ###
+
+  INKSCAPE="/usr/bin/inkscape"
+  OPTIPNG="/usr/bin/optipng"
+
+  SRC_FILE="assets.svg"
+  ASSETS_DIR="assets"
+  INDEX="assets.txt"
+
+
+  for i in `cat $INDEX`
+  do
+
+      echo
+      echo Rendering $ASSETS_DIR/$i.png
+      $INKSCAPE --export-id=$i \
+                --export-id-only \
+                -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+                #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+                #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
+  	      #&& $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png  ## commented out in yaru source render script
+
+  		echo Rendering $ASSETS_DIR/$i@2.png
+  		$INKSCAPE --export-id=$i \
+  		                  --export-dpi=180 \
+  		                  --export-id-only \
+                        -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+                        #--export-background-opacity=0 \ # Old for Inkscape 0.9x
+                        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
+  			  #&& $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png ## commented out in yaru source render script
+  done
+
+  ### assets done ###
+
+
+
+  # copy files
+  cd $WORKDIR
+  echo -e "Copy finished files"
+  mv $source40_path/gtk_generated.css $gtk40_path/gtk.css
+  mv $source40_path/gtk_dark_generated.css $gtk40d_path/gtk.css
+  mv $source40_path/gtk_light_generated.css $gtk40l_path/gtk.css
+  ln -rs $gtk40d_path/gtk.css $gtk40_path/gtk-dark.css
+  cp -R $source40_path/assets $gtk40_path
+  cd $gtk40l_path
+  ln -rs ../../Yaru-$color/gtk-4.0/assets ./assets
+  cd $gtk40d_path
+  ln -rs ../../Yaru-$color/gtk-4.0/assets ./assets
+
+  ## removing backup
+  echo -e "Restoring backup"
+  cp -R $backup_path/40default/* $source40_path/
+  cp -R $backup_path/40dark/* $source40d_path/
+  cp -R $backup_path/40light/* $source40l_path/
+  rm -rf $backup_path
+  rm $source40_path/gtk-light.scss
+
+  echo -e "GTK4 done"
+
+  comp_gtk4="false"
+
+done
+
+if [[ $comp_gtk4 == "false" ]] && [[ $comp_gtk3 == "false" ]] && [[ $comp_gtk2 == "false" ]] && [[ $comp_shell == "false" ]] && [[ $comp_unity == "false" ]] && [[ $comp_icons == "false" ]] && [[ $comp_cursors == "false" ]]; then
 	compile_done="true"
 	echo -e "Everything's done now, your files are stored in the Themes directory!"
 fi

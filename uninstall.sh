@@ -223,12 +223,14 @@ if [[ $uninstall = "true" ]] && [[ $remthemes = "true" ]]; then
 ### REMOVE BEGINS HERE
 ### REMOVE GTK THEMES
 	rm -rf $iconpath/Yaru-Amber*
+	rm -rf $iconpath/Yaru-Aubergine*
 	rm -rf $iconpath/Yaru-Aqua*
 	rm -rf $iconpath/Yaru-Blue*
 	rm -rf $iconpath/Yaru-Brown*
 	rm -rf $iconpath/Yaru-Deepblue*
 	rm -rf $iconpath/Yaru-Green*
 	rm -rf $iconpath/Yaru-Grey*
+	rm -rf $iconpath/Yaru-Lavender*
 	rm -rf $iconpath/Yaru-MATE*
 	rm -rf $iconpath/Yaru-Orange*
 	rm -rf $iconpath/Yaru-Pink*
@@ -245,12 +247,14 @@ if [[ $uninstall = "true" ]] && [[ $remicons = "true" ]]; then
 	echo -e "${BYel}Removing icons in '$iconpath'...${RCol}"
 ### REMOVE ICONS
 	rm -rf $iconpath/Yaru-Amber*
+	rm -rf $iconpath/Yaru-Aubergine*
 	rm -rf $iconpath/Yaru-Aqua*
 	rm -rf $iconpath/Yaru-Blue*
 	rm -rf $iconpath/Yaru-Brown*
 	rm -rf $iconpath/Yaru-Deepblue*
 	rm -rf $iconpath/Yaru-Green*
 	rm -rf $iconpath/Yaru-Grey*
+	rm -rf $iconpath/Yaru-Lavender*
 	rm -rf $iconpath/Yaru-MATE*
 	rm -rf $iconpath/Yaru-Orange*
 	rm -rf $iconpath/Yaru-Pink*
