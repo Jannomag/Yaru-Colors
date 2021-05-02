@@ -5,11 +5,15 @@
 
 # This script will NOT output anything theme-script.sh will do!
 
-array=( Amber Aqua Aubergine Blue Brown Cinnamon Deepblue Green Grey Lavender MATE Orange Pink Purple Red Teal Yellow )
+#array=( Amber Aqua Aubergine Blue Brown Cinnamon Deepblue Green Grey Lavender MATE Orange Pink Purple Red Teal Yellow )
+COLORS="colors.txt"
 readpart=$1
 while [ ! -z "$1" ]; do
   case "$1" in
     --all|-a)
+      shift
+      ;;
+    --gtk4|-4)
       shift
       ;;
     --gtk3|-3)
@@ -39,11 +43,11 @@ while [ ! -z "$1" ]; do
 done
 
 
-for color in "${array[@]}"
+for i in `cat $COLORS`
 do
-  echo -e "Compiling: Yaru-$color"
+  echo -e "Compiling: Yaru-$i"
   echo -e "\033[2K"
-  ./theme-script.sh $color $readpart >/dev/null
+  ./theme-script.sh $i $readpart >/dev/null
 done
 
 echo -e "Done"

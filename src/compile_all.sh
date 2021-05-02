@@ -1,5 +1,6 @@
 #!/bin/bash
-declare -a color=("amber" "aqua" "aubergine" "blue" "brown" "cinnamon" "deepblue" "green" "grey" "lavender" "mate" "orange" "pink" "purple" "red" "teal" "yellow")
+COLORS="colors.txt"
+#declare -a color=("amber" "aqua" "aubergine" "blue" "brown" "cinnamon" "deepblue" "green" "grey" "lavender" "mate" "orange" "pink" "purple" "red" "teal" "yellow")
 param=$1
 while [ ! -z "$1" ]; do
 	case "$1" in
@@ -25,7 +26,7 @@ while [ ! -z "$1" ]; do
 	esac
 done
 
-for i in "${color[@]}"
+for i in `cat $COLORS`
 do
 	echo "Compiling $i with parameter $param..."
 	./theme-script.sh $i $param
