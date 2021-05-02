@@ -12,7 +12,8 @@
 *- Updated icons to 21.04*    
 *- Added two new colors as per community request: Aubergine and Lavender are now a part of the colorful family! Suggestions are ALWAYS welcome!*
 ling*    
-*RELEASE FILES ARE COMING SOON™*    
+*- NOTE: Shell of Gnome 40 isn't supported yet because Yaru hasn't added support for it, yet. As soon as Yaru devs release Gnome-Shell support for Gnome 40, I'll do my best to update Yaru-Colors as well.
+*RELEASED*    
 
 *Update 20.10.1:*    
 *- Updated every theme to 20.10!*    
@@ -128,6 +129,10 @@ or the direct command: `sudo update-alternatives --set gdm3-theme.gresource /usr
 3. Restart GNOME Shell / Cinnamon Shell.
 4. Panel icons will now show applied Yaru-Color icon pack.
 
+**Compiling own themes**
+I tried my best to create a tutorial on how to use my theme-script.sh to compile own themes. I hope it's understandable and usable.
+If not, please tell me!
+But: Due the lack of time I'm not able to help you at any time. So, pease, excuse me if I can't anwer instantly.
 
 ***Have fun with it!   
 For any suggestions send me a message here or on Reddit /u/jannomag***
@@ -166,6 +171,9 @@ First color is the Ubuntu-Orange, second the Ubuntu-Purple
 All other colors in the themes are generated while compiling the css from Yaru's source.
 
 **KNOWN BUGS**    
+*Some buttons are wrong displayed in Gnome-Shell 40*
+In Gnome 40 shell are some "glitches" or wrong looking buttons. This is just because Yaru doesn't support the shell of Gnome 40 officially, yet. As soon as they release the support, I'll update Yaru-Colors as well.
+
 *Transparent window borders*   
 Snap applications like Ubuntu Software become transparent.
 This isn't really a Yaru-Colors issue. Snap has its own theme directory and I'm not able to add Yaru-Colors to this.
