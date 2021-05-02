@@ -1,6 +1,6 @@
 # special thanks to github user Muqtxdir who helped me to created this!
 name: yaru-colors
-version: "20.04.6"
+version: "21.04"
 base: core18
 architectures:
   - all
