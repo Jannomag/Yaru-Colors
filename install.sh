@@ -131,7 +131,7 @@ RUSER_UID=$(id -u ${RUID})
 #### Function for package color selection
 package_color_menu () {
   select package_color in "${@}"; do
-    if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#-1)) ]; then
+    if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#)) ]; then
       echo -e "${Yel}Okay, '$package_color' is set!${RCol}"
       break;
     else
@@ -143,7 +143,7 @@ package_color_menu () {
 #### Function for icon color selection
 icon_color_menu () {
   select icon_color in "${@}"; do
-    if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#-1)) ]; then
+    if [ 1 -le "$REPLY" ] && [ "$REPLY" -le $(($#)) ]; then
       echo -e "${Yel}Okay, '$icon_color' is set for the icons!${RCol}"
       break;
     else
@@ -172,7 +172,7 @@ icon_color_menu () {
 
 
 # The color array - THIS revolutionized my old script...I can add colors as much as I want, if they're present as themes...nice
-colors=(Amber Aqua Blue Brown Cinnamon Deepblue Green Grey MATE Pink Purple Orange Red Teal Yellow)
+colors=(Amber Aqua Aubergine Blue Brown Cinnamon Deepblue Green Grey Lavender MATE Pink Purple Orange Red Teal Yellow)
 
 
 
