@@ -713,7 +713,7 @@ while [ "$execute" == "true" ]; do
             echo -e "${Yel}Okay, I'll fix this, please read the readme to see what I've done.${RCol}"
             echo -e "${Yel}Please enter your passwort...${RCol}"
             # I've got this fix from here: https://gist.github.com/atiensivu/fcc3183e9a6fd74ec1a283e3b9ad05f0 - it puts the missing file from ~ to the glib-2.0 directory and re-compiles the glib schemas
-            sudo cp $HOME/.local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/schemas/org.gnome.shell.extensions.user-theme.gschema.xml /usr/share/glib-2.0/schemas && sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+            sudo cp $homedir/.local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/schemas/org.gnome.shell.extensions.user-theme.gschema.xml /usr/share/glib-2.0/schemas && sudo glib-compile-schemas /usr/share/glib-2.0/schemas
             break ;;
           no)
             echo -e "${Yel}Okay, skipping shell theme. Please read the readme for this!${RCol}"
