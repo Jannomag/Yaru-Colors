@@ -189,7 +189,7 @@ On some distros the icon pack fails to apply (Arch in this case).
 Fix by @tur1ngb0x (see issue #55):
 1. Install humanity-icon-theme (dependency)
    * Debian/Ubuntu (should be installed by default): `sudo apt install humanity-icon-theme`
-   * Arch/Manjaro: `sudo yay -S humanity-icon-theme`
+   * Arch/Manjaro: `yay -S humanity-icon-theme`
 2. Open GNOME Tweak Tool, apply any Yaru-Color icon pack.
 3. Restart GNOME Shell.
 4. GNOME panel icons will now show applied Yaru icon pack.
