@@ -174,6 +174,8 @@ All other colors in the themes are generated while compiling the css from Yaru's
 *Some buttons are wrong displayed in Gnome-Shell 40*
 In Gnome 40 shell are some "glitches" or wrong looking buttons. This is just because Yaru doesn't support the shell of Gnome 40 officially, yet. As soon as they release the support, I'll update Yaru-Colors as well.
 
+[Workaround](https://github.com/Jannomag/Yaru-Colors/issues/115) for the dock transparency with Gnome 40.
+
 *Transparent window borders*   
 Snap applications like Ubuntu Software become transparent.
 This isn't really a Yaru-Colors issue. Snap has its own theme directory and I'm not able to add Yaru-Colors to this.
