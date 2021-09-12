@@ -61,6 +61,8 @@ Please note: I've added Yarus source files for gtk2/3, gnome-shell, unity, icons
 Icons: To safe space, I decided to ditch the whole Suru theme for just the edited files. The icon packs will inherit to Yarus icons in first place. To get this to work, you need to install Yarus icons ([instructions on Yaru's git](https://github.com/ubuntu/yaru)).
 To change the inherit icons, you can change the index.theme file in the icons directory of each theme.    
 
+GitHub user GabePoel made a Kvantum theme to match Yaru-Colors themes with Qt apps. Thanks for this!
+[KvYaru-Colors](https://github.com/GabePoel/KvYaru-Colors)
 
 I tried to make the installation as easy as possible.
 Therefore I created an installation script called install.sh.
