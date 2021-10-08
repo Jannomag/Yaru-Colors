@@ -95,8 +95,8 @@ elif [ "$color" == "Purple" ]; then
 	purple_col=$purple_purple
 
 elif [ "$color" == "Teal" ]; then
-	base_col=$Teal_base
-	purple_col=$Teal_purple
+	base_col=$teal_base
+	purple_col=$teal_purple
 
 elif [ "$color" == "Red" ]; then
 	base_col=$red_base
