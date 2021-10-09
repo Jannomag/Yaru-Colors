@@ -802,8 +802,8 @@ do
 		$INKSCAPE --export-id=$i \
 		                  --export-dpi=180 \
 		                  --export-id-only \
-                      -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
-			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+                      -o $ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
+			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@2.png
         #--export-background-opacity=0 \ # Old for Inkscape 0.9x
         #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 done
@@ -900,8 +900,8 @@ do
 		        $INKSCAPE --export-id=$i \
 		                  --export-dpi=180 \
 		                  --export-id-only \
-                      -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
-			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+                      -o $ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
+			  && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@2.png
         #--export-background-opacity=0 \ # Old for Inkscape 0.9x
         #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
 done
@@ -1465,7 +1465,7 @@ sed -i -e "s/$svg5_orange_stock_gtk2/$svg1_color/gI" $source20_path/assets.svg
 sed -i -e "s/e55730/$base_col/g" $source20l_path/assets.svg
 sed -i -e "s/c34113/$svg3_color/g" $source20l_path/assets.svg
 sed -i -e "s/fea691/$svg1_color/g" $source20l_path/assets.svg
-sed -i -e "s/f6b6a0/$svg1_color/g" $source20l_path/assets.svgpi
+sed -i -e "s/f6b6a0/$svg1_color/g" $source20l_path/assets.svg
 sed -i -e "s/975187/$svg2_color/g" $source20l_path/assets.svg
 sed -i -e "s/924d8b/$svg1_color/g" $source20l_path/assets.svg # changed to svg1 because sliders are too dark with svg3
 sed -i -e "s/9f2c94/$svg1_color/gI" $source20l_path/assets.svg
@@ -1581,10 +1581,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
         #--export-background-opacity=0 \ # Old for Inkscape 0.9x
-        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -1629,10 +1629,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
         #--export-background-opacity=0 \ # Old for Inkscape 0.9x
-        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -1677,10 +1677,10 @@ else
     echo Rendering $ASSETS_DIR/$i.png
     $INKSCAPE --export-id=$i \
               --export-id-only \
-              -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+              -o $ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \
 	      && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
         #--export-background-opacity=0 \ # Old for Inkscape 0.9x
-        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
+        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE_EXTERNAL >/dev/null \ # Old for Inkscape 0.9x
 fi
 done
 
@@ -2048,9 +2048,9 @@ while [[ $comp_gtk4 == "true" ]]; do
   		$INKSCAPE --export-id=$i \
   		                  --export-dpi=180 \
   		                  --export-id-only \
-                        -o $ASSETS_DIR/$i.png $SRC_FILE >/dev/null \
+                        -o $ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \
                         #--export-background-opacity=0 \ # Old for Inkscape 0.9x
-                        #--export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
+                        #--export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null \ # Old for Inkscape 0.9x
   			  #&& $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png ## commented out in yaru source render script
   done
 
