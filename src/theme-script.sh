@@ -129,7 +129,7 @@ while [ ! -z "$2" ]; do
 			comp_shell="true"
 			comp_gtk2="true"
 			comp_gtk3="true"
-      comp_gtk4="true"
+      		comp_gtk4="true"
 			comp_unity="true"
 			comp_icons="true"
 			comp_cursors="true"
