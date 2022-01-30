@@ -1,0 +1,143 @@
+/**********
+ * Frames *
+ **********/
+frame,
+.frame {
+  border: 1px solid $border_color;
+}
+
+frame {
+  border-radius: $card_radius;
+
+  > label {
+    margin: 4px;
+  }
+}
+
+/**************
+ * Separators *
+ **************/
+
+separator {
+  background: $border_color;
+  min-width: 1px;
+  min-height: 1px;
+
+  &.spacer {
+    background: none;
+
+    &.horizontal { min-width: 12px; }
+    &.vertical { min-height: 12px; }
+  }
+}
+
+/*********************
+ * App Notifications *
+ *********************/
+
+.app-notification {
+  @extend %osd;
+
+  padding: 10px;
+  border-spacing: 10px;
+  border-radius: 0 0 $card_radius $card_radius;
+  background-color: $osd_bg_color;
+  background-image: linear-gradient(to bottom, transparentize(black, 0.8),
+                                               transparent 2px);
+  background-clip: padding-box;
+
+  border { border: none; }
+}
+
+/**************
+ * GtkVideo *
+ **************/
+
+video {
+  & image.osd {
+    min-width: 64px;
+    min-height: 64px;
+    border-radius: 32px;
+  }
+  background: black;
+}
+
+/****************
+ * GtkStatusBar *
+ ****************/
+
+statusbar {
+  padding: 6px 10px 6px 10px;
+}
+
+/*****************
+ * AdwStatusPage *
+ *****************/
+
+statuspage {
+  > scrolledwindow > viewport > box {
+    margin: 36px 12px;
+    border-spacing: 36px;
+
+    > clamp > box {
+      border-spacing: 12px;
+
+      > .icon {
+        -gtk-icon-size: 128px;
+
+        color: gtkalpha(currentColor, $dim_label_opacity);
+
+        &:disabled {
+          opacity: $disabled_opacity;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+
+  &.compact > scrolledwindow > viewport > box {
+    margin: 24px 12px;
+    border-spacing: 24px;
+
+    > clamp > box {
+      > .icon {
+        -gtk-icon-size: 96px;
+
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+
+      > .title {
+        font-size: 18pt;
+      }
+    }
+  }
+}
+
+/* Cards */
+
+.card {
+  background-color: $card_bg_color;
+  background-clip: padding-box;
+  color: $card_fg_color;
+  border: 1px solid $card_border_color;
+  border-radius: $card_radius;
+
+  @include focus-ring($offset: -2px);
+
+  &.activatable {
+    transition: $button_transition;
+
+    &:hover {
+      background-image: image(gtkalpha(currentColor, .03));
+    }
+
+    &:active {
+      background-image: image(gtkalpha(currentColor, .08));
+    }
+  }
+}

@@ -1,0 +1,45 @@
+shortcuts-section {
+  margin: 20px;
+}
+
+.shortcuts-search-results {
+  margin: 20px;
+  border-spacing: 24px;
+}
+
+// shortcut window keys
+shortcut {
+  border-spacing: 6px;
+
+  > .keycap {
+    min-width: 20px;
+    min-height: 25px;
+    margin-top: 2px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+
+    color: $card_fg_color;
+    background-color: $card_bg_color;
+    background-clip: padding-box;
+    border: 1px solid;
+    border-color: $card_border_color;
+    border-radius: $button_radius;
+    box-shadow: inset 0 -3px gtkalpha($card_border_color, .5);
+    font-size: smaller;
+  }
+}
+
+stackswitcher > button.text-button { min-width: 100px; } // FIXME aggregate with buttons
+
+stackswitcher.circular {
+  border-spacing: 12px;
+
+  // FIXME aggregate with buttons
+  > button.circular,
+  > button.text-button.circular {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0;
+  }
+}

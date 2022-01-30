@@ -1,0 +1,31 @@
+/* Workspace pager */
+
+// thumbnails in overview
+.workspace-thumbnails {
+  visible-width: 32px; //amount visible before hover
+  spacing: $base_spacing;
+  padding: $base_padding;
+  border-color: transparent; // Yaru: adapt the workspace osd border to the dock border
+
+  .workspace-thumbnail {
+    @extend %overview_panel;
+    border-radius: 3px;
+    background-color: $dash_background_color; // Yaru: use same background as dash
+    border: 1px solid $borders_color_dark; // Yaru: use same border as dash
+  }
+
+  // drag and drop indicator
+  .placeholder {
+    background-image: url("resource:///org/gnome/shell/theme/workspace-placeholder.svg");
+    background-size: contain;
+    width: 18px;
+  }
+}
+
+// selected indicator
+.workspace-thumbnail-indicator {
+  border: 2px solid $focus_border_color; // Yaru: we detached focus from selected
+  border-radius: 3px;
+  padding: 0px;
+  // background-color: transparentize($selected_bg_color, 0.9);
+}

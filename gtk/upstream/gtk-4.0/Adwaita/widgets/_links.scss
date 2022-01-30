@@ -1,0 +1,38 @@
+%link,
+link {
+  color: $link_color;
+  text-decoration: underline;
+
+  &:visited {
+    color: $link_visited_color;
+  }
+
+  &:hover {
+    color: gtkshade($link_color, 1.1);
+  }
+
+  &:active {
+    color: $link_color;
+  }
+
+  &:disabled { color: gtkalpha(currentColor, $disabled_opacity); }
+}
+
+link {
+  @include focus-ring();
+}
+
+button.link {
+  @extend %link;
+
+  &,
+  &:hover,
+  &:active,
+  &:checked {
+    @extend %undecorated_button;
+  }
+
+  > label {
+    text-decoration: underline;
+  }
+}

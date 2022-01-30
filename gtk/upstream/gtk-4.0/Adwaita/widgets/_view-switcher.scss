@@ -1,0 +1,89 @@
+viewswitcher {
+  &, & button.toggle {
+    margin: 0;
+    padding: 0;
+  }
+
+  button.toggle {
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    font-size: 1rem;
+    font-weight: inherit;
+
+    > stack > box {
+      &.narrow {
+        font-size: 0.75rem;
+        padding-top: 7px;
+        padding-bottom: 5px;
+        border-spacing: 4px;
+
+        > stack > label {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+      }
+
+      &.wide {
+        padding: 8px 12px;
+        border-spacing: 6px;
+      }
+
+      label.active {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/**********************
+ * AdwViewSwitcherBar *
+ **********************/
+
+viewswitcherbar actionbar > revealer > box {
+  padding: 0;
+}
+
+/************************
+ * AdwViewSwitcherTitle *
+ ************************/
+
+viewswitchertitle viewswitcher {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+/*******************
+ * AdwIndicatorBin *
+ *******************/
+
+indicatorbin {
+  > indicator, > mask {
+    min-width: 6px;
+    min-height: 6px;
+    border-radius: 100px;
+  }
+
+  > indicator {
+    margin: 1px;
+    background: gtkalpha(currentColor, .4);
+
+    > label {
+      font-size: 0.6rem;
+      font-weight: bold;
+      padding: 1px 4px;
+      color: white;
+    }
+  }
+
+  > mask {
+    padding: 1px;
+    background: black;
+  }
+
+  &.needs-attention > indicator {
+    background: $accent_bg_color;
+
+    > label { color: $accent_fg_color; }
+  }
+}

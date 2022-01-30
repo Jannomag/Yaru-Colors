@@ -1,0 +1,9 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-172 -380)" color="#bebebe" fill="gray">
+  <rect transform="scale(-1 1)" x="-187" y="381" width="14" height="1" overflow="visible"/>
+  <rect transform="scale(-1 1)" x="-187" y="384" width="14" height="1" overflow="visible"/>
+  <path d="m187 390h-9.999v1h10z" overflow="visible"/>
+  <rect transform="scale(-1 1)" x="-187" y="387" width="14" height="1" overflow="visible"/>
+  <path d="M176 391.318a37.603 37.603 0 0 0-4 2.182c.633.4 1.29.788 1.97 1.164.689.375 1.364.714 2.028 1.018V394H185v-1h-9z" overflow="visible"/>
+ </g>
+</svg>
