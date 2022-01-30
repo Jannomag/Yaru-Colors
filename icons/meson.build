@@ -1,30 +1,42 @@
-theme_dir = join_paths(get_option('prefix'), 'share/icons', meson.project_name())
+fs = import('fs')
 
-install_subdir('Yaru',
-    install_dir: theme_dir,
-    strip_directory: true,
-    exclude_files: ['index.theme', 'cursor.theme'],
-)
+foreach flavour: ['default', 'Aqua', 'Blue', 'Green', 'Lavender', 'Pink', 'Red', 'Yellow']
+  if get_option(flavour)
+    suffix = flavour == 'default' ? '' : '-@0@'.format(flavour)
+    icon_dir = 'Yaru' + suffix
+    theme_name = meson.project_name() + suffix
+    theme_install_dir = join_paths(get_option('prefix'), 'share/icons', theme_name)
 
-  # install unity-panel icons
-  if get_option('ubuntu-unity')
-    install_subdir('unity-panel',
-    install_dir: theme_dir,
-    strip_directory: true,
+    install_subdir(icon_dir,
+      install_dir: theme_install_dir,
+      strip_directory: true,
+      exclude_files: ['index.theme', 'cursor.theme'],
     )
+
+    # install unity and MATE panel-icons
+    install_subdir('panel',
+      install_dir: theme_install_dir,
+      strip_directory: true,
+    )
+    
+    themes_f = [
+      'cursor.theme',
+      'index.theme',
+    ]
+    conf_data = configuration_data()
+    conf_data.set('ProjectName', meson.project_name())
+    conf_data.set('ThemeName', theme_name)
+    foreach theme: themes_f
+      if fs.is_file(join_paths(icon_dir, theme))
+        file = configure_file(
+          input : join_paths(icon_dir, theme),
+          output : flavour + '-@0@'.format(theme),
+          configuration : conf_data
+        )
+        install_data(file, install_dir: theme_install_dir, rename: theme)
+      endif
+    endforeach
+
+    meson.add_install_script('meson/post_install.py', theme_name)
   endif
-
-themes_f = [
-  'cursor.theme',
-  'index.theme',
-]
-conf_data = configuration_data()
-conf_data.set('ThemeName', meson.project_name())
-foreach theme: themes_f
-  configure_file(input : 'Yaru/@0@'.format(theme),
-                 output : '@0@'.format(theme),
-                 configuration : conf_data,
-                 install_dir: theme_dir)
 endforeach
-
-meson.add_install_script('meson/post_install.py', meson.project_name())
