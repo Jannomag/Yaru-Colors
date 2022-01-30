@@ -1,9 +1,0 @@
-[X-GNOME-Metatheme]
-Name=Yaru-COLOR-dark
-Type=X-GNOME-Metatheme
-Comment=Ubuntu Yaru-Dark theme - forked with a stylish COLOR base color
-Encoding=UTF-8
-GtkTheme=Yaru-COLOR
-IconTheme=Yaru-COLOR
-CursorTheme=Yaru
-CursorSize=24

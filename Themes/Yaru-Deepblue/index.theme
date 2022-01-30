@@ -1,9 +1,0 @@
-[X-GNOME-Metatheme]
-Name=Yaru-Deepblue
-Type=X-GNOME-Metatheme
-Comment=Ubuntu Yaru theme - forked with a stylish Deepblue base color
-Encoding=UTF-8
-GtkTheme=Yaru-Deepblue
-IconTheme=Yaru-Deepblue
-CursorTheme=Yaru
-CursorSize=24
