@@ -1,1 +1,9 @@
-../../default/gtk-3.0/gtk.scss
+$variant: 'light';
+
+@import 'colors';
+@import 'drawing';
+@import 'common';
+@import 'apps';
+@import 'tweaks';
+@import 'colors-public';
+@import 'libhandy/Adwaita-base';

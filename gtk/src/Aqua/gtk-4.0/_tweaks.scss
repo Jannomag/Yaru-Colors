@@ -1,1 +1,128 @@
-../../default/gtk-4.0/_tweaks.scss
+// Smaller windowcontrols and orange close button
+windowcontrols {
+    margin-left: 7px; // Fix windowcontrols misalignement caused by smaller windowcontrols
+
+    button {
+        min-width: 20px;
+        min-height: 20px;
+        padding: 2px;
+        margin: 0 7px;
+
+        > image {
+            padding: 0;
+            background: transparent;
+        }
+
+        &:hover > image {
+            background: $view_hover_color;
+        }
+    
+        &:active > image {
+            background: $view_active_color;
+        }
+        
+        &.close {
+            > image {
+                color: $accent_fg_color;
+                background: $accent_bg_color;
+
+                &:hover {
+                    background: gtkmix($accent_bg_color, "#fff", 90%);
+                }
+
+                &:active {
+                    background: gtkmix($accent_bg_color, "#000", 90%)
+                }
+
+                &:backdrop {
+                    filter: saturate(0);
+                }
+            }
+        }
+    }
+}
+
+// Reducing the amount of the palette's background colors to two
+.sidebar {
+    background-color: $window_bg_color;
+}
+
+// Entries drown if drawn on widgets with $base_color
+// Fixing this at least for notebooks, since entries on tabs is a common pattern
+// Remove this when upstream makes entries have a light border in the dark theme
+@if $variant== "dark" {
+    notebook entry {
+        background-color: gtkmix($view_bg_color, black, 98%);
+    }
+}
+
+// Add some transitions on widgets
+check,
+radio,
+switch,
+switch slider,
+scale > trough,
+scale > trough > slider,
+scale > trough > highlight {
+    transition: $button_transition;
+}
+
+// Fix popover wiggling effect (see #2903)
+popover.menu {
+    check,
+    radio {
+        transition: none;
+    }
+}
+
+// Use our own palette for high and not empty levelbar
+levelbar {
+    > trough {
+        > block {
+            &.high,
+            &:not(.empty) {
+                background-color: $success_color;
+            }
+        }
+    }
+}
+
+// Green suggested buttons
+%button,
+button {
+    &.suggested-action {
+        color: $suggested_fg_color;
+
+        &,
+        &:checked {
+            &:not(.flat) {
+                background-color: $suggested_bg_color;
+            }
+        }
+    }
+
+    &.flat {
+        &.suggested-action {
+            color: $suggested_color;
+        }
+    }
+}
+
+splitbutton {
+    &.suggested-action {
+        > button, > menubutton > button {
+            color: $suggested_fg_color;
+    
+            &, &:checked {
+                background-color: $suggested_bg_color;
+            }
+        }
+    }
+}
+
+%button,
+button,
+%link,
+link {
+    font-weight: normal;
+}
