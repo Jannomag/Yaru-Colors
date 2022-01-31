@@ -4,7 +4,6 @@ option('gtk', type: 'boolean', value: true, description:'build gtk component')
 option('gtksourceview', type: 'boolean', value: true, description:'build gtksourceview component')
 option('metacity', type: 'boolean', value: true, description:'build metacity component')
 option('sounds', type: 'boolean', value: true, description:'build sounds component')
-option('sessions', type: 'boolean', value: true, description:'build sessions component')
 
 option('default', type: 'boolean', value: true, description:'build Yaru gtk default flavour')
 option('dark', type: 'boolean', value: true, description:'build Yaru gtk dark flavour')
