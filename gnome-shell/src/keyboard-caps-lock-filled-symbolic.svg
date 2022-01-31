@@ -1,5 +1,1 @@
-<svg version="1.1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
- <g transform="matrix(1.1765 0 0 1.1765 -392.06 -562.88)" fill="#808080">
-  <path transform="matrix(.85 0 0 .85 333.25 478.45)" d="m7.9414 3c-0.53915 0.85294-1.0635 1.644-1.5703 2.5625-0.50559 0.92727-0.96211 1.8377-1.3711 2.7324h1.7656v1.7051h2.3516v-1.7051l1.7656 0.0019531c-0.41992-0.8951-0.88279-1.8066-1.3887-2.7344-0.5068-0.91862-1.0244-1.7096-1.5527-2.5625zm-1.1758 8v2l2.3516-0.001953v-1.998h-2.3516z" fill="#808080" stroke-width="1.1765" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
- </g>
-</svg>
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 .015c-3.167 4.469-6 11-6 11h3v3h6v-3h3s-2.833-6.531-6-11zm0 1.75c2.375 3.352 4.5 8.25 4.5 8.25H10v3H6v-3H3.5S5.625 5.117 8 1.765zM5 15h6v1H5z" fill="gray"/></svg>

@@ -1,5 +1,1 @@
-<svg version="1.1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
- <g transform="translate(0,2e-5)" fill="#808080" fill-rule="evenodd">
-  <path d="m3.5 1c-0.277 0-0.5 0-0.5 0.75v13.25h1v-5.9883c5.2698 0.11521 2.2146 1.9883 9 1.9883v-7c-6.7854 0-3.7302-1.8731-9-1.9883v-0.26172c0-0.75-0.223-0.75-0.5-0.75z"/>
- </g>
-</svg>
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 0 0-1 1v12.5a.5.5 0 1 0 1-.018V9h3.992l.723 1.447a1 1 0 0 0 .894.553H13a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H9.008l-.723-1.447A1 1 0 0 0 7.391 1H4zm.5 1h3.883l.722 1.447A1 1 0 0 0 9 4h3.5c.277 0 .5.223.5.5v5c0 .277-.223.5-.5.5H8.617l-.722-1.447A1 1 0 0 0 7 8H3.5a.499.499 0 0 1-.5-.5v-5c0-.277.223-.5.5-.5z" fill="gray" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;shape-padding:0;text-decoration-color:#000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/></svg>

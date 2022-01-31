@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/shell/theme">
+    <file alias="icons/scalable/actions/color-pick.svg">color-pick.svg</file>
+    <file alias="icons/scalable/actions/pointer-double-click-symbolic.svg">pointer-double-click-symbolic.svg</file>
+    <file alias="icons/scalable/actions/pointer-drag-symbolic.svg">pointer-drag-symbolic.svg</file>
+    <file alias="icons/scalable/actions/pointer-primary-click-symbolic.svg">pointer-primary-click-symbolic.svg</file>
+    <file alias="icons/scalable/actions/pointer-secondary-click-symbolic.svg">pointer-secondary-click-symbolic.svg</file>
+    <file alias="icons/scalable/actions/preview-close-symbolic.svg">preview-close-symbolic.svg</file>
+    <file alias="icons/scalable/status/carousel-arrow-next-24-symbolic.svg">carousel-arrow-next-24-symbolic.svg</file>
+    <file alias="icons/scalable/status/carousel-arrow-back-24-symbolic.svg">carousel-arrow-back-24-symbolic.svg</file>
+    <file alias="icons/scalable/status/eye-open-negative-filled-symbolic.svg">eye-open-negative-filled-symbolic.svg</file>
+    <file alias="icons/scalable/status/eye-not-looking-symbolic.svg">eye-not-looking-symbolic.svg</file>
+    <file alias="icons/scalable/status/keyboard-caps-lock-filled-symbolic.svg">keyboard-caps-lock-filled-symbolic.svg</file>
+    <file alias="icons/scalable/status/keyboard-enter-symbolic.svg">keyboard-enter-symbolic.svg</file>
+    <file alias="icons/scalable/status/keyboard-hide-symbolic.svg">keyboard-hide-symbolic.svg</file>
+    <file alias="icons/scalable/status/keyboard-layout-filled-symbolic.svg">keyboard-layout-filled-symbolic.svg</file>
+    <file alias="icons/scalable/status/keyboard-shift-filled-symbolic.svg">keyboard-shift-filled-symbolic.svg</file>
+    <file alias="icons/scalable/status/message-indicator-symbolic.svg">message-indicator-symbolic.svg</file>
+    <file>calendar-today.svg</file>
+    <file>checkbox-focused.svg</file>
+    <file>checkbox-focused-dark.svg</file>
+    <file>checkbox-off-focused.svg</file>
+    <file>checkbox-off-focused-dark.svg</file>
+    <file>checkbox-off.svg</file>
+    <file>checkbox-off-dark.svg</file>
+    <file>checkbox.svg</file>
+    <file>checkbox-dark.svg</file>
+    <file>workspace-placeholder.svg</file>
+    <file>no-events.svg</file>
+    <file>no-notifications.svg</file>
+    <file>pad-osd.css</file>
+    <file>process-working.svg</file>
+    <file>toggle-off.svg</file>
+    <file>toggle-off-dark.svg</file>
+    <file>toggle-off-hc.svg</file>
+    <file>toggle-on.svg</file>
+    <file>toggle-on-dark.svg</file>
+    <file>toggle-on-hc.svg</file>
+
+    <!-- Use Yaru files for ubuntu's special gdm and default gnome-shell css -->
+    <file alias="gdm.css">gnome-shell.css</file>
+    <file>gnome-shell.css</file>
+    <file>gnome-shell-high-contrast.css</file>
+    <file>gnome-shell-dark.css</file>
+    <file>gnome-shell-high-contrast-dark.css</file>
+    
+    <!-- Aqua -->
+    <file>checkbox-aqua.svg</file>
+    <file>checkbox-focused-aqua.svg</file>
+    <file>checkbox-off-focused-aqua.svg</file>
+    <file>checkbox-off-focused-dark-aqua.svg</file>
+    <file>toggle-on-aqua.svg</file>
+    <file>gnome-shell-aqua.css</file>
+    <file>gnome-shell-aqua-dark.css</file>
+    
+    <!-- Blue -->
+    <file>checkbox-blue.svg</file>
+    <file>checkbox-focused-blue.svg</file>
+    <file>checkbox-off-focused-blue.svg</file>
+    <file>checkbox-off-focused-dark-blue.svg</file>
+    <file>toggle-on-blue.svg</file>
+    <file>gnome-shell-blue.css</file>
+    <file>gnome-shell-blue-dark.css</file>
+    
+    <!-- Green -->
+    <file>checkbox-green.svg</file>
+    <file>checkbox-focused-green.svg</file>
+    <file>checkbox-off-focused-green.svg</file>
+    <file>checkbox-off-focused-dark-green.svg</file>
+    <file>toggle-on-green.svg</file>
+    <file>gnome-shell-green.css</file>
+    <file>gnome-shell-green-dark.css</file>
+    
+    <!-- Lavender -->
+    <file>checkbox-lavender.svg</file>
+    <file>checkbox-focused-lavender.svg</file>
+    <file>checkbox-off-focused-lavender.svg</file>
+    <file>checkbox-off-focused-dark-lavender.svg</file>
+    <file>toggle-on-lavender.svg</file>
+    <file>gnome-shell-lavender.css</file>
+    <file>gnome-shell-lavender-dark.css</file>
+    
+    <!-- Pink -->
+    <file>checkbox-pink.svg</file>
+    <file>checkbox-focused-pink.svg</file>
+    <file>checkbox-off-focused-pink.svg</file>
+    <file>checkbox-off-focused-dark-pink.svg</file>
+    <file>toggle-on-pink.svg</file>
+    <file>gnome-shell-pink.css</file>
+    <file>gnome-shell-pink-dark.css</file>
+    
+    <!-- Red -->
+    <file>checkbox-red.svg</file>
+    <file>checkbox-focused-red.svg</file>
+    <file>checkbox-off-focused-red.svg</file>
+    <file>checkbox-off-focused-dark-red.svg</file>
+    <file>toggle-on-red.svg</file>
+    <file>gnome-shell-red.css</file>
+    <file>gnome-shell-red-dark.css</file>
+    
+    <!-- Yellow -->
+    <file>checkbox-yellow.svg</file>
+    <file>checkbox-focused-yellow.svg</file>
+    <file>checkbox-off-focused-yellow.svg</file>
+    <file>checkbox-off-focused-dark-yellow.svg</file>
+    <file>toggle-on-yellow.svg</file>
+    <file>gnome-shell-yellow.css</file>
+    <file>gnome-shell-yellow-dark.css</file>
+  </gresource>
+</gresources>
