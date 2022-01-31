@@ -8,6 +8,7 @@
 @import 'apps/nemo';
 @import 'apps/not-csd';
 @import 'apps/gnome-todo';
+@import 'apps/guake';
 @import 'apps/firefox';
 @import 'apps/ubiquity';
 @import 'apps/geary';
@@ -15,3 +16,8 @@
 @import 'apps/evolution';
 @import 'apps/unity7';
 @import 'apps/xfce';
+@import 'apps/mate'; // Have to be included before all other mate files due to vars
+@import 'apps/brisk-menu';
+@import 'apps/caja';
+@import 'apps/mate-multimedia-osd';
+@import 'apps/mate-terminal';
