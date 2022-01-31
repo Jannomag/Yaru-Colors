@@ -1,3 +1,17 @@
+yaru-theme (21.10.3ubuntu5) impish; urgency=medium
+
+  [ Muqtxdir ]
+  * finalize gtk-3.0 colors
+  * finalize gtk-4.0 colors
+  * add icon_varinats
+  * Update colors:
+  * - Remove session-files. - Add GNOME-Shell assets and files. - Merge all colors into one gnome-shell-theme.gresource
+  * modify debian files
+  * remove unnecesssary assets under gnome-shell
+  * fix yaru default/dark themes
+
+ -- Muqtadir <muqtadir5555@gmail.com>  Mon, 31 Jan 2022 23:54:42 +0530
+
 yaru-theme (21.10.1) impish; urgency=medium
 
   [ Stuart Hayhurst ]
