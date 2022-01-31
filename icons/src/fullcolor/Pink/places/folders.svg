@@ -31,18 +31,18 @@
      borderopacity="0.25490196"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.17677669"
-     inkscape:cx="2709.6333"
-     inkscape:cy="-124.4508"
+     inkscape:zoom="0.125"
+     inkscape:cx="1232"
+     inkscape:cy="-124"
      inkscape:current-layer="g1324"
      showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
      inkscape:showpageshadow="false"
-     inkscape:window-width="1852"
-     inkscape:window-height="1043"
-     inkscape:window-x="1434"
-     inkscape:window-y="0"
+     inkscape:window-width="1298"
+     inkscape:window-height="704"
+     inkscape:window-x="68"
+     inkscape:window-y="27"
      width="400px"
      height="300px"
      inkscape:snap-nodes="true"
@@ -2515,7 +2515,7 @@
       <stop
          id="stop950"
          offset="1"
-         style="stop-color:#742558;stop-opacity:1" />
+         style="stop-color:#bc245d;stop-opacity:1" />
     </linearGradient>
   </defs>
   <metadata

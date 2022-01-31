@@ -31,18 +31,18 @@
      borderopacity="0.25490196"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="330.21887"
-     inkscape:cy="200.11122"
+     inkscape:zoom="7.9999999"
+     inkscape:cx="330.25"
+     inkscape:cy="239.8125"
      inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
      inkscape:showpageshadow="false"
-     inkscape:window-width="1852"
-     inkscape:window-height="1043"
-     inkscape:window-x="1434"
-     inkscape:window-y="0"
+     inkscape:window-width="1298"
+     inkscape:window-height="704"
+     inkscape:window-x="68"
+     inkscape:window-y="27"
      width="400px"
      height="300px"
      inkscape:snap-nodes="true"
@@ -123,7 +123,7 @@
        y1="401.58368"
        x1="529.65515"
        id="linearGradient4226"
-       xlink:href="#linearGradient952"
+       xlink:href="#linearGradient952-6"
        inkscape:collect="always"
        gradientTransform="matrix(0.453125,0,0,0.45311204,39.9973,46.0403)" />
     <linearGradient
@@ -265,7 +265,7 @@
     </clipPath>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient952"
+       xlink:href="#linearGradient952-6"
        id="linearGradient16503"
        x1="320.79483"
        y1="99.180145"
@@ -275,7 +275,7 @@
        gradientTransform="matrix(-1,0,0,1,688.00194,0)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient952"
+       xlink:href="#linearGradient952-6"
        id="linearGradient16511"
        x1="321.5004"
        y1="142.07481"
@@ -285,7 +285,7 @@
        gradientTransform="rotate(180,336.0004,147.99973)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient952"
+       xlink:href="#linearGradient952-6"
        id="linearGradient16527"
        x1="321.0007"
        y1="204.13487"
@@ -295,7 +295,7 @@
        gradientTransform="matrix(-1,0,0,1,664.00075,0)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient952"
+       xlink:href="#linearGradient952-6"
        id="linearGradient16535"
        x1="320.48868"
        y1="247.08658"
@@ -305,15 +305,15 @@
        gradientTransform="matrix(-1,0,0,1,656.0008,0)" />
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient952">
+       id="linearGradient952-6">
       <stop
-         id="stop948"
+         id="stop948-7"
          offset="0"
-         style="stop-color:#208fe9;stop-opacity:1" />
+         style="stop-color:#19b6ee;stop-opacity:1" />
       <stop
-         id="stop950"
+         id="stop950-5"
          offset="1"
-         style="stop-color:#255074;stop-opacity:1" />
+         style="stop-color:#002e99;stop-opacity:1" />
     </linearGradient>
   </defs>
   <metadata

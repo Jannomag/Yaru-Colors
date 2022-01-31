@@ -33,16 +33,16 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="318"
-     inkscape:cy="266"
+     inkscape:cy="266.5"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
      inkscape:showpageshadow="false"
-     inkscape:window-width="1852"
-     inkscape:window-height="1043"
-     inkscape:window-x="1434"
-     inkscape:window-y="0"
+     inkscape:window-width="1298"
+     inkscape:window-height="704"
+     inkscape:window-x="68"
+     inkscape:window-y="27"
      width="400px"
      height="300px"
      inkscape:snap-nodes="true"
@@ -95,11 +95,11 @@
        inkscape:collect="always"
        id="linearGradient3340">
       <stop
-         style="stop-color:#000000;stop-opacity:1;"
+         style="stop-color:#000000;stop-opacity:1"
          offset="0"
          id="stop3336" />
       <stop
-         style="stop-color:#000000;stop-opacity:0;"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop3338" />
     </linearGradient>
@@ -117,7 +117,7 @@
        inkscape:collect="always"
        id="linearGradient1055">
       <stop
-         style="stop-color:#000000;stop-opacity:1;"
+         style="stop-color:#000000;stop-opacity:1"
          offset="0"
          id="stop1051" />
       <stop
@@ -129,7 +129,7 @@
          offset="0.19443204"
          id="stop1061" />
       <stop
-         style="stop-color:#000000;stop-opacity:0;"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop1053" />
     </linearGradient>
@@ -246,7 +246,7 @@
        inkscape:collect="always"
        id="linearGradient1361">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#ffffff;stop-opacity:1"
          offset="0"
          id="stop1357" />
       <stop
@@ -353,7 +353,7 @@
        inkscape:collect="always"
        id="linearGradient927">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#ffffff;stop-opacity:1"
          offset="0"
          id="stop923" />
       <stop
@@ -410,7 +410,7 @@
       <stop
          id="stop950"
          offset="1"
-         style="stop-color:#326868;stop-opacity:1" />
+         style="stop-color:#0e9a83;stop-opacity:1" />
     </linearGradient>
   </defs>
   <metadata

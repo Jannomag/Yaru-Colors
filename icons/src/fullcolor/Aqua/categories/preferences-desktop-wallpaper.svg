@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   inkscape:export-ydpi="90.000000"
-   inkscape:export-xdpi="90.000000"
-   width="400"
-   height="300"
-   id="svg11300"
-   sodipodi:version="0.32"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="preferences-desktop-wallpaper.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   version="1.0"
-   style="display:inline;enable-background:new"
    inkscape:export-filename="/home/sam/suru-template.png"
+   style="display:inline;enable-background:new"
+   version="1.0"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   sodipodi:docname="preferences-desktop-wallpaper.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:version="0.32"
+   id="svg11300"
+   height="300"
+   width="400"
+   inkscape:export-xdpi="90.000000"
+   inkscape:export-ydpi="90.000000"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -33,16 +33,16 @@
      inkscape:pageshadow="2"
      inkscape:zoom="5.6568542"
      inkscape:cx="330.21887"
-     inkscape:cy="200.11122"
+     inkscape:cy="200.02283"
      inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
      inkscape:showpageshadow="false"
-     inkscape:window-width="1852"
-     inkscape:window-height="1043"
-     inkscape:window-x="1434"
-     inkscape:window-y="0"
+     inkscape:window-width="1298"
+     inkscape:window-height="704"
+     inkscape:window-x="68"
+     inkscape:window-y="27"
      width="400px"
      height="300px"
      inkscape:snap-nodes="true"
@@ -95,11 +95,11 @@
        inkscape:collect="always"
        id="linearGradient15024">
       <stop
-         style="stop-color:#000000;stop-opacity:1;"
+         style="stop-color:#000000;stop-opacity:1"
          offset="0"
          id="stop15020" />
       <stop
-         style="stop-color:#000000;stop-opacity:0;"
+         style="stop-color:#000000;stop-opacity:0"
          offset="1"
          id="stop15022" />
     </linearGradient>
@@ -130,7 +130,7 @@
        inkscape:collect="always"
        id="linearGradient927">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         style="stop-color:#ffffff;stop-opacity:1"
          offset="0"
          id="stop923" />
       <stop
@@ -313,7 +313,7 @@
       <stop
          id="stop950"
          offset="1"
-         style="stop-color:#326868;stop-opacity:1" />
+         style="stop-color:#0e9a83;stop-opacity:1" />
     </linearGradient>
   </defs>
   <metadata
