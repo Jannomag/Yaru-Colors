@@ -428,7 +428,7 @@ while [ "$install" == false ] && [ "$picking" == "false" ] && [ "$enable" == "tr
 
   ### Shell questions
   echo -e ""
-  if [ ! -d $homedir/.local/share/gnome-shell/extensions/user-theme* ]; then # checking if the user-themes extension of gnome-shell is enabled, it's needed to be able to set a different gnome-shell theme (why, though?)
+  if [ ! -d $homedir/.local/share/gnome-shell/extensions/user-theme* ] && [ ! -d /usr/share/gnome-shell/extensions/user-theme* ] ; then # checking if the user-themes extension of gnome-shell is enabled, it's needed to be able to set a different gnome-shell theme (why, though?)
     echo -e "${Red}I just wanted to ask you if I should enable a gnome-shell theme...\nBut the user-themes extension is not installed.\nPlease install it to be able to set a gnome-shell theme.${RCol}" #...and if not, just tell this to the user
     echo -e "${Red}You can get this by using 'apt install gnome-shell-extensions'\nor here: https://extensions.gnome.org/extension/19/user-themes/"
   else
